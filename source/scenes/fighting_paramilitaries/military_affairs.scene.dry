@@ -26,7 +26,6 @@ Military loyalty : [+ reichswehr_loyalty : loyalty +]
 - @martial_law: With our situation, if it is better that Germany be under martial law than the extremists.
 
 @promise_spending
-@promise_spending
 view-if: military_concessions == 0
 choose-if: military_weariness > 10
 on-arrival: reichswehr_loyalty += 0.05; military_weariness -= 10; military_concessions = 1; workers_spd -= 3; unemployed_spd -=3; workers_nsdap += 3; unemployed_kpd += 3
