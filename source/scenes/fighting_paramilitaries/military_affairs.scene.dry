@@ -8,33 +8,49 @@ tags: fighting_paramilitaries
 
 = The Army
 
-AHHHHH the armys gonna kill us!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-We gotta beg them not to!!!!
-We swear were gonna get everything under control shhhhhhhhhhhhhhhhh.
+Military availability : [+ military_available +]%
 
-- @army_loyalty: Increase Loyalty of the Army.
-- @calm: Calm the army down
+Military loyalty : [+ reichswehr_loyalty : loyalty +]
+
+- @concessions_menu: We can give concessions to the military to calm them down.
 - @root: Perhaps another time
 - @easy_discard
 
-@army_loyalty
-on-arrival: reichswehr_loyalty += 0.25; month_actions +=1; paramilitaries_timer = 2
+Military loyalty : [+ reichswehr_loyalty : loyalty +]
 
-Yessssssssss now they are loyal and that is good
+With bourgeois cooperation, the military are more willing to side with us.
 
-but I dont think all of them are loyal
+@concessions_menu
 
-that is bad
+- @promise_spending: We promise the army to fund them once this is over.
+- @spending_1: We allocate a part of their budget to placate them.
+- @delegate_1: We can delegate some of our paramilitary suppression operations to the Reichswehr.
+- @spending_2: We can allocate a large portion of our budget on militarizing the Reichswehr even further.
+- @delegate_2: We can give up major positions on anti streetfighting operations.
+- @martial_law: With our situation, if it is better that Germany be under martial law than the extremists.
 
-@calm
-on-arrival: military_weariness -= 10 if military_weariness >= 10; month_actions +=1; paramilitaries_timer = 2
+@promise_spending
+on-arrival: reichswehr_loyalty += 0.05; military_weariness -= 10
+subtitle: A vague promise of future military funding. It buys us time, but at the cost of credibility.
 
-The reichswehr is now calm, and will trust us that we can put down the violence in the streets
+@spending_1
+on-arrival: reichswehr_loyalty += 0.1; budget -= 1; military_weariness -= 15
+subtitle: A small part of the budget is reallocated to calm military leadership. -1 budget
 
-that would be good
+@delegate_1
+on-arrival: reichswehr_loyalty += 0.15; military_weariness -= 15
+subtitle: We let the Reichswehr handle some suppression. This helps — but we lose some civilian oversight.
 
-but they are still big and scary
+@spending_2
+on-arrival: reichswehr_loyalty += 0.25; budget -=2; military_weariness -= 20
+subtitle: A major boost to Reichswehr capabilities. Effective, but controversial. -2 budget
 
-that would be bad.
+@delegate_2
+on-arrival: reichswehr_loyalty += 0.3; military_weariness -= 20
+subtitle: We relinquish full operational control in key cities. Short-term order at a cost.
 
-.
+@martial_law
+on-arrival: reichswehr_loyalty += 0.4
+choose-if: 1 == 2
+unavailable-subtitle: not done
+subtitle: Germany enters martial law. The streets are quieter — but so is civil liberty.
