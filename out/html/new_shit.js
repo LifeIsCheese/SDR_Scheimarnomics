@@ -1,5 +1,12 @@
 var d = dendryUI.dendryEngine.state.qualities;
 
+const plotMap = {
+    "hjalmar": "hjalmar_plot",
+    "bruning": "bruning_plot",
+    "rohm": "rohm_plot",
+    "leow": "leow_plot"
+};
+
  function new_hire () {
    if (d.resources > 0) {
       d.director_pointer = Math.floor( Math.random() * d.director_a.length);
@@ -22,12 +29,9 @@ function director_actions () {
 function purge () {
    d.interior_police_loyalty += 0.1;
    d.prussian_police_loyalty += 0.1;
-   if (d.plot_target == "hjalmar") {
-      d.hjalmar_plot -= (d.plot_strength * 3);
-   }
-   if (d.plot_target == "bruning") {
-      d.bruning_plot -= (d.plot_strength * 3);
-   }
+if (plotMap[d.plot_target]) {
+   d[plotMap[d.plot_target]] -= d.plot_strength * 3
+}
    d.director_actions_timer = 3;
    d.month_actions += 1;
    window.changeTab('status.Actions', 'Actions')
@@ -40,12 +44,9 @@ function rush () {
    }
          d.interior_police_loyalty -= 0.1;
       d.prussian_police_loyalty -= 0.1;
-      if (d.plot_target == "hjalmar") {
-         d.hjalmar_plot += (d.plot_strength * 3);
-      }
-      if (d.plot_target == "bruning") {
-         d.bruning_plot += (d.plot_strength * 3);
-      }
+if (plotMap[d.plot_target]) {
+   d[plotMap[d.plot_target]] += d.plot_strength * 3
+}
    d.director_actions_timer = 3;
    d.month_actions += 1;
    window.changeTab('status.Actions', 'Actions')
