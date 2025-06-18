@@ -16,10 +16,6 @@ Military loyalty : [+ reichswehr_loyalty : loyalty +]
 - @root: Perhaps another time
 - @easy_discard
 
-Military loyalty : [+ reichswehr_loyalty : loyalty +]
-
-With bourgeois cooperation, the military are more willing to side with us.
-
 @concessions_menu
 
 - @promise_spending: We promise the army to fund them once this is over.
