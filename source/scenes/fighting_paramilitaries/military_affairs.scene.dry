@@ -11,19 +11,15 @@ tags: fighting_paramilitaries
 Military availability : [+ military_available +]%
 
 Military loyalty : [+ reichswehr_loyalty : loyalty +]
-
-- @concessions_menu: We can give concessions to the military to calm them down.
-- @root: Perhaps another time
-- @easy_discard
-
-@concessions_menu
-
 - @promise_spending: We promise the army to fund them once this is over.
 - @spending_1: We allocate a part of their budget to placate them.
 - @delegate_1: We can delegate some of our paramilitary suppression operations to the Reichswehr.
 - @spending_2: We can allocate a large portion of our budget on militarizing the Reichswehr even further.
 - @delegate_2: We can give up major positions on anti streetfighting operations.
 - @martial_law: With our situation, if it is better that Germany be under martial law than the extremists.
+- @root: Perhaps another time
+- @easy_discard
+
 
 @promise_spending
 view-if: military_concessions == 0
