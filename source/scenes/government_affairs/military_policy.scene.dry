@@ -38,7 +38,6 @@ Demilitarization is preferred by our coalition partners and will be harder to ra
 
 - @demilitarize: We will demilitarize the army.
 - @downsize: We will downsize the army.
-#- @disband: We will disband the army.
 
 @demilitarize
 choose-if: reichswehr_militancy >= 1
@@ -56,11 +55,6 @@ on-arrival: reichswehr_strength -= 20; sh_strength += 15; sa_strength += 5; unem
 The army has fewer soldiers, as we decrease its size even further below the already small limit set out for us by Versailles. Many demobilized soldiers have joined the right-wing paramilitaries such as the Stahlhelm and SA, while the right rallies for the defense of Germany.
 
 Our coalition is upset, as is the army that we are directly attacking their powerful position. [? if coup_progress < 5 : There is no hint of a coup yet, but we do not know where the line will be drawn. ?][? if coup_progress >= 5 and coup_progress < 8 : Rumors of a coup have begun to spread around, though in terms of actual evidence, there is nothing yet. We must proceed with caution. ?][? if coup_progress >= 8 : Arms and ammunition seem to disappear mysteriously from military supplies, while reactionaries increasingly join the army. Officers meet through the nights, often with Harzburg Front officials as well, and the army's already huge degree of independence seems to somehow grow. Most damning of all is the Harzburg Front's recent condemnation of demilitarization, which seems almost a veiled threat aimed at the government. There can be no uncertainty: a coup plot is in motion, and we might not have much time to prevent it. ?]
-
-@disband
-view-if: reichswehr_strength < 20 and reichswehr_militancy < 1
-
-WIP
 
 @reform
 subtitle: -1 budget

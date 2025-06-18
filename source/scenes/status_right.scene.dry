@@ -13,7 +13,9 @@ Military Weariness: [+ military_weariness +]%
 
 = Concessions
 
-None
+[? if military_concessions == 0 : None ?] [? if military_concessions == 1 : Promised funding. ?] [? if military_concessions == 2 : An increase in military spending. ?] [? if military_concessions >= 3 : Military delegation, in dealing with the extremists. ?] [? if military_concessions == 4 : Further military spending. ?] [? if military_concessions >= 5 : Military overwatch regarding counter paramilitary operations. ?]
+
+Military influence : so basically it is dependant on concessions, and their strength within the republican forces.
 
 @reichsbanner
 
