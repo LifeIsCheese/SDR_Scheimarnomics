@@ -3,12 +3,8 @@ subtitle: The preparations are in order, we just need the approval
 new-page: true
 tags: event
 priority: 1
-view-if: {!
-
-Q[Q.plotMap[Q.plot_target]] >= 100
-
-!}
-on-arrival: {!
+view-if: operations_scene = 1
+on-arrival: operations_scene = 0; {!
 
 if (plot_target == "hjalmar") {
     Q.interior_police_loyalty_plot_cap = 0.55

@@ -290,6 +290,7 @@ Q.bruning_plot = 0;
 Q.rohm_plot = 0;
 Q.leow_plot = 0;
 Q.schleicher_plot = 0;
+Q.operations_scene = 0;
 
 Q.hunger_chancellor = 0;
 Q.reichsbank_a = 0;
