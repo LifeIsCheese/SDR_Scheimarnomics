@@ -1,9 +1,9 @@
-title: Operation Reversed Scale
+title: Plots and preparations.
 subtitle: The preparations are in order, we just need the approval
 new-page: true
 tags: event
 priority: 1
-view-if: {! dendryUI.dendryEngine.state.qualities[dendryUI.dendryEngine.state.qualities.plotMap[dendryUI.dendryEngine.state.qualities.plot_target]] >= 100 !}
+view-if: operations_scene = 1
 on-arrival: operations_scene = 0; {!
 
 if (plot_target == "hjalmar") {
@@ -47,7 +47,7 @@ These are our current estimates of loyalty within the police, if any of the 2 ar
 
 @go
 subtitle: Operation Reversed Scale is given the go ahead. [? if chancellor == "Braun": "Who made that mess?" Braun, are you ok? "Sorry, must've been the wind" ?].
-on-arrival: {!
+on-arrival: operations_scene = 0; {!
 
 if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.assassination_partners == "Police" ) {
     Q[plotMap[plot_target]] = "successful";
