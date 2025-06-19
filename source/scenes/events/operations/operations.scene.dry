@@ -11,6 +11,7 @@ if (Q[plotMap[plot_target]] >= 100) {
 }
 
 !}
+
 = Plots and preparations
 
 Partners: [+ assassination_partners_string +]
