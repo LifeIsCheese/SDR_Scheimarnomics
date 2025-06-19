@@ -6,9 +6,7 @@ tags: event
 priority: 1
 view-if: {!
 
-if (Q[plotMap[plot_target]] >= 100) {
-    1 = 1;
-}
+Q[plotMap[plot_target]] >= 100
 
 !}
 
