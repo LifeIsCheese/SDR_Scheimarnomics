@@ -8,9 +8,10 @@ tags: fighting_paramilitaries
 
 = The Army
 
-Military availability : [+ military_available +]%
+Military availability : [+ military_available +]% (times it by 100)
 
 Military loyalty : [+ reichswehr_loyalty : loyalty +]
+
 - @promise_spending: We promise the army to fund them once this is over.
 - @spending_1: We allocate a part of their budget to placate them.
 - @delegate_1: We can delegate some of our paramilitary suppression operations to the Reichswehr.

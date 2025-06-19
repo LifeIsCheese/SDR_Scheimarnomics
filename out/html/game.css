@@ -483,7 +483,7 @@ a.card:focus .card-tooltip, a.card:hover .card-tooltip {
 }
 .face-status {
   display: inline-block;
-  outline: 5px solid var(--active-color);
+  outline: 5px solid var(--card-border-color);
   height: 150px;
   object-fit: contain;
 }
