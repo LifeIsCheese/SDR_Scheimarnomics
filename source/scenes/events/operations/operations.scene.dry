@@ -47,7 +47,7 @@ These are our current estimates of loyalty within the police, if any of the 2 ar
 
 @go
 subtitle: Operation Reversed Scale is given the go ahead. [? if chancellor == "Braun": "Who made that mess?" Braun, are you ok? "Sorry, must've been the wind" ?].
-on-arrival: operations_scene = 0; {!
+on-arrival: {!
 
 if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.assassination_partners == "Police" ) {
     Q[plotMap[plot_target]] = "successful";
@@ -66,10 +66,30 @@ if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.prussia
 } else {
     Q[plotMap[plot_target]] = "failed";
 }
-
+Q.operations_scene = 0
 !}
 
 @bribe
 subtitle: -1 budget. Promise a pay raise well after the assisnation attempt.
 choose-if: budget > 0
-on-arrival: interior_police_loyalty *= 1.5; prussian_police_loyalty *= 1.5; budget -=1; hjalmar_plot = "successful" if interior_police_loyalty >= 0.55 and assassination_partners == "Police"; hjalmar_plot = "failed" if interior_police_loyalty < 0.55 and assassination_partners == "Police"; hjalmar_plot = "successful" if (interior_police_loyalty < 0.55 or prussian_police_loyalty < 0.5) and assassination_partners == "Prussian"; hjalmar_plot = "failed" if interior_police_loyalty < 0.55 and prussian_police_loyalty < 0.5 and assassination_partners == "Prussian"; hjalmar_plot = "successful" if interior_police_loyalty >= 0.55 and assassination_partners == "Reichsbanner"; hjalmar_plot = "failed" if interior_police_loyalty < 0.55 and assassination_partners == "Reichsbanner"; hjalmar_plot = "failed" if interior_police_loyalty < 0.55 and assassination_partners == "Spies"; hjalmar_plot = "successful" if assassination_partners == "Spies"; barmat +=1
+on-arrival: interior_police_loyalty *= 1.5; prussian_police_loyalty *= 1.5; budget -=1; barmat +=1; {!
+
+if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.assassination_partners == "Police" ) {
+    Q[plotMap[plot_target]] = "successful";
+} else {
+    Q[plotMap[plot_target]] = "failed";
+}
+
+if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.prussian_police_loyalty >= Q.prussian_police_loyalty_plot_cap && Q.assassination_partners == "Prussian" ) {
+    Q[plotMap[plot_target]] = "successful";
+} else {
+    Q[plotMap[plot_target]] = "failed";
+}
+
+if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.prussian_police_loyalty >= Q.prussian_police_loyalty_plot_cap && Q.rb_dissent < Q,rb_dissent_plot_cap && Q.assassination_partners == "Reichsbanner" ) {
+    Q[plotMap[plot_target]] = "successful";
+} else {
+    Q[plotMap[plot_target]] = "failed";
+}
+Q.operations_scene = 0
+!}
