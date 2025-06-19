@@ -9,6 +9,29 @@ view-if: {!
 Q[plotMap[plot_target]] >= 100
 
 !}
+on-arrival: {!
+
+if (plot_target == "hjalmar") {
+    Q.interior_police_loyalty_plot_cap = 0.55
+    Q.prussian_police_loyalty_plot_cap = 0.50
+    Q.rb_dissent_plot_cap = 0;
+}
+if (plot_target == "bruning") {
+    Q.interior_police_loyalty_plot_cap = 0.65
+    Q.prussian_police_loyalty_plot_cap = 0.70
+    Q.rb_dissent_plot_cap = 10;
+}
+if (plot_target == "rohm") {
+    Q.interior_police_loyalty_plot_cap = 0.55
+    Q.prussian_police_loyalty_plot_cap = 0.50
+    Q.rb_dissent_plot_cap = 0;
+}
+if (plot_target == "leow") {
+    Q.interior_police_loyalty_plot_cap = 0.45
+    Q.prussian_police_loyalty_plot_cap = 0.40
+    Q.rb_dissent_plot_cap = 50;
+}
+!}
 
 = Plots and preparations
 
@@ -18,16 +41,38 @@ It's too late to turn back now...
 
 These are our current estimates of loyalty within the police, if any of the 2 are disloyal it *will* lead to disaster. 
 
-Current interior police loyalty: [+ interior_police_loyalty : loyalty +]. [? if interior_police_loyalty < 0.55: The police show frighteningly low levels of loyalty. ?]
+[? if assassination_partners == "Police" or assassination_partners == "Prussian" or assassination_partners == "Reichsbanner" : Current interior police loyalty: [+ interior_police_loyalty : loyalty +]. [? if interior_police_loyalty < 0.55: The police show frighteningly low levels of loyalty. ?] ?]
 
-Current prussian police loyalty: [+ prussian_police_loyalty : loyalty +]. [? if prussian_police_loyalty < 0.5: The Prussian police seem untrustworthy. ?]
+[? if assassination_partners == "Prussian" or assassination_partners == "Reichsbanner" : Current prussian police loyalty: [+ prussian_police_loyalty : loyalty +]. [? if prussian_police_loyalty < 0.5: The Prussian police seem untrustworthy. ?] ?]
+
+[? if assassination_partners == "Reichsbanner" : Current Reichsbanner dissent: [+ prussian_police_loyalty : loyalty +]. [? if rb_dissent >= 50: The Reichsbanner seem unwilling. ?] ?]
 
 - @go: Operation Reversed Scale is given the go ahead.
 - @bribe: For extra measure.
 
 @go
 subtitle: Operation Reversed Scale is given the go ahead. [? if chancellor == "Braun": "Who made that mess?" Braun, are you ok? "Sorry, must've been the wind" ?].
-on-arrival: hjalmar_plot = "successful" if interior_police_loyalty >= 0.55 and assassination_partners == "Police"; hjalmar_plot = "failed" if interior_police_loyalty < 0.55 and assassination_partners == "Police"; hjalmar_plot = "successful" if interior_police_loyalty >= 0.55 and prussian_police_loyalty >= 0.5 and assassination_partners == "Prussian"; hjalmar_plot = "failed" if (interior_police_loyalty < 0.55 or prussian_police_loyalty < 0.5) and assassination_partners == "Prussian"; hjalmar_plot = "successful" if interior_police_loyalty >= 0.55 and assassination_partners == "Reichsbanner"; hjalmar_plot = "failed" if interior_police_loyalty < 0.55 and assassination_partners == "Reichsbanner"; hjalmar_plot = "failed" if interior_police_loyalty < 0.55 and assassination_partners == "Spies"; hjalmar_plot = "successful" if assassination_partners == "Spies"
+on-arrival: {!
+
+if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.assassination_partners == "Police" ) {
+    Q[plotMap[plot_target]] = "successful";
+} else {
+    Q[plotMap[plot_target]] = "failed";
+}
+
+if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.prussian_police_loyalty >= Q.prussian_police_loyalty_plot_cap && Q.assassination_partners == "Prussian" ) {
+    Q[plotMap[plot_target]] = "successful";
+} else {
+    Q[plotMap[plot_target]] = "failed";
+}
+
+if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.prussian_police_loyalty >= Q.prussian_police_loyalty_plot_cap && Q.rb_dissent < Q,rb_dissent_plot_cap && Q.assassination_partners == "Reichsbanner" ) {
+    Q[plotMap[plot_target]] = "successful";
+} else {
+    Q[plotMap[plot_target]] = "failed";
+}
+
+!}
 
 @bribe
 subtitle: -1 budget. Promise a pay raise well after the assisnation attempt.
