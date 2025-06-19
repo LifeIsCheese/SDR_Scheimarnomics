@@ -5,7 +5,7 @@ tags: event
 priority: 1
 view-if: {!
 
-Q[plotMap[plot_target]] >= 100
+Q[Q.plotMap[Q.plot_target]] >= 100
 
 !}
 on-arrival: {!
