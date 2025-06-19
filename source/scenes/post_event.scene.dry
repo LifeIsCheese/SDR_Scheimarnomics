@@ -353,6 +353,11 @@ if (Q.plotMap[Q.plot_target]) {
 if (Q.plotMap[Q.plot_target] && Q[Q.plotMap[Q.plot_target]] >= 100) {
     Q.operations_scene = 1;
 }
+if (Q.plotCaps[plot_target] && violence_timer > 0) {
+    Q.interior_police_loyalty_plot_cap = Q.plotCaps[plot_target].interior;
+    Q.prussian_police_loyalty_plot_cap = Q.plotCaps[plot_target].prussian;
+    Q.rb_dissent_plot_cap = Q.plotCaps[plot_target].rb;
+}
 // Tax reform
 Q.tax_reform_progress = 1 - (Q.science_bonus / 10);
 

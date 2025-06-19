@@ -4,14 +4,7 @@ new-page: true
 tags: event
 priority: 1
 view-if: operations_scene = 1
-on-arrival: operations_scene = 0; {!
-
-if (Q.plotCaps[plot_target]) {
-    Q.interior_police_loyalty_plot_cap = Q.plotCaps[plot_target].interior;
-    Q.prussian_police_loyalty_plot_cap = Q.plotCaps[plot_target].prussian;
-    Q.rb_dissent_plot_cap = Q.plotCaps[plot_target].rb;
-}
-!}
+on-arrival: operations_scene = 0;
 
 = Plots and preparations
 
