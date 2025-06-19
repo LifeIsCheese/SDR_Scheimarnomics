@@ -3,7 +3,7 @@ subtitle: The preparations are in order, we just need the approval
 new-page: true
 tags: event
 priority: 1
-view-if: [plotMap[plot_target]] >= 100
+view-if: {! dendryUI.dendryEngine.state.qualities[dendryUI.dendryEngine.state.qualities.plotMap[dendryUI.dendryEngine.state.qualities.plot_target]] >= 100 !}
 on-arrival: operations_scene = 0; {!
 
 if (plot_target == "hjalmar") {
