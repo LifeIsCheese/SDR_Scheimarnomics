@@ -4,7 +4,7 @@ new-page: true
 max-visits: 1
 tags: event
 priority: 1
-view-if: view-if: {!
+view-if: {!
 
 Q[plotMap[plot_target]] >= 100
 
