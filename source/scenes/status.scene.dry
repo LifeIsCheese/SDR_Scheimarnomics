@@ -289,7 +289,7 @@ Partners: [+ assassination_partners_string +]
 Plot power: [+ plot_strength +]%
 
 [? if plot_target == "hjalmar" : Death of <span style="color:rgb(112, 87, 19);">**Hjalmar Schacht**</span>: [+ hjalmar_plot +] ?] [? if plot_target == "bruning" : Death of <span style="color:rgb(19, 93, 112);">**Heinrich Brüning**</span>: [+ bruning_plot +] ?] [? if plot_target == "rohm" : Death of <span style="color:rgb(185, 138, 7);">**Ernst Röhm**</span>: [+ rohm_plot +]  ?] [? if plot_target == "leow" : Death of <span style="color:rgb(180, 38, 38);">**Willy Leow**</span>: [+ leow_plot +]  ?] [? if plot_target == "schleicher" : Death of <span style="color:rgb(180, 38, 38);">**Kurt von Schleicher
-**</span>: [+ schleicher_plot +]  ?]
+**</span>: [+ schleicher_plot +]  ?]%
 
 = Informants
 
