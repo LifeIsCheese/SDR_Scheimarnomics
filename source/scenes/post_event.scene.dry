@@ -346,17 +346,9 @@ switch (Q.interest_rates) {
         Q.s_interest = "Very Low";
         break;
 }
-
 // Plot changes
-const plotMap = {
-    "hjalmar": "hjalmar_plot",
-    "bruning": "bruning_plot",
-    "rohm": "rohm_plot",
-    "leow": "leow_plot",
-    "schleicher": "schleicher_plot"
-};
-if (plotMap[Q.plot_target]) {
-    Q[plotMap[Q.plot_target]] += Q.plot_strength;
+if (Q.plotMap[Q.plot_target]) {
+    Q[Q.plotMap[Q.plot_target]] += Q.plot_strength;
 }
 
 // Tax reform

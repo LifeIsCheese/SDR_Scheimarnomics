@@ -270,6 +270,17 @@ Q.s_spy_network = "None";
 Q.plot_strength = 0;
 Q.plot_target = "None";
 
+
+//plotMap
+
+Q.plotMap = {
+    "hjalmar": "hjalmar_plot",
+    "bruning": "bruning_plot",
+    "rohm": "rohm_plot",
+    "leow": "leow_plot",
+    "schleicher": "schleicher_plot"
+};
+
 //plots
 Q.hjalmar_plot = 0;
 Q.bruning_plot = 0;
