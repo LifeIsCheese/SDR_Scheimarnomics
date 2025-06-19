@@ -42,6 +42,10 @@ These are our current estimates of loyalty within the police, if any of the 2 ar
 
 [? if assassination_partners == "Reichsbanner" : Current Reichsbanner dissent: [+ rb_dissent +]. [? if rb_dissent >= 50: The Reichsbanner seem unwilling. ?] ?]
 
+interior_police_loyalty_plot_cap : [+ interior_police_loyalty_plot_cap +]
+prussian_police_loyalty_plot_cap : [+ prussian_police_loyalty_plot_cap +]
+rb_dissent_plot_cap : [+ rb_dissent_plot_cap +]
+
 - @go: Operation Reversed Scale is given the go ahead.
 - @bribe: For extra measure.
 
