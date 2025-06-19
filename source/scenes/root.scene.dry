@@ -271,6 +271,15 @@ Q.plot_strength = 0;
 Q.plot_target = "None";
 
 
+//plotCap
+
+plotCaps = {
+    hjalmar: { interior: 0.55, prussian: 0.50, rb: 0 },
+    bruning: { interior: 0.65, prussian: 0.70, rb: 10 },
+    rohm:    { interior: 0.55, prussian: 0.50, rb: 0 },
+    leow:    { interior: 0.45, prussian: 0.40, rb: 50 }
+};
+
 //plotMap
 
 Q.plotMap = {

@@ -6,25 +6,10 @@ priority: 1
 view-if: operations_scene = 1
 on-arrival: operations_scene = 0; {!
 
-if (plot_target == "hjalmar") {
-    Q.interior_police_loyalty_plot_cap = 0.55
-    Q.prussian_police_loyalty_plot_cap = 0.50
-    Q.rb_dissent_plot_cap = 0;
-}
-if (plot_target == "bruning") {
-    Q.interior_police_loyalty_plot_cap = 0.65
-    Q.prussian_police_loyalty_plot_cap = 0.70
-    Q.rb_dissent_plot_cap = 10;
-}
-if (plot_target == "rohm") {
-    Q.interior_police_loyalty_plot_cap = 0.55
-    Q.prussian_police_loyalty_plot_cap = 0.50
-    Q.rb_dissent_plot_cap = 0;
-}
-if (plot_target == "leow") {
-    Q.interior_police_loyalty_plot_cap = 0.45
-    Q.prussian_police_loyalty_plot_cap = 0.40
-    Q.rb_dissent_plot_cap = 50;
+if (Q.plotCaps[plot_target]) {
+    Q.interior_police_loyalty_plot_cap = Q.plotCaps[plot_target].interior;
+    Q.prussian_police_loyalty_plot_cap = Q.plotCaps[plot_target].prussian;
+    Q.rb_dissent_plot_cap = Q.plotCaps[plot_target].rb;
 }
 !}
 
