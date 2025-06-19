@@ -6,7 +6,9 @@ tags: event
 priority: 1
 view-if: {!
 
-Q[plotMap[plot_target]] >= 100
+if (Q[plotMap[plot_target]] >= 100) {
+    1 = 1;
+}
 
 !}
 = Plots and preparations
