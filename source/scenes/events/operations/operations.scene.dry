@@ -14,15 +14,11 @@ It's too late to turn back now...
 
 These are our current estimates of loyalty within the police, if any of the 2 are disloyal it *will* lead to disaster. 
 
-[? if assassination_partners == "Police" or assassination_partners == "Prussian" or assassination_partners == "Reichsbanner" : Current interior police loyalty: [+ interior_police_loyalty : loyalty +]. [? if interior_police_loyalty < 0.55: The police show frighteningly low levels of loyalty. ?] ?]
+[? if assassination_partners == "Police" or assassination_partners == "Prussian" or assassination_partners == "Reichsbanner" : Current interior police loyalty: [+ interior_police_loyalty : loyalty +]. [? if interior_police_loyalty < interior_police_loyalty_plot_cap: The police show frighteningly low levels of loyalty. ?] ?]
 
-[? if assassination_partners == "Prussian" or assassination_partners == "Reichsbanner" : Current prussian police loyalty: [+ prussian_police_loyalty : loyalty +]. [? if prussian_police_loyalty < 0.5: The Prussian police seem untrustworthy. ?] ?]
+[? if assassination_partners == "Prussian" or assassination_partners == "Reichsbanner" : Current prussian police loyalty: [+ prussian_police_loyalty : loyalty +]. [? if prussian_police_loyalty < prussian_police_loyalty_plot_cap: The Prussian police seem untrustworthy. ?] ?]
 
-[? if assassination_partners == "Reichsbanner" : Current Reichsbanner dissent: [+ rb_dissent +]. [? if rb_dissent >= 50: The Reichsbanner seem unwilling. ?] ?]
-
-interior_police_loyalty_plot_cap : [+ interior_police_loyalty_plot_cap +]
-prussian_police_loyalty_plot_cap : [+ prussian_police_loyalty_plot_cap +]
-rb_dissent_plot_cap : [+ rb_dissent_plot_cap +]
+[? if assassination_partners == "Reichsbanner" : Current Reichsbanner dissent: [+ rb_dissent +]% [? if rb_dissent >= rb_dissent_plot_cap: The Reichsbanner seem unwilling. ?] ?]
 
 - @go: Operation Reversed Scale is given the go ahead.
 - @bribe: For extra measure.

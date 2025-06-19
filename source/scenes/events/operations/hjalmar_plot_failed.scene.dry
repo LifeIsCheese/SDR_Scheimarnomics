@@ -1,0 +1,15 @@
+title: Operation Reversed Scale
+view-if: hjalmar_plot == "failed"
+new-page: true
+max-visits: 1
+tags: event
+on-arrival: capital_strike_progress += 5; coup_progress = 9; plot_target = "None"; plot_strength = 0; reichsbank_a = 0; z_relation *= 0.6; ddp_relation *= 0.4; dvp_relation *= 0.3; new_middle_spd -=10; old_middle_spd -=10; workers_spd -=10; time_to_election = 3; spd_in_government = 0; in_grand_coalition = 0; spd_toleration = 0; weimar_dissent *= 10 if weimar_plan_adopted; hjalmar_event = 1;
+call: set_next_election_time
+
+= A cornershop
+
+Tensions were high, as the clock striked 12. Otto Braun himself was nearby to confirm Schacht's death, with the secret police's elite serving as watchout. 20 minutes passed by, which by then an informant came back, bloodied and bruised.
+
+It was a massacre, what we thought to be an assisnation was instead a ambush backed by the SS and the Stahlhelm. Many good men died today, and now with the streets of Lübeck running red with blood, it isn't long before the information leaks out.
+
+This was a disaster of **your** making.

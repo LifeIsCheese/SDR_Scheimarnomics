@@ -1,0 +1,23 @@
+title: Our plans have been uncovered!
+view-if: year >= 1928 and bruning_plot >=50 and (interior_police_loyalty < 0.7 and prussian_police_loyalty < 0.7 and assassination_partners == "Prussian") or (assassination_partners == "Police" and interior_police_loyalty < 0.7) or (interior_police_loyalty < 0.7 and prussian_police_loyalty < 0.7 and plot_strength == 20)
+new-page: true
+max-visits: 1
+tags: event
+on-arrival: bruning_plot = "uncovered"; plot_strength = 0; plot_target = "None"; bruning_event = 1
+
+Otto Braun. A man who's name which once held much respect throughout most of Germany for promoting republican and democratic cooperation against the radical parties. Is now irreversibly tarnished.
+
+It was during a visit to see his wife in the hospital, where he would find out the news. Well more like the news found him, with many journalists clamoring for his input on the the recent leaks. For Braun it was a blur, the life that he once knew, and the position that he holds, know stands on shaky ground.
+
+It was only a day before the whole country knew of the plot, with the reformist members, leaving in droves.
+
+In the midst of the disaster, a catastrophe happened. The hospital where Braun's beloved was, sparked into flames. With Braun himself rushing in to save his wife. Thankfully Braun was quick enough due to his daily jogs with Woytinsky, but it only reinforced the notion that political life is over.
+
+- @title: Shit.
+
+@title
+title: Braun has resigned 
+subtitle: With his resignation, Z now holds leadership over Prussia.
+on-arrival: braun_advisor_advisor = 0; spd_prussia = 0; prussian_government = "I"
+
+We bid Braun fare well.

@@ -1,0 +1,29 @@
+title: A visit from the past
+new-page: true
+view-if: year = 1929 and month >= 11 and spd_in_government = 1 and finance_minister = "Hilferding" and finance_minister_party = "SPD" and hjalmar_plot == "successful"
+tags: event
+max-visits: 1
+card-image: img/portraits/SchachtHjalmar.jpg
+
+= Hjalmar Schacht has risen from the dead!
+
+Reichsbank president Hjalmar Schacht has came back from the dead, in spirit form, to criticize Finance Minister Hilferding of the SPD for his budget, which he claims is unbalanced and contains too much social welfare and not enough tax cuts for top earners and businesses.
+
+This incident happend in a public cornershop, with many eyewitnesses confirming that this in fact *did* happen.
+
+The catholics are replused by this act of clear satanism, many abhoring the DNVP and the NDSAP because of this.
+
+- @banish: Ask help from the center party to exorcise this foul demon!
+- @leave: Enjoy the negative press on the far right.
+
+@banish
+on-arrival: z_relation *= 2; old_middle_nsdap -= 6; new_middle_nsdap -= 6; rural_nsdap -= 6; workers_nsdap -= 6; new_middle_dnvp -=6; old_middle_dnvp -=6; rural_dnvp -=6; workers_dnvp -=6
+
+With help from the center party Z, they brought in cardinal Ludwig Kaas to get rid of Hjalmar Schacht. Finally getting rid of him once and for all.
+
+Due to our partnership with the center party on this issue, our relations has increased tremendously. 
+
+@leave
+on-arrival: old_middle_nsdap -= 6; new_middle_nsdap -= 6; rural_nsdap -= 6; workers_nsdap -= 6; new_middle_dnvp -=6; old_middle_dnvp -=6; rural_dnvp -=6; workers_dnvp -=6
+
+We enjoy the press on the escapeds on Hjalmar Schacht, but just to be sure we instructed all our party members to carry holy water at all times.

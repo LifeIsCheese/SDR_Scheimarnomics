@@ -1,0 +1,44 @@
+title: Suspicion from the right
+subtitle: It seems our schemes haven't gone unnoticed....
+new-page: true
+max-visits: 1
+tags: event
+priority: 1
+view-if: year >= 1928 and hjalmar_plot >= 50 and assassination_partners != "Spies"
+on-arrival: interior_police_loyalty -=0.1; prussian_police_loyalty -= 0.1; loyalty_decay = 0.01;
+
+= Suspicion from the right
+
+Our infiltrators have informed us of the right suspicion in our ongoing plot against Hjalmar Schacht. 
+Of course they haven't found out anything related to it, but it does raise a serious security issue. 
+
+We fear that the right has sent <span style="color:rgb(0, 0, 0);">**spies**</span> within our ranks to figure out our plot.
+
+Current interior police loyalty: [+ interior_police_loyalty : loyalty +]. [? if interior_police_loyalty < 0.55: The police show frighteningly low levels of loyalty. ?]
+
+[? if plot_strength == 10: Current prussian police loyalty: [+ prussian_police_loyalty : loyalty +]. [? if prussian_police_loyalty < 0.5: The Prussian police seem untrustworthy. ?] ?]
+
+- @purge: Start the purges.
+- @bribe: Perhaps we can bribe them.
+- @investigate: All precautions must be taken, better safe than sorry.
+- @root: We are fine as it is.
+
+@purge
+subtitle: We can purge the most suspicous of our police, this well set us back by a few months.
+on-arrival: hjalmar_plot = 10; interior_police_loyalty *= 1.5; prussian_police_loyalty *= 1.5; loyalty_decay = 0
+
+Despite our crude efforts, the results seem promising.
+
+@bribe
+subtitle: -1 budget. By doing a general pay raise, we can ensure that any infiltrators have an incentive to stay shut.
+choose-if: budget > 0
+on-arrival: interior_police_loyalty *= 1.5; prussian_police_loyalty *= 1.5; budget -=1; barmat +=1
+
+Despite reformist cries of already spending too much on this operation, this seems to be the most effective course of action.
+
+@investigate
+subtitle: We can perform an investigation to find these spies, but the speed of our planning will be significantly slower.
+choose-if: budget > 0
+on-arrival: plot_strength *= 0.5; interior_police_loyalty *= 1.5; prussian_police_loyalty *= 1.5; loyalty_decay = 0
+
+The investigatations are approved, with many key members being outed as Nazi spies.
