@@ -268,11 +268,13 @@ Spy network strength: [+ s_spy_network +].
 
 = Plots
 
-[? if hjalmar_plot == "successful" : We have killed <span style="color:rgb(112, 87, 19);">**Hjalmar Schacht**</span>. ?] [? if bruning_plot == "successful" : We have killed <span style="color:rgb(19, 93, 112);">**Heinrich Brüning**</span>.  ?] [? if rohm_plot == "successful" : We have killed <span style="color:rgb(185, 138, 7);">**Ernst Röhm**</span>. ?] [? if leow_plot == "successful" : We have killed <span style="color:rgb(180, 38, 38);">**Willy Leow**</span>. ?]
+[? if hjalmar_plot == "successful" : We have killed <span style="color:rgb(112, 87, 19);">**Hjalmar Schacht**</span>. ?] [? if bruning_plot == "successful" : We have killed <span style="color:rgb(19, 93, 112);">**Heinrich Brüning**</span>.  ?] [? if rohm_plot == "successful" : We have killed <span style="color:rgb(185, 138, 7);">**Ernst Röhm**</span>. ?] [? if leow_plot == "successful" : We have killed <span style="color:rgb(180, 38, 38);">**Willy Leow**</span>. ?] [? if schleicher_plot == "successful" : We have killed <span style="color:rgb(216, 75, 75);">**Kurt von Schleicher
+**</span>. ?]
 
 @Targets
 
-= [? if plot_target == "hjalmar" : <span style="color:rgb(112, 87, 19);">**Hjalmar Schacht**</span> ?] [? if plot_target == "bruning" : <span style="color:rgb(19, 93, 112);">**Heinrich Brüning**</span> ?] [? if plot_target == "rohm" : <span style="color:rgb(185, 138, 7);">**Ernst Röhm**</span> ?] [? if plot_target == "leow" : <span style="color:rgb(180, 38, 38);">**Willy Leow**</span> ?]
+= [? if plot_target == "hjalmar" : <span style="color:rgb(112, 87, 19);">**Hjalmar Schacht**</span> ?] [? if plot_target == "bruning" : <span style="color:rgb(19, 93, 112);">**Heinrich Brüning**</span> ?] [? if plot_target == "rohm" : <span style="color:rgb(185, 138, 7);">**Ernst Röhm**</span> ?] [? if plot_target == "leow" : <span style="color:rgb(180, 38, 38);">**Willy Leow**</span> ?] [? if plot_target == "schleicher" : <span style="color:rgb(216, 75, 75);">**Kurt von Schleicher
+**</span> ?]
 
 <script src="new_shit.js" defer></script>
 
@@ -286,7 +288,8 @@ Partners: [+ assassination_partners_string +]
 
 Plot power: [+ plot_strength +]%
 
-[? if plot_target == "hjalmar" : Death of <span style="color:rgb(112, 87, 19);">**Hjalmar Schacht**</span>: [+ hjalmar_plot +][? if hjalmar_plot != "successful" or hjalmar_plot != "failed": % ?]  ?] [? if plot_target == "bruning" : Death of <span style="color:rgb(19, 93, 112);">**Heinrich Brüning**</span>: [+ bruning_plot +][? if bruning_plot != "successful" or bruning_plot != "failed": % ?] ?] [? if plot_target == "rohm" : Death of <span style="color:rgb(185, 138, 7);">**Ernst Röhm**</span>: [+ rohm_plot +][? if rohm_plot != "successful" or rohm_plot != "failed": % ?]  ?] [? if plot_target == "leow" : Death of <span style="color:rgb(180, 38, 38);">**Willy Leow**</span>: [+ leow_plot +][? if leow_plot != "successful" or leow_plot != "failed": % ?]  ?]
+[? if plot_target == "hjalmar" : Death of <span style="color:rgb(112, 87, 19);">**Hjalmar Schacht**</span>: [+ hjalmar_plot +] ?] [? if plot_target == "bruning" : Death of <span style="color:rgb(19, 93, 112);">**Heinrich Brüning**</span>: [+ bruning_plot +] ?] [? if plot_target == "rohm" : Death of <span style="color:rgb(185, 138, 7);">**Ernst Röhm**</span>: [+ rohm_plot +]  ?] [? if plot_target == "leow" : Death of <span style="color:rgb(180, 38, 38);">**Willy Leow**</span>: [+ leow_plot +]  ?] [? if plot_target == "schleicher" : Death of <span style="color:rgb(180, 38, 38);">**Kurt von Schleicher
+**</span>: [+ schleicher_plot +]  ?]
 
 = Informants
 
@@ -303,6 +306,7 @@ Focus: [? if director_type == 1 or director_type == 3 : Operations ?] [? if dire
 [? if plot_target == "bruning" : The Streets will burn, will the republic stand? ?]
 [? if plot_target == "rohm" : Hampered SA. ?]
 [? if plot_target == "leow" : Hampered RFB, and reduced influence. ?]
+[? if plot_target == "schleicher" : Military weariness growth rate reduced. ?]
 
 @Actions
 

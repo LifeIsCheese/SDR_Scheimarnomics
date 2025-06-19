@@ -14,6 +14,7 @@ We can kill key figures to stunt the growth of our enemies.
 
 - @rohm: Ernst Röhm.
 - @leow: Willy Leow.
+- @schleicher: Kurt von Schleicher.
 - @spies_fund: We can fund our spies.
 - @root: Perhaps another time
 - @easy_discard
@@ -35,6 +36,16 @@ on-arrival: leow_plot +=10; plot_target = "leow"
 go-to: partners
 
 Our coalition partners have agreed on this course of action.
+
+@schleicher
+subtitle: By killing Kurt von Schleicher, the Reichswehr will be less prone in intervening in civilian matters.[? if budget <= 0 and spd_in_government: Not enough budget. ?] [? if rohm_plot == "failed" : we have failed to kill Ernst Röhm ?] [? if resources <= 1 : Not enough resources. ?]. Not done
+view-if: schleicher_plot != "successful"
+choose-if: schleicher_plot != "failed" and (budget > 0 or resources > 1)
+on-arrival: schleicher_plot +=10; plot_target = "schleicher"
+go-to: partners
+
+Our coalition partners have agreed on this course of action.
+
 
 @spies_fund
 subtitle: [? if spy_network < 9 : -2 resources, reduces loyalty decay ?] [? if spy_network >= 9 : If we pour in too much funds into our spies, it may attract unwanted attention. ?]

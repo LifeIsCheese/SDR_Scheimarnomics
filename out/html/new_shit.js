@@ -4,7 +4,8 @@ const plotMap = {
     "hjalmar": "hjalmar_plot",
     "bruning": "bruning_plot",
     "rohm": "rohm_plot",
-    "leow": "leow_plot"
+    "leow": "leow_plot",
+    "schleicher": "schleicher_plot"
 };
 
  function new_hire () {
