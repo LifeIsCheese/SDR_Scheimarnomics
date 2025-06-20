@@ -364,8 +364,7 @@ Q.tax_reform_progress = 1 - (Q.science_bonus / 10);
 // budget
 Q.budget_eligible = 1;
 
-//military influence
-
+// Calculate military influence based on current concessions and force ratios
 if (Q.violence_timer > 0 && Q.military_concessions > 0) {
     const army_force_in_relation = Q.loyal_army / (Q.rb_force + Q.prussia_force);
     Q.military_influence = army_force_in_relation * (Q.military_concessions / 5);
@@ -431,7 +430,7 @@ if (Q.hans_opinion >= 6) {
 const assassinationPartners = {
     "Police": "Interior police",
     "Prussian": "Interior + Prussian police",
-    "Reichsbanner": "Interior + Prussian police + Reichsbanner"
+    "Reichsbanner": "Interior + Prussian police + Reichsbanner",
     "Spies": "Spies only"
 };
 if (Q.assassination_partners in assassinationPartners) {
@@ -487,13 +486,13 @@ if (Q.violence_timer > 0) {
 // Military weariness change
 if (Q.violence_timer > 0) {
     if (Q.far_right_strength < 50 && Q.weimar_strength < 50 && Q.kpd_strength < 50) {
-        if (Q.schleicher_plot = "successful") {
+        if (Q.schleicher_plot === "successful") {
             Q.military_weariness += 2;
         } else {
             Q.military_weariness += 5;
         }
     } else if (Q.military_weariness > 5) {
-        if (Q.schleicher_plot = "successful") {
+        if (Q.schleicher_plot === "successful") {
             Q.military_weariness -= 3;
         } else {
             Q.military_weariness -= 5;
