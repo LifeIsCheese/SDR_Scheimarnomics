@@ -279,7 +279,7 @@ Spy network strength: [+ s_spy_network +].
 <script src="new_shit.js" defer></script>
 
 <div class = "face-status-container">
-    [? if plot_target == "hjalmar" : <img class="face-status" src="img/portraits/SchachtHjalmar.jpg"> ?] [? if plot_target == "bruning" : <img class="face-status" src="img/portraits/BrüningHeinrich.jpg"> ?] [? if plot_target == "rohm" : <img class="face-status" src="img/portraits/rohm.jpg"> ?] [? if plot_target == "leow" : <img class="face-status" src="img/portraits/Willy_Leow_1930.jpg"> ?]
+    [? if plot_target == "hjalmar" : <img class="face-status" src="img/portraits/SchachtHjalmar.jpg"> ?] [? if plot_target == "bruning" : <img class="face-status" src="img/portraits/BrüningHeinrich.jpg"> ?] [? if plot_target == "rohm" : <img class="face-status" src="img/portraits/rohm.jpg"> ?] [? if plot_target == "leow" : <img class="face-status" src="img/portraits/Willy_Leow_1930.jpg"> ?] [? if plot_target == "schleicher" : <img class="face-status" src="img/portraits/KurtVonScheleicherEn1932.jpg"> ?]
 </div>
 
 = Status

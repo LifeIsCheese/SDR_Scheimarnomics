@@ -26,7 +26,7 @@ These are our current estimates of loyalty within the police, if any of the 2 ar
 - @bribe: For extra measure.
 
 @go
-subtitle: Operation Reversed Scale is given the go ahead. [? if chancellor == "Braun": "Who made that mess?" "Braun, are you ok?" "Sorry." ?].
+subtitle: The operation is given the go ahead. [? if chancellor == "Braun": "Who made that mess?" "Braun, are you ok?" "Sorry." ?].
 on-arrival: {!
 
 if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.assassination_partners == "Police" ) {
@@ -44,7 +44,7 @@ if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.assassi
 !}
 
 @bribe
-subtitle: -1 budget. Promise a pay raise well after the assisnation attempt.
+subtitle: -1 budget. Promise a pay raise well after the assassination attempt.
 choose-if: budget > 0
 on-arrival: interior_police_loyalty *= 1.5; prussian_police_loyalty *= 1.5; budget -=1; barmat +=1; {!
 
