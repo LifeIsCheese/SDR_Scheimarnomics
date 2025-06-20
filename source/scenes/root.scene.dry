@@ -335,6 +335,7 @@ Q.spd_bd_position = "in_government";
 Q.violence_level = 0;
 Q.violence_add_on = 0;
 Q.military_concessions = 0;
+Q.military_influence = 0;
 
 // ID's: 0 = nothing 1 = RFB militarization 2 = SA militarization 3 = SH militarization 4 = Berlin terrorism
 Q.violence_events = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 3, 0, 0];

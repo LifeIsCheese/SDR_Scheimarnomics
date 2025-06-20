@@ -35,7 +35,9 @@ Military influence : so basically it is dependant on concessions, and their stre
 [? if rb_leader != "karl holtermann" : <p style="text-align: center;">Deputy Karl Höltermann</p> ?] [? if rb_leader == "karl holtermann" : <p style="text-align: center;">Chairman Karl Höltermann</p> ?]
 <p style="text-align: center;">Chance of murder: 0%</p>
 
-Current Reichsbanner dissent: [+ rb_dissent +]%
+Current Reichsbanner Dissent: [+ rb_dissent +]%
+
+Military Influence [+ military_influence +]%
 
 
 

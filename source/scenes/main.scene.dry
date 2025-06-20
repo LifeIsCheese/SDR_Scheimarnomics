@@ -58,7 +58,7 @@ max-cards: 4
 
 <div class = "face-status-container">
 
-Violence Level : [+ violence_level +]%
+[? if violence_timer > 0 : Violence Level : [+ violence_level +]% ?]
 
 </div>
 
