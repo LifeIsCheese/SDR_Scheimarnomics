@@ -293,7 +293,7 @@ Q.plotMap = {
 //plots
 Q.interior_police_loyalty_plot_cap = 0;
 Q.prussian_police_loyalty_plot_cap = 0;
-Q.rb_dissent_plot_cap = 0;
+Q.rb_loyalty_plot_cap = 0;
 Q.hjalmar_plot = 0;
 Q.bruning_plot = 0;
 Q.rohm_plot = 0;
@@ -711,7 +711,7 @@ Q.kpd_influence_timer = 0;
 
 //scary kpd
 
-Q.rb_dissent = 0;
+Q.rb_loyalty = 0;
 
 //whaha
 Q.end_disabled = 1

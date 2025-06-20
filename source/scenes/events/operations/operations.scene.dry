@@ -4,7 +4,9 @@ new-page: true
 tags: event
 priority: 1
 view-if: operations_scene = 1
-on-arrival: operations_scene = 0;
+on-arrival: operations_scene = 0; {!
+Q.rb_loyalty = 100 - Q.rb_dissent
+!}
 
 = Plots and preparations
 
@@ -31,7 +33,7 @@ if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.assassi
     Q[Q.plotMap[Q.plot_target]] = "successful";
 } else if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.prussian_police_loyalty >= Q.prussian_police_loyalty_plot_cap && Q.assassination_partners == "Prussian") {
     Q[Q.plotMap[Q.plot_target]] = "successful";
-} else if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.prussian_police_loyalty >= Q.prussian_police_loyalty_plot_cap && Q.rb_dissent < Q.rb_dissent_plot_cap && Q.assassination_partners == "Reichsbanner") {
+} else if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.prussian_police_loyalty >= Q.prussian_police_loyalty_plot_cap && Q.rb_loyalty >= Q.rb_loyalty_plot_cap && Q.assassination_partners == "Reichsbanner") {
     Q[Q.plotMap[Q.plot_target]] = "successful";
 } else if (Q.assassination_partners == "Spies") {
     Q[Q.plotMap[Q.plot_target]] = "successful";
@@ -50,7 +52,7 @@ if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.assassi
     Q[Q.plotMap[Q.plot_target]] = "successful";
 } else if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.prussian_police_loyalty >= Q.prussian_police_loyalty_plot_cap && Q.assassination_partners == "Prussian") {
     Q[Q.plotMap[Q.plot_target]] = "successful";
-} else if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.prussian_police_loyalty >= Q.prussian_police_loyalty_plot_cap && Q.rb_dissent < Q.rb_dissent_plot_cap && Q.assassination_partners == "Reichsbanner") {
+} else if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.prussian_police_loyalty >= Q.prussian_police_loyalty_plot_cap && Q.rb_loyalty >= Q.rb_loyalty_plot_cap && Q.assassination_partners == "Reichsbanner") {
     Q[Q.plotMap[Q.plot_target]] = "successful";
 } else if (Q.assassination_partners == "Spies") {
     Q[Q.plotMap[Q.plot_target]] = "successful";
