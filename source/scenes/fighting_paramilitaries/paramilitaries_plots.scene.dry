@@ -38,7 +38,7 @@ go-to: partners
 Our coalition partners have agreed on this course of action.
 
 @schleicher
-subtitle: By killing Kurt von Schleicher, the Reichswehr will be less prone in intervening in civilian matters.[? if budget <= 0 and spd_in_government: Not enough budget. ?] [? if rohm_plot == "failed" : we have failed to kill Ernst Röhm ?] [? if resources <= 1 : Not enough resources. ?]. Not done
+subtitle: By killing Kurt von Schleicher, the Reichswehr will be less prone in intervening in civilian matters.[? if budget <= 0 and spd_in_government: Not enough budget. ?] [? if rohm_plot == "failed" : we have failed to kill Ernst Röhm ?] [? if resources <= 1 : Not enough resources. ?]. It's kind of done, like skeleton, theres benefits, but i didn't code the drawbacks
 view-if: schleicher_plot != "successful"
 choose-if: schleicher_plot != "failed" and (budget > 0 or resources > 1)
 on-arrival: schleicher_plot +=10; plot_target = "schleicher"

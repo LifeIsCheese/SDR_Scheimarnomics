@@ -1,0 +1,38 @@
+title: Military Concerns
+view-if: violence_level >= 33 and schleicher_plot != "successful"
+on-arrival: military_weariness += 15
+max-visits: 1
+new-page: true
+tags: event
+
+= A message from Schleicher
+
+Dear SPD, if you do not lock in, I WILL use the military for evil purposes.
+
+Do something.
+
+But personalyyyyy, if you work with me I will get the far right to decrease violence (I am lying)
+
+Love Schleicher
+
+- @bide: By giving the military some concessions we can delay their action.
+- @work: Maybe we can hear him out.
+- @accelerate: The best way to reduce violence, is to kill the violent.
+
+@bide
+subtitle: [? if military_concessions = 4 : If we give them anymore concessions, we will get couped. ?] [? if military_concessions = 0 : -1 budget ?] [? if military_concessions = 2 : -2 budget ?]
+on-arrival: military_concessions += 1; budget -=1 if military_concessions = 0; budget -= 2 if military_concessions = 2
+
+I hope nothin bad happens
+
+@work
+subtitle: not finished but if military influence too high ts will be the only operational
+choose-if: 1 == 2
+
+AHHHHHHHHHh
+
+@accelerate
+subtitle: We must accelerate our efforts. Schleicher might be a little angry
+on-arrival: violence_add_on += 3
+
+Schleicher is pissed and this is good!

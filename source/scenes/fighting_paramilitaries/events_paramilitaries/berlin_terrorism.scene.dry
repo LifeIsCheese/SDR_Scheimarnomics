@@ -1,5 +1,5 @@
 title: Berlin in Flames
-view-if: violence_timer > 0 and ( violence_events_id == 4 and spd_bd_position != "support_kpd" ) or ( year = 1929 and month = 5 and in_right_coalition == 0)
+view-if: violence_timer > 0 and ( violence_events_id == 4 and spd_bd_position != "support_kpd" )
 on-arrival: military_weariness += 15; violence_events_id = 0; violence_add_on += 3
 max-visits: 1
 new-page: true

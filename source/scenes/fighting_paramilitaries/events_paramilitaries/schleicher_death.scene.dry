@@ -1,0 +1,10 @@
+title: Operation kill Schleicher
+view-if: schleicher_plot == "successful"
+new-page: true
+max-visits: 1
+on-arrival: plot_target = "None"; plot_strength = 0
+tags: event
+
+= Operation kill Schleicher
+
+We did it guys!
