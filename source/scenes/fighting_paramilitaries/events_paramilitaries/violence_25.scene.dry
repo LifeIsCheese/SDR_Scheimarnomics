@@ -1,5 +1,5 @@
 title: Military Concerns
-view-if: violence_level >= 33 and schleicher_plot != "successful"
+view-if: violence_level >= 25 and schleicher_plot != "successful"
 on-arrival: military_weariness += 15
 max-visits: 1
 new-page: true
@@ -33,6 +33,6 @@ AHHHHHHHHHh
 
 @accelerate
 subtitle: We must accelerate our efforts. Schleicher might be a little angry
-on-arrival: violence_add_on += 3
+on-arrival: violence_add_on += 3; military_weariness += 10
 
 Schleicher is pissed and this is good!

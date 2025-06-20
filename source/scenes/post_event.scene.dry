@@ -498,6 +498,9 @@ if (Q.violence_timer > 0) {
             Q.military_weariness -= 5;
         }
     }
+    if (Q.schleicher_plot == "failed") {
+        Q.military_weariness += 5;
+    }
 }
 
 // Military ramp up
