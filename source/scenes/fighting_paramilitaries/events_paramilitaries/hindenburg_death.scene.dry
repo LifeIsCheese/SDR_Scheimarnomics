@@ -1,0 +1,21 @@
+title: Comatose.
+view-if:  spd_in_government and violence_timer < 21 and bruning_plot == "successful" and violence_timer != -1
+new-page: true
+max-visits: 1
+tags: event
+on-arrival: president = "Vacant"
+
+= Eternal Sleep
+
+Coincidentally, right after the "unfortunate" passing of Brüning, president Hindenburg has suffered a severe stroke.
+
+In this case, due to article 51, the president of the Reich shall be represented by chancellor [+ chancellor +]. 
+
+- @wow: How Convenient. 
+
+@wow
+
+Nice!
+
+
+
