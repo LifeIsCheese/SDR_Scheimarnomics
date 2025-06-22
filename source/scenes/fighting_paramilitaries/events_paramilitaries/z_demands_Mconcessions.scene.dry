@@ -1,25 +1,20 @@
-title: Military Concerns
-view-if: violence_level >= 25 and schleicher_plot != "successful"
-on-arrival: military_weariness += 15
+title: Lost of trust
+view-if: right_dominance_timer > 3 and rb_urgency_timer > 0 and in_spd_majority != 1
+on-arrival: z_relation -=20; ddp_relation -= 20; dvp_relation -=20 if dvp_in_government
 max-visits: 1
 new-page: true
 tags: event
 
-= A message from Schleicher
+= Coalition Demands
 
-Dear SPD, if you do not lock in, I WILL use the military for evil purposes.
+With the right being dominant in the streets for over 3 months, despite our best efforts our coalition partners demand that we work with the Reicshwehr.
 
-Do something.
+What should we do?
 
-But personalyyyyy, if you work with me I will get the far right to decrease violence (I am lying)
+- @agree: The situation has not necessarily turned in the republic's favor.
+- @disagree: Nonsense, everything is under control.
 
-Love Schleicher
-
-- @bide: By giving the military some concessions we can delay their action.
-- @work: Maybe we can hear him out.
-- @accelerate: The best way to reduce violence, is to kill the violent.
-
-@bide
+@agree
 subtitle: [? if military_concessions == 5 : If we give them anymore concessions, we will get couped. ?] [? if military_concessions == 0 : -1 budget ?] [? if military_concessions == 2 : -2 budget ?]
 on-arrival: military_concessions += 1; budget -=1 if military_concessions == 0; budget -= 2 if military_concessions == 2; {!
 
@@ -73,15 +68,7 @@ if (Q.military_concessions == 5) {
 
 [? if military_concessions == 5 : We can give up major positions on anti streetfighting operations. The Reichsbanner are absolutely pissed ?]
 
+@disagree
+on-arrival: z_relation -=20; ddp_relation -= 20; dvp_relation -=20 if dvp_in_government
 
-@work
-subtitle: not finished but if military influence too high ts will be the only option
-choose-if: 1 == 2
-
-AHHHHHHHHHh
-
-@accelerate
-subtitle: We must accelerate our efforts. Schleicher might be a little angry
-on-arrival: violence_add_on += 3; military_weariness += 10; z_relation -= 20
-
-The Z, [? if year <= 1932 and month <= 7 : with Franz von Papen being it's main instigator ?], detest us for our intransigence to work with the Reicshwehr. 
+Hmm, they are angry now.

@@ -485,7 +485,7 @@ if (Q.violence_timer > 0) {
 
 // Military weariness change
 if (Q.violence_timer > 0) {
-    if (Q.far_right_strength < 50 && Q.weimar_strength < 50 && Q.kpd_strength < 50) {
+    if (Q.far_right_strength < 50 && Q.weimar_strength < 50 && Q.far_left_strength < 50) {
         if (Q.schleicher_plot === "successful") {
             Q.military_weariness += 2;
         } else {
@@ -513,7 +513,7 @@ Q.military_available = 1 - (Q.military_weariness / 100);
 
 // Coalition strengths
 Q.weimar_strength = Math.round(Q.rb_force + Q.loyal_prussia + (Q.loyal_army * Q.military_available));
-Q.kpd_strength = Math.round(Q.rfb_force);
+Q.far_left_strength = Math.round(Q.rfb_force);
 Q.far_right_strength = Math.round(
     Q.sa_force +
     Q.sh_force +
@@ -522,6 +522,23 @@ Q.far_right_strength = Math.round(
 );
 Q.military_strength = Math.round(Q.army_force * (1 - Q.military_available));
 
+if (Q.far_right_strength >= 50) {
+  Q.right_dominance_timer += 1;
+} else {
+  Q.right_dominance_timer = 0;
+}
+
+if (Q.far_left_strength >= 50) {
+  Q.left_dominance_timer += 1;
+} else {
+  Q.left_dominance_timer = 0;
+}
+
+if (Q.weimar_strength >= 50) {
+  Q.weimar_dominance_timer += 1;
+} else {
+  Q.weimar_dominance_timer = 0;
+}
 /// violence events
 
 if (Q.violence_timer > 0) {

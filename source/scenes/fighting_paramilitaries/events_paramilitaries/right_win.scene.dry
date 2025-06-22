@@ -1,5 +1,5 @@
 title: Right victory
-view-if: bruning_plot == "successful" and far_right_strength > kpd_strength and far_right_strength > weimar_strength and violence_timer == 0
+view-if: bruning_plot == "successful" and far_right_strength > far_left_strength and far_right_strength > weimar_strength and violence_timer == 0
 max-visits: 1
 on-arrival: left_dissent += 50; labor_dissent +=25; workers_nsdap += (workers_spd * 0.5); workers_spd *= 0.5; nazi_rebel = 1 if spd_in_government = 1; spd_rebel = 1 if spd_in_government = 0
 new-page: true

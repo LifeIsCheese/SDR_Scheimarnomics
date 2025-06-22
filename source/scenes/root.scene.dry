@@ -326,7 +326,7 @@ Q.stagflation = 0;
 
 //Bruning Death
 Q.weimar_strength = 0;
-Q.kpd_strength = 0;
+Q.far_left_strength = 0;
 Q.far_right_strength = 0;
 Q.military_strength = 0;
 Q.interfere_labour = 0;
@@ -337,6 +337,9 @@ Q.violence_level = 0;
 Q.violence_add_on = 0;
 Q.military_concessions = 0;
 Q.military_influence = 0;
+Q.weimar_dominance_timer = 0;
+Q.left_dominance_timer = 0;
+Q.right_dominance_timer = 0;
 
 // ID's: 0 = nothing 1 = RFB militarization 2 = SA militarization 3 = SH militarization 4 = Berlin terrorism
 Q.violence_events = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 3, 0, 0];

@@ -45,7 +45,7 @@ max-cards: 4
 
 <div class = "face-status-container">
 
-[? if violence_timer > 0 : The Far Left: [+ kpd_strength +]% ?]
+[? if violence_timer > 0 : The Far Left: [+ far_left_strength +]% ?]
 
 [? if violence_timer > 0 : The Republic: [+ weimar_strength +]% ?]
 

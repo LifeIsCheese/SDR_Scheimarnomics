@@ -1,5 +1,5 @@
 title: Leftist victory
-view-if: bruning_plot == "successful" and kpd_strength > weimar_strength and kpd_strength > far_right_strength and violence_timer == 0
+view-if: bruning_plot == "successful" and far_left_strength > weimar_strength and far_left_strength > far_right_strength and violence_timer == 0
 max-visits: 1
 on-arrival: 
 new-page: true

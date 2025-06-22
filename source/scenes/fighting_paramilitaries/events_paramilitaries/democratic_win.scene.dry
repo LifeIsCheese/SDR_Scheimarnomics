@@ -1,5 +1,5 @@
 title: Democratic victory
-view-if: bruning_plot == "successful" and weimar_strength > kpd_strength and weimar_strength > far_right_strength and violence_timer == 0
+view-if: bruning_plot == "successful" and weimar_strength > far_left_strength and weimar_strength > far_right_strength and violence_timer == 0
 max-visits: 1
 on-arrival: workers_spd += workers_dnvp; workers_spd += workers_nsdap; workers_dnvp = 0; workers_nsdap = 0; new_middle_ddp += new_middle_nsdap; new_middle_ddp += new_middle_dnvp; new_middle_dnvp = 0; new_middle_nsdap = 0; catholics_z += catholics_dnvp; catholics_z += catholics_nsdap; catholics_dnvp = 0; catholics_nsdap = 0; old_middle_dvp +=10; old_middle_dnvp -=10; sa_strength = 0; sh_strength = 0; rfb_strength = 0; z_relation += 25; ddp_relation +=25; dvp_relation +=25
 new-page: true
