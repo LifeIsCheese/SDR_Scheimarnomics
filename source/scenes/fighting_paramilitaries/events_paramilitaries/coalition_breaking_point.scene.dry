@@ -91,6 +91,6 @@ okokokokokokokok lalalallalalalalala
 @accelerate
 subtitle: This effectively halves our time that we have, in addition, the military will start to grow weary month by month.
 view-if: violence_acceleration == 0
-on-arrival: violence_acceleration = 1; violence_timer / 2; coalition_dissent = 0
+on-arrival: violence_acceleration = 1; violence_timer /= 2; coalition_dissent = 0
 
 This is a risky decision, and we may not be up to the task. At least we didn't have to give any concessions.
