@@ -1,0 +1,96 @@
+title: The Right is angry!
+subtitle: We have angered our coalition partners too much...
+new-page: true
+on-arrival: tried_supporting_kpd = 0; weimar_dissent += 1 if weimar_plan_adopted
+view-if: (chancellor_party != "SPD" and chancellor_party != "KPD" and spd_in_government = 1 and ((in_grand_coalition = 1 or in_popular_front = 1 or in_minority_government = 1) and coalition_dissent >= 3) or (in_weimar_coalition = 1 and coalition_dissent >= 4) and spd_r < 50) and violence_timer > 0
+tags: event
+
+
+= Breaking point
+
+Dissent has consumed our coalition, with some in the right advocating to join the right instead. Although, due to our circumstances, our coalition cannot break off, so we are forced to the negotiating table.
+
+The Z demands that we work with the military, citing that a this point, the country is bound to head for a civil war.
+
+The military demands that we demands that we should work on deescalating the conflict through all paramilitaries de militarizing with them as a mediator.
+
+[? if dvp_in_government : The DVP demands that we should work on deescalating the conflict through all paramilitaries de militarizing with the military as a mediator, for a sort of deescalation. ?]
+
+What should we do?
+
+- @wirth: Wirth is very goated
+- @military: We are forced to give more concessions to the military. 
+- @otto_horsing: Sorry Hörsing. We have to do it in the name of the republic.
+- @deescalation: hmmm, RFB dominance.
+- @accelerate: Promise that we will crush the paramilitaries immediately, and that we will accelerate the time we will accomplish this
+
+@wirth
+subtitle: not done,
+choose-if: 1 == 2
+
+Wirth is too goated.
+
+@military
+subtitle: [? if military_concessions == 4 : If we give them anymore concessions, we will get couped. ?] [? if military_concessions == 0 : -1 budget ?] [? if military_concessions == 2 : -2 budget ?]
+on-arrival: military_concessions += 2; budget -=1 if military_concessions == 0; budget -= 2 if military_concessions == 2; coalition_dissent = 0; {!
+
+if (Q.military_concessions == 1) {
+    Q.reichswehr_loyalty += 0.05;
+    Q.workers_spd -= 3;
+    Q.unemployed_spd -= 3;
+    Q.workers_nsdap += 3;
+    Q.unemployed_kpd += 3;
+    Q.month_actions += 1;
+}
+
+if (Q.military_concessions == 2) {
+    Q.reichswehr_loyalty += 0.4;
+    Q.budget -= 1;
+    Q.reichswehr_strength += 100;
+    Q.left_dissent += 10;
+    Q.month_actions += 1;
+}
+
+if (Q.military_concessions == 3) {
+    Q.reichswehr_loyalty += 0.25;
+    Q.rb_dissent += 25;
+    Q.month_actions += 1;
+}
+
+if (Q.military_concessions == 4) {
+    Q.reichswehr_loyalty += 0.4;
+    Q.budget -= 2;
+    Q.reichswehr_militancy += 1;
+    Q.reichswehr_strength += 200;
+    Q.left_dissent += 25;
+    Q.month_actions += 1;
+}
+
+if (Q.military_concessions == 5) {
+    Q.reichswehr_loyalty += 0.3;
+    Q.rb_dissent = 100;
+    Q.month_actions += 1;
+}
+
+!}
+
+
+@otto_horsing
+subtitle: It's Reichsbanner over.
+choose-if: dvp_in_government
+on-arrival: rb_dissent += 100; rb_leader = "karl holtermann"; coalition_dissent = 0
+
+The Reichsbanner is angry, Otto Hörsing is sad.
+
+@deescalation
+subtitle: not done
+choose-if: 1 == 2
+
+okokokokokokokok lalalallalalalalala
+
+@accelerate
+subtitle: This effectively halves our time that we have, in addition, the military will start to grow weary month by month.
+view-if: violence_acceleration == 0
+on-arrival: violence_acceleration = 1; violence_timer / 2; coalition_dissent = 0
+
+This is a risky decision, and we may not be up to the task. At least we didn't have to give any concessions.

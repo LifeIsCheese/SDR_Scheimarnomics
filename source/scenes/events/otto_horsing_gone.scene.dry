@@ -1,6 +1,6 @@
 title: Otto Hörsing Expelled!
 subtitle: Due to a falling out with party colleagues, Hörsing has resigned from Reichsbanner!
-view-if: year = 1931 and month >= 9
+view-if: year = 1931 and month >= 9 and violence_timer <= 0
 new-page: true
 on-arrival: rb_leader = "karl holtermann"
 max-visits: 1

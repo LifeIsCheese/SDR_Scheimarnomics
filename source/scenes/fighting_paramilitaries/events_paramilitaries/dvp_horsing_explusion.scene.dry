@@ -1,0 +1,36 @@
+title: DVP's request
+view-if: dvp_relation < 30 and violence_timer > 0 and right_dominance_timer > 2 and dvp_in_government and rb_leader != "karl holtermann"
+new-page: true
+max-visits: 1
+tags: event
+
+= DVP's ultimatum 
+
+With our deterioration of our relations with the DVP, and Otto Hörsing's irascible personality led to a breaking point today. Otto Hörsing pubicly accused the DVP for not stepping up when "during the republic's time of need" and if they refuse to contribute more than lip service, they will be expelled from the reichsbanner.
+
+What should we do?
+
+- @mediate: Wirth ascendant is needed for this, not added yet
+- @reject: coalition dissent
+- @agree: rb dissent
+
+
+@mediate
+subtitle: not dvp_in_government
+choose-if: 1 == 2
+
+Yes
+
+@reject
+subtitle: Why must we get rid a staunch defender of the republic?
+on-arrival: coalition_dissent += 1
+
+What if Otto horsing was a horse
+
+that would be bad.
+
+@agree
+subtitle: for the sake of cooperation, especially now, we have to get rid of Otto Hörsing.
+on-arrival: rb_dissent += 100; rb_leader = "karl holtermann"
+
+The Reichsbanner is angry, Otto Hörsing is sad.

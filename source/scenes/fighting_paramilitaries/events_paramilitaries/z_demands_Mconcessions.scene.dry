@@ -1,5 +1,5 @@
 title: Lost of trust
-view-if: right_dominance_timer > 3 and rb_urgency_timer > 0 and in_spd_majority != 1
+view-if: right_dominance_timer > 4 and rb_urgency_timer > 0 and in_spd_majority != 1
 on-arrival: z_relation -=20; ddp_relation -= 20; dvp_relation -=20 if dvp_in_government
 max-visits: 1
 new-page: true
@@ -7,7 +7,7 @@ tags: event
 
 = Coalition Demands
 
-With the right being dominant in the streets for over 3 months, despite our best efforts our coalition partners demand that we work with the Reicshwehr.
+With the right being dominant in the streets for over 4 months, despite our best efforts our coalition partners demand that we work with the Reicshwehr.
 
 What should we do?
 
@@ -69,6 +69,6 @@ if (Q.military_concessions == 5) {
 [? if military_concessions == 5 : We can give up major positions on anti streetfighting operations. The Reichsbanner are absolutely pissed ?]
 
 @disagree
-on-arrival: z_relation -=20; ddp_relation -= 20; dvp_relation -=20 if dvp_in_government
+on-arrival: z_relation -=20; ddp_relation -= 20; dvp_relation -=20 if dvp_in_government; coalition_dissent +=1
 
 Hmm, they are angry now.

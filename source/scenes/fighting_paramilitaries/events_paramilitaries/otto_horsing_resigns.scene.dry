@@ -1,0 +1,14 @@
+title: Otto Hörsing's resignation
+view-if: military_influence > 50 and rb_leader != "karl holtermann"
+new-page: true
+max-visits: 1
+on-arrival: rb_dissent += 100; rb_leader = "karl holtermann"
+tags: event
+
+= Otto Hörsing's resignation 
+
+With the military having gained a notable influence in the Reichsbanner, Otto Hörsing has been disillusioned with the SPD. Thus he has resigned.
+
+In his stead is Karl Holtermann, the now ex deputy of the Reichsbanner.
+
+

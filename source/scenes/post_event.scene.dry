@@ -367,7 +367,7 @@ Q.budget_eligible = 1;
 // Calculate military influence based on current concessions and force ratios
 if (Q.violence_timer > 0 && Q.military_concessions > 0) {
     const army_force_in_relation = Q.loyal_army / (Q.rb_force + Q.prussia_force);
-    Q.military_influence = army_force_in_relation * (Q.military_concessions / 5);
+    Q.military_influence = army_force_in_relation * (Q.military_concessions / 10);
     Q.military_influence = Math.round(Q.military_influence * 100);
     if (Q.military_influence > 100) {Q.military_influence = 100}
 }
@@ -498,7 +498,7 @@ if (Q.violence_timer > 0) {
             Q.military_weariness -= 5;
         }
     }
-    if (Q.schleicher_plot == "failed") {
+    if (Q.schleicher_plot == "failed" || Q.violence_acceleration == 1) {
         Q.military_weariness += 5;
     }
 }
