@@ -15,7 +15,7 @@ What should we do?
 - @disagree: Nonsense, everything is under control.
 
 @agree
-subtitle: [? if military_concessions == 5 : If we give them anymore concessions, we will get couped. ?] [? if military_concessions == 0 : -1 budget ?] [? if military_concessions == 2 : -2 budget ?]
+subtitle: [? if military_concessions == 5 : If we give them anymore concessions, we will get couped. ?] [? if military_concessions == 1 : -1 budget ?] [? if military_concessions == 3 : -2 budget ?]
 on-arrival: military_concessions += 1; budget -=1 if military_concessions == 0; budget -= 2 if military_concessions == 2; {!
 
 if (Q.military_concessions == 1) {
