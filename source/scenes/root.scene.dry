@@ -325,6 +325,7 @@ Q.high_inflation = 0;
 Q.stagflation = 0;
 
 //Bruning Death
+Q.should_expel_spd = 0;
 Q.weimar_strength = 0;
 Q.far_left_strength = 0;
 Q.far_right_strength = 0;

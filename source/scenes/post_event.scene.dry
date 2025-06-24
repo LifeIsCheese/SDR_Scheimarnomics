@@ -376,6 +376,16 @@ if (Q.violence_timer > 0 && Q.military_concessions > 0) {
 
 if (Q.violence_timer > 0) { Q.violence_level = Math.round(((Q.sa_militancy + Q.sh_militancy + Q.rfb_militancy + Q.rb_militancy + Q.violence_add_on) / 5 ) * 20)  }
 
+// Cabinet reshuffle variable, because i will NOT deal with dendry bugging out
+
+Q.should_expel_spd = (
+  (Q.chancellor_party != "SPD" && Q.chancellor_party != "KPD" && Q.spd_in_government == 1 &&
+    (Q.in_grand_coalition == 1 || Q.in_popular_front == 1 || Q.in_minority_government == 1) &&
+    Q.coalition_dissent >= 3)
+  || 
+  (Q.in_weimar_coalition == 1 && Q.coalition_dissent >= 4 && Q.spd_r < 50)
+);
+
 // Loyalty decay
 Q.loyalty_decay_rate = Q.loyalty_decay - (Q.spy_network / 300);
 if (Q.loyalty_decay_rate >= 0) {
