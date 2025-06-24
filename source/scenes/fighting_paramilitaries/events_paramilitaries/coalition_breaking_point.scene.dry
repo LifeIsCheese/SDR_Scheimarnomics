@@ -20,7 +20,6 @@ What should we do?
 
 - @wirth: Wirth is very goated
 - @military: We are forced to give more concessions to the military. 
-- @otto_horsing: Sorry Hörsing. We have to do it in the name of the republic.
 - @deescalation: hmmm, RFB dominance.
 - @accelerate: Promise that we will crush the paramilitaries immediately, and that we will accelerate the time we will accomplish this
 
@@ -74,13 +73,6 @@ if (Q.military_concessions == 5) {
 
 !}
 
-
-@otto_horsing
-subtitle: It's Reichsbanner over.
-choose-if: dvp_in_government
-on-arrival: rb_dissent += 100; rb_leader = "karl holtermann"; coalition_dissent = 0
-
-The Reichsbanner is angry, Otto Hörsing is sad.
 
 @deescalation
 subtitle: not done
