@@ -25,13 +25,13 @@ Military loyalty : [+ reichswehr_loyalty : loyalty +]
 @promise_spending
 view-if: military_concessions == 0
 choose-if: military_weariness > 10
-on-arrival: reichswehr_loyalty += 0.05; military_weariness -= 10; military_concessions = 1; workers_spd -= 3; unemployed_spd -=3; workers_nsdap += 3; unemployed_kpd += 3; month_actions +=1
+on-arrival: reichswehr_loyalty += 0.05; military_weariness -= 10; military_concessions = 1; workers_spd -= 3; unemployed_spd -=3; workers_nsdap += 3; unemployed_kpd += 3; month_actions +=1; paramilitaries_timer = 2
 subtitle: A vague promise of future military funding. It buys us time, but at the cost of slight credibility.
 
 @spending_1
 view-if: military_concessions == 1
 choose-if: military_weariness > 15
-on-arrival: reichswehr_loyalty += 0.4; budget -= 1; military_weariness -= 15; military_concessions = 2; reichswehr_strength += 100; left_dissent += 10; month_actions +=1
+on-arrival: reichswehr_loyalty += 0.4; budget -= 1; military_weariness -= 25; military_concessions = 2; reichswehr_strength += 100; left_dissent += 10; month_actions +=1; paramilitaries_timer = 2
 subtitle: A small part of the budget is reallocated to calm military leadership. -1 budget
 
 The left our party are irritated. They cite it shows weakness, and could start a trend of once again, going to the military for help.
@@ -39,7 +39,7 @@ The left our party are irritated. They cite it shows weakness, and could start a
 @delegate_1
 view-if: military_concessions == 2
 choose-if: military_weariness > 15
-on-arrival: reichswehr_loyalty += 0.25; military_weariness -= 15; military_concessions = 3; rb_dissent += 25; month_actions +=1
+on-arrival: reichswehr_loyalty += 0.25; military_weariness -= 15; military_concessions = 3; rb_dissent += 25; month_actions +=1; paramilitaries_timer = 2
 subtitle: We let the Reichswehr handle some suppression. This helps — but we lose some civilian oversight. The Reichsbanner are insulted by this. 
 
 The Reichsbanner are untrusting of the Reichswehr, yet for now at least, most tolerate their presence.
@@ -47,7 +47,7 @@ The Reichsbanner are untrusting of the Reichswehr, yet for now at least, most to
 @spending_2
 view-if: military_concessions == 3
 choose-if: military_weariness > 20
-on-arrival: reichswehr_loyalty += 0.4; budget -=2; military_weariness -= 20; military_concessions = 4; reichswehr_militancy += 1; reichswehr_strength += 200; left_dissent += 25; month_actions +=1
+on-arrival: reichswehr_loyalty += 0.4; budget -=2; military_weariness -= 30; military_concessions = 4; reichswehr_militancy += 1; reichswehr_strength += 200; left_dissent += 25; month_actions +=1; paramilitaries_timer = 2
 subtitle: A major boost to Reichswehr capabilities. Effective, but controversial. -2 budget
 
 The left's fear have only grown worse, with many hardliners leaving the party and joining the KPD! Many in the party are starting to doubt our actions.
@@ -55,7 +55,7 @@ The left's fear have only grown worse, with many hardliners leaving the party an
 @delegate_2
 view-if: military_concessions == 4
 choose-if: military_weariness > 20
-on-arrival: reichswehr_loyalty += 0.3; military_weariness -= 20; military_concessions = 5; rb_dissent = 100; month_actions +=1
+on-arrival: reichswehr_loyalty += 0.3; military_weariness -= 35; military_concessions = 5; rb_dissent = 100; month_actions +=1; paramilitaries_timer = 2
 subtitle: We relinquish full operational control in key cities. Short-term order at a cost, the Reichsbanner will not be pleased.
 
 The Reichsbanner are absolutely pissed.

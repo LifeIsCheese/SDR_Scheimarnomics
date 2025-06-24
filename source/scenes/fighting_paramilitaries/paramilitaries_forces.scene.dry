@@ -77,7 +77,7 @@ The Reichsbanner now has munitions meant for military use, thankfully our coalit
 
 @defund
 subtitle: Why?, +3 resources
-on-arrival: rb_dissent +=50; resources +=3; rb_strength *= 0.9
+on-arrival: rb_dissent +=50; resources +=3; rb_strength *= 0.9; paramilitaries_timer = 2
 
 Alright then. The Reichsbanner will remember this. 
 
