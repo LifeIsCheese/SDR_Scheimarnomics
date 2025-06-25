@@ -22,18 +22,18 @@ Military Influence [+ military_influence +]%
 = Reichsbanner
 
 <div class = "face-status-container">
-    [? if rb_leader != "karl holtermann" : <img class="face-status" src="img/portraits/Otto_Horsing_1932.jpg"> ?]
+    [? if rb_leader == "otto horsing" : <img class="face-status" src="img/portraits/Otto_Horsing_1932.jpg"> ?]
 </div>
 
-[? if rb_leader != "karl holtermann" : <p style="text-align: center;">Chairman Otto Hörsing</p> ?]
-[? if rb_leader != "karl holtermann" : <p style="text-align: center;">Chance of murder: [+ horsing_death +]%</p> ?]
+[? if rb_leader == "otto horsing" : <p style="text-align: center;">Chairman Otto Hörsing</p> ?]
+[? if rb_leader == "otto horsing" : <p style="text-align: center;">Assassination: [+ horsing_death +]%</p> ?]
 
 <div class = "face-status-container">
     <img class="face-status" src="img/portraits/Karl_Holtermann_1932.jpg"> 
 </div>
 
-[? if rb_leader != "karl holtermann" : <p style="text-align: center;">Deputy Karl Höltermann</p> ?] [? if rb_leader == "karl holtermann" : <p style="text-align: center;">Chairman Karl Höltermann</p> ?]
-<p style="text-align: center;">Chance of murder: [+ holtermann_death +]%</p>
+[? if rb_leader == "otto horsing" : <p style="text-align: center;">Deputy Karl Höltermann</p> ?] [? if rb_leader == "karl holtermann" : <p style="text-align: center;">Chairman Karl Höltermann</p> ?]
+[? if rb_leader != "vacant" <p style="text-align: center;">Assassination: [+ holtermann_death +]%</p> ?]
 
 Current Reichsbanner Dissent: [+ rb_dissent +]%
 
