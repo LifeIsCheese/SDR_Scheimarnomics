@@ -358,6 +358,18 @@ if (Q.plotCaps[Q.plot_target] && Q.violence_timer > 0) {
     Q.prussian_police_loyalty_plot_cap = Q.plotCaps[Q.plot_target].prussian;
     Q.rb_loyalty_plot_cap = Q.plotCaps[Q.plot_target].rb;
 }
+//death of rb
+
+if (Q.violence_level > 0) {
+    if (Q.rb_leader == "otto horsing") {
+            Q.horsing_death += (9 - Q.spy_network) / 1.2;
+            Q.holtermann_death_death += (9 - Q.spy_network) / 2;
+    } 
+    else if (Q.rb_leader == "karl holtermann"){
+        Q.holtermann_death_death += (9 - Q.spy_network) / 1.2;
+    }
+}
+
 // Tax reform
 Q.tax_reform_progress = 1 - (Q.science_bonus / 10);
 

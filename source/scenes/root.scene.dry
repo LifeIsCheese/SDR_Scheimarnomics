@@ -343,6 +343,8 @@ Q.left_dominance_timer = 0;
 Q.right_dominance_timer = 0;
 Q.violence_acceleration = 0;
 Q.wirth_ascendant = 0;
+Q.holtermann_death = 0;
+Q.horsing_death = 0;
 
 // ID's: 0 = nothing 1 = RFB militarization 2 = SA militarization 3 = SH militarization 4 = Berlin terrorism
 Q.violence_events = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 3, 0, 0];
