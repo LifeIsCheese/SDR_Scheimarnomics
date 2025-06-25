@@ -9,3 +9,11 @@ tags: event
 The RFB has stolen a vast quantity of military grade weapons from the Reichswehr, increasing their militancy!
 
 The military has started purging anybody with left leaning tendencies.
+
+- @spies: Operation Red Hand
+
+@spies
+subtitle: We can use our vast network of spies to sabotage their military equipment
+unavailable-subtitle: Our spy network does not have the capability to carry this out.
+choose-if: spy_network >= 9
+on-arrival: rfb_militancy -= 1

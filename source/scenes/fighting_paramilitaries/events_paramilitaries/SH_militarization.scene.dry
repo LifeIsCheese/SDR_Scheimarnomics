@@ -7,4 +7,12 @@ tags: event
 = Still, they cling on
 
 
-It seems the Stahlhelm has gotten military grade weapons! This is not surprising.
+It seems the SH has gotten military grade weapons! They achieved this through old connections with practically rotting SH members.
+
+- @spies: Operation Silent dagger
+
+@spies
+subtitle: We can use our vast network of spies to sabotage their military equipment
+unavailable-subtitle: Our spy network does not have the capability to carry this out.
+choose-if: spy_network >= 9
+on-arrival: sh_militancy -= 1

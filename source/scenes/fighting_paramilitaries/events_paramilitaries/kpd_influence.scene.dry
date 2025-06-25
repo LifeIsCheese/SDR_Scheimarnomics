@@ -15,6 +15,6 @@ With violence spreading even further in the streets, and the left being weaker t
 
 @spies
 subtitle: We can use our vast network of spies to single out KPD dissidents.
-unavailable-subtitle: Our spy network does not have the capablility to carry this out.
+unavailable-subtitle: Our spy network does not have the capability to carry this out.
 choose-if: spy_network >= 6
 on-arrival: rb_dissent -= 15

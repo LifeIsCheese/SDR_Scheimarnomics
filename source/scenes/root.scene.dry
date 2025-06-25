@@ -719,6 +719,7 @@ Q.kpd_influence_timer = 0;
 //scary kpd
 
 Q.rb_loyalty = 0;
+Q.rb_dissent = 0;
 
 //whaha
 Q.end_disabled = 1

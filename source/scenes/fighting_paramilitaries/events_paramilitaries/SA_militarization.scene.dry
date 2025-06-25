@@ -7,3 +7,11 @@ tags: event
 = Growing Influence
 
 It seems SA has gotten it's hands on a large amount of military grade weaponry! This was discovered during a large alteration with our republican forces being thoroughly beaten.
+
+- @spies: Operation Blind Eagle
+
+@spies
+subtitle: We can use our vast network of spies to sabotage their military equipment
+unavailable-subtitle: Our spy network does not have the capability to carry this out.
+choose-if: spy_network >= 9
+on-arrival: sa_militancy -= 1

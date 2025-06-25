@@ -13,21 +13,31 @@ At a great cost.
 
 From what we have gathered, 510 civilians were killed, around 10% were unaffiliated. With another ~2000 civilians injured. With are Reichsbanner members suffering 20 dead, and around 50 injured. With the RFB being unknown.
 
-The left of our party has criticized our paramilitary and police's actions, citing it's intense brutality and indiscriminate harshness. While the reformists [? if neorevisionism : and neorevisionists argue that it is the communists fault, not ours, that led to all the senseless deaths. ?]. What should we side with?
+The left of our party has criticized our paramilitary and police's actions, citing it's intense brutality and indiscriminate harshness. While the reformists [? if neorevisionism : and neorevisionists argue that it is the communists fault, not ours, that led to all the senseless deaths. ?]. What should we do?
 
 - @left: The left are right, we were much too harsh
 - @right: The reformists are right, this is tragic, yet the blame lies on the communists, not us.
+- @military: The military acts by it's self!
 
 @left
-subtitle: -1 resource. To compensate for new police hires and damages.
-unavailable-subtitle: We don't have enough resources.
-choose-if: resources > 0
+subtitle: -1 resource. To compensate for new police hires and damages. [? if resources < 1 : We don't have enough resources. ?] [? if military_influence >= 50 : We are not in control of the situation. ?]
+choose-if: resources > 0 and military_influence < 50
 on-arrival: resources -=1
 
 We apologize to the affected civilians, providing them aid, and money to the dead of the families. Yet, we also purge any on the police responsible, and reprimanding Karl Zörgiebel. 
 
 @right
+subtitle: [? if military_influence >= 50 : We are not in control of the situation. ?]
+choose-if: military_influence < 50
 on-arrival: left_dissent += 10
 
 We put the blame on the KPD and RFB, demanding that they compensate for the death of theses civilians. The left criticize our lack of compensation.
 
+@military
+subtitle: We can't do anything.
+view-if: military_influence >= 50
+on-arrival: left_dissent += 999; rb_dissent += 100
+
+Despite our protests, the Reichswehr starts cracking down on Berlin residents, doing random checks and barging in the homes of suspected KPD affiliates. 
+
+The party are now questioning why we worked with them in the first place. Many influential leftist leaders quit for, in their own words "refusing to be puppets of the military".
