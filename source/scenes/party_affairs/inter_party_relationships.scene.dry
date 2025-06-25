@@ -21,7 +21,8 @@ The SPD cannot govern by itself yet. Because we do not have an electoral majorit
 
 @kpd
 subtitle: -1 resources
-choose-if: resources >= 1 and (violence <= 0 or (violence_timer > 0 and spd_bd_position == "support_kpd"))
+view-if: violence_timer <= 0 or (violence_timer > 0 and spd_bd_position == "support_kpd")
+choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; kpd_inter_party_seen += 1
 go-to: kpd_blutmai if blutmai = 1; kpd_1 if blutmai = 0 and kpd_coalition_success = 0 and (kpd_relation < 40 or kpd_rectifed_history = 1); kpd_rectification_of_history if kpd_relation >= 40 and kpd_rectifed_history = 0; kpd_2 if kpd_coalition_success = 1 and kpd_rectified_history = 1
