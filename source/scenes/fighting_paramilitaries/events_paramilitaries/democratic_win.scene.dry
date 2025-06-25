@@ -32,7 +32,7 @@ The death of Brüning has strengthened the left wing of the Center party as the 
 
 @military
 
-We over relied on the Reichswehr, and that proved to be our downfall. Despite The death of Brüning has strengthening the left wing of the Center, as we gave more concessions to the military, the right wing held firm and even significantly grew. Right after proclaiming victory over the extremists the Reichswehr couped the government, with the support of Franz von Papen, he kicked Wirth out of the Center Party and installed himself as de facto dictator. We were powerless to stop it, as the military held sway over even the Reichsbanner, resistance prover futile. We may have prevented hitler from taking control, but is this much better?
+The death of Brüning has given a golden card to the "Red General" as the new leader: Franz Bracht. However, instead of coalitioning with the far-right as we have expected Franz Bracht has called for coalitioning with the SPD instead. This is a welcome change however, we have become concerned with the consistent appointments at Zentrum's expense of general [? if schleicher_plot == "successful" : Bredow ?] [? if schleicher_plot != "successful" : Schleicher ?] as defense minister but yet the military remains loyal. However, a rising star within our faction calls for greater cooperation with the military led by Lothar Erdmann, he has called upon the SPD to take on a more nationalistic tone as he declares our decades of peace will not undo the justices of Versailles. It has reached many ears and has gained many voices perhaps the SPD shall change direction again.
 
 - @game_over: Game over.
 
