@@ -4,11 +4,17 @@ frequency: 100
 new-page: true
 is-card: true
 card-image: img/d_rose.jpg
+on-arrival: {!
+Q.military_supporting_right = (((Q.army_force * Q.military_available) * (1 - Q.reichswehr_loyalty)) / Q.army_force) * 100
+Q.military_support_republic = ((Q.loyal_army * Q.military_available) / Q.army_force) * 100
+!}
 tags: fighting_paramilitaries
 
 = The Army
 
-Military availability : [+ military_available +]% (times it by 100)
+Military supporting the right : [+ military_supporting_right +]%
+
+Military supporting the republic : [+ military_support_republic +]%
 
 Military loyalty : [+ reichswehr_loyalty : loyalty +]
 

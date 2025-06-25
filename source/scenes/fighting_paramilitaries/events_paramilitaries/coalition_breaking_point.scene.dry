@@ -22,6 +22,7 @@ What should we do?
 - @military: We are forced to give more concessions to the military. 
 - @deescalation: hmmm, RFB dominance.
 - @accelerate: Promise that we will crush the paramilitaries immediately, and that we will accelerate the time we will accomplish this
+- @itsover: We have no choice, the military shall assume full control over the government.
 
 @wirth
 subtitle: By begging Wirth to convince his party to change their minds, we can stave off a vote of no confidence. This will damage his position within the Center.
@@ -84,16 +85,14 @@ if (Q.military_concessions == 5) {
 
 [? if military_concessions == 5 : We can give up major positions on anti streetfighting operations. The Reichsbanner are absolutely pissed ?]
 
-
-@deescalation
-subtitle: not done
-choose-if: 1 == 2
-
-okokokokokokokok lalalallalalalalala
-
 @accelerate
 subtitle: This effectively halves our time that we have, in addition, the military will start to grow weary month by month.
 view-if: violence_acceleration == 0
 on-arrival: violence_acceleration = 1; violence_timer /= 2; coalition_dissent = 0
 
 This is a risky decision, and we may not be up to the task. At least we didn't have to give any concessions.
+
+@itsover
+view-if: military_concessions == 4 and wirth_ascendant != 1 and violence_acceleration
+
+- @game_over: Game over.

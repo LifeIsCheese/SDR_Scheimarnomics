@@ -21,6 +21,7 @@ The SPD is torn between many different ideological currents. What should be our 
 - @easy_discard
 
 @class_struggle
+view-if: violence_timer <= 0 or (spd_bd_position == "support_kpd" and violence_timer > 0)
 on-arrival: {!
 if (Q.ideology && Q.ideology != "left") {
     Q.changed = 1;

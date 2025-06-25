@@ -479,7 +479,7 @@ if (Q.violence_timer > 0) {
 
 // Far left ramp up
 if (Q.violence_timer > 0) {
-    const leftMultiplier = (100 - Q.nationalism) / (Q.leow_plot !== "successful" ? 8 : 12);
+    const leftMultiplier = (100 - Q.nationalism) / (Q.leow_plot !== "successful" ? 9 : 13);
     Q.rfb_strength += (Q.violence_timer * leftMultiplier) * violenceMultiplier;
 }
 

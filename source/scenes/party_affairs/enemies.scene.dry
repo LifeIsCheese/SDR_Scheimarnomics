@@ -41,6 +41,7 @@ on-arrival: enemies = "KPD"; reformist_strength += 5; left_dissent += 8; reformi
 Attacking the KPD is supported by all but the most left-wing socialists, and wins us some measure of approval among the bourgeois parties. However, If we are to reconcile with the KPD, this may not be the best choice.
 
 @bourgeois
+view-if: violence_timer <= 0 or (spd_bd_position == "support_kpd" and violence_timer > 0)
 on-arrival: enemies = "bourgeois parties"; left_strength += 8; left_dissent -= 5; dvp_relation -= 5; z_relation -= 5; kpd_relation += 5; reformist_dissent += 8; workers_z -= 3; coalition_dissent += 1
 
 Our anti-bourgeois rhetoric is popular among the left, but may make it harder to build the coalitions that are necessary for government in the future.
