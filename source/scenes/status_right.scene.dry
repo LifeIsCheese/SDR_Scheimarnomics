@@ -33,7 +33,7 @@ Military Influence [+ military_influence +]%
 </div>
 
 [? if rb_leader != "karl holtermann" : <p style="text-align: center;">Deputy Karl Höltermann</p> ?] [? if rb_leader == "karl holtermann" : <p style="text-align: center;">Chairman Karl Höltermann</p> ?]
-<p style="text-align: center;">Chance of murder: [+ holtermann_death +]</p>
+<p style="text-align: center;">Chance of murder: [+ holtermann_death +]%</p>
 
 Current Reichsbanner Dissent: [+ rb_dissent +]%
 

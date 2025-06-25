@@ -363,10 +363,10 @@ if (Q.plotCaps[Q.plot_target] && Q.violence_timer > 0) {
 if (Q.violence_level > 0) {
     if (Q.rb_leader == "otto horsing") {
             Q.horsing_death += (9 - Q.spy_network) / 1.2;
-            Q.holtermann_death_death += (9 - Q.spy_network) / 2;
+            Q.holtermann_death += (9 - Q.spy_network) / 2;
     } 
     else if (Q.rb_leader == "karl holtermann"){
-        Q.holtermann_death_death += (9 - Q.spy_network) / 1.2;
+        Q.holtermann_death += (9 - Q.spy_network) / 1.2;
     }
 }
 

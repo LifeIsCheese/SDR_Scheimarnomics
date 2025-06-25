@@ -2,7 +2,7 @@ title: Reichsbanner
 new-page: true
 is-card: true
 tags: party_affairs
-view-if: reichsbanner_timer <= 0
+view-if: reichsbanner_timer <= 0 and violence_level <= 0
 card-image: img/reichsbanner.jpg
 on-arrival: month_actions += 1; reichsbanner_timer += 6; rb_militarization_cost = 2 if rb_militancy > 0.1 else rb_militarization_cost = 1; rb_militarization_cost = 3 if rb_militancy > 0.25; coup_progress += 0.5 if historical_mode; coup_progress += 0.5 if rb_force >= 10; coup_progress += 0.5 if rb_force >= 15; coup_progress += 1 if rb_force >= 20; coup_progress += 1 if rb_force >= 25; coup_progress += 1 if rb_force >= 30
 max-visits: 5
