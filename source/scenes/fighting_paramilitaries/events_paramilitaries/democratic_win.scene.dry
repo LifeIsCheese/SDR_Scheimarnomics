@@ -7,25 +7,32 @@ go-to: democratic if military_influence < 25; influence_25 if military_influence
 
 @democratic
 
-Best ending, military has barley any influence.
+The streets know now peace after 2 years of strife.
+
+ The death of Brüning, at first seeming to be a disaster, has led to the weimar parties grow significantly closer [? if wirth_ascendant : and has strengthened the left wing of the party led by Joseph Wirth ?], combined with our increasing popularity and peace keeping efforts we have finally stabilized our political system underneath the majority [? if in_grand_coalition : Grand coalition?] [? if in_weimar_coalition != 1 : Weimar coalition?]! With our new political capital we have begun to undo the emergency agreement of the Ebert-Groener Pact. Under the leadership of Reichswehr Minister; Julius Leber, our substantial reforms succeeded with all members of the military loyally serving our republic. 
 
 - @game_over: Game over.
 
 @influence_25
 
-Good ending, influence, but it's not that bad.
+The streets know now peace after 2 years of strife.
+
+
+The death of Brüning, at first seeming to be a disaster, has led to the weimar parties grow significantly closer, and has strengthened the left wing of the party [? if wirth_ascendant : as the new parliamentary leader ?], Joseph Wirth has emphasized cooperation with the SPD rather than the far-right parties such as DNVP or NSDAP in order to protect parliamentary democracy. This has worked wonders on German Democracy with our party assuming the responsibilities of government more often than assuming opposition as it was prior. The Reichswehr however, remains only loyal to us out of goodwill, how many steps we have taken to undermine the Ebert-Groener Pact the next government would walk that step back, yet we still have the military under our good graces and command their personal loyalty.
 
 - @game_over: Game over.
 
 @influence_50
 
-bad ending, military has considerable influence.
+The streets know now peace after this 2 years of strife.
+
+The death of Brüning has strengthened the left wing of the Center party as the newly elected parliamentary leader, Joseph Wirth has convinced Zentrum to abandon coalitioning with the DNVP or NSDAP, as he argues successfully that German Democracy would weaken for every time Zentrum coalitions with the far right rather than the SPD. This has worked until his VONC as later Zentrum leaders have begun to shift towards the right rather than maintain Wirth's sane coalition policies. The reichswehr has become disillusioned with the SPD ever since attempts to reform and reign in the military has failed. We have heard from whistleblowers that the military is planning a soft coup in order to rid themselves of government oversight but we can't risk German stability or a hard coup to eliminate our government. We answer and govern to all the people, we can't allow the military to govern as they answer only to themselves.
 
 - @game_over: Game over.
 
 @military
 
-Just the military ending, couped.
+We over relied on the Reichswehr, and that proved to be our downfall. Despite The death of Brüning has strengthening the left wing of the Center, as we gave more concessions to the military, the right wing held firm and even significantly grew. Right after proclaiming victory over the extremists the Reichswehr couped the government, with the support of Franz von Papen, he kicked Wirth out of the Center Party and installed himself as de facto dictator. We were powerless to stop it, as the military held sway over even the Reichsbanner, resistance prover futile. We may have prevented hitler from taking control, but is this much better?
 
 - @game_over: Game over.
 
