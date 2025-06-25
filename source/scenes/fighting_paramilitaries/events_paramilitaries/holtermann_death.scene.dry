@@ -1,0 +1,10 @@
+title: Death of Karl Höltermann
+view-if: holtermann_death >= 100
+new-page: true
+max-visits: 1
+on-arrival: rb_leader = "vacant"; rb_strength *= 0.7; rb_militancy *=0.7
+tags: event
+
+= Death of Karl Höltermann 
+
+lazy. hes dead now aint writing this, if you see this you prob got this on purpose. btw you cant militarize the reichsbanner anymore. your forced to do the free ones or -1 resource options yaknow.

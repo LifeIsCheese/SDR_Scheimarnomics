@@ -1,0 +1,12 @@
+title: Death of Otto Hörsing
+view-if: horsing_death >= 100
+new-page: true
+max-visits: 1
+on-arrival: rb_leader = "karl holtermann"; rb_strength *= 0.7; rb_militancy *=0.7
+tags: event
+
+= Death of Otto Hörsing 
+
+During a Reichsbanner rally at the Sportpalast in Berlin, Otto Hörsing was shot at the chest by a far right militant! The ensuing chaos that followed included, said militant himself getting shot in the head, accidental friendly fire, and the electricity cutting out!
+
+In his stead is Karl Holtermann, confounder, and now chairman of the Reichsbanner. Despite his long expertise in the Reichsbanner, many of it's members are now discouraged after seeing their leader fall. We assume now it will be harder to militarize the Reichsbanner from now on.

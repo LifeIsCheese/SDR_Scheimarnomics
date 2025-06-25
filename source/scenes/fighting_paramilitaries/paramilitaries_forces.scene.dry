@@ -37,7 +37,7 @@ What should we do?
 subtitle: -1 budget, heavily decreases Reichsbanner dissent and increases militarization.
 view-if: rb_leader != "karl holtermann"
 choose-if: budget > 0
-on-arrival: rb_dissent = 0; budget -=1; rb_militancy += 0.1; month_actions +=1
+on-arrival: rb_dissent = 0; budget -=1; rb_militancy += 0.3; month_actions +=1
 
 Horsing's dreams have finally came true.
 
@@ -52,7 +52,7 @@ Together with the Z, we have begged the papacy fo support. Surprisingly, they ac
 @reichsbanner
 subtitle: -1 resource
 choose-if: resources > 0
-on-arrival: rb_strength +=600; rb_militancy +=0.05; month_actions +=1; paramilitaries_timer = 2; resources -=1
+on-arrival: rb_strength +=300; rb_militancy +=0.05; month_actions +=1; paramilitaries_timer = 2; resources -=1
 
 We fund the Reichsbanner.
 
@@ -64,14 +64,14 @@ We can use our media empire to find new reichsbanner recruits.
 @militarize_budget
 subtitle: -1 budget [? if spd_in_government != 1 : We are not in government. ?]
 choose-if: budget > 0 and spd_in_government
-on-arrival: rb_militancy +=0.2; month_actions +=1; paramilitaries_timer = 2; budget -=1; rb_strength += 300
+on-arrival: rb_militancy +=0.2 if rb_leader != "karl holtermann"; rb_militancy +=0.15 if rb_leader == "karl holtermann"; month_actions +=1; paramilitaries_timer = 2; budget -=1; rb_strength += 350 if rb_leader != "karl holtermann"; rb_strength += 300 if rb_leader == "karl holtermann"
 
-The Reichsbanner now has munitions meant for military use, thankfully our coalition partners see this as necessary to save the republic.
+The Reichsbanner now has extra munitions meant for military use, thankfully our coalition partners see this as necessary to save the republic.
 
 @militarize
-subtitle: -3 resources 
+subtitle: -3 resources, this will be less effective if we were to use state funds instead.
 choose-if: resources > 2 
-on-arrival: rb_militancy +=0.1; month_actions +=1; paramilitaries_timer = 2; resource -=3; rb_strength += 150
+on-arrival: rb_militancy +=0.15 if rb_leader != "karl holtermann"; rb_militancy +=0.1 if rb_leader == "karl holtermann"; month_actions +=1; paramilitaries_timer = 2; resource -=3; rb_strength += 300 if rb_leader != "karl holtermann"; rb_strength += 250 if rb_leader == "karl holtermann"
 
 The Reichsbanner now has munitions meant for military use, thankfully our coalition partners see this as necessary to save the republic.
 
