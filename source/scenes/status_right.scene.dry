@@ -40,7 +40,7 @@ Current Reichsbanner Dissent: [+ rb_dissent +]%
 
 @Actions_rb
 
-= [? if rb_leader == "otto horsing" : <span style="color: rgb(199, 197, 69);">**Otto Hörsing**</span>'s Actions ?] [? if rb_leader == "karl holtermann" : <span style="color: rgb(199, 197, 69);">**Karl Höltermann**</span> ?]
+= [? if rb_leader == "otto horsing" : <span style="color: rgb(199, 197, 69);">**Otto Hörsing**</span> ?] [? if rb_leader == "karl holtermann" : <span style="color: rgb(199, 197, 69);">**Karl Höltermann**</span> ?]
 
 [? if rb_leader != "vacant" and rb_actions_timer == 0 and hiding == 0 : <button class = "status_button_wide" onclick ="dissent_reduction()">Rally</button> ?]
 
