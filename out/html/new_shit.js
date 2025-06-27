@@ -20,7 +20,7 @@ function director_actions () {
    window.changeTab('status.Actions', 'Actions')
 }
 function rb_actions () {
-   window.changeTab('status_right.Actions_rb', 'Actions_rb')
+   window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right')
 }
 function purge () {
    d.interior_police_loyalty += 0.1;
