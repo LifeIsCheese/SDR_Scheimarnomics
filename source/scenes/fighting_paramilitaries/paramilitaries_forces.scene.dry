@@ -23,7 +23,6 @@ Our leader, [+ rb_leader +] [? if rb_leader != "karl holtermann" : has always ca
 
 What should we do?
 
-- @horsing: Build infrastructure solely for Reichsbanner use.
 - @holtermann: Ask the Center for papal endorsement.
 - @reichsbanner_free: Recruit for the reichsbanner
 - @reichsbanner: Fund reichsbanner
@@ -32,14 +31,6 @@ What should we do?
 - @defund: We defund????
 - @root: Perhaps another time
 - @easy_discard
-
-@horsing
-subtitle: -1 budget, heavily decreases Reichsbanner dissent and increases militarization.
-view-if: rb_leader != "karl holtermann"
-choose-if: budget > 0
-on-arrival: rb_dissent = 0; budget -=1; rb_militancy += 0.3; month_actions +=1
-
-Horsing's dreams have finally came true.
 
 @holtermann
 subtitle: -1 resource, heavily increases base of Reichsbanner membership. [? if z_relation <= 39 : The Center would not consider this. ?]

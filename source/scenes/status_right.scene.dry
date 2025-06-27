@@ -42,10 +42,21 @@ Current Reichsbanner Dissent: [+ rb_dissent +]%
 
 = [? if rb_leader == "otto horsing" : <span style="color: rgb(199, 197, 69);">**Otto Hörsing**</span>'s Actions ?] [? if rb_leader == "karl holtermann" : <span style="color: rgb(199, 197, 69);">**Karl Höltermann**</span> ?]
 
-[? if rb_leader == "otto horsing" and rb_actions_timer == 0 : <button class = "status_button_wide" onclick ="dissent_reduction()">Rally</button> ?]
+[? if rb_leader != "vacant" and rb_actions_timer == 0 and hiding == 0 : <button class = "status_button_wide" onclick ="dissent_reduction()">Rally</button> ?]
 
-[? if rb_actions_timer == 0 and rb_leader == "otto horsing" : Decreases Reichsbanner dissent by [? if rb_leader == "otto horsing" : 25% ?] [? if rb_leader == "karl holtermann" : 15% ?]. ?] [? if rb_actions_timer > 0 and rb_leader == "otto horsing" : Sorry but [+ rb_leader +] is busy, please wait [+ rb_actions_timer +] months. ?]
+[? if rb_actions_timer == 0 and rb_leader != "vacant" and hiding == 0  : Decreases Reichsbanner dissent by [? if rb_leader == "otto horsing" : 33% ?] [? if rb_leader == "karl holtermann" : 15% ?]. ?]
 
+[? if rb_leader != "vacant" and rb_actions_timer == 0 and hiding == 0 : <button class = "status_button_wide" onclick ="republic_unity()">Republican Cooperation</button> ?]
+
+[? if rb_actions_timer == 0 and rb_leader != "vacant" and hiding == 0  : Increase passive Reichsbanner growth by [? if rb_leader == "otto horsing" : 3 ?] [? if rb_leader == "karl holtermann" : 6 ?] thousand members per month. ?]
+
+[? if rb_leader != "vacant" and hiding == 0: <button class = "status_button_wide" onclick ="hide()">Go into hiding</button> ?]
+
+[? if hiding == 0 and rb_leader != "vacant" : Be at a far lower risk at getting assassinated. But unable to do actions. ?]
+
+[? if rb_leader != "vacant" and hiding == 1: <button class = "status_button_wide" onclick ="show()">Get out of hiding</button> ?]
+
+[? if hiding == 1 and rb_leader != "vacant" : Be able to do actions, but be at a far greater risk of getting assassinated.  ?]
 
 
 

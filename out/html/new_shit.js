@@ -107,11 +107,33 @@ function dissent_reduction() {
   d.rb_actions_timer = 3;
 
   if (d.rb_leader == "otto horsing") {
-    d.rb_dissent = Math.max(0, d.rb_dissent - 25);
+    d.rb_dissent = Math.max(0, d.rb_dissent - 33);
   } else if (d.rb_leader == "karl holtermann") {
     d.rb_dissent = Math.max(0, d.rb_dissent - 15);
   }
 
+  window.changeTab('status_right.Actions_rb', 'Actions_rb');
+}
+
+function republic_unity() {
+  d.rb_actions_timer = 3;
+
+  if (d.rb_leader == "otto horsing") {
+    d.rb_passive += 3;
+  } else if (d.rb_leader == "karl holtermann") {
+    d.rb_passive += 6;
+  }
+
+  window.changeTab('status_right.Actions_rb', 'Actions_rb');
+}
+
+function hide() {
+  d.hiding = 1;
+  window.changeTab('status_right.Actions_rb', 'Actions_rb');
+}
+
+function show() {
+  d.hiding = 0;
   window.changeTab('status_right.Actions_rb', 'Actions_rb');
 }
 

@@ -362,11 +362,11 @@ if (Q.plotCaps[Q.plot_target] && Q.violence_timer > 0) {
 
 if (Q.violence_level > 0) {
     if (Q.rb_leader == "otto horsing") {
-            Q.horsing_death += (9 - Q.spy_network) / 1.2;
-            Q.holtermann_death += (9 - Q.spy_network) / 2;
+            Q.horsing_death += Q.hiding == 1 ? (9 - Q.spy_network) / 3 : (9 - Q.spy_network) / 1.2;
+            Q.holtermann_death += Q.hiding == 1 ? (9 - Q.spy_network) / 4 : (9 - Q.spy_network) / 2;
     } 
     else if (Q.rb_leader == "karl holtermann"){
-        Q.holtermann_death += (9 - Q.spy_network) / 1.2;
+        Q.holtermann_death += Q.hiding == 1 ? (9 - Q.spy_network) / 4 : (9 - Q.spy_network) / 2;
     }
 }
 
@@ -387,6 +387,10 @@ if (Q.violence_timer > 0 && Q.military_concessions > 0) {
 // violence level
 
 if (Q.violence_timer > 0) { Q.violence_level = Math.round(((Q.sa_militancy + Q.sh_militancy + Q.rfb_militancy + Q.rb_militancy + Q.violence_add_on) / 5 ) * 20)  }
+
+//Reichsbanner passive growth
+Q.rb_strength += Q.rb_passive;
+
 
 // Loyalty decay
 Q.loyalty_decay_rate = Q.loyalty_decay - (Q.spy_network / 300);
