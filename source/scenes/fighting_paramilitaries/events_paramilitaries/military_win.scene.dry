@@ -1,12 +1,12 @@
 title: Military Coup!
-view-if: bruning_plot == "successful" and violence_timer != -1 and military_weariness >= 100 and violence_timer > 0
+view-if: bruning_plot == "successful" and violence_timer != -1 and military_weariness >= 100 and violence_timer > 0 
 new-page: true
 tags: event
 
 = Military Coup!
 
-Nothing done here rn, but im assuming millitary is strongest.
+Tried of the government's inability to reasonably govern, the Reichswehr took it into their own hands and performed a coup d'etat! With the government already struggling to combat extremist paramilitaries they were thoroughly crushed. Even worse, Military mandate was backed up with legitimate reason, as many in Germany were fed up with the violence seeing the coup as necessary to save the country.
 
-Military tired of no one being strong enough to do anything, they coup now.
+Many SPD members are jailed or exiled, with only a few traitors who helped the Reichswehr gaining modest positions in government. The future is bleak, at least Hitler isn't in power!
 
 - @game_over: Game over.
