@@ -11,6 +11,8 @@
   --bg-bg-transparent: #d6d6d6;
   --Z-color: #000000;
   --status-text-color: #000000;
+  --button-bg-color: #d4d4d4;
+  --button-border-color: #858585;
 
 
 }
@@ -27,6 +29,8 @@
   --bg-bg-transparent: #0e0505dc;
   --Z-color: #ffffff;
   --status-text-color: #ffffff;
+  --button-bg-color: #3a1b1e;
+  --button-border-color: #442024;
 }
 body {
   font-family: "Minion Pro", Georgia, serif;
@@ -301,8 +305,8 @@ blockquote + blockquote.attribution {
 .status_button {
   font-family: "Minion Pro", Geor gia, serif;
   color: var(--text-color);
-  background-color: var(--header-color);
-  border: 2px solid var(--active-color);
+  background-color: var(--button-bg-color);
+  border: 2px solid var(--button-border-color);
   outline: none;
   border-radius: 0.4rem;
   padding: 4px;
@@ -315,8 +319,8 @@ blockquote + blockquote.attribution {
   font-family: "Minion Pro", Geor gia, serif;
   width: 220px;
   color: var(--htext-color);
-  background-color: var(--header-color);
-  border: 2px solid var(--active-color);
+  background-color: var(--button-bg-color);
+  border: 2px solid var(--button-border-color);
   outline: none;
   border-radius: 0.4rem;
   padding: 4px;
