@@ -19,6 +19,9 @@ function director_actions () {
    d.director_actions = 1;
    window.changeTab('status.Actions', 'Actions')
 }
+function rb_actions () {
+   window.changeTab('status_right.Actions_rb', 'Actions_rb')
+}
 function purge () {
    d.interior_police_loyalty += 0.1;
    d.prussian_police_loyalty += 0.1;
