@@ -254,12 +254,13 @@ Q.tax_reform_progress = 1;
 Q.director_type = 0;
 // 1 is purge and rush, 2 is 
 Q.director_pointer = 0;
-// length is 6
 Q.director_a = [
     
     'Derrick Rosa', 'Rudi Althaus', 'Friedrich Kreszentia', 'Herrick Lang', 'Maximilian Stroker', 'Ivan Humpel', 'Mon Gropen', 'Christoph König', 'Horst Stark', 'Meinrad Forst', 'Werther Baier', 'Adler Mayer', 'Kanye West', 'Raban Baumann', 'Reto Klein', 'You', 'Mitsuki', 'Apple sky', 'Liminia'
 
 ];
+
+
 
 //Added Plots
 Q.loyalty_decay = 0;
@@ -624,7 +625,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
             'iron_front', 'media', 'enemies',
             'party_organizations', 'rally', 'reichsbanner',
             'shuffle_leadership', 'streetfighting', 'peoples_party',
-            'party_disunity', 'weimar_plan', 'director_actions', 'bond',
+            'party_disunity', 'weimar_plan', 'director_actions', 'bond', 'rb_actions',
             // govt
             'agricultural_policy', 'domestic_enemies', 'fiscal_policy',
             'foreign_policy', 'judiciary', 'labor_affairs', 'military_policy',
@@ -714,6 +715,7 @@ Q.presidential_timer = 0;
 
 // epic timers
 Q.director_actions_timer = 0;
+Q.rb_actions_timer = 0;
 Q.bond_timer = 0;
 Q.rb_urgency_timer = 0;
 Q.kpd_influence_timer = 0;

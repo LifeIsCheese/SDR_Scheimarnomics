@@ -37,11 +37,13 @@ Military Influence [+ military_influence +]%
 
 Current Reichsbanner Dissent: [+ rb_dissent +]%
 
+@Actions
 
+= [? if rb_leader == "otto horsing" : <span style="color: rgb(199, 197, 69);">**Otto Hörsing**</span>'s Actions ?] [? if rb_leader == "karl holtermann" : <span style="color: rgb(199, 197, 69);">**Karl Höltermann**</span>'s Actions ?]
 
+[? if rb_leader == "otto horsing" and rb_actions_timer == 0 : <button class = "status_button_wide" onclick ="dissent_reduction()">Rally</button> ?]
 
-
-
+[? if rb_actions_timer == 0 and rb_leader == "otto horsing" : Decreases Reichsbanner dissent by [? if rb_leader == "otto horsing" : 25% ?][? if rb_leader == "karl holtermann" ?]. ?] [? if rb_actions_timer > 0 and rb_leader == "otto horsing" : Sorry but [+ rb_leader +] is busy, please wait [+ rb_actions_timer +] months. ?]
 
 
 
