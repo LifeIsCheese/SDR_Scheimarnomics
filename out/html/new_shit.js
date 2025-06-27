@@ -112,7 +112,7 @@ function dissent_reduction() {
     d.rb_dissent = Math.max(0, d.rb_dissent - 15);
   }
 
-  window.changeTab('status_right.Actions_rb', 'Actions_rb');
+window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 }
 
 function republic_unity() {
@@ -124,17 +124,17 @@ function republic_unity() {
     d.rb_passive += 6;
   }
 
-  window.changeTab('status_right.Actions_rb', 'Actions_rb');
+window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 }
 
 function hide() {
   d.hiding = 1;
-  window.changeTab('status_right.Actions_rb', 'Actions_rb');
+window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 }
 
 function show() {
   d.hiding = 0;
-  window.changeTab('status_right.Actions_rb', 'Actions_rb');
+window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 }
 
 function bruning () {
