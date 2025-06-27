@@ -38,7 +38,7 @@ Military Influence [+ military_influence +]%
 
 Current Reichsbanner Dissent: [+ rb_dissent +]%
 
-@Actions
+@Actions_rb
 
 = [? if rb_leader == "otto horsing" : <span style="color: rgb(199, 197, 69);">**Otto Hörsing**</span>'s Actions ?] [? if rb_leader == "karl holtermann" : <span style="color: rgb(199, 197, 69);">**Karl Höltermann**</span>'s Actions ?]
 
