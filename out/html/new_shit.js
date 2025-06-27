@@ -100,15 +100,16 @@ function rush2 () {
 
 }
 
-function dissent_reduction () {
-   //Make sure to say to the player that horsing is more effective dissent reduction
-   d.rb_actions_timer = 3;
-   if (d.rb_dissent > 25) {
-   d.rb_dissent -= 25;
-   } else {
-   d.rb_dissent = 0;
-   }
-   window.changeTab('status_right.Actions_rb', 'Actions_rb');
+function dissent_reduction() {
+  d.rb_actions_timer = 3;
+
+  if (d.rb_leader == "otto horsing") {
+    d.rb_dissent = Math.max(0, d.rb_dissent - 25);
+  } else if (d.rb_leader == "karl holtermann") {
+    d.rb_dissent = Math.max(0, d.rb_dissent - 15);
+  }
+
+  window.changeTab('status_right.Actions_rb', 'Actions_rb');
 }
 
 function bruning () {
