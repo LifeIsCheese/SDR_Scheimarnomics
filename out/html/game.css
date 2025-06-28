@@ -310,7 +310,7 @@ blockquote + blockquote.attribution {
   outline: none;
   border-radius: 0.4rem;
   padding: 4px;
-  box-shadow: 2px 2px 10px var(--bgBack-color);
+  box-shadow: 1px 1px 5px var(--bgBack-color);
 }
 .status_button:hover {
   background-color: var(--hover-color);
@@ -325,7 +325,7 @@ blockquote + blockquote.attribution {
   outline: none;
   border-radius: 0.4rem;
   padding: 4px;
-  box-shadow: 2px 2px 10px var(--bgBack-color);
+  box-shadow: 1px 1px 5px var(--bgBack-color);
 }
 .status_button_wide:hover {
   background-color: var(--hover-color);
