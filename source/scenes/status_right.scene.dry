@@ -59,9 +59,3 @@ Current Reichsbanner Dissent: [+ rb_dissent +]%
 [? if hiding == 1 and rb_leader != "vacant" : Be able to do actions, but be at a far greater risk of getting assassinated.  ?]
 
 [? if rb_actions_timer > 0 and rb_leader != "vacant" and hiding == 0 : Sorry but [+ rb_leader +] is busy, please wait [+ rb_actions_timer +] months. ?]
-
-
-
-
-[? if started: [? if z_party_name != "CVP": <span class="tooltip-text" title="Center Party + Bavarian People's Party"><span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span></span>?][? if z_party_name == "CVP": <span class="tooltip-text" title="Christian People's Party + Bavarian People's Party"><span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span></span>?]?][? if not started: <span class="tooltip-text" title="Center Party + Bavarian People's Party"><span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span></span> ?]: [+ z_r +]%
-
