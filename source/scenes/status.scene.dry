@@ -276,13 +276,12 @@ Spy network strength: [+ s_spy_network +].
 
 @Targets
 
-= [? if plot_target == "hjalmar" : <span style="color:rgb(112, 87, 19);">**Hjalmar Schacht**</span> ?] [? if plot_target == "bruning" : <span style="color:rgb(19, 93, 112);">**Heinrich Brüning**</span> ?] [? if plot_target == "rohm" : <span style="color:rgb(185, 138, 7);">**Ernst Röhm**</span> ?] [? if plot_target == "leow" : <span style="color:rgb(180, 38, 38);">**Willy Leow**</span> ?] [? if plot_target == "schleicher" : <span style="color:rgb(216, 75, 75);">**Kurt von Schleicher
-**</span> ?]
+= [? if plot_target == "hjalmar" : <span style="color:rgb(112, 87, 19);">**Hjalmar Schacht**</span> ?] [? if plot_target == "bruning" : <span style="color:rgb(19, 93, 112);">**Heinrich Brüning**</span> ?] [? if plot_target == "rohm" : <span style="color:rgb(185, 138, 7);">**Ernst Röhm**</span> ?] [? if plot_target == "leow" : <span style="color:rgb(180, 38, 38);">**Willy Leow**</span> ?] [? if plot_target == "schleicher" : <span style="color:rgb(216, 75, 75);">**Kurt von Schleicher**</span> ?] [? if plot_target == "bank" : <span style="color:rgb(221, 223, 109);">**Reichsbank**</span> ?]
 
 <script src="new_shit.js" defer></script>
 
 <div class = "face-status-container">
-    [? if plot_target == "hjalmar" : <img class="face-status" src="img/portraits/SchachtHjalmar.jpg"> ?] [? if plot_target == "bruning" : <img class="face-status" src="img/portraits/BrüningHeinrich.jpg"> ?] [? if plot_target == "rohm" : <img class="face-status" src="img/portraits/rohm.jpg"> ?] [? if plot_target == "leow" : <img class="face-status" src="img/portraits/Willy_Leow_1930.jpg"> ?] [? if plot_target == "schleicher" : <img class="face-status" src="img/portraits/KurtVonScheleicherEn1932.jpg"> ?]
+    [? if plot_target == "hjalmar" : <img class="face-status" src="img/portraits/SchachtHjalmar.jpg"> ?] [? if plot_target == "bruning" : <img class="face-status" src="img/portraits/BrüningHeinrich.jpg"> ?] [? if plot_target == "rohm" : <img class="face-status" src="img/portraits/rohm.jpg"> ?] [? if plot_target == "leow" : <img class="face-status" src="img/portraits/Willy_Leow_1930.jpg"> ?] [? if plot_target == "schleicher" : <img class="face-status" src="img/portraits/KurtVonScheleicherEn1932.jpg"> ?] [? if plot_target == "bank" : <img class="face-status" src="img/Reichsbank.jpg"> ?]
 </div>
 
 = Status
@@ -292,7 +291,7 @@ Partners: [+ assassination_partners_string +]
 Plot power: [+ plot_strength +]%
 
 [? if plot_target == "hjalmar" : Death of <span style="color:rgb(112, 87, 19);">**Hjalmar Schacht**</span>: [+ hjalmar_plot +] ?] [? if plot_target == "bruning" : Death of <span style="color:rgb(19, 93, 112);">**Heinrich Brüning**</span>: [+ bruning_plot +] ?] [? if plot_target == "rohm" : Death of <span style="color:rgb(185, 138, 7);">**Ernst Röhm**</span>: [+ rohm_plot +]  ?] [? if plot_target == "leow" : Death of <span style="color:rgb(180, 38, 38);">**Willy Leow**</span>: [+ leow_plot +]  ?] [? if plot_target == "schleicher" : Death of <span style="color:rgb(180, 38, 38);">**Kurt von Schleicher
-**</span>: [+ schleicher_plot +]  ?]%
+**</span>: [+ schleicher_plot +]  ?] [? if plot_target == "bank" : Stealing the <span style="color:rgb(221, 223, 109);">**Reichsbank**</span>: [+ bank_plot +]  ?]%
 
 = Informants
 
