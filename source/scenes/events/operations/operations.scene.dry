@@ -28,7 +28,7 @@ These are our current estimates of loyalty within our partners, if any of them a
 - @bribe: For extra measure.
 
 @go
-subtitle: [? if chancellor == "Braun": "Who made that mess?" "Braun, are you ok?" "Sorry." ?].
+subtitle: [? if chancellor == "Braun": "Who made that mess?" "Braun, are you ok?" "Sorry." ?]
 on-arrival: {!
 
 if (Q.interior_police_loyalty >= Q.interior_police_loyalty_plot_cap && Q.assassination_partners == "Police" ) {
