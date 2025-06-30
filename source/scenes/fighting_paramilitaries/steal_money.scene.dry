@@ -1,0 +1,91 @@
+title: A great Heist
+view-if: bruning_plot == "successful" and paramilitaries_timer == 0 and spd_in_government and reichsbank_seized == 1
+frequency: 100
+new-page: true
+is-card: true
+card-image: img/RB_money.jpg
+tags: fighting_paramilitaries
+
+= Money
+
+Due to us unable to access the Reichsbank at this time, we are forced to steal money from it.
+
+- @issue_bond_1: Steal 1 budget.
+- @issue_bond_2: Steal 2 budget.
+- @issue_bond_3: Steal 3 budget.
+- @root: We are NOT doing this.
+- @easy_discard
+
+@issue_bond_1
+subtitle: +1 budget, with a bit of time
+unavailable-subtitle: We are in the middle of an operation.
+choose-if: plot_target == "None"
+on-arrival: bank_plot +=10; plot_target = "bank"; stealing_amount = 1
+go-to: partners
+
+We have to pay this back at 30% interest rate per year, for 4 years. if we go into deficit spending in this, we *can* have the option to default, this is not recommended.
+
+@issue_bond_2
+subtitle: +2 budget, with a moderate of time
+unavailable-subtitle: We are in the middle of an operation.
+choose-if: plot_target == "None"
+on-arrival: bank_plot +=10; plot_target = "bank"; stealing_amount = 2
+go-to: partners
+
+We have to pay this back at 30% interest rate per year, for 4 years. if we go into deficit spending in this, we *can* have the option to default, this is not recommended.
+
+@issue_bond_3
+subtitle: +3 budget, with a lot of time
+unavailable-subtitle: We are in the middle of an operation.
+choose-if: plot_target == "None"
+on-arrival: bank_plot +=10; plot_target = "bank"; stealing_amount = 3
+go-to: partners
+
+We have to pay this back at 30% interest rate per year, for 4 years. if we go into deficit spending in this, we *can* have the option to default, this is not recommended.
+
+@partners
+title: To further increase the progression of our plot, we must choose who to work with...
+
+Who should we work with on this operation?
+
+- @interior: The Interior security forces only.
+- @prussia: The Prussian police should join as well.
+- @reichsbanner: Due to it's large size, the reichsbanner can prove useful during direct encounters. When the police cannot do anything
+- @spies: Let's keep it small.
+
+@interior
+subtitle: -1 Budget. The progression rate of our operation will be slow but this is the most safest option, provided the internal security are loyal. [? if interior_police_loyalty < 0.55: The internal security are disloyal. ?] [? if spd_in_government != 1 : We are not in government. ?]
+choose-if: budget > 0 and spd_in_government
+on-arrival: plot_strength = 5; assassination_partners = "Police"; resources +=1; month_actions +=1; paramilitaries_timer = 2; {!
+new_hire()
+!}
+
+We brief the internal police on our plan, time will tell if it succeeds. 
+
+@prussia
+subtitle: -1 Budget. Though the extra manpower is nice, if any of the 2 are disloyal it will lead to disaster. [? if interior_police_loyalty < 0.55: The internal security are disloyal. ?] [? if prussian_police_loyalty < 0.5: The Prussian police still seem divided on this cause, but we do need the manpower. ?] [? if spd_in_government != 1 : We are not in government. ?]
+choose-if: budget > 0 and spd_in_government
+on-arrival: plot_strength = 10; assassination_partners = "Prussian"; resources +=1; month_actions +=1; paramilitaries_timer = 2; {!
+new_hire()
+!}
+
+
+By also working with the prussian police, as well as the internal police, we can get things done much faster... 
+
+@reichsbanner
+subtitle: -1 Budget. By getting the reichsbanner involved in this operation, we can brute force our way into stealing money from the [+ plot_target +]. [? if interior_police_loyalty < 0.55: The internal security are disloyal. ?] [? if prussian_police_loyalty < 0.5: The Prussian police still seem divided on this cause, but we do need the manpower. ?] [? if spd_in_government != 1 : We are not in government. ?]
+choose-if: budget > 0 and spd_in_government
+on-arrival: plot_strength = 20; assassination_partners = "Reichsbanner"; resources +=1; month_actions +=1; paramilitaries_timer = 2; {!
+new_hire()
+!}
+
+With the liberals fully supporting the militarization of the Reichsbanner, we can finally leverage it's massive numbers.
+
+@spies
+subtitle: [? if spy_network < 9 : -2 resources Least riskiest option, but slowest?] [? if spy_network >= 9 : If we pour in too much funds into our spies, it may attract unwanted attention. 0 resources. ?]
+choose-if: (resources > 1 and spy_network < 9) or (spy_network >=9)
+on-arrival: spy_network +=3 if spy_network < 9; plot_strength = spy_network * 2; resources -=2 if spy_network < 9; assassination_partners = "Spies"; resources +=1; month_actions +=1; paramilitaries_timer = 2; {!
+new_hire()
+!}
+
+Use our own network of <span style="color:rgb(0, 0, 0);">**spies**</span> to carry this out instead. This is the slowest option, but perhaps with more funding we can change that.

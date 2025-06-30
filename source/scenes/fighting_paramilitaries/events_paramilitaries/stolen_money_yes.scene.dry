@@ -1,0 +1,14 @@
+title: operation steal a lot of money
+view-if: bank_plot == "successful"
+new-page: true
+max-visits: 1
+on-arrival: budget += stealing_amount
+tags: event
+
+= operation steal a lot of money
+
+Hell yeah!
+
+<div class = "face-status-container">
+    <img class="event-img" src="img/RB_money.jpg">
+</div>
