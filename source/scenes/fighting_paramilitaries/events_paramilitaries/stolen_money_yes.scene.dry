@@ -2,7 +2,7 @@ title: operation steal a lot of money
 view-if: bank_plot == "successful"
 new-page: true
 max-visits: 1
-on-arrival: budget += stealing_amount
+on-arrival: plot_target = "None"; plot_strength = 0; budget += stealing_amount
 tags: event
 
 = operation steal a lot of money
