@@ -3,6 +3,7 @@ view-if: bruning_plot == "successful" and paramilitaries_timer == 0 and spd_in_g
 frequency: 100
 new-page: true
 is-card: true
+view-if: reichsbank_seized == 0
 card-image: img/Reichsbank.jpg
 tags: fighting_paramilitaries
 

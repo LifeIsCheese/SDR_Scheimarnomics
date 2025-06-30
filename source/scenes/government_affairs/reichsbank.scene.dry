@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: govt_affairs
 frequency: 500
-view-if: spd_in_government = 1 and finance_minister_party = "SPD" and reichsbank_timer == 0
+view-if: spd_in_government = 1 and finance_minister_party = "SPD" and reichsbank_timer == 0 and reichsbank_seized == 0
 on-arrival: reichsbank_timer += 4; month_actions += 1
 card-image: img/Reichsbank.jpg
 

@@ -1,0 +1,16 @@
+title: Reichsbank Sized!
+view-if: right_dominance_timer > 3 and violence_timer > 0 and hjalmar_plot != "successful"
+new-page: true
+max-visits: 1
+on-arrival: reichsbank_seized = 1
+tags: event
+
+= Reichsbank Seized
+
+SA and SH forces have stormed all major branches of the Reichsbank, as well as the building. This bravado only came for their increasing dominance of the streets, and our lack of any real resistance to their efforts. Hjalmar Schacht has aided in right's efforts to consolidate the Reichsbank, even pledging loyalty to it, violating the institution's political neutrality.
+
+In other words, we can't influence Reichsbank policies (If we had any influence on it), and most alarmingly, we can't enact bonds to raise funds for our ongoing efforts to stabilize the republic.
+
+<div class = "face-status-container">
+    <img class="event-img" src="img/RB_money.jpg">
+</div> 

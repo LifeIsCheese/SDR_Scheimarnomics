@@ -326,7 +326,6 @@ Q.high_inflation = 0;
 Q.stagflation = 0;
 
 //Bruning Death
-Q.should_expel_spd = 0;
 Q.weimar_strength = 0;
 Q.far_left_strength = 0;
 Q.far_right_strength = 0;
@@ -347,6 +346,7 @@ Q.wirth_ascendant = 0;
 Q.holtermann_death = 0;
 Q.horsing_death = 0;
 Q.rb_passive = 0;
+Q.reichsbank_seized = 0;
 
 // ID's: 0 = nothing 1 = RFB militarization 2 = SA militarization 3 = SH militarization 4 = Berlin terrorism
 Q.violence_events = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 3, 0, 0];

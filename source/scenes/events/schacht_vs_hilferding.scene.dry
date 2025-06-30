@@ -1,6 +1,6 @@
 title: Hjalmar Schacht against Hilferding
 new-page: true
-view-if: year = 1929 and month >= 11 and spd_in_government = 1 and finance_minister = "Hilferding" and finance_minister_party = "SPD" and hjalmar_plot != "successful" or hjalmar_plot == "failed"
+view-if: year = 1929 and month >= 11 and spd_in_government = 1 and finance_minister = "Hilferding" and finance_minister_party = "SPD" and hjalmar_plot != "successful" and violence_timer <= 0 or hjalmar_plot == "failed"
 tags: event
 max-visits: 1
 card-image: img/portraits/SchachtHjalmar.jpg
