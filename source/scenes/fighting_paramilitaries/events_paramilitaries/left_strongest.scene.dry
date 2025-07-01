@@ -1,0 +1,9 @@
+title: Kurt von Schleicher's letter
+view-if: violence_timer > 0 and far_left_strength > weimar_strength and far_left_strength > far_right_strength and spd_bd_position != "support_kpd"
+new-page: true
+max-visits: 1
+tags: event
+
+= Rise of the Left
+
+We have received a lengthy letter from Kurt von Schleicher. It's contents detailed that we, have mismanaged the country's situation, and that the RFB have been steadily gaining ground and have actually surpassed the capabilities of both our own and the far right. He warns us that if our "incompetence" leads to the communists dominating the streets, the military will take action.

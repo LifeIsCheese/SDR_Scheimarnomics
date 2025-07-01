@@ -514,8 +514,11 @@ if (Q.violence_timer > 0) {
             Q.military_weariness -= 5;
         }
     }
-    if (Q.schleicher_plot == "failed" || Q.violence_acceleration == 1) {
+    if (Q.schleicher_plot == "failed" || Q.violence_acceleration == 1 || Q.left_dominance_timer >= 1) {
         Q.military_weariness += 5;
+        if (Q.left_dominance_timer >= 1) {
+            Q.military_weariness += 5;
+        }
     }
 }
 

@@ -256,7 +256,7 @@ Q.director_type = 0;
 Q.director_pointer = 0;
 Q.director_a = [
     
-    'Derrick Rosa', 'Rudi Althaus', 'Friedrich Kreszentia', 'Herrick Lang', 'Maximilian Stroker', 'Ivan Humpel', 'Mon Gropen', 'Christoph König', 'Horst Stark', 'Meinrad Forst', 'Werther Baier', 'Adler Mayer', 'Kanye West', 'Raban Baumann', 'Reto Klein', 'You', 'Mitsuki', 'Apple sky', 'Liminia'
+    'Derrick Rosa', 'Rudi Althaus', 'Friedrich Kreszentia', 'Herrick Lang', 'Maximilian Stroker', 'Ivan Humpel', 'Mon Gropen', 'Christoph König', 'Horst Stark', 'Meinrad Forst', 'Werther Baier', 'Adler Mayer', 'Kanye West', 'Raban Baumann', 'Reto Klein', 'You', 'Mitsuki', 'Apple sky', 'Liminia', 'Cardigan'
 
 ];
 
