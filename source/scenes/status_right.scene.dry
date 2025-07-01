@@ -17,6 +17,42 @@ Military Weariness: [+ military_weariness +]%
 
 Military Influence [+ military_influence +]%
 
+= factions
+
+The Far Left:
+
+<span style="color:rgb(92, 0, 0);">**KPD**</span>
+
+[? if spd_bd_position == "support_kpd" :<span style="color:rgb(182, 45, 45);">**SPD**</span>  ?]
+
+[? if spd_bd_position == "support_kpd" and sapd_formed :<span style="color:rgb(255, 93, 93);">**SAPD**</span>  ?]
+
+The Republic:
+
+[? if spd_bd_position != "support_kpd" :<span style="color:rgb(182, 45, 45);">**SPD**</span>  ?]
+
+[? if spd_bd_position != "support_kpd" and sapd_formed :<span style="color:rgb(255, 93, 93);">**SAPD**</span>  ?]
+
+<span style="color:var(--Z-color);">**Z**</span>
+
+<span style="color:rgb(62, 107, 206);">**BVP**</span>
+
+<span style="color:rgb(255, 242, 67);">**DDP**</span>
+
+[? if in_grand_coalition : <span style="color:rgb(187, 185, 52);">**DVP**</span> ?]
+
+The Far Right:
+
+<span style="color:rgb(0, 26, 255);">**DNVP**</span>
+
+<span style="color:rgb(100, 78, 17);">**NDSAP**</span>
+
+<span style="color:rgb(107, 107, 107);">**Others**</span>
+
+Undecided:
+
+[? if in_grand_coalition != 1 : <span style="color:rgb(187, 185, 52);">**DVP**</span> ?]
+
 @reichsbanner
 
 = Reichsbanner
