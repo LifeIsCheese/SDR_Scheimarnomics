@@ -47,11 +47,11 @@ The Far Right:
 
 <span style="color:rgb(100, 78, 17);">**NDSAP**</span>
 
-<span style="color:rgb(107, 107, 107);">**Others**</span>
-
 Undecided:
 
 [? if in_grand_coalition != 1 : <span style="color:rgb(187, 185, 52);">**DVP**</span> ?]
+
+<span style="color:rgb(107, 107, 107);">**Others**</span>
 
 @reichsbanner
 
