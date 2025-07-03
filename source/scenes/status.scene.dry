@@ -87,7 +87,7 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 <span style="color:rgb(110, 65, 131);">**Foreign investment**</span>: +[+ foreign_investment +]% to <span style="color:rgb(95, 131, 65);">**growth**</span>
 
-[? if bond_debt > 0 : <span style="color:rgb(131, 65, 65);">**Annual Debt**</span>: [+ bond_debt_2 +] 
+[? if bond_debt > 0 : <span style="color:rgb(131, 65, 65);">**Annual Debt**</span>: [+ bond_debt_2 +] ?]
 
 # = Public Opinion
 

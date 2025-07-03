@@ -39,7 +39,7 @@ The Republic:
 
 <span style="color:rgb(255, 242, 67);">**DDP**</span>
 
-[? if in_grand_coalition : <span style="color:rgb(187, 185, 52);">**DVP**</span> ?]
+[? if dvp_alignment >= 10 : <span style="color:rgb(187, 185, 52);">**DVP**</span> ?]
 
 The Far Right:
 
@@ -47,9 +47,11 @@ The Far Right:
 
 <span style="color:rgb(100, 78, 17);">**NDSAP**</span>
 
+[? if dvp_alignment <= 0 : <span style="color:rgb(187, 185, 52);">**DVP**</span> ?]
+
 Undecided:
 
-[? if in_grand_coalition != 1 : <span style="color:rgb(187, 185, 52);">**DVP**</span> ?]
+[? if dvp_alignment < 10 or dvp_alignment > 0 : <span style="color:rgb(187, 185, 52);">**DVP**</span> : [+ dvp_alignment : alignment +] ?]
 
 <span style="color:rgb(107, 107, 107);">**Others**</span>
 
