@@ -1,12 +1,12 @@
 
-(..0) The DVP has aligned with the right.
-(1..1) The DVP are about to work with the right.
-(2..2) The DVP are considering cooperating with the right.
-(3..3) Right-leaning sentiment is high within the DVP.
-(4..4) The DVP remains officially neutral, but internal tensions are rising.
-(5..5) The DVP are divided between cooperating with the right or the republic.
-(6..6) Talks have begun with moderate factions in both camps.
-(7..7) The DVP are leaning towards supporting the republic.
-(8..8) The DVP are considering cooperating with the republic.
-(9..9) The DVP are about to work with the republic.
+(..0.0) The DVP has aligned with the right.
+(1.0..1.9) The DVP are about to work with the right.
+(2.0..2.9) The DVP are considering cooperating with the right.
+(3.0..3.9) Right-leaning sentiment is high within the DVP.
+(4.0..4.9) The DVP remains officially neutral, but internal tensions are rising.
+(5.0..5.9) The DVP are divided between cooperating with the right or the republic.
+(6.0..6.9) Talks have begun with moderate factions in both camps.
+(7.0..7.9) The DVP are leaning towards supporting the republic.
+(8.0..8.9) The DVP are considering cooperating with the republic.
+(9.0..9.9) The DVP are about to work with the republic.
 (10..) The DVP has aligned with the republic.
