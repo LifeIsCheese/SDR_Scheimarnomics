@@ -51,7 +51,7 @@ on-arrival: rb_militancy +=0.05; month_actions +=1; paramilitaries_timer = 2; re
 We fund the Reichsbanner.
 
 @reichsbanner_free
-on-arrival: rb_strength +=100; month_actions +=1; paramilitaries_timer = 2; rb_strength_add / 3
+on-arrival: rb_strength +=100; month_actions +=1; paramilitaries_timer = 2; rb_strength += rb_strength_add / 3
 
 We can use our media empire to find new reichsbanner recruits. 
 
