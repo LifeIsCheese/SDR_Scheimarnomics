@@ -494,7 +494,7 @@ if (Q.rb_leader == "otto horsing") {
     Q.rb_strength_add = 175 - (Q.coalition_dissent * 25);
 }
 
-if (Q.dvp_alignment > 0.9 and Q.dvp_alignment < 9.9 ) {
+if (Q.dvp_alignment > 0.9 && Q.dvp_alignment < 9.9 ) {
     Q.rb_strength_add = 200 - (Q.coalition_dissent * 25);
 }
 
@@ -508,7 +508,7 @@ if (Q.military_influence < 25 ) {
     Q.rb_militancy_add = 0.25 - (Q.coalition_dissent / 75);
 }
 
-if (Q.military_influence >= 25 and Q.dvp_alignment < 75 ) {
+if (Q.military_influence >= 25 && Q.dvp_alignment < 75 ) {
     Q.rb_militancy_add = 0.15 - (Q.coalition_dissent / 75);
 }
 
@@ -524,7 +524,7 @@ if (Q.rb_leader == "karl holtermann") {
     Q.rb_strength_add = 200 - (Q.coalition_dissent * 25);
 }
 
-if (Q.dvp_alignment > 0.9 and Q.dvp_alignment < 9.9 ) {
+if (Q.dvp_alignment > 0.9 && Q.dvp_alignment < 9.9 ) {
     Q.rb_strength_add = 225 - (Q.coalition_dissent * 25);
 }
 
@@ -538,7 +538,7 @@ if (Q.military_influence < 25 ) {
     Q.rb_militancy_add = 0.2 - (Q.coalition_dissent / 75);
 }
 
-if (Q.military_influence >= 25 and Q.dvp_alignment < 75 ) {
+if (Q.military_influence >= 25 && Q.dvp_alignment < 75 ) {
     Q.rb_militancy_add = 0.1 - (Q.coalition_dissent / 75);
 }
 
@@ -552,7 +552,7 @@ if (Q.rb_leader == "vacant") {
     Q.rb_strength_add = 125 - (Q.coalition_dissent * 25);
 }
 
-if (Q.dvp_alignment > 0.9 and Q.dvp_alignment < 9.9 ) {
+if (Q.dvp_alignment > 0.9 && Q.dvp_alignment < 9.9 ) {
     Q.rb_strength_add = 150 - (Q.coalition_dissent * 25);
 }
 
@@ -566,7 +566,7 @@ if (Q.military_influence < 25 ) {
     Q.rb_militancy_add = 0.2 - (Q.coalition_dissent / 75);
 }
 
-if (Q.military_influence >= 25 and Q.dvp_alignment < 75 ) {
+if (Q.military_influence >= 25 && Q.dvp_alignment < 75 ) {
     Q.rb_militancy_add = 0.1 - (Q.coalition_dissent / 75);
 }
 
