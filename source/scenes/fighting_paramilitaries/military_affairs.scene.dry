@@ -1,5 +1,5 @@
 title: The Army
-view-if: bruning_plot == "successful" and paramilitaries_timer == 0
+view-if: bruning_plot == "successful" and paramilitaries_timer == 0 and spd_in_government
 frequency: 100
 new-page: true
 is-card: true

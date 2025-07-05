@@ -1,5 +1,5 @@
 title: Military Concerns
-view-if: violence_level >= 50 and schleicher_plot != "successful"
+view-if: violence_level >= 50 and schleicher_plot != "successful" and spd_in_government
 on-arrival: military_weariness += 15
 max-visits: 1
 new-page: true

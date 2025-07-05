@@ -30,7 +30,7 @@ Our coalition partners have agreed on this course of action.
 
 @leow
 subtitle: By killing Willy Leow, we can dissrupt the growth of the RFB and destroy it's influence in the Reichsbanner. [? if budget <= 0 and spd_in_government: Not enough budget. ?] [? if rohm_plot == "failed" : we have failed to kill Ernst Röhm ?] [? if resources <= 1 : Not enough resources. ?]. Not done
-view-if: leow_plot != "successful"
+view-if: leow_plot != "successful" and spd_bd_position != "support_kpd"
 choose-if: leow_plot != "failed" and (budget > 0 or resources > 1)
 on-arrival: leow_plot +=10; plot_target = "leow"
 go-to: partners

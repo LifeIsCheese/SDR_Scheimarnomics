@@ -70,7 +70,7 @@ on-arrival: month_actions +=1; paramilitaries_timer = 2; resource -=3; rb_milita
 The Reichsbanner now has munitions meant for military use, thankfully our coalition partners see this as necessary to save the republic.
 
 @defund
-subtitle: Why?, +3 resources +1 budget
+subtitle: Why?, +3 resources
 on-arrival: rb_dissent +=50; resources +=3; rb_strength *= 0.9; paramilitaries_timer = 2; rb_militancy *= 0.9
 
 Alright then. The Reichsbanner will remember this. 
@@ -89,11 +89,15 @@ What should we do?
 - @easy_discard
 
 @loyalty
+choose-if: spd_in_government or spd_prussia
+unavailable-subtitle: We do not control any government positions. 
 on-arrival: prussian_police_loyalty += 0.2; interior_police_loyalty +=0.2; month_actions +=1; paramilitaries_timer = 2
 
 We root out corrupt or extremist policemen, we can justify this to our coalition partners with the violence in the streets.
 
 @anti_decay
+choose-if: spd_in_government or spd_prussia
+unavailable-subtitle: We do not control any government positions. 
 on-arrival: loyalty_decay -=0.01 if loyalty_decay > 0; month_actions +=1; paramilitaries_timer = 2
 
 We single out dissident figures within our forces, we can justify this to our coalition partners with the violence in the streets.

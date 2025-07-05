@@ -1,5 +1,5 @@
 title: Reichsbanner Defections
-view-if: violence_timer > 0 and rb_dissent >= 100
+view-if: violence_timer > 0 and rb_dissent >= 100 and spd_bd_position != "support_kpd"
 on-arrival: rb_dissent = 0; rfb_strength += (rb_strength * 0.2); rb_strength *= 0.8; rfb_militancy += (rb_militancy * 0.2); rb_militancy *= 0.8; month_actions +=1
 new-page: true
 tags: event

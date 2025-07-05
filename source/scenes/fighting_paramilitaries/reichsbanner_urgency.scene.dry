@@ -1,5 +1,5 @@
 title: Reichsbanner Urgency
-view-if: weimar_strength < 30 and bruning_plot == "successful" and rb_urgency_timer == 0 and violence_timer < 21 and violence_timer != -1
+view-if: weimar_strength < 30 and bruning_plot == "successful" and rb_urgency_timer == 0 and violence_timer < 21 and violence_timer != -1 and spd_bd_position != "support_kpd"
 max-visits: 5
 on-arrival: rb_urgency_timer = 4
 new-page: true
