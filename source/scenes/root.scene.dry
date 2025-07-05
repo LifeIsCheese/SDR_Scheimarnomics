@@ -352,6 +352,8 @@ Q.holtermann_death = 0;
 Q.horsing_death = 0;
 Q.rb_passive = 0;
 Q.reichsbank_seized = 0;
+Q.rb_strength_add = 200;
+Q.rb_militancy_add = 0.1;
 
 //higher alignment = wllinginess to wrok with spd
 Q.dvp_alignment = 5;

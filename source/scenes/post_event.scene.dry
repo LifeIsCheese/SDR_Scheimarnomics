@@ -486,6 +486,95 @@ if (Q.right_dominance_timer >= 1) {Q.dvp_alignment -= 0.5}
 if (Q.weimar_dominance_timer >= 1) {Q.dvp_alignment += 0.5}
 if (Q.left_dominance_timer >= 1) {Q.dvp_alignment -= 1}
 
+// rb_strength_recruiting
+
+if (Q.rb_leader == "otto horsing") {
+
+    if (Q.dvp_alignment <= 0.9 ) {
+    Q.rb_strength_add = 175 - (Q.coalition_dissent * 25);
+}
+
+if (Q.dvp_alignment > 0.9 and Q.dvp_alignment < 9.9 ) {
+    Q.rb_strength_add = 200 - (Q.coalition_dissent * 25);
+}
+
+if (Q.dvp_alignment >= 9.9 ) {
+    Q.rb_strength_add = 325 - (Q.coalition_dissent * 25);
+}
+
+// rb_militancy_add stuff
+
+if (Q.military_influence < 25 ) {
+    Q.rb_militancy_add = 0.25 - (Q.coalition_dissent / 75);
+}
+
+if (Q.military_influence >= 25 and Q.dvp_alignment < 75 ) {
+    Q.rb_militancy_add = 0.15 - (Q.coalition_dissent / 75);
+}
+
+if (Q.military_influence >= 75 ) {
+    Q.rb_militancy_add = 0.075 - (Q.coalition_dissent / 75);
+}
+}
+
+// karl
+
+if (Q.rb_leader == "karl holtermann") {
+    if (Q.dvp_alignment <= 0.9 ) {
+    Q.rb_strength_add = 200 - (Q.coalition_dissent * 25);
+}
+
+if (Q.dvp_alignment > 0.9 and Q.dvp_alignment < 9.9 ) {
+    Q.rb_strength_add = 225 - (Q.coalition_dissent * 25);
+}
+
+if (Q.dvp_alignment >= 9.9 ) {
+    Q.rb_strength_add = 350 - (Q.coalition_dissent * 25);
+}
+
+// rb_militancy_add stuff
+
+if (Q.military_influence < 25 ) {
+    Q.rb_militancy_add = 0.2 - (Q.coalition_dissent / 75);
+}
+
+if (Q.military_influence >= 25 and Q.dvp_alignment < 75 ) {
+    Q.rb_militancy_add = 0.1 - (Q.coalition_dissent / 75);
+}
+
+if (Q.military_influence >= 75 ) {
+    Q.rb_militancy_add = 0.055 - (Q.coalition_dissent / 75);
+}
+}
+
+if (Q.rb_leader == "vacant") {
+    if (Q.dvp_alignment <= 0.9 ) {
+    Q.rb_strength_add = 125 - (Q.coalition_dissent * 25);
+}
+
+if (Q.dvp_alignment > 0.9 and Q.dvp_alignment < 9.9 ) {
+    Q.rb_strength_add = 150 - (Q.coalition_dissent * 25);
+}
+
+if (Q.dvp_alignment >= 9.9 ) {
+    Q.rb_strength_add = 175 - (Q.coalition_dissent * 25);
+}
+
+// rb_militancy_add stuff
+
+if (Q.military_influence < 25 ) {
+    Q.rb_militancy_add = 0.2 - (Q.coalition_dissent / 75);
+}
+
+if (Q.military_influence >= 25 and Q.dvp_alignment < 75 ) {
+    Q.rb_militancy_add = 0.1 - (Q.coalition_dissent / 75);
+}
+
+if (Q.military_influence >= 75 ) {
+    Q.rb_militancy_add = 0.055 - (Q.coalition_dissent / 75);
+}
+}
+
 // Violence var
 const violenceMultiplier = Math.round((1 + (Q.violence_level / 100) ) * 100) / 100;
 

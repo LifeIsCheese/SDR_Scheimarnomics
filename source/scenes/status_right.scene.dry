@@ -19,6 +19,12 @@ Military Influence [+ military_influence +]%
 
 = factions
 
+Undecided:
+
+[? if dvp_alignment < 10 and dvp_alignment > 0 : <span style="color:rgb(187, 185, 52);">**DVP**</span> : [+ dvp_alignment : alignment +] ?]
+
+<span style="color:rgb(107, 107, 107);">**Others**</span>
+
 The Far Left:
 
 <span style="color:rgb(92, 0, 0);">**KPD**</span>
@@ -48,12 +54,6 @@ The Far Right:
 <span style="color:rgb(100, 78, 17);">**NDSAP**</span>
 
 [? if dvp_alignment <= 0 : <span style="color:rgb(187, 185, 52);">**DVP**</span> ?]
-
-Undecided:
-
-[? if dvp_alignment < 10 or dvp_alignment > 0 : <span style="color:rgb(187, 185, 52);">**DVP**</span> : [+ dvp_alignment : alignment +] ?]
-
-<span style="color:rgb(107, 107, 107);">**Others**</span>
 
 @reichsbanner
 

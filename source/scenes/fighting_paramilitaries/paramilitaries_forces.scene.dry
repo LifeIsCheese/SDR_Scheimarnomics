@@ -8,7 +8,19 @@ tags: fighting_paramilitaries
 
 = Our forces
 
-Due to increased violence in the streets, the repbulican parties are calmoring for further militarization.
+Due to increased violence in the streets, the republican parties are clamoring for further militarization.
+
+Remember, Coalition dissent heavily affects recruiting efforts, while military influence affects our militarization efforts.
+
+[? if rb_leader == "otto horsing" : Reichsbanner leader Otto Hörsing, is a polarizing figure, but we live in polarizing times and his excessive militancy will prove to be useful. ?]
+
+[? if rb_leader == "karl holtermann" : Reichsbanner leader Karl Höltermann, is a uniting figure, someone who as able to moderate Otto Hörsing's more militant positions. But we live in polarizing times and although he may be able to recruit more moderates, he will have less experience militarizing the Reichsbanner.  ?]
+
+[? if rb_leader == "vacant" : We have <span style="color:rgb(255, 0, 0);">**no**</span> Reichsbanner leader. ?]
+
+[? if rb_strength_add < 200 : Recruiting is impacted. ?] [? if rb_strength_add >= 200 and rb_strength_add < 300 : Recruiting is normal. ?] [? if rb_strength_add >= 300 : Recruiting has been expanded. ?]
+
+[? if rb_militancy_add < 0.1 : Our militarization efforts are hampered. ?] [? if rb_militancy_add >= 0.1 and rb_militancy_add < 1.5 : Our militarization efforts are normal. ?] [? if rb_militancy_add >= 1.5 : Our militarization efforts have been expanded. ?]
 
 - @reichsbanner_menu: The Reichsbanner
 - @state_forces_menu: Security and police.
@@ -19,11 +31,10 @@ Due to increased violence in the streets, the repbulican parties are calmoring f
 
 The Reichsbanner is one of our most important tools for controling violence on the streets.
 
-Our leader, [+ rb_leader +] [? if rb_leader != "karl holtermann" : has always called for militarization, while usualy we would dispute this, we may need his expertise in this situation. ?] [? if rb_leader == "karl holtermann" : has always called for a broad democratic bullwark, focusing on increasing cooperation with our coalition partners. ?]
+Our leader, [+ rb_leader +] [? if rb_leader != "karl holtermann" : has always called for militarization, while usually we would dispute this, we may need his expertise in this situation. ?] [? if rb_leader == "karl holtermann" : has always called for a broad democratic bulwark, focusing on increasing cooperation with our coalition partners. ?]
 
 What should we do?
 
-- @holtermann: Ask the Center for papal endorsement.
 - @reichsbanner_free: Recruit for the reichsbanner
 - @reichsbanner: Fund reichsbanner
 - @militarize: Militarize the reichsbanner
@@ -32,43 +43,35 @@ What should we do?
 - @root: Perhaps another time
 - @easy_discard
 
-@holtermann
-subtitle: -1 resource, heavily increases base of Reichsbanner membership. [? if z_relation <= 39 : The Center would not consider this. ?]
-view-if: rb_leader == "karl holtermann"
-choose-if: resources > 0 and z_relation >= 40
-on-arrival: resources -=1; rb_strength *= 1.3; month_actions +=1
-
-Together with the Z, we have begged the papacy fo support. Surprisingly, they accept!
-
 @reichsbanner
 subtitle: -1 resource
 choose-if: resources > 0
-on-arrival: rb_strength +=300; rb_militancy +=0.05; month_actions +=1; paramilitaries_timer = 2; resources -=1
+on-arrival: rb_militancy +=0.05; month_actions +=1; paramilitaries_timer = 2; resources -=1; rb_strength += rb_strength_add / 2
 
 We fund the Reichsbanner.
 
 @reichsbanner_free
-on-arrival: rb_strength +=100; month_actions +=1; paramilitaries_timer = 2
+on-arrival: rb_strength +=100; month_actions +=1; paramilitaries_timer = 2; rb_strength_add / 3
 
 We can use our media empire to find new reichsbanner recruits. 
 
 @militarize_budget
 subtitle: -1 budget [? if spd_in_government != 1 : We are not in government. ?]
 choose-if: budget > 0 and spd_in_government
-on-arrival: rb_militancy +=0.2 if rb_leader != "karl holtermann"; rb_militancy +=0.15 if rb_leader == "karl holtermann"; month_actions +=1; paramilitaries_timer = 2; budget -=1; rb_strength += 350 if rb_leader != "karl holtermann"; rb_strength += 300 if rb_leader == "karl holtermann"
+on-arrival: month_actions +=1; paramilitaries_timer = 2; budget -=1; rb_strength += rb_strength_add * 1.5; rb_militancy += rb_militancy_add * 2
 
 The Reichsbanner now has extra munitions meant for military use, thankfully our coalition partners see this as necessary to save the republic.
 
 @militarize
 subtitle: -3 resources, this will be less effective if we were to use state funds instead.
 choose-if: resources > 2 
-on-arrival: rb_militancy +=0.15 if rb_leader != "karl holtermann"; rb_militancy +=0.1 if rb_leader == "karl holtermann"; month_actions +=1; paramilitaries_timer = 2; resource -=3; rb_strength += 300 if rb_leader != "karl holtermann"; rb_strength += 250 if rb_leader == "karl holtermann"
+on-arrival: month_actions +=1; paramilitaries_timer = 2; resource -=3; rb_militancy += rb_militancy_add * 1.5
 
 The Reichsbanner now has munitions meant for military use, thankfully our coalition partners see this as necessary to save the republic.
 
 @defund
-subtitle: Why?, +3 resources
-on-arrival: rb_dissent +=50; resources +=3; rb_strength *= 0.9; paramilitaries_timer = 2
+subtitle: Why?, +3 resources +1 budget
+on-arrival: rb_dissent +=50; resources +=3; rb_strength *= 0.9; paramilitaries_timer = 2; rb_militancy *= 0.9
 
 Alright then. The Reichsbanner will remember this. 
 
