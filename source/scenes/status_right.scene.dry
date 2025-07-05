@@ -10,12 +10,11 @@ Military Weariness: [+ military_weariness +]%
 
 [? if military_available < 0.25 : The military is coalescing and getting tired of the current deadlock. ?] [? if military_available >= 0.25 and military_available < 0.5 : The military has enforced discipline. ?] [? if military_available >= 0.5 and military_available < 0.75 : The military is split. ?] [? if military_available >= 0.75 : The military is racked with ideological infighting. ?]
 
+[? if spd_in_government : Concessions ?]
 
-= Concessions
+[? if spd_in_government : [? if military_concessions == 0 : None ?] [? if military_concessions == 1 : Promised funding. ?] [? if military_concessions == 2 : An increase in military spending. ?] [? if military_concessions >= 3 : Military delegation, in dealing with the extremists. ?] [? if military_concessions == 4 : Further military spending. ?] [? if military_concessions >= 5 : Military overwatch regarding counter paramilitary operations. ?] ?]
 
-[? if military_concessions == 0 : None ?] [? if military_concessions == 1 : Promised funding. ?] [? if military_concessions == 2 : An increase in military spending. ?] [? if military_concessions >= 3 : Military delegation, in dealing with the extremists. ?] [? if military_concessions == 4 : Further military spending. ?] [? if military_concessions >= 5 : Military overwatch regarding counter paramilitary operations. ?]
-
-Military Influence [+ military_influence +]%
+[? if spd_in_government : Military Influence [+ military_influence +]% ?]
 
 = factions
 

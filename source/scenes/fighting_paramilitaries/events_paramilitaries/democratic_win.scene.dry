@@ -1,5 +1,5 @@
 title: Democratic victory
-view-if: bruning_plot == "successful" and weimar_strength > far_left_strength and weimar_strength > far_right_strength and violence_timer == 0
+view-if: bruning_plot == "successful" and weimar_strength > far_left_strength and weimar_strength > far_right_strength and violence_timer == 0 and spd_in_government
 max-visits: 1
 new-page: true
 tags: event

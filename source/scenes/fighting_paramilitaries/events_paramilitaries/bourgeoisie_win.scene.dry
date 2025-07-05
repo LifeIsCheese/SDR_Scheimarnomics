@@ -1,0 +1,11 @@
+title: Bourgeoisie victory
+view-if: bruning_plot == "successful" and weimar_strength > far_left_strength and weimar_strength > far_right_strength and violence_timer == 0 and spd_in_government != 1
+max-visits: 1
+new-page: true
+tags: event
+
+= Bourgeoisie victory
+
+With SPD toleration, the Bourgeois parties managed to stabilize the republic! At a cost, they heavily relied on the military and now act as mere puppets to the Reichswehr!
+
+- @game_over: uh oh.
