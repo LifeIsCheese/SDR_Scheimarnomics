@@ -479,135 +479,78 @@ Q.economic_goal = (Q.economic_base * Q.tax_reform) -
      (Q.upper_tax_rates / 3 / Q.inflation) +
      (Q.tariffs / 6 / Q.inflation)) + Q.inflation / 15;
 
-
-//dvp alignment
+// --- DVP Alignment Logic ---
 
 if (Q.violence_timer > 0) {
-    if (Q.right_dominance_timer >= 1) {Q.dvp_alignment -= 0.5}
-if (Q.weimar_dominance_timer >= 1) {Q.dvp_alignment += 0.5}
-if (Q.left_dominance_timer >= 1) {Q.dvp_alignment -= 1}
+    if (Q.right_dominance_timer >= 1) Q.dvp_alignment -= 0.5;
+    if (Q.weimar_dominance_timer >= 1) Q.dvp_alignment += 0.5;
+    if (Q.left_dominance_timer >= 1) Q.dvp_alignment -= 1;
 
-if (Q.dvp_alignment > Q.dvp_willing) {
-    Q.dvp_alignment = Q.dvp_willing;
+    // Cap at willing threshold
+    Q.dvp_alignment = Math.min(Q.dvp_alignment, Q.dvp_willing);
+
+    // Soft boundaries during low violence
+    if (Q.violence_level <= 33) {
+        if (Q.dvp_alignment >= 10) Q.dvp_alignment = 9;
+        if (Q.dvp_alignment <= 0) Q.dvp_alignment = 1;
+    }
 }
 
-if (Q.violence_level <= 33) {
-    if (Q.dvp_alignment >= 10) {
-    Q.dvp_alignment = 9;
-}
-
-if (Q.dvp_alignment <=0) {
-    Q.dvp_alignment = 1;
-}
-
-}
-
-// Make sure this is third last
-
-if (Q.dvp_in_government and Q.year >= 1928 and Q.month >= ) {
+// DVP alignment override if in government after 1928
+if (Q.dvp_in_government && Q.year >= 1928 && Q.month >= 1) {
     Q.dvp_alignment = 10;
     Q.dvp_willing = 10;
 }
 
+// Optional: Hard caps (you may remove these if not needed)
 if (Q.dvp_alignment >= 10) {
     Q.dvp_alignment = 100;
-     Q.dvp_willing = 100;
+    Q.dvp_willing = 100;
+}
+if (Q.dvp_alignment <= 0) {
+    Q.dvp_alignment = -100;
 }
 
-if (Q.dvp_alignment <=0) {
-    Q.dvp_alignment = -100; 
+// --- RB Strength & Militancy Calculation by Leader ---
+
+const rbLeaders = {
+    "otto horsing": {
+        strength: [175, 200, 325],
+        militancy: [0.25, 0.15, 0.075],
+    },
+    "karl holtermann": {
+        strength: [200, 225, 350],
+        militancy: [0.2, 0.1, 0.055],
+    },
+    "vacant": {
+        strength: [125, 150, 175],
+        militancy: [0.2, 0.1, 0.055],
+    },
+};
+
+if (Q.rb_leader in rbLeaders) {
+    const data = rbLeaders[Q.rb_leader];
+
+    // Strength assignment based on DVP alignment
+    if (Q.dvp_alignment <= 0.9) {
+        Q.rb_strength_add = data.strength[0] - (Q.coalition_dissent * 25);
+    } else if (Q.dvp_alignment < 9.9) {
+        Q.rb_strength_add = data.strength[1] - (Q.coalition_dissent * 25);
+    } else {
+        Q.rb_strength_add = data.strength[2] - (Q.coalition_dissent * 25);
+    }
+
+    // Militancy assignment based on military influence
+    if (Q.military_influence < 25) {
+        Q.rb_militancy_add = data.militancy[0] - (Q.coalition_dissent / 75);
+    } else if (Q.military_influence < 75) {
+        Q.rb_militancy_add = data.militancy[1] - (Q.coalition_dissent / 75);
+    } else {
+        Q.rb_militancy_add = data.militancy[2] - (Q.coalition_dissent / 75);
+    }
 }
 
-// rb_strength_recruiting
 
-if (Q.rb_leader == "otto horsing") {
-
-    if (Q.dvp_alignment <= 0.9 ) {
-    Q.rb_strength_add = 175 - (Q.coalition_dissent * 25);
-}
-
-if (Q.dvp_alignment > 0.9 && Q.dvp_alignment < 9.9 ) {
-    Q.rb_strength_add = 200 - (Q.coalition_dissent * 25);
-}
-
-if (Q.dvp_alignment >= 9.9 ) {
-    Q.rb_strength_add = 325 - (Q.coalition_dissent * 25);
-}
-
-// rb_militancy_add stuff
-
-if (Q.military_influence < 25 ) {
-    Q.rb_militancy_add = 0.25 - (Q.coalition_dissent / 75);
-}
-
-if (Q.military_influence >= 25 && Q.dvp_alignment < 75 ) {
-    Q.rb_militancy_add = 0.15 - (Q.coalition_dissent / 75);
-}
-
-if (Q.military_influence >= 75 ) {
-    Q.rb_militancy_add = 0.075 - (Q.coalition_dissent / 75);
-}
-}
-
-// karl
-
-if (Q.rb_leader == "karl holtermann") {
-    if (Q.dvp_alignment <= 0.9 ) {
-    Q.rb_strength_add = 200 - (Q.coalition_dissent * 25);
-}
-
-if (Q.dvp_alignment > 0.9 && Q.dvp_alignment < 9.9 ) {
-    Q.rb_strength_add = 225 - (Q.coalition_dissent * 25);
-}
-
-if (Q.dvp_alignment >= 9.9 ) {
-    Q.rb_strength_add = 350 - (Q.coalition_dissent * 25);
-}
-
-// rb_militancy_add stuff
-
-if (Q.military_influence < 25 ) {
-    Q.rb_militancy_add = 0.2 - (Q.coalition_dissent / 75);
-}
-
-if (Q.military_influence >= 25 && Q.dvp_alignment < 75 ) {
-    Q.rb_militancy_add = 0.1 - (Q.coalition_dissent / 75);
-}
-
-if (Q.military_influence >= 75 ) {
-    Q.rb_militancy_add = 0.055 - (Q.coalition_dissent / 75);
-}
-}
-
-if (Q.rb_leader == "vacant") {
-    if (Q.dvp_alignment <= 0.9 ) {
-    Q.rb_strength_add = 125 - (Q.coalition_dissent * 25);
-}
-
-if (Q.dvp_alignment > 0.9 && Q.dvp_alignment < 9.9 ) {
-    Q.rb_strength_add = 150 - (Q.coalition_dissent * 25);
-}
-
-if (Q.dvp_alignment >= 9.9 ) {
-    Q.rb_strength_add = 175 - (Q.coalition_dissent * 25);
-}
-
-// rb_militancy_add stuff
-
-if (Q.military_influence < 25 ) {
-    Q.rb_militancy_add = 0.2 - (Q.coalition_dissent / 75);
-}
-
-if (Q.military_influence >= 25 && Q.dvp_alignment < 75 ) {
-    Q.rb_militancy_add = 0.1 - (Q.coalition_dissent / 75);
-}
-
-if (Q.military_influence >= 75 ) {
-    Q.rb_militancy_add = 0.055 - (Q.coalition_dissent / 75);
-}
-}
-
-}
 // Violence var
 const violenceMultiplier = Math.round((1 + (Q.violence_level / 100) ) * 100) / 100;
 
