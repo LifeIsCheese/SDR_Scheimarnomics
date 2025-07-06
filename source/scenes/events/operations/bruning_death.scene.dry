@@ -4,7 +4,7 @@ new-page: true
 max-visits: 1
 tags: event
 go-to: set_next_election_time if spd_in_government != 1
-on-arrival: judicial_reform = 2; z_relation +=20; ddp_relation +=15; dvp_relation +=15; workers_dnvp -=15; workers_ddp +=4; workers_dvp +=1; workers_z += 4; workers_spd += 6; z_party_leader = "Joos"; chancellor = "Wirth" if chancellor_party == "Z"; plot_target = "None"; plot_strength = 0; violence_timer = 24; time_to_election = 3 if spd_in_government != 1; workers_nsdap -= 15; workers_spd +=10; workers_ddp +=2; workers_z +=3; kpd_relation = 0; judicial_reform += 6; rfb_banned = 1; rfb_banned_prussia = 0; sa_banned = 1; sh_banned = 1; {!
+on-arrival: judicial_reform = 2; z_relation +=20; ddp_relation +=15; dvp_relation +=15; workers_dnvp -=15; workers_ddp +=4; workers_dvp +=1; workers_z += 4; workers_spd += 6; z_party_leader = "Joos"; chancellor = "Wirth" if chancellor_party == "Z"; plot_target = "None"; plot_strength = 0; violence_timer = 24; time_to_election = 3 if spd_in_government != 1; workers_nsdap -= 15; workers_spd +=10; workers_ddp +=2; workers_z +=3; kpd_relation = 0; judicial_reform += 6; rfb_banned = 1; rfb_banned_prussia = 1; sa_banned = 1; sh_banned = 1; dvp_in_government = 0; spd_in_government = 0; {!
     side_bar = document.getElementById("stats_sidebar_right");
     side_bar.style.display = "block";
     

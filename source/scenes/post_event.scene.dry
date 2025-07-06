@@ -482,7 +482,8 @@ Q.economic_goal = (Q.economic_base * Q.tax_reform) -
 
 //dvp alignment
 
-if (Q.right_dominance_timer >= 1) {Q.dvp_alignment -= 0.5}
+if (Q.violence_timer > 0) {
+    if (Q.right_dominance_timer >= 1) {Q.dvp_alignment -= 0.5}
 if (Q.weimar_dominance_timer >= 1) {Q.dvp_alignment += 0.5}
 if (Q.left_dominance_timer >= 1) {Q.dvp_alignment -= 1}
 
@@ -503,7 +504,7 @@ if (Q.dvp_alignment <=0) {
 
 // Make sure this is third last
 
-if (Q.dvp_in_government) {
+if (Q.dvp_in_government and Q.year >= 1928 and Q.month >= ) {
     Q.dvp_alignment = 10;
     Q.dvp_willing = 10;
 }
@@ -515,6 +516,7 @@ if (Q.dvp_alignment >= 10) {
 
 if (Q.dvp_alignment <=0) {
     Q.dvp_alignment = -100; 
+}
 }
 
 // rb_strength_recruiting
