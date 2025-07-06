@@ -517,7 +517,6 @@ if (Q.dvp_alignment >= 10) {
 if (Q.dvp_alignment <=0) {
     Q.dvp_alignment = -100; 
 }
-}
 
 // rb_strength_recruiting
 
@@ -608,6 +607,7 @@ if (Q.military_influence >= 75 ) {
 }
 }
 
+}
 // Violence var
 const violenceMultiplier = Math.round((1 + (Q.violence_level / 100) ) * 100) / 100;
 
