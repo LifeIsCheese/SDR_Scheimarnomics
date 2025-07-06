@@ -1,6 +1,6 @@
 title: The Bourgeois have given concessions.
 view-if: weimar_strength < far_right_strength and concessions_timer == 0 and spd_bd_position == "support_government"
-on-arrival: reichswehr_loyalty += 0.4; concessions_timer = 4
+on-arrival: reichswehr_loyalty += 0.4; concessions_timer = 4; reichswehr_strength += 200
 max-visits: 1
 new-page: true
 tags: event

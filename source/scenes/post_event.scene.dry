@@ -482,9 +482,32 @@ Q.economic_goal = (Q.economic_base * Q.tax_reform) -
 
 //dvp alignment
 
+if (Q.dvp_alignment >= 10) {
+    Q.dvp_alignment = 100;
+}
+
+if (Q.dvp_alignment <=0) {
+    Q.dvp_alignment = -100;
+}
+
+if (Q.dvp_in_government) {
+    Q.dvp_alignment = 10;
+}
+
 if (Q.right_dominance_timer >= 1) {Q.dvp_alignment -= 0.5}
 if (Q.weimar_dominance_timer >= 1) {Q.dvp_alignment += 0.5}
 if (Q.left_dominance_timer >= 1) {Q.dvp_alignment -= 1}
+
+if (Q.violence_level <= 33) {
+    if (Q.dvp_alignment >= 10) {
+    Q.dvp_alignment = 9;
+}
+
+if (Q.dvp_alignment <=0) {
+    Q.dvp_alignment = 1;
+}
+
+}
 
 // rb_strength_recruiting
 
@@ -581,11 +604,25 @@ const violenceMultiplier = Math.round((1 + (Q.violence_level / 100) ) * 100) / 1
 // Far right ramp up
 if (Q.violence_timer > 0) {
     if (Q.rohm_plot !== "successful") {
-        Q.sa_strength += (Q.violence_timer * 3) * violenceMultiplier;
+        if (Q.dvp_alignment <= 0) {
+            Q.sa_strength += (Q.violence_timer * 3.5) * violenceMultiplier;
+        Q.sh_strength += (Q.violence_timer * 3.2) * violenceMultiplier;
+        } 
+        
+        else {
+            Q.sa_strength += (Q.violence_timer * 3) * violenceMultiplier;
         Q.sh_strength += (Q.violence_timer * 2.9) * violenceMultiplier;
+        }
     } else {
-        (Q.sa_strength += Q.violence_timer * 2) * violenceMultiplier;
-        (Q.sh_strength += Q.violence_timer * 2.1) * violenceMultiplier;
+                if (Q.dvp_alignment <= 0) {
+           Q.sa_strength += (Q.violence_timer * 3) * violenceMultiplier;
+        Q.sh_strength += (Q.violence_timer * 2.9) * violenceMultiplier;
+        } 
+        
+        else {
+            Q.sa_strength += (Q.violence_timer * 2) * violenceMultiplier;
+        Q.sh_strength += (Q.violence_timer * 2.1) * violenceMultiplier;
+        }
     }
 }
 

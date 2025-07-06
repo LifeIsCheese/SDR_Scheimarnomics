@@ -1,5 +1,5 @@
 title: DVP's request
-view-if: dvp_relation < 30 and violence_timer > 0 and right_dominance_timer > 2 and dvp_in_government and rb_leader != "karl holtermann"
+view-if: dvp_relation < 30 and violence_timer > 0 and right_dominance_timer > 2 and (dvp_in_government or dvp_alignment >= 10) and rb_leader != "karl holtermann" and spd_bd_position != "support_kpd"
 new-page: true
 max-visits: 1
 tags: event
