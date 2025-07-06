@@ -479,15 +479,13 @@ Q.economic_goal = (Q.economic_base * Q.tax_reform) -
      (Q.upper_tax_rates / 3 / Q.inflation) +
      (Q.tariffs / 6 / Q.inflation)) + Q.inflation / 15;
 
-// --- DVP Alignment Logic ---
-
 if (Q.violence_timer > 0) {
     if (Q.right_dominance_timer >= 1) Q.dvp_alignment -= 0.5;
     if (Q.weimar_dominance_timer >= 1) Q.dvp_alignment += 0.5;
     if (Q.left_dominance_timer >= 1) Q.dvp_alignment -= 1;
 
     // Cap at willing threshold
-    Q.dvp_alignment = Math.min(Q.dvp_alignment, Q.dvp_willing_alignment_alignment);
+    Q.dvp_alignment = Math.min(Q.dvp_alignment, Q.dvp_willing_alignment ?? 10);
 
     // Soft boundaries during low violence
     if (Q.violence_level <= 33) {
@@ -502,13 +500,10 @@ if (Q.dvp_in_government && Q.year >= 1928 && Q.month >= 1) {
     Q.dvp_willing_alignment = 10;
 }
 
-// Optional: Hard caps (you may remove these if not needed)
-if (Q.dvp_alignment >= 10) {
+// Optional permanent commitment trigger
+if (Q.dvp_alignment >= 10 && Q.dvp_commits_right) {
     Q.dvp_alignment = 100;
     Q.dvp_willing_alignment = 100;
-}
-if (Q.dvp_alignment <= 0) {
-    Q.dvp_alignment = -100;
 }
 
 // --- RB Strength & Militancy Calculation by Leader ---

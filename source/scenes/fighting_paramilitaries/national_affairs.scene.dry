@@ -87,7 +87,7 @@ view-if: dvp_alignment < 10 or dvp_in_government != 1
 
 The DVP has declared it's neutrality, [? if violence_level < 33 : as of now it will stay that way as violence isn't widespread enough to concern them, but we can still build friendly relations with them. ?] [? if violence_level >= 33 : but with violence being widespread, they cannot stay neutral for long. ?]
 
-[? if dvp_alignment == dvp_willing : We need to talk to them more about the specifics of them supporting us. Otherwise, they cannot be convinced of supporting us yet. ?]
+[? if dvp_alignment == dvp_willing_alignment : We need to talk to them more about the specifics of them supporting us. Otherwise, they cannot be convinced of supporting us yet. ?]
 
 
 - @talks: Engage in talks with the DVP, negotiating continued support.
@@ -96,13 +96,13 @@ The DVP has declared it's neutrality, [? if violence_level < 33 : as of now it w
 - @easy_discard
 
 @talks
-on-arrival: dvp_willing += 2
+on-arrival: dvp_willing_alignment += 2
 
 We continue on our talks with the DVP, they seem more willing to support us now.
 
 @left_wing
-subtitle: -1 resource [? if dvp_alignment == dvp_willing : Even if we did strengthen their leftwing, we need to negotiate more for them even consider supporting us. ?]
-choose-if: dvp_alignment != dvp_willing and resources > 0
+subtitle: -1 resource [? if dvp_alignment == dvp_willing_alignment : Even if we did strengthen their leftwing, we need to negotiate more for them even consider supporting us. ?]
+choose-if: dvp_alignment != dvp_willing_alignment and resources > 0
 on-arrival: dvp_alignment += 1; month_actions +=1; paramilitaries_timer = 2; resources -= 1
 
 Using contacts in the DVP's left wing, we have supported their faction through our own party resources.
