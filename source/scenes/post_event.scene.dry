@@ -494,16 +494,18 @@ if (Q.violence_timer > 0) {
     }
 }
 
-// DVP alignment override if in government after 1928
-if (Q.dvp_in_government && Q.year >= 1928 && Q.month >= 1) {
+if (Q.dvp_in_government && Q.violence_timer == 20) {
     Q.dvp_alignment = 10;
     Q.dvp_willing_alignment = 10;
 }
 
-// Optional permanent commitment trigger
-if (Q.dvp_alignment >= 10 && Q.dvp_commits_right) {
+if (Q.dvp_alignment >= 10) {
     Q.dvp_alignment = 100;
     Q.dvp_willing_alignment = 100;
+}
+
+if (Q.dvp_alignment <= 0) {
+    Q.dvp_alignment = -100;
 }
 
 // --- RB Strength & Militancy Calculation by Leader ---
