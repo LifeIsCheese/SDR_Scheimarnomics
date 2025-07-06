@@ -1,4 +1,4 @@
-title: The Army
+title: National affairs
 view-if: bruning_plot == "successful" and paramilitaries_timer == 0 and spd_in_government
 frequency: 100
 new-page: true
@@ -10,7 +10,14 @@ Q.military_support_republic = ((Q.loyal_army * Q.military_available) / Q.army_fo
 !}
 tags: fighting_paramilitaries
 
-= The Army
+= National affairs
+
+We cannot whether this storm alone, we need to cooperate lest we fall.
+
+- @military_menu: The Military
+- @dvp_menu: The DVP
+
+@military_menu
 
 Military supporting the right : [+ military_supporting_right +]%
 
@@ -74,3 +81,29 @@ subtitle: If the devil want's to dance with you, you better say never.
 Because the dance with the devil might last forever.
 
 - @game_over: It is done.
+
+@dvp_menu
+view-if: dvp_alignment < 10 or dvp_in_government != 1
+
+The DVP has declared it's neutrality, [? if violence_level < 33 : as of now it will stay that way as violence isn't widespread enough to concern them, but we can still build friendly relations with them. ?] [? if violence_level >= 33 : but with violence being widespread, they cannot stay neutral for long. ?]
+
+[? if dvp_alignment == dvp_willing : We need to talk to them more about the specifics of them supporting us. Otherwise, they cannot be convinced of supporting us yet. ?]
+
+
+- @talks: Engage in talks with the DVP, negotiating continued support.
+- @left_wing: Strengthen the left wing of the DVP, making them more willing to support us.
+- @root: Perhaps another time
+- @easy_discard
+
+@talks
+on-arrival: dvp_willing += 2
+
+We continue on our talks with the DVP, they seem more willing to support us now.
+
+@left_wing
+subtitle: -1 resource [? if dvp_alignment == dvp_willing : Even if we did strengthen their leftwing, we need to negotiate more for them even consider supporting us. ?]
+choose-if: dvp_alignment != dvp_willing and resources > 0
+on-arrival: dvp_alignment += 1; month_actions +=1; paramilitaries_timer = 2; resources -= 1
+
+Using contacts in the DVP's left wing, we have supported their faction through our own party resources.
+

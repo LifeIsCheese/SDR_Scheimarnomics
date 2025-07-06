@@ -482,21 +482,13 @@ Q.economic_goal = (Q.economic_base * Q.tax_reform) -
 
 //dvp alignment
 
-if (Q.dvp_alignment >= 10) {
-    Q.dvp_alignment = 100;
-}
-
-if (Q.dvp_alignment <=0) {
-    Q.dvp_alignment = -100;
-}
-
-if (Q.dvp_in_government) {
-    Q.dvp_alignment = 10;
-}
-
 if (Q.right_dominance_timer >= 1) {Q.dvp_alignment -= 0.5}
 if (Q.weimar_dominance_timer >= 1) {Q.dvp_alignment += 0.5}
 if (Q.left_dominance_timer >= 1) {Q.dvp_alignment -= 1}
+
+if (Q.dvp_alignment > Q.dvp_willing) {
+    Q.dvp_alignment = Q.dvp_willing;
+}
 
 if (Q.violence_level <= 33) {
     if (Q.dvp_alignment >= 10) {
@@ -507,6 +499,22 @@ if (Q.dvp_alignment <=0) {
     Q.dvp_alignment = 1;
 }
 
+}
+
+// Make sure this is third last
+
+if (Q.dvp_in_government) {
+    Q.dvp_alignment = 10;
+    Q.dvp_willing = 10;
+}
+
+if (Q.dvp_alignment >= 10) {
+    Q.dvp_alignment = 100;
+     Q.dvp_willing = 100;
+}
+
+if (Q.dvp_alignment <=0) {
+    Q.dvp_alignment = -100; 
 }
 
 // rb_strength_recruiting

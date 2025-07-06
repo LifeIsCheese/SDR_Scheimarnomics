@@ -22,6 +22,8 @@ Undecided:
 
 [? if dvp_alignment < 10 and dvp_alignment > 0 : <span style="color:rgb(187, 185, 52);">**DVP**</span> : [+ dvp_alignment : alignment +] ?]
 
+[? if dvp_alignment < 10 and dvp_alignment > 0 : [? if dvp_alignment == dvp_willing : We need to talk to them more about the specifics of them supporting us. Otherwise, they cannot be convinced of supporting us yet. ?] ?]
+
 <span style="color:rgb(107, 107, 107);">**Others**</span>
 
 The Far Left:
