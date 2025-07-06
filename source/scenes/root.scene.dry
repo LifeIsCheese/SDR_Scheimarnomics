@@ -357,7 +357,7 @@ Q.rb_militancy_add = 0.1;
 
 //higher alignment = wllinginess to wrok with spd
 Q.dvp_alignment = 5;
-Q.dvp_willing = 5;
+Q.dvp_willing_alignment = 5;
 
 // ID's: 0 = nothing 1 = RFB militarization 2 = SA militarization 3 = SH militarization 4 = Berlin terrorism
 Q.violence_events = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 3, 0, 0];
