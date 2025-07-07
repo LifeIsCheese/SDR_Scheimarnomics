@@ -2,7 +2,7 @@ title: Operation Lavender
 view-if: rohm_plot == "successful"
 new-page: true
 max-visits: 1
-on-arrival: plot_target = "None"; plot_strength = 0; sa_strength *= 0.7
+on-arrival: plot_target = "None"; plot_strength = 0; sa_strength *= 0.7; violence_add_on +=2
 tags: event
 
 = Operation Lavender

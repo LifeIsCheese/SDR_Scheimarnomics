@@ -488,6 +488,8 @@ Q.economic_goal = (Q.economic_base * Q.tax_reform) -
      (Q.upper_tax_rates / 3 / Q.inflation) +
      (Q.tariffs / 6 / Q.inflation)) + Q.inflation / 15;
 
+//dvp stuff
+
 if (Q.violence_timer > 0) {
     if (Q.right_dominance_timer >= 1) Q.dvp_alignment -= 0.5;
     if (Q.weimar_dominance_timer >= 1) Q.dvp_alignment += 0.5;

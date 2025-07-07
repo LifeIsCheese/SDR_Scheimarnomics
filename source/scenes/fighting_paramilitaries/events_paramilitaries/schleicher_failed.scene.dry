@@ -2,7 +2,7 @@ title: Operation Red Dead
 view-if: schleicher_plot == "failed"
 new-page: true
 max-visits: 1
-on-arrival: plot_target = "None"; plot_strength = 0; z_relation -= 3; ddp_relation -=3; dvp_relation -=3; military_weariness += 25; violence_add_on += 2
+on-arrival: plot_target = "None"; plot_strength = 0; z_relation -= 3; ddp_relation -=3; dvp_relation -=3; military_weariness += 25; violence_add_on += 8
 tags: event
 
 = Oh well

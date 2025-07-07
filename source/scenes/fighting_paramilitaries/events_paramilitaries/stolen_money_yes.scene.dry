@@ -5,9 +5,9 @@ max-visits: 1
 on-arrival: plot_target = "None"; plot_strength = 0; budget += stealing_amount
 tags: event
 
-= operation steal a lot of money
+= We have stolen a lot of money!
 
-Hell yeah!
+<p style="text-align: center;"> Director [+ director_s +] has created a mastermind of a plan, think about it. In what time do most robberies occur, at night. Now that would mean that they are expecting it, so to subvert their expectation, they would never expect if we did it in broad daylight! Carl Severing was here personally to serve as a mentor for [+ director_s +] and with his senior expertise we were able to pull of the heist of the century! </p>
 
 <div class = "face-status-container">
     <img class="event-img" src="img/RB_money.jpg">

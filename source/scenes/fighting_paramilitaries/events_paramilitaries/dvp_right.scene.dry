@@ -1,12 +1,12 @@
 title: The DVP has joined the Right
-view-if: dvp_alignment <= 0 and violence_level >= 33
+view-if: dvp_alignment <= 0 and violence_level >= 33 and dvp_in_government != 1
 new-page: true
 max-visits: 1
 tags: event
 
 = The DVP has broken it's neutrality!
 
-With violence has engulfing 33% of the country, the industrialists worry over their assets as already the RFB have begun to enact factory takeovers. After numerous talks with the right, they have come to an agreement. In exchange for monetary support, the far right promise to provide protection against the RFB.
+With violence engulfing 33% of the country, the industrialists worry over their assets as already the RFB have begun to enact factory takeovers. After numerous talks with the right, they have come to an agreement. In exchange for monetary support, the far right promise to provide protection against the RFB.
 
 - @title: This will not bode well for us
 

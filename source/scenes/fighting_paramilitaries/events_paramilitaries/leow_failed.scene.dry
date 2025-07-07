@@ -2,7 +2,7 @@ title: Operation Kill Willy
 view-if: leow_plot == "failed"
 new-page: true
 max-visits: 1
-on-arrival: plot_target = "None"; plot_strength = 0; z_relation -= 3; ddp_relation -=3; dvp_relation -=3; rfb_militancy += 0.5; violence_add_on +=2
+on-arrival: plot_target = "None"; plot_strength = 0; z_relation -= 3; ddp_relation -=3; dvp_relation -=3; rfb_militancy += 0.5; violence_add_on +=4
 tags: event
 
 = Oh well

@@ -2,7 +2,7 @@ title: Operation Kill Willy
 view-if: leow_plot == "successful"
 new-page: true
 max-visits: 1
-on-arrival: plot_target = "None"; plot_strength = 0; rfb_strength *= 0.8; violence_add_on +=1
+on-arrival: plot_target = "None"; plot_strength = 0; rfb_strength *= 0.8; violence_add_on +=2
 tags: event
 
 = Operation Lavender
