@@ -318,6 +318,15 @@ if (Q.month_actions >= 1) {
     if (Q.inflation >= 3) {
         Q.economic_health -= (Q.inflation-3);
     }
+
+
+    //updating in government stuff, for some reason game only cares about spd. atleast my old version.
+if (Q.grand_coalition || Q.new_grand_coalition) {
+    Q.dvp_in_government = 1;
+} else {
+    Q.dvp_in_government = 0;
+}
+
 // Interest Rates, affecting baseline inflation and economic growth
 switch (Q.interest_rates) {
     case 2:
@@ -494,7 +503,7 @@ if (Q.violence_timer > 0) {
     }
 }
 
-if (Q.dvp_in_government && Q.violence_timer == 20) {
+if (Q.dvp_in_government && Q.violence_timer <= 20) {
     Q.dvp_alignment = 10;
     Q.dvp_willing_alignment = 10;
 }
