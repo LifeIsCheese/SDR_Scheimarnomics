@@ -2,9 +2,9 @@ title: Operation Kill Willy
 view-if: leow_plot == "successful"
 new-page: true
 max-visits: 1
-on-arrival: plot_target = "None"; plot_strength = 0; rfb_strength *= 0.8
+on-arrival: plot_target = "None"; plot_strength = 0; rfb_strength *= 0.8; violence_add_on +=1
 tags: event
 
 = Operation Lavender
 
-We did it guys!
+Willy Leow, Second Chairman of the RFB, has been found dead in his home. No trace of the culpricts could be found, except for eyewitness reports of men in black coats which the RFB immediately interpreted as the SS.  
