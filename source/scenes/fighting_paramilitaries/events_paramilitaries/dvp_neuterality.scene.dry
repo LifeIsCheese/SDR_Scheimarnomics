@@ -6,16 +6,21 @@ tags: event
 
 = Declaration of neutrality
 
-<div style="display: flex; padding: 10px; gap: 10px; align-items: flex-start flex-wrap: wrap;">
+<div style="display: flex; padding: 10px; gap: 10px; align-items: flex-start; flex-wrap: wrap;">
 
-  <img src="img/d_rose.jpg" style="flex-shrink: 0">
+  <img src="img/d_rose.jpg" style="flex-shrink: 0;">
 
   <div style="flex: 1; min-width: 0;">
     <p style="margin: 0;">
-      Despite the democratic majority of the Reichstag agreeing with Braun and Joos measures, in practice the right-leaning parties are only paying lip service to the fact. With DVP itself declaring neutrality. 
-
-      They state that they will watch as the situation unfolds, and if needed will support a side. Which side they will support will be up to them, but as the right seems to have the upper hand, we can only hope that their left wing can influence them enough into supporting them.
+      Despite the democratic majority of the Reichstag agreeing with Braun and Joos measures, in practice the right-leaning parties are only paying lip service to the fact. With DVP itself declaring neutrality.
     </p>
   </div>
 
+</div>
+
 - @title: Now we wait
+
+@title
+
+They state that they will watch as the situation unfolds, and if needed will support a side. Which side they will support will be up to them, but as the right seems to have the upper hand, we can only hope that their left wing can influence them enough into supporting them.
+
