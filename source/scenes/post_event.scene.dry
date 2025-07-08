@@ -321,7 +321,7 @@ if (Q.month_actions >= 1) {
 
 
     //updating in government stuff, for some reason game only cares about spd. atleast my old version.
-if (Q.grand_coalition || Q.new_grand_coalition) {
+if (Q.in_grand_coalition || Q.in_bourgeois_coalition) {
     Q.dvp_in_government = 1;
 } else {
     Q.dvp_in_government = 0;

@@ -304,7 +304,7 @@ Focus: [? if director_type == 1 or director_type == 3 : Operations ?] [? if dire
 
 = Effects
 
-[? if plot_target == "hjalmar" : Reichsbank can be influenced. RFB banned. Z max relations (secret oooh). ?]
+[? if plot_target == "hjalmar" : Reichsbank can be influenced. RFB banned. <span style="color:var(--Z-color);">**Z**</span> max relations (secret oooh). ?]
 [? if plot_target == "bruning" : The Streets will burn, will the republic stand? ?]
 [? if plot_target == "rohm" : Hampered SA. ?]
 [? if plot_target == "leow" : Hampered RFB, and reduced influence. ?]

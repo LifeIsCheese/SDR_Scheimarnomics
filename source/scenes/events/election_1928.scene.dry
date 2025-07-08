@@ -113,7 +113,7 @@ Q.popular_front_coalition = Q.spd_r + Q.kpd_r + Q.z_r + Q.ddp_r - 3;
 Q.anti_democratic_coalition = Q.kpd_r + Q.nsdap_r + Q.dnvp_r;
 // aka everyone except nazi, kpd, dnvp
 Q.neo_weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
-// Hitler + Right-wing parties (only comes into effect if you've alienated Z too badly)
+// Hitler + Right-wing parties (only comes into effect if you've alienated <span style="color:var(--Z-color);">**Z**</span> too badly)
 Q.hitler_right_coalition = Q.z_r + Q.dnvp_r + Q.nsdap_r;
 // Progressive coalition isn't going to be implemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
 Q.progressive_coalition = Q.spd_r + Q.sapd_r + Q.kpd_r + Q.ddp_r;
@@ -395,14 +395,14 @@ There are some potential coalition arrangements.
 title: A "National Front" coalition
 view-if: national_front
 choose-if: national_front_r >= 50
-subtitle: [? if z_national : Z + ?]BVP + DVP + Others + DNVP + NSDAP ([+ national_front_r +])
-unavailable_subtitle: [? if z_national : Z + ?]BVP + DVP + Others + DNVP + NSDAP ([+ national_front_r +]) - The National Front lacks a majority.
+subtitle: [? if z_national : <span style="color:var(--Z-color);">**Z**</span>+ ?]BVP + DVP + Others + DNVP + NSDAP ([+ national_front_r +])
+unavailable_subtitle: [? if z_national : <span style="color:var(--Z-color);">**Z**</span>+ ?]BVP + DVP + Others + DNVP + NSDAP ([+ national_front_r +]) - The National Front lacks a majority.
 on-arrival: started = 0
 go-to: root
 
 @bourgeois_coalition
 title: A "Bourgeois" Coalition
-subtitle: Z + BVP + [+ ddp_name +] + DVP + Others ([+ bourgeois_coalition +]%)
+subtitle: <span style="color:var(--Z-color);">**Z**</span>+ BVP + [+ ddp_name +] + DVP + Others ([+ bourgeois_coalition +]%)
 view-if: bourgeois_coalition >= 50 and (weimar_coalition < 50 or z_willing != 1) and not dvp_banned
 
 The constitutional bourgeois parties have enough votes to form a coalition on their own, without even needing toleration from us. It is likely that such a government will be formed unless we act to prevent it.
@@ -413,8 +413,8 @@ The constitutional bourgeois parties have enough votes to form a coalition on th
 - @let_it_form_bd: Let it form.
 
 @plead_grand
-subtitle: SPD + Z + [+ bvp_name +] + [+ ddp_name +] + DVP  ([+ grand_coalition +]%)
-unavailable-subtitle: SPD + Z + [+ bvp_name +] + [+ ddp_name +] + DVP  ([+ grand_coalition +]%) - The DVP is unwilling to enter such a government[? if z_relation < 30 :, as is the Center party?].
+subtitle: SPD + <span style="color:var(--Z-color);">**Z**</span>+ [+ bvp_name +] + [+ ddp_name +] + DVP  ([+ grand_coalition +]%)
+unavailable-subtitle: SPD + <span style="color:var(--Z-color);">**Z**</span>+ [+ bvp_name +] + [+ ddp_name +] + DVP  ([+ grand_coalition +]%) - The DVP is unwilling to enter such a government[? if z_relation < 30 :, as is the Center party?].
 view-if: not grand_coalition_failed and grand_coalition >= 50 and bruning_plot != "successful"
 choose-if: dvp_relation >= 30 and z_relation >= 30
 go-to: grand_coalition
@@ -422,8 +422,8 @@ go-to: grand_coalition
 We have managed to convince Zentrum to instead support another Grand Coalition!
 
 @plead_grand_bd
-subtitle: SPD + Z + [+ bvp_name +] + [+ ddp_name +] + DVP  ([+ grand_coalition +]%)
-unavailable-subtitle: SPD + Z + [+ bvp_name +] + [+ ddp_name +] + DVP  ([+ grand_coalition +]%) - The DVP is unwilling to enter such a government[? if z_relation < 30 :, as is the Center party?].
+subtitle: SPD + <span style="color:var(--Z-color);">**Z**</span>+ [+ bvp_name +] + [+ ddp_name +] + DVP  ([+ grand_coalition +]%)
+unavailable-subtitle: SPD + <span style="color:var(--Z-color);">**Z**</span>+ [+ bvp_name +] + [+ ddp_name +] + DVP  ([+ grand_coalition +]%) - The DVP is unwilling to enter such a government[? if z_relation < 30 :, as is the Center party?].
 view-if: not grand_coalition_failed and grand_coalition >= 50 and bruning_plot == "successful"
 choose-if: dvp_relation >= 20 and z_relation >= 20
 go-to: grand_coalition_bd
@@ -446,8 +446,8 @@ The Bourgeois Coalition is formed, with Brüning as its chancellor. We will have
 
 @popular_front_coalition
 title: A new "Popular Front" coalition?
-subtitle: SPD + KPD + Z + [+ ddp_name +] ([+ popular_front_coalition +]%)
-unavailable-subtitle: SPD + KPD + Z + [+ ddp_name +] ([+ popular_front_coalition +]%) - [? if kpd_relation < 50: We do not have good enough relations with the KPD. ?][? if z_relation < 50: We do not have good enough relations with the Center Party. ?][? if communist_coalition < 3 : The Communists are unwilling to compromise at all. ?][? if president == "Hitler" : Hitler refuses to appoint a chancellor under such a governing arrangement. ?][? if president == "Hindenburg" and coup_progress >= 8 and popular_front < 55 and historical_mode : Hindenburg is unwilling to appoint this government. ?]
+subtitle: SPD + KPD + <span style="color:var(--Z-color);">**Z**</span>+ [+ ddp_name +] ([+ popular_front_coalition +]%)
+unavailable-subtitle: SPD + KPD + <span style="color:var(--Z-color);">**Z**</span>+ [+ ddp_name +] ([+ popular_front_coalition +]%) - [? if kpd_relation < 50: We do not have good enough relations with the KPD. ?][? if z_relation < 50: We do not have good enough relations with the Center Party. ?][? if communist_coalition < 3 : The Communists are unwilling to compromise at all. ?][? if president == "Hitler" : Hitler refuses to appoint a chancellor under such a governing arrangement. ?][? if president == "Hindenburg" and coup_progress >= 8 and popular_front < 55 and historical_mode : Hindenburg is unwilling to appoint this government. ?]
 view-if: popular_front_coalition >= 50 or (sapd_formed == 1 and (popular_front_coalition + sapd_r) >= 50)
 choose-if: ((((kpd_relation >= 65 and kpd_party_leader == "Thälmann") or (kpd_relation >= 45 and kpd_party_leader == "Conciliators")) and ((z_relation >= 45 and z_party_leader == "Joos") or (z_relation >= 65 and z_party_leader != "Joos" and kpd_party_leader != "Conciliators") or (z_relation >= 55 and z_party_leader != "Joos" and kpd_party_leader == "Conciliators")) and ddp_relation >= 50 and communist_coalition >= 3) or (z_party_leader == "Joos" and kpd_party_leader == "Conciliators" and z_relation >= 30 and kpd_relation >= 30)) and president != "Hitler" and (president != "Hindenburg" or coup_progress < 8 or popular_front >= 55 or not historical_mode)
 
@@ -865,7 +865,7 @@ The Communists quickly rebuild Germany in the Soviet image, bringing it into the
 
 @right_coalition
 title: A right-wing coalition may be formed.
-subtitle: Z + [+ bvp_name +] + DVP + DNVP + Others ([+ right_coalition +]%)
+subtitle: <span style="color:var(--Z-color);">**Z**</span>+ [+ bvp_name +] + DVP + DNVP + Others ([+ right_coalition +]%)
 unavailable-subtitle: The DNVP is not interested in a coalition with the Center.
 view-if: right_coalition >= 50
 choose-if: year < 1928 or dnvp_reform
@@ -1167,10 +1167,10 @@ The third option is to have new elections.
 
 @new_grand_coalition
 title: A "New Grand Coalition" of all the constitutional parties?
-subtitle: SPD + Z + [+ bvp_name +] + [+ ddp_name +] + DVP + Others ([+ neo_weimar_coalition +]%)
+subtitle: SPD + <span style="color:var(--Z-color);">**Z**</span>+ [+ bvp_name +] + [+ ddp_name +] + DVP + Others ([+ neo_weimar_coalition +]%)
 view-if: neo_weimar_coalition >= 50 and grand_coalition < 50
 choose-if: z_relation >= 50 and dvp_relation >= 30 and president != "Hitler"
-unavailable-subtitle: SPD + Z + [+ bvp_name +] + [+ ddp_name +] + DVP + Others ([+ neo_weimar_coalition +]%) - [? if z_relation < 50 : We do not have adequate relations with the Center Party. ?][? if dvp_relation < 30 : We do not have adequate relations with the DVP. ?][? if president == "Hitler" : Hitler refuses to appoint a chancellor under such a governing arrangement. ?]
+unavailable-subtitle: SPD + <span style="color:var(--Z-color);">**Z**</span>+ [+ bvp_name +] + [+ ddp_name +] + DVP + Others ([+ neo_weimar_coalition +]%) - [? if z_relation < 50 : We do not have adequate relations with the Center Party. ?][? if dvp_relation < 30 : We do not have adequate relations with the DVP. ?][? if president == "Hitler" : Hitler refuses to appoint a chancellor under such a governing arrangement. ?]
 
 How do we convince vehemently anti-socialist parties to allow us to form a majority coalition? Our largely benevolent relations with the Center and DVP may allow us some leverage.
 
@@ -1208,8 +1208,8 @@ We have assembled a new coalition under Otto Braun.
 
 @unity_government
 title: The Center Party offers a "Government of National Unity" under Chancellor Joseph Wirth.
-subtitle: SPD + Z + [+ bvp_name +] + [+ ddp_name +] + DVP + Others ([+ neo_weimar_coalition +]%)
-unavailable-subtitle: SPD + Z + [+ bvp_name +] + [+ ddp_name +] + DVP + Others ([+ neo_weimar_coalition +]%) - [? if president == "Hitler" : Hitler refuses to appoint a chancellor under such a governing arrangement. ?]
+subtitle: SPD + <span style="color:var(--Z-color);">**Z**</span>+ [+ bvp_name +] + [+ ddp_name +] + DVP + Others ([+ neo_weimar_coalition +]%)
+unavailable-subtitle: SPD + <span style="color:var(--Z-color);">**Z**</span>+ [+ bvp_name +] + [+ ddp_name +] + DVP + Others ([+ neo_weimar_coalition +]%) - [? if president == "Hitler" : Hitler refuses to appoint a chancellor under such a governing arrangement. ?]
 choose-if: president != "Hitler"
 view-if: z_party_leader == "Joos" and neo_weimar_coalition >= 50 and weimar_coalition < 50  and z_relation >= 10 and (anti_democratic_coalition + unemployed) >= 50 and unity_refused != 1
 
@@ -1519,9 +1519,9 @@ We have won the vote of no confidence, and are currently ruling under an SPD min
 
 @weimar_coalition
 title: We can form a Weimar Coalition.
-subtitle: SPD + Z + [+ ddp_name +] ([+ weimar_coalition +]%)
+subtitle: SPD + <span style="color:var(--Z-color);">**Z**</span>+ [+ ddp_name +] ([+ weimar_coalition +]%)
 choose-if: president != "Hitler" and z_willing == 1 or bruning_plot == "successful"
-unavailable-subtitle: SPD + Z + [+ ddp_name +] ([+ weimar_coalition +]%) - [? if president == "Hitler" : Hitler refuses to appoint a chancellor under such a governing arrangement. ?][? if not z_willing : The Center Party is unwilling to coalition with us. ?]
+unavailable-subtitle: SPD + <span style="color:var(--Z-color);">**Z**</span>+ [+ ddp_name +] ([+ weimar_coalition +]%) - [? if president == "Hitler" : Hitler refuses to appoint a chancellor under such a governing arrangement. ?][? if not z_willing : The Center Party is unwilling to coalition with us. ?]
 view-if: weimar_coalition >= 50 or (weimar_coalition + sapd_r >= 50 and kpd_relations >= 30)
 on-arrival: leverage += 5; leverage += 5 if z_party_leader == "Joos"; in_weimar_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = ddp_name; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; finance_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
 achievement: weimar_coalition
@@ -1577,8 +1577,8 @@ go-to: coalition_menu if bourgeois_coalition < 50; let_it_form if bourgeois_coal
 title: We can form a Grand Coalition.
 view-if: grand_coalition >= 50 and grand_coalition_failed == 0 and bruning_plot != "successful"
 choose-if: president != "Hitler" and dvp_willing == 1
-unavailable-subtitle: SPD + Z + [+ bvp_name +] + [+ ddp_name +] + DVP ([+ grand_coalition +]%) - [? if president == "Hitler" : Hitler refuses to appoint a chancellor under such a governing arrangement. ?][? if not dvp_willing : The DVP is unwilling to work with us. ?]
-subtitle: SPD + Z + [+ bvp_name +] + [+ ddp_name +] + DVP  ([+ grand_coalition +]%)
+unavailable-subtitle: SPD + <span style="color:var(--Z-color);">**Z**</span>+ [+ bvp_name +] + [+ ddp_name +] + DVP ([+ grand_coalition +]%) - [? if president == "Hitler" : Hitler refuses to appoint a chancellor under such a governing arrangement. ?][? if not dvp_willing : The DVP is unwilling to work with us. ?]
+subtitle: SPD + <span style="color:var(--Z-color);">**Z**</span>+ [+ bvp_name +] + [+ ddp_name +] + DVP  ([+ grand_coalition +]%)
 on-arrival: in_grand_coalition = 1; in_popular_front = 0; in_left_front = 0
 go-to: grand_coalition_spd_lead if ((n_elections <= 1 and largest_party == "SPD") or (largest_party == "SPD" and spd_r >= 30) and spd_sackings <= 0) or president = "Braun"; grand_coalition_z_lead if president != "Braun" and (spd_sackings > 0 or (n_elections > 1 and spd_r < 30) or (n_elections <= 1 and largest_party != "SPD"))
 

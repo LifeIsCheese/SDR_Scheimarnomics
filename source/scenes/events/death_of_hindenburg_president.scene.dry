@@ -204,7 +204,7 @@ view-if: round = 0
 - @round_1: Let the voting begin.
 
 
-# convincing Z to support a unity candidate
+# convincing <span style="color:var(--Z-color);">**Z**</span> to support a unity candidate
 @convince_z_unity
 title: Convince the Center Party to support [+ spd_candidate +].
 view-if: (spd_candidate = "Eckener" or spd_candidate = "Gessler") and z_candidate != spd_candidate
@@ -225,7 +225,7 @@ go-to: z_failed if z_support_braun = 0 or (z_support_braun == 2 and historical_m
 We implore the Center Party to support [+ spd_candidate +] as a unity candidate against fascism, arguing that together, the Weimar Coalition can defeat the Nazis. [? if z_relation >= 50 : We also remind them of the history of cooperation between our parties, dating back to 1918. ?]
 
 
-# convincing Z to support an SPD candidate
+# convincing <span style="color:var(--Z-color);">**Z**</span>to support an SPD candidate
 @convince_z_spd
 title: Convince the Center Party to support [+ spd_candidate +].
 choose-if: spd_votes >= z_votes
