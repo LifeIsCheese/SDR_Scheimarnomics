@@ -8,7 +8,7 @@ tags: event
 
 <div style="display: flex; padding: 10px; gap: 10px; align-items: flex-start; flex-wrap: wrap;">
 
-  <img src="img/d_rose.jpg" style="flex-shrink: 0;">
+  <img src="img/d_rose.jpg" style="flex-shrink: 0; width: 120px; height: auto">
 
   <div style="flex: 1; min-width: 0;">
     <p style="margin: 0;">
