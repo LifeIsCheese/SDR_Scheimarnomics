@@ -80,13 +80,22 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <label for="audio_yes">Theme Switch</label>
-                    </td>
-                    <td>
-                        <input type="radio" id="theme-switch" name="theme" value="1">
-                    </td>
-                </tr>
+                    <td> <hr> </td>
+                <td>
+                    <label for="theme_yes">Theme on</label>
+                </td>
+               <td>
+                <input type="radio" id="theme_yes" name="theme" value="1" onclick="enableDarkmode();">
+              </td>
+            </tr>
+            <tr>
+               <td>
+                 <label for="theme_no">Theme off</label>
+              </td>
+              <td>
+                <input type="radio" id="theme_no" name="theme" value="0" onclick="disableDarkmode();">
+             </td>
+            </tr>
 
                 <tr>
                     <td>
