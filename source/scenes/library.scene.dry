@@ -75,7 +75,7 @@ Reichstag composition:
 SPD: [+ spd_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-<span style="color:var(--Z-color);">**Z**</span> + BVP: [+ z_r +]%
+Z + BVP: [+ z_r +]%
 # 1928: 10, 1930: 13
 KPD: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DstP)

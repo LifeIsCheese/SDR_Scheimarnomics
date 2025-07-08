@@ -16,8 +16,8 @@ As expected, the ruling government has collapsed as a result of the DNVP's staun
 
 @enter_government
 choose-if: grand_coalition >= 50 and (z_relation >= 45 or z_party_leader == "Joos") and (dvp_relation >= 30 or stresemann_dead == 0)
-subtitle: SPD + <span style="color:var(--Z-color);">**Z**</span> + BVP + DDP + DVP
-unavailable-subtitle: SPD + <span style="color:var(--Z-color);">**Z**</span> + BVP + DDP + DVP - [? if grand_coalition < 50 : We do not have the votes. ?][? if (z_relation < 45 and z_party_leader != Joos) or (dvp_relation < 30 and stresemann_dead == 1) : The right would rather see their government fall than let us into government. ?]
+subtitle: SPD + Z + BVP + DDP + DVP
+unavailable-subtitle: SPD + Z + BVP + DDP + DVP - [? if grand_coalition < 50 : We do not have the votes. ?][? if (z_relation < 45 and z_party_leader != Joos) or (dvp_relation < 30 and stresemann_dead == 1) : The right would rather see their government fall than let us into government. ?]
 go-to: election_1928.grand_coalition_z_lead
 
 @toleration
