@@ -17,7 +17,7 @@ In the midst of the disaster, a catastrophe happened. The hospital where Braun's
 
 @title
 title: Braun has resigned 
-subtitle: With his resignation, Z now holds leadership over Prussia.
+subtitle: With his resignation, <span style="color:var(--Z-color);">**Z**</span> now holds leadership over Prussia.
 on-arrival: braun_advisor_advisor = 0; spd_prussia = 0; prussian_government = "I"
 
 We bid Braun fare well.
