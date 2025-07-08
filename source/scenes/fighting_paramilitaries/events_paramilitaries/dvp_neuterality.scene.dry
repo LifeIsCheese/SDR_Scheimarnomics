@@ -3,20 +3,11 @@ view-if: violence_timer < 23 and bruning_plot == "successful" and violence_timer
 new-page: true
 max-visits: 1
 tags: event
+face-image: img/d_rose.jpg
 
 = Declaration of neutrality
 
-<div style="display: flex; padding: 10px; gap: 10px; align-items: flex-start; flex-wrap: wrap;">
-
-  <img src="img/d_rose.jpg" style="flex-shrink: 0;">
-
-  <div style="flex: 1; min-width: 0;">
-    <p style="margin: 0;">
-      Despite the democratic majority of the Reichstag agreeing with Braun and Joos measures, in practice the right-leaning parties are only paying lip service to the fact. With DVP itself declaring neutrality.
-    </p>
-  </div>
-
-</div>
+Despite the democratic majority of the Reichstag agreeing with Braun and Joos measures, in practice the right-leaning parties are only paying lip service to the fact. With DVP itself declaring neutrality.
 
 - @title: Now we wait
 
