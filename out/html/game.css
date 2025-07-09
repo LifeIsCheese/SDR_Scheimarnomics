@@ -493,6 +493,7 @@ a.card:focus .card-tooltip, a.card:hover .card-tooltip {
   height: 150px;
   object-fit: contain;
   box-shadow: 5px 5px 16px var(--bgBack-color);
+  width: auto;
 }
 
 .event-img {
