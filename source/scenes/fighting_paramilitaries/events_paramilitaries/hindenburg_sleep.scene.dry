@@ -3,7 +3,6 @@ view-if: violence_timer < 21 and bruning_plot == "successful" and violence_timer
 new-page: true
 max-visits: 1
 tags: event
-on-arrival: president = "Vacant"
 
 = Eternal Sleep
 
@@ -14,5 +13,5 @@ In this case, due to article 51, the president of the Reich shall be represented
 - @wow: How Convenient
 
 @wow
-
+on-arrival: president = "Vacant"
 

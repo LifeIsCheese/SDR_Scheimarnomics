@@ -166,7 +166,7 @@ SPD: [+ spd_votes +]%
 [? if sapd_formed == 1 : SAPD: [+ sapd_votes +]% ?]
 
 # 1928: 15, 1930: 15, 1932: 
-<span style="color:var(--Z-color);">**Z**</span>+ BVP: [+ z_votes +]%
+Z + BVP: [+ z_votes +]%
 
 # 1928: 10, 1930: 13
 KPD: [+ kpd_votes +]%
