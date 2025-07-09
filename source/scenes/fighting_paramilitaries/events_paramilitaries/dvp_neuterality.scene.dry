@@ -7,7 +7,7 @@ tags: event
 = Declaration of neutrality
 
 <div class="event-container">
-  <img src="img/d_rose.jpg" alt="Dih rose">
+  <img class="face-status" src="img/d_rose.jpg" alt="Dih rose">
   Despite the democratic majority of the Reichstag agreeing with Braun and Joos's measures, in practice the minor right-leaning parties are only paying lip service to the fact. With the DVP itself declaring neutrality.
 </div>
 

@@ -518,6 +518,10 @@ min-width: 0;
 word-break: break-word;
 }
 
+.event-container > img {
+  flex-shrink: 0;
+}
+
 div.face-status-container {
   display:flex;
   justify-content:center;
