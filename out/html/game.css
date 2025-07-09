@@ -502,6 +502,22 @@ a.card:focus .card-tooltip, a.card:hover .card-tooltip {
   box-shadow: 5px 5px 16px var(--bgBack-color);
 }
 
+.event-container {
+
+  display: flex; 
+  flex-wrap: wrap; 
+  align-items: flex-start; 
+  padding: 10px; 
+  gap: 10px; 
+  box-sizing: border-box;
+}
+.event-container > p {
+margin: 0; 
+flex: 1; 
+min-width: 0; 
+word-break: break-word;
+}
+
 div.face-status-container {
   display:flex;
   justify-content:center;
