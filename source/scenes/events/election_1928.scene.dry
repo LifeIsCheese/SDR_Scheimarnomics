@@ -1877,7 +1877,8 @@ go-to: ministries
 @no_govt_3
 view-if: (weimar_coalition >= 50 and z_willing == 1) or (grand_coalition >= 50 and grand_coalition_failed != 1 and dvp_willing == 1)
 title: We do not form a government.
-subtitle: [? if right_coalition >= 50 and right_coalition_failed == 0 : A right-wing coalition may form instead. ?] This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties.
+choose-if: bruning_plot != "successful"
+subtitle: [? if right_coalition >= 50 and right_coalition_failed == 0 : A right-wing coalition may form instead. ?] This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties. [? if bruning_plot == "successful" : We can't afford to not be in government during these times. ?]
 on-arrival: reformist_dissent += 5; center_dissent += 5; labor_dissent += 5; neorevisionist_dissent += 5
 
 Are we sure about not participating in government? This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties. Even debating this option causes internal backlash. In addition, it is possible that the bourgeois and right-wing parties will also be unable to form a coalition government, leading to a regime appointed by President [+ president +].
@@ -1887,7 +1888,8 @@ Are we sure about not participating in government? This will cause significant i
 
 @no_govt
 title: We do not form the government.
-subtitle: This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties.
+choose-if: bruning_plot != "successful"
+subtitle: This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties. [? if bruning_plot == "successful" : We can't afford to not be in government during these times. ?]
 on-arrival: reformist_dissent += 5; center_dissent += 5; labor_dissent += 5; neorevisionist_dissent += 5
 
 Are we sure about not participating in government? This will cause significant internal dissent, and will lead to increased distrust from the bourgeois parties. Even debating this option causes internal backlash. In addition, it is possible that the bourgeois and right-wing parties will also be unable to form a coalition government, leading to a regime appointed by President [+ president +].
