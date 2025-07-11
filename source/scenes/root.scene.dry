@@ -233,7 +233,6 @@ Q.budget_eligible = 1;
 //Added Interest reates
 Q.interest_rates = 1;
 Q.inflation_growth = 0.1;
-Q.s_interest = "Normal";
 
 //Reichsbank
 Q.reparations_paused = 0;

@@ -327,33 +327,7 @@ if (Q.in_grand_coalition || Q.in_bourgeois_coalition) {
 }
 
 // Interest Rates, affecting baseline inflation and economic growth
-switch (Q.interest_rates) {
-    case 2:
-        Q.inflation_growth = 0.25;
-        if (Q.inflation > Q.economic_growth) Q.inflation -= 0.2;
-        if (Q.economic_growth >= 1) Q.economic_growth -= 0.1;
-        Q.s_interest = "Very High";
-        break;
-    case 1:
-        Q.inflation_growth = 0.07;
-        Q.s_interest = "High";
-        break;
-    case 0:
-        Q.inflation_growth = 0.1;
-        Q.economic_growth += 0.1;
-        Q.s_interest = "Normal";
-        break;
-    case -1:
-        Q.inflation_growth = 0.15;
-        Q.economic_growth += 0.2;
-        Q.s_interest = "Low";
-        break;
-    case -2:
-        Q.inflation_growth = 0.2;
-        Q.economic_growth += 0.3;
-        Q.s_interest = "Very Low";
-        break;
-}
+
 // Plot changes
 if (Q.plotMap[Q.plot_target]) {
     Q[Q.plotMap[Q.plot_target]] += Q.plot_strength;
