@@ -13,7 +13,7 @@ card-image: img/Reichsbank.jpg
 
 [? if hjalmar_plot == "successful": Now that the Reichsbank is controlled by Hans Luther, perhaps now the Reichsbank will heed our policies.?]
 
-[? if hjalmar_plot == "successful": Hans Luther opinion: [+ hans_string +]. [? if hans_opinion <= 2 : We can persuade him by talking to him directly. ?] ?]
+[? if hjalmar_plot == "successful": Hans Luther opinion: [+ hans_opinion : hans_opinion +]. [? if hans_opinion <= 2 : We can persuade him by talking to him directly. ?] ?]
 
 Reichsbank reserve requirement: 40%
 

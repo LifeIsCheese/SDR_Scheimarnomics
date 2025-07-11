@@ -265,9 +265,7 @@ Q.director_a = [
 //Added Plots
 Q.loyalty_decay = 0;
 Q.loyalty_decay_rate = 0;
-Q.s_loyalty_decay = "None";
 Q.spy_network = 0;
-Q.s_spy_network = "None";
 Q.plot_strength = 0;
 Q.plot_target = "None";
 
@@ -311,7 +309,6 @@ Q.operations_scene = 0;
 Q.hunger_chancellor = 0;
 Q.reichsbank_a = 0;
 Q.hans_opinion = 2;
-Q.hans_string = "Suspicious";
 Q.bruning_death_support = 0;
 Q.assassination_partners = "None";
 Q.assassination_partners_string = "None";

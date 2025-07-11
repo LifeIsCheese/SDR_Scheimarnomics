@@ -14,7 +14,6 @@ Q.pro_republic = Math.max(0, Math.min(Q.pro_republic, 99));
 Q.socialism = Math.max(0, Math.min(Q.socialism, 99));
 Q.nationalism = Math.max(0, Math.min(Q.nationalism, 99));
 
-// --- 2. Calculate normalized class voting (avoid repeated Math.round) ---
 for (const c of Q.classes) {
     let class_votes = 0;
     for (const party of Q.parties) class_votes += Q[c + '_' + party];
@@ -407,49 +406,12 @@ if (Q.loyalty_decay_rate >= 0) {
     Q.prussian_police_loyalty -= Q.loyalty_decay_rate;
     Q.interior_police_loyalty -= Q.loyalty_decay_rate;
 }
-const loyaltyStrings = ["None", "Bothering", "Alarming", "Urgent"];
-if (Q.loyalty_decay_rate === 0) {
-    Q.s_loyalty_decay = loyaltyStrings[0];
-} else if (Q.loyalty_decay_rate === 0.01) {
-    Q.s_loyalty_decay = loyaltyStrings[1];
-} else if (Q.loyalty_decay_rate === 0.02) {
-    Q.s_loyalty_decay = loyaltyStrings[2];
-} else if (Q.loyalty_decay_rate === 0.03) {
-    Q.s_loyalty_decay = loyaltyStrings[3];
-} else if (Q.loyalty_decay_rate >= 0.04) {
-    Q.s_loyalty_decay = "Do something";
-}
 
 // Spy strength
-const spyStrings = {
-    0: "What's that, whats a spy network",
-    3: "Fledgling",
-    6: "Influential",
-    9: "Dominant"
-};
-if (Q.spy_network in spyStrings) {
-    Q.s_spy_network = spyStrings[Q.spy_network];
     if (Q.spy_network === 9) {
         Q.interior_police_loyalty += 0.02;
         Q.prussian_police_loyalty += 0.02;
     }
-}
-
-// Hans Luther opinion
-const hansStrings = [
-    "Hateful",    // 0
-    "Spiteful",   // 1
-    "Suspicious", // 2
-    "Cooperative",// 3
-    "Cordial",    // 4
-    "Ecstatic"    // 5
-];
-if (Q.hans_opinion >= 6) {
-    Q.hans_string = "Glazing";
-    Q.hans_opinion -= 1;
-} else if (Q.hans_opinion >= 0 && Q.hans_opinion <= 5) {
-    Q.hans_string = hansStrings[Q.hans_opinion];
-}
 
 // Assassination partners string
 const assassinationPartners = {
