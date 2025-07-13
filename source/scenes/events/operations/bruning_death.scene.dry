@@ -19,10 +19,11 @@ The current Chancellor of the Republic, dubbed The Hunger Chancellor by the work
 
 Many in the party are in favour of forming a united front with the democratic parties against the extremist paramilitaries suspected of his death. [? if left_strength >= 40 and kpd_relation >= 40 : But the left instead wish to pursue a united front with the KPD, declaring that now is the most opportune time to overthrow capitalism. ?]
 
-- @republic_path: We stand with the republic! (United front with democratic parties)
-- @left_path: We have one struggle. (United front with KPD)
+- @republic_path: We stand with the republic!
+- @left_path: We have one struggle.
 
 @republic_path
+subtitle: (United front with democratic parties)
 
 Members of the Reichstag, most notably Otto Braun and [+ z_party_leader +] have recently called for an emergency session to discuss the course of action, as such an event could spark an upsurge of extremist activity.
 
@@ -31,7 +32,7 @@ The Reichstag has spoken, we will crush the paramilitaries as much as possible.
 [? if spd_in_government != 1 : We will hold elections in 3 months, as we are not in government. ?]
 
 @left_path
-subtitle:WIP
+subtitle: (United front with KPD)
 choose-if: 1 == 0
 on-arrival: spd_bd_position = "support_kpd"; kpd_relation = 50
 
