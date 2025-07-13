@@ -3,7 +3,7 @@ view-if: bruning_plot == "successful" and paramilitaries_timer == 0 and spd_in_g
 frequency: 100
 new-page: true
 is-card: true
-card-image: img/d_rose.jpg
+card-image: img/national_affairs.jpg
 on-arrival: {!
 Q.military_supporting_right = (((Q.army_force * Q.military_available) * (1 - Q.reichswehr_loyalty)) / Q.army_force) * 100
 Q.military_support_republic = ((Q.loyal_army * Q.military_available) / Q.army_force) * 100
@@ -16,6 +16,8 @@ We cannot whether this storm alone, we need to cooperate lest we fall.
 
 - @military_menu: The Military
 - @dvp_menu: The DVP
+- @root: Perhaps another time
+- @easy_discard
 
 @military_menu
 
