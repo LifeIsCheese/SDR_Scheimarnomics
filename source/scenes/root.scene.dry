@@ -104,10 +104,10 @@ Q.nationalization_adopted = 0;
 Q.moderate_plan_support = 0;
 Q.moderate_plan_adopted = 0;
 // weimar plan
-Q.weimar_rejected = 0
-Q.weimar_plan_adopted = 0
-Q.weimar_support = 0
-Q.weimar_willingness = 0
+Q.weimar_rejected = 0;
+Q.weimar_plan_adopted = 0;
+Q.weimar_support = 0;
+Q.weimar_willingness = 0;
 
 // organizations
 
@@ -361,7 +361,7 @@ Q.violence_perceived_addon_right = 0;
 
 Q.violence_perceived_left = ( (Q.rb_militancy + Q.rfb_militancy) / 2 ) + Q.violence_perceived_addon_left;
 Q.violence_perceived_republic = ( (Q.reichswehr_militancy + 3) / 2 ) + Q.violence_perceived_addon_republic;
-Q.violence_perceived_right = ( (Q.sa_militancy + Q>sh_militancy) / 2 ) + Q.violence_perceived_addon_right;
+Q.violence_perceived_right = ( (Q.sa_militancy + Q.sh_militancy) / 2 ) + Q.violence_perceived_addon_right;
 
 
 //higher alignment = willingness to wrok with spd
