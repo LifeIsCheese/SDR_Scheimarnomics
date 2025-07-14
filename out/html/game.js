@@ -380,6 +380,6 @@ function ViolenceAddon (whichSide, violenceAmt) {
 
     let old_violence = d.violence_level;
     d.violence_add_on += violenceAmt;
-    d['violence_perceived_' + whichSide] += violenceAmt;
+    d['violence_perceived_addon_' + whichSide] += violenceAmt;
 
 }

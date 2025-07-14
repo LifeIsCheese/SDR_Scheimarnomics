@@ -354,13 +354,17 @@ Q.rb_militancy_add = 0.1;
 Q.violence_level = 0;
 Q.violence_add_on = 0;
 
-// united left
-Q.violence_perceived_left = 0;
-Q.violence_perceived_republic = 0;
-Q.violence_perceived_right = 0;
+// united left path
+Q.violence_perceived_addon_left = 0;
+Q.violence_perceived_addon_republic = 0;
+Q.violence_perceived_addon_right = 0;
+
+Q.violence_perceived_left = ( (Q.rb_militancy + Q.rfb_militancy) / 2 ) + Q.violence_perceived_addon_left;
+Q.violence_perceived_republic = ( (Q.reichswehr_militancy + 3) / 2 ) + Q.violence_perceived_addon_republic;
+Q.violence_perceived_right = ( (Q.sa_militancy + Q>sh_militancy) / 2 ) + Q.violence_perceived_addon_right;
 
 
-//higher alignment = wllinginess to wrok with spd
+//higher alignment = willingness to wrok with spd
 Q.dvp_alignment = 5;
 Q.dvp_willing_alignment = 5;
 
