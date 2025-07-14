@@ -28,6 +28,8 @@ if (Q.budget) {
 
 = Status
 
+<script src="game.js" defer></script>
+
 [+ month : month +] [+ year +]
 
 Resources available: [+ resources +]
