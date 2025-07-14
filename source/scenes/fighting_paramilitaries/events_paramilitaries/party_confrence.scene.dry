@@ -18,7 +18,7 @@ on-arrival: left_dissent +=20; spd_bd_position = "support_government"
 The left is enraged at our decision, with some leaders even defecting to the KPD.
 
 @left
-subtitle:WIP
+subtitle: WIP
 choose-if: 1 == 0
 on-arrival: spd_bd_position = "support_kpd"; kpd_relation = 50
 

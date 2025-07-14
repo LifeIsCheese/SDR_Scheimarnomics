@@ -334,8 +334,6 @@ Q.interfere_labour = 0;
 Q.military_weariness = 1;
 Q.military_available = 1;
 Q.spd_bd_position = "in_government";
-Q.violence_level = 0;
-Q.violence_add_on = 0;
 Q.military_concessions = 0;
 Q.military_influence = 0;
 Q.weimar_dominance_timer = 0;
@@ -349,6 +347,18 @@ Q.rb_passive = 0;
 Q.reichsbank_seized = 0;
 Q.rb_strength_add = 200;
 Q.rb_militancy_add = 0.1;
+
+
+//violence stuff
+
+Q.violence_level = 0;
+Q.violence_add_on = 0;
+
+// united left
+Q.violence_perceived_left = 0;
+Q.violence_perceived_republic = 0;
+Q.violence_perceived_right = 0;
+
 
 //higher alignment = wllinginess to wrok with spd
 Q.dvp_alignment = 5;
