@@ -28,8 +28,6 @@ if (Q.budget) {
 
 = Status
 
-<script src="game.js" defer></script>
-
 [+ month : month +] [+ year +]
 
 Resources available: [+ resources +]
@@ -244,6 +242,7 @@ if (Q.capital_strike_progress) {
 
 = The Right
 
+<script src="game.js"></script>
 
 <button class = "status_button" onclick ="bruning()">kill Bruning</button>
 
