@@ -358,12 +358,12 @@ function republic_unity() {
 window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 }
 
-function hide() {
+function hiderb() {
   d.hiding = 1;
 window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 }
 
-function show() {
+function showrb() {
   d.hiding = 0;
 window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 }
@@ -374,4 +374,12 @@ function bruning () {
 
 function hjalmar () {
    d.hjalmar_plot = "successful"
+}
+
+function ViolenceAddon (whichSide, violenceAmt) {
+
+    let old_violence = d.violence_level;
+    d.violence_add_on += violenceAmt;
+    d['violence_perceived_' + whichSide] += violenceAmt;
+
 }

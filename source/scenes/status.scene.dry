@@ -242,7 +242,6 @@ if (Q.capital_strike_progress) {
 
 = The Right
 
-<script src="new_shit.js" defer></script>
 
 <button class = "status_button" onclick ="bruning()">kill Bruning</button>
 
@@ -278,7 +277,6 @@ Spy network strength: [+ spy_network : spy_strength +].
 
 = [? if plot_target == "hjalmar" : <span style="color:rgb(112, 87, 19);">**Hjalmar Schacht**</span> ?] [? if plot_target == "bruning" : <span style="color:rgb(19, 93, 112);">**Heinrich Brüning**</span> ?] [? if plot_target == "rohm" : <span style="color:rgb(185, 138, 7);">**Ernst Röhm**</span> ?] [? if plot_target == "leow" : <span style="color:rgb(180, 38, 38);">**Willy Leow**</span> ?] [? if plot_target == "schleicher" : <span style="color:rgb(216, 75, 75);">**Kurt von Schleicher**</span> ?] [? if plot_target == "bank" : <span style="color:rgb(221, 223, 109);">**Reichsbank**</span> ?]
 
-<script src="new_shit.js" defer></script>
 
 <div class = "face-status-container">
     [? if plot_target == "hjalmar" : <img class="face-status" src="img/portraits/SchachtHjalmar.jpg"> ?] [? if plot_target == "bruning" : <img class="face-status" src="img/portraits/BrüningHeinrich.jpg"> ?] [? if plot_target == "rohm" : <img class="face-status" src="img/portraits/rohm.jpg"> ?] [? if plot_target == "leow" : <img class="face-status" src="img/portraits/Willy_Leow_1930.jpg"> ?] [? if plot_target == "schleicher" : <img class="face-status" src="img/portraits/KurtVonScheleicherEn1932.jpg"> ?] [? if plot_target == "bank" : <img class="face-status" src="img/Reichsbank.jpg"> ?]
