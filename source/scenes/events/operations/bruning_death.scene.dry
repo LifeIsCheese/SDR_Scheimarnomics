@@ -34,7 +34,7 @@ The Reichstag has spoken, we will crush the paramilitaries as much as possible.
 
 @left_path
 subtitle: (United front with KPD)
-choose-if: 
+choose-if: kpd_relation =>= 40 and left_strength >= 40
 on-arrival: spd_bd_position = "support_kpd"; kpd_relation = 80
 
 what how.
