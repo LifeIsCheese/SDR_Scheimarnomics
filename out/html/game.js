@@ -229,7 +229,7 @@
 
 }());
 
-function new_hire () {
+function new_hire() {
 
 if (d.resources > 0) {
 
@@ -259,7 +259,7 @@ alert('Broke');
 
   
 
-function director_actions () {
+function director_actions() {
 
 d.director_actions = 1;
 
@@ -295,7 +295,7 @@ window.changeTab('status.Actions', 'Actions')
 
 }
 
-function rush () {
+function rush() {
 
 if (d.loyalty_decay < 0.04) {
 
@@ -325,7 +325,7 @@ window.changeTab('status.Actions', 'Actions')
 
   
 
-function train_spies () {
+function train_spies() {
 
 if (d.loyalty_decay > 0) {
 
@@ -353,7 +353,7 @@ window.changeTab('status.Actions', 'Actions')
 
   
 
-function train_police () {
+function train_police() {
 
 d.prussian_police_strength += 10;
 
@@ -369,7 +369,7 @@ window.changeTab('status.Actions', 'Actions')
 
   
 
-function joke () {
+function joke() {
 
 d.coup_progress = 10;
 
@@ -381,7 +381,7 @@ window.changeTab('status.Actions', 'Actions')
 
   
 
-function purge2 () {
+function purge2() {
 
 d.interior_police_loyalty += 0.1;
 
@@ -401,7 +401,7 @@ window.changeTab('status.Actions', 'Actions')
 
   
 
-function rush2 () {
+function rush2() {
 
 if (d.loyalty_decay < 0.04) {
 
@@ -495,7 +495,7 @@ window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 
   
 
-function bruning () {
+function bruning() {
 
 d.bruning_plot = "successful"
 
@@ -503,7 +503,7 @@ d.bruning_plot = "successful"
 
   
 
-function hjalmar () {
+function hjalmar() {
 
 d.hjalmar_plot = "successful"
 
@@ -511,7 +511,7 @@ d.hjalmar_plot = "successful"
 
   
 
-function ViolenceAddon (whichSide, violenceAmt) {
+function ViolenceAddon(whichSide, violenceAmt) {
 
   
 let old_violence = d.violence_level;
