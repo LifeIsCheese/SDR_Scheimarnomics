@@ -342,7 +342,7 @@ if (Q.plotCaps[Q.plot_target] && Q.violence_timer > 0) {
 }
 //death of rb
 
-if (Q.violence_level > 0) {
+if (Q.violence_level > 0 && Q.spd_bd_position != "support_kpd") {
     if (Q.rb_leader == "otto horsing") {
             Q.horsing_death += Q.hiding == 1 ? (9 - Q.spy_network) / 3 : (9 - Q.spy_network) / 1.2;
             Q.holtermann_death += Q.hiding == 1 ? (9 - Q.spy_network) / 4 : (9 - Q.spy_network) / 2;
@@ -359,7 +359,7 @@ Q.tax_reform_progress = 1 - (Q.science_bonus / 10);
 Q.budget_eligible = 1;
 
 // Calculate military influence based on current concessions and force ratios
-if (Q.violence_timer > 0 && Q.military_concessions > 0) {
+if (Q.violence_timer > 0 && Q.military_concessions > 0 && Q.spd_bd_position != "support_kpd") {
     const army_force_in_relation = Q.loyal_army / (Q.rb_force + Q.prussia_force);
     Q.military_influence = army_force_in_relation * (Q.military_concessions / 10);
     Q.military_influence = Math.round(Q.military_influence * 100);
@@ -482,7 +482,7 @@ const rbLeaders = {
     },
 };
 
-if (Q.rb_leader in rbLeaders) {
+if (Q.rb_leader in rbLeaders && Q.spd_bd_position != "support_kpd") {
     const data = rbLeaders[Q.rb_leader];
 
     // Strength assignment based on DVP alignment
@@ -597,13 +597,11 @@ if (Q.spd_bd_position == "support_kpd") {
 
 Q.military_strength = Math.round(Q.army_force * (1 - Q.military_available));
 
-if (Q.far_right_strength >= 50) {
-  Q.right_dominance_timer += 1;
-} else {
-  Q.right_dominance_timer = 0;
-}
+// non kpd path 
 
-if (Q.far_left_strength >= 50) {
+if (Q.spd_bd_position != "support_kpd") {
+
+    if (Q.far_left_strength >= 50) {
   Q.left_dominance_timer += 1;
 } else {
   Q.left_dominance_timer = 0;
@@ -614,6 +612,15 @@ if (Q.weimar_strength >= 50) {
 } else {
   Q.weimar_dominance_timer = 0;
 }
+
+}
+
+if (Q.far_right_strength >= 50) {
+  Q.right_dominance_timer += 1;
+} else {
+  Q.right_dominance_timer = 0;
+}
+
 /// violence events
 
 if (Q.violence_timer > 0) {
