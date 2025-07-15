@@ -229,6 +229,8 @@
 
 }());
 
+var d = window.dendryUI.dendryEngine.state.qualities;
+
 function new_hire() {
 
 if (d.resources > 0) {
@@ -267,13 +269,13 @@ window.changeTab('status.Actions', 'Actions')
 
 }
 
-function rb_actions () {
+function rb_actions() {
 
 window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 
 }
 
-function purge () {
+function purge() {
 
 d.interior_police_loyalty += 0.1;
 
