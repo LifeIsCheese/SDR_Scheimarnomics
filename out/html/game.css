@@ -13,6 +13,7 @@
   --status-text-color: #000000;
   --button-bg-color: #d4d4d4;
   --button-border-color: #858585;
+  --text-hover: rgba(68, 67, 67, 0.247);
 
 
 }
@@ -31,6 +32,7 @@
   --status-text-color: #ffffff;
   --button-bg-color: #3a1b1e;
   --button-border-color: #442024;
+  --text-hover: rgba(66, 17, 17, 0.329);
 }
 body {
   font-family: "Minion Pro", Georgia, serif;
@@ -162,11 +164,11 @@ ul.choices li div.subtitle {
 }
 ul.choices li.unavailable {
   color: #999;
-  background-color: rgba(66, 17, 17, 0.1) !important;
+  background-color: rgba(66, 17, 17, 0.048) !important;
   cursor: default !important;
 }
 ul.choices li:hover {
-  background-color: rgba(66, 17, 17, 0.6);
+  background-color: var(--text-hover);
   cursor: pointer;
 }
 ul.choices li:last-child {

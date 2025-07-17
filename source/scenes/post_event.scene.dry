@@ -408,6 +408,28 @@ Q.list_debt_amount.forEach((amount, i) => {
     }
 });
 
+//passive focusing
+
+switch (Q.united_focus){
+
+  case "unity":
+  Q.rfb_rb_unity += 0.1;
+  break;
+
+  case "outreach":
+Q.bourgeois_left_willingness += 0.1;
+  break;
+
+case "sympathy":
+  Q.left_sympathies += 0.1; 
+  break;
+
+  default:
+  counsole.log("bug");
+  
+
+}
+
 // Hiding Targets
 
 if (typeof document !== "undefined") {

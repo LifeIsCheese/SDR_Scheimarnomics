@@ -359,7 +359,16 @@ Q.violence_perceived_addon_left = 0;
 Q.violence_perceived_addon_republic = 0;
 Q.violence_perceived_addon_right = 0;
 Q.military_reluctance = 80;
+
+
+
+//focusing
+Q.united_focus = "unity";
 Q.left_sympathies = 0; 
+Q.bourgeois_left_willingness = 0.1;
+Q.rfb_rb_unity = 0.25;
+
+//violence +
 
 Q.violence_perceived_left = ( (Q.rb_militancy + Q.rfb_militancy) / 2 ) + Q.violence_perceived_addon_left;
 Q.violence_perceived_republic = ( (Q.reichswehr_militancy + 3) / 2 ) + Q.violence_perceived_addon_republic;

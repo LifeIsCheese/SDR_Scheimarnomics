@@ -4,13 +4,29 @@ is-special: true
 
 = your not supposed to see this
 
-hmm
+hmm go click on a button 
 
 @status
 
 = 
 
+<div class = "face-status-container">
+    We are focusing on [+ focus +], [? if focus == "unity" : Uniting the RFB and Reichsbanner as a proper united front. ?] [? if focus == "outreach" : reaching out to the leftwing of the bourgeois parties. ?] [? if focus == "sympathy" : increasing socialist sympathy within the army. ?] 
+</div>
 
+<div class = "face-status-container">
+    <button class = "status_button" onclick ="unity_focus()">Unity</button>
+
+    <button class = "status_button" onclick ="outreach_focus()">Outreach</button>
+    
+    <button class = "status_button" onclick ="sympathy_focus()">sympathy</button>
+</div>
+
+Current RFB Reichsbanner Unity [+ rfb_rb_unity +]%
+
+Current amount of sympathetic soldiers [+ left_sympathies +]%
+
+Bourgeois willingness to work [+ bourgeois_left_willingness +]%
 
 
 @military

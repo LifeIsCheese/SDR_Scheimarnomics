@@ -525,3 +525,21 @@ d['violence_perceived_addon_' + whichSide] += violenceAmt;
   
 
 }
+
+function unity_focus() {
+
+d.united_focus = "unity"
+
+}
+
+function outreach_focus() {
+
+d.united_focus = "outreach"
+
+}
+
+function sympathy_focus() {
+
+d.united_focus = "sympathy"
+
+}
