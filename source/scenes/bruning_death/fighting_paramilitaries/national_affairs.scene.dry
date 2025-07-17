@@ -18,6 +18,7 @@ We cannot whether this storm alone, we need to cooperate lest we fall.
 - @dvp_menu: The DVP
 - @root: Perhaps another time
 - @easy_discard
+- @return: Perhaps another time.
 
 @military_menu
 
@@ -33,7 +34,7 @@ Military loyalty : [+ reichswehr_loyalty : loyalty +]
 - @spending_2: We can allocate a large portion of our budget on militarizing the Reichswehr even further.
 - @delegate_2: We can give up major positions on anti streetfighting operations.
 - @martial_law: With our situation, if it is better that Germany be under martial law than the extremists.
-- @root: Perhaps another time
+- @return: Perhaps another time.
 - @easy_discard
 
 
@@ -96,6 +97,7 @@ The DVP has declared it's neutrality, [? if violence_level < 33 : as of now it w
 - @left_wing: Strengthen the left wing of the DVP, making them more willing to support us.
 - @root: Perhaps another time
 - @easy_discard
+- @return: Perhaps another time.
 
 @talks
 on-arrival: dvp_willing_alignment += 2; month_actions +=1; paramilitaries_timer = 2

@@ -358,10 +358,13 @@ Q.violence_add_on = 0;
 Q.violence_perceived_addon_left = 0;
 Q.violence_perceived_addon_republic = 0;
 Q.violence_perceived_addon_right = 0;
+Q.military_reluctance = 80;
+Q.left_sympathies = 0; 
 
 Q.violence_perceived_left = ( (Q.rb_militancy + Q.rfb_militancy) / 2 ) + Q.violence_perceived_addon_left;
 Q.violence_perceived_republic = ( (Q.reichswehr_militancy + 3) / 2 ) + Q.violence_perceived_addon_republic;
 Q.violence_perceived_right = ( (Q.sa_militancy + Q.sh_militancy) / 2 ) + Q.violence_perceived_addon_right;
+
 
 
 //higher alignment = willingness to wrok with spd

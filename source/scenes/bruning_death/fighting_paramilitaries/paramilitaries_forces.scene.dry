@@ -1,0 +1,104 @@
+title: Our forces
+view-if: bruning_plot == "successful" and paramilitaries_timer == 0
+frequency: 100
+new-page: true
+is-card: true
+card-image: img/forces.jpg
+tags: fighting_paramilitaries
+
+= Our forces
+
+Due to increased violence in the streets, the republican parties are clamoring for further militarization.
+
+Remember, Coalition dissent heavily affects recruiting efforts, while military influence affects our militarization efforts.
+
+[? if rb_leader == "otto horsing" : Reichsbanner leader Otto Hörsing, is a polarizing figure, but we live in polarizing times and his excessive militancy will prove to be useful. ?]
+
+[? if rb_leader == "karl holtermann" : Reichsbanner leader Karl Höltermann, is a uniting figure, someone who as able to moderate Otto Hörsing's more militant positions. But we live in polarizing times and although he may be able to recruit more moderates, he will have less experience militarizing the Reichsbanner.  ?]
+
+[? if rb_leader == "vacant" : We have <span style="color:rgb(255, 0, 0);">**no**</span> Reichsbanner leader. ?]
+
+[? if rb_strength_add < 200 : Recruiting is impacted. ?] [? if rb_strength_add >= 200 and rb_strength_add < 300 : Recruiting is normal. ?] [? if rb_strength_add >= 300 : Recruiting has been expanded. ?]
+
+[? if rb_militancy_add < 0.1 : Our militarization efforts are hampered. ?] [? if rb_militancy_add >= 0.1 and rb_militancy_add < 1.5 : Our militarization efforts are normal. ?] [? if rb_militancy_add >= 1.5 : Our militarization efforts have been expanded. ?]
+
+- @reichsbanner_menu: The Reichsbanner
+- @state_forces_menu: Security and police.
+- @return: Perhaps another time.
+- @easy_discard
+
+@reichsbanner_menu
+
+The Reichsbanner is one of our most important tools for controling violence on the streets.
+
+Our leader, [+ rb_leader +] [? if rb_leader != "karl holtermann" : has always called for militarization, while usually we would dispute this, we may need his expertise in this situation. ?] [? if rb_leader == "karl holtermann" : has always called for a broad democratic bulwark, focusing on increasing cooperation with our coalition partners. ?]
+
+What should we do?
+
+- @reichsbanner_free: Recruit for the reichsbanner
+- @reichsbanner: Fund reichsbanner
+- @militarize: Militarize the reichsbanner
+- @militarize_budget: Militarize the reichsbanner
+- @defund: We defund????
+- @return: Perhaps another time.
+- @easy_discard
+
+@reichsbanner
+subtitle: -1 resource
+choose-if: resources > 0
+on-arrival: rb_militancy +=0.05; month_actions +=1; paramilitaries_timer = 2; resources -=1; rb_strength += rb_strength_add / 2
+
+We fund the Reichsbanner.
+
+@reichsbanner_free
+on-arrival: rb_strength +=100; month_actions +=1; paramilitaries_timer = 2; rb_strength += rb_strength_add / 3
+
+We can use our media empire to find new reichsbanner recruits. 
+
+@militarize_budget
+subtitle: -1 budget [? if spd_in_government != 1 : We are not in government. ?]
+choose-if: budget > 0 and spd_in_government
+on-arrival: month_actions +=1; paramilitaries_timer = 2; budget -=1; rb_strength += rb_strength_add * 1.5; rb_militancy += rb_militancy_add * 2
+
+The Reichsbanner now has extra munitions meant for military use, thankfully our coalition partners see this as necessary to save the republic.
+
+@militarize
+subtitle: -3 resources, this will be less effective if we were to use state funds instead.
+choose-if: resources > 2 
+on-arrival: month_actions +=1; paramilitaries_timer = 2; resource -=3; rb_militancy += rb_militancy_add * 1.5
+
+The Reichsbanner now has munitions meant for military use, thankfully our coalition partners see this as necessary to save the republic.
+
+@defund
+subtitle: Why?, +3 resources
+on-arrival: rb_dissent +=50; resources +=3; rb_strength *= 0.9; paramilitaries_timer = 2; rb_militancy *= 0.9
+
+Alright then. The Reichsbanner will remember this. 
+
+@state_forces_menu
+
+With current state of the streets, many of the military and police are split along ideological lines. This could be a bad or good thing for us, depending on how we manage it.
+
+There also comes a risk of the military itself intervening if none of the sides manage to gain dominance over the streets.
+
+What should we do?
+
+- @loyalty: Increase loyalty all around
+- @anti_decay: decrease loyalty decay
+- @return: Perhaps another time.
+- @easy_discard
+
+@loyalty
+choose-if: spd_in_government or spd_prussia
+unavailable-subtitle: We do not control any government positions. 
+on-arrival: prussian_police_loyalty += 0.2; interior_police_loyalty +=0.2; month_actions +=1; paramilitaries_timer = 2
+
+We root out corrupt or extremist policemen, we can justify this to our coalition partners with the violence in the streets.
+
+@anti_decay
+choose-if: spd_in_government or spd_prussia
+unavailable-subtitle: We do not control any government positions. 
+on-arrival: loyalty_decay -=0.01 if loyalty_decay > 0; month_actions +=1; paramilitaries_timer = 2
+
+We single out dissident figures within our forces, we can justify this to our coalition partners with the violence in the streets.
+

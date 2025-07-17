@@ -101,16 +101,24 @@ is-deck: true
 
 @govt
 title: Government Affairs
-view-if: time >= 6
+view-if: time >= 6 and spd_bd_position != "support_kpd"
 card-image: img/reichstag_2.jpg
 is-deck: true
 
 - #govt_affairs
 
 @paramilitaries
-view-if: violence_timer > 0
+view-if: violence_timer > 0 and spd_bd_position !="support_kpd"
 title: Fighting the Paramilitaries
 card-image: img/anti_paramillitary.jpg
 is-deck: true
 
 - #fighting_paramilitaries
+
+@agitation
+view-if: violence_timer > 0 and spd_bd_position == "support_kpd"
+title: Agitation
+card-image: img/d_rose.jpg
+is-deck: true
+
+- #agitation

@@ -1,0 +1,101 @@
+title: Our plots
+view-if: bruning_plot == "successful" and paramilitaries_timer == 0 and plot_target == "None"
+frequency: 100
+new-page: true
+is-card: true
+card-image: img/plots.jpg
+tags: fighting_paramilitaries
+
+= Our plots
+
+
+We can kill key figures to stunt the growth of our enemies.
+
+- @rohm: Ernst Röhm.
+- @leow: Willy Leow.
+- @schleicher: Kurt von Schleicher.
+- @spies_fund: We can fund our spies.
+- @return: Perhaps another time.
+- @easy_discard
+
+@rohm
+subtitle: By killing Ernst Röhm, we can effectively stunt the growth of the SA. [? if budget <= 0 and spd_in_government: Not enough budget. ?] [? if rohm_plot == "failed" : we have failed to kill Ernst Röhm ?] [? if resources <= 1 : Not enough resources. ?]
+view-if: rohm_plot != "successful"
+choose-if: rohm_plot != "failed" and (budget > 0 or resources > 1)
+on-arrival: rohm_plot +=10; plot_target = "rohm"
+go-to: partners
+
+Our coalition partners have agreed on this course of action.
+
+@leow
+subtitle: By killing Willy Leow, we can dissrupt the growth of the RFB and destroy it's influence in the Reichsbanner. [? if budget <= 0 and spd_in_government: Not enough budget. ?] [? if rohm_plot == "failed" : we have failed to kill Ernst Röhm ?] [? if resources <= 1 : Not enough resources. ?]. Not done
+view-if: leow_plot != "successful" and spd_bd_position != "support_kpd"
+choose-if: leow_plot != "failed" and (budget > 0 or resources > 1)
+on-arrival: leow_plot +=10; plot_target = "leow"
+go-to: partners
+
+Our coalition partners have agreed on this course of action.
+
+@schleicher
+subtitle: By killing Kurt von Schleicher, the Reichswehr will be less prone in intervening in civilian matters.[? if budget <= 0 and spd_in_government: Not enough budget. ?] [? if rohm_plot == "failed" : we have failed to kill Ernst Röhm ?] [? if resources <= 1 : Not enough resources. ?]. Due to the nature of this operation, we are only able to use Spies. It's kind of done, like skeleton, theres benefits, but i didn't code the drawbacks
+view-if: schleicher_plot != "successful"
+choose-if: schleicher_plot != "failed" and (budget > 0 or resources > 1)
+on-arrival: schleicher_plot +=10; plot_target = "schleicher"
+go-to: spies
+
+We are forced to keep this a secret from our coalition partners.
+
+
+@spies_fund
+subtitle: [? if spy_network < 9 : -2 resources, reduces loyalty decay ?] [? if spy_network >= 9 : If we pour in too much funds into our spies, it may attract unwanted attention. ?]
+choose-if: spy_network < 9 and resources > 1
+on-arrival: resources -=2; spy_network +=3; paramilitaries_timer = 2; month_actions +=1
+
+By funding our spy network, we can rely on them to serve as a watchdog, during our operations.
+
+@partners
+title: To further increase the progression of our plot, we must choose who to work with...
+
+Who should we work with on this operation?
+
+- @interior: The Interior security forces only.
+- @prussia: The Prussian police should join as well.
+- @reichsbanner: Due to it's large size, the reichsbanner can prove useful during direct encounters. When the police cannot do anything
+- @spies: Let's keep it small.
+
+@interior
+subtitle: -1 Budget. The progression rate of our operation will be slow but this is the most safest option, provided the internal security are loyal. [? if interior_police_loyalty < 0.55: The internal security are disloyal. ?] [? if spd_in_government != 1 : We are not in government. ?]
+choose-if: budget > 0 and spd_in_government
+on-arrival: plot_strength = 5; assassination_partners = "Police"; resources +=1; month_actions +=1; paramilitaries_timer = 2; {!
+new_hire()
+!}
+
+We brief the internal police on our plan, time will tell if it succeeds. 
+
+@prussia
+subtitle: -1 Budget. Though the extra manpower is nice, if any of the 2 are disloyal it will lead to disaster. [? if interior_police_loyalty < 0.55: The internal security are disloyal. ?] [? if prussian_police_loyalty < 0.5: The Prussian police still seem divided on this cause, but we do need the manpower. ?] [? if spd_in_government != 1 : We are not in government. ?]
+choose-if: budget > 0 and spd_in_government
+on-arrival: plot_strength = 10; assassination_partners = "Prussian"; resources +=1; month_actions +=1; paramilitaries_timer = 2; {!
+new_hire()
+!}
+
+
+By also working with the prussian police, as well as the internal police, we can get things done much faster... 
+
+@reichsbanner
+subtitle: -1 Budget. By getting the reichsbanner involved in this operation, we can brute force our way into killing [+ plot_target +]... [? if interior_police_loyalty < 0.55: The internal security are disloyal. ?] [? if prussian_police_loyalty < 0.5: The Prussian police still seem divided on this cause, but we do need the manpower. ?] [? if spd_in_government != 1 : We are not in government. ?]
+choose-if: budget > 0 and spd_in_government
+on-arrival: plot_strength = 20; assassination_partners = "Reichsbanner"; resources +=1; month_actions +=1; paramilitaries_timer = 2; {!
+new_hire()
+!}
+
+With the liberals fully supporting the militarization of the Reichsbanner, we can finally leverage it's massive numbers.
+
+@spies
+subtitle: [? if spy_network < 9 : -2 resources Least riskiest option, but slowest?] [? if spy_network >= 9 : If we pour in too much funds into our spies, it may attract unwanted attention. 0 resources. ?]
+choose-if: (resources > 1 and spy_network < 9) or (spy_network >=9)
+on-arrival: spy_network +=3 if spy_network < 9; plot_strength = spy_network; resources -=2 if spy_network < 9; assassination_partners = "Spies"; resources +=1; month_actions +=1; paramilitaries_timer = 2; {!
+new_hire()
+!}
+
+Use our own network of <span style="color:rgb(0, 0, 0);">**spies**</span> to carry this out instead. This is the slowest option, but perhaps with more funding we can change that.

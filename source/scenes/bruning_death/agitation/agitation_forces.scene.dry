@@ -1,0 +1,12 @@
+title: Our forces
+view-if: bruning_plot == "successful" and paramilitaries_timer == 0
+frequency: 100
+new-page: true
+is-card: true
+card-image: img/forces.jpg
+tags: agitation
+
+
+= Our forces
+
+a

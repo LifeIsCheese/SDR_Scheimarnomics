@@ -162,11 +162,11 @@ ul.choices li div.subtitle {
 }
 ul.choices li.unavailable {
   color: #999;
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: rgba(66, 17, 17, 0.1) !important;
   cursor: default !important;
 }
 ul.choices li:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(66, 17, 17, 0.6);
   cursor: pointer;
 }
 ul.choices li:last-child {

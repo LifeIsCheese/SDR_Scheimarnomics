@@ -13,7 +13,7 @@ Due to us unable to access the Reichsbank at this time, we are forced to steal m
 - @issue_bond_1: Steal 1 budget.
 - @issue_bond_2: Steal 2 budget.
 - @issue_bond_3: Steal 3 budget.
-- @root: We are NOT doing this.
+- @return: We are NOT doing this.
 - @easy_discard
 
 @issue_bond_1
