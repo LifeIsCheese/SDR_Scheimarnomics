@@ -15,15 +15,19 @@ hmm go click on a button
 </div>
 
 <div class = "face-status-container">
+|
     <button class = "status_button" onclick ="unity_focus()">Unity</button>
 
+    |
     |
 
     <button class = "status_button" onclick ="outreach_focus()">Outreach</button>
 
     |
+    |
     
     <button class = "status_button" onclick ="sympathy_focus()">Sympathy</button>
+    |
 </div>
 
 Current RFB Reichsbanner Unity [+ rfb_rb_unity +]%

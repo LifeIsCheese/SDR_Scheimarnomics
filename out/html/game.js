@@ -500,6 +500,9 @@ window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 function bruning() {
 
 d.bruning_plot = "successful"
+d.kpd_party_leader == "Conciliators"
+d.kpd_relation = 100;
+d.left_strength = 60;
 
 }
 
