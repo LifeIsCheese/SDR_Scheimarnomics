@@ -524,6 +524,11 @@ if (Q.rb_leader in rbLeaders && Q.spd_bd_position != "support_kpd") {
     } else {
         Q.rb_militancy_add = data.militancy[2] - (Q.coalition_dissent / 75);
     }
+} else {
+
+    Q.rb_strength_add = 100 + (Q.rfb_rb_unity * 200);
+    Q.rb_militancy_add = 0.1 + (Q.rfb_rb_unity / 10);
+
 }
 
 

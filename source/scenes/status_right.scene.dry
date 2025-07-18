@@ -7,11 +7,22 @@ is-special: true
 hmm go click on a button 
 
 @status
+on-arrival: {!
+if (Q.rfb_rb_unity) {
+    Q.rfb_rb_unity_2 = ( Q.rfb_rb_unity.toFixed(2) ) * 100;
+}
+if (Q.left_sympathies) {
+    Q.left_sympathies_2 = ( Q.left_sympathies.toFixed(2) ) * 100;
+}
+if (Q.bourgeois_left_willingness) {
+    Q.bourgeois_left_willingness_2 = ( Q.bourgeois_left_willingness.toFixed(2) ) * 100;
+}
+!}
 
 = 
 
 <div class = "face-status-container">
-    We are focusing on [+ united_focus +], [? if focus == "unity" : Uniting the RFB and Reichsbanner as a proper united front. ?] [? if focus == "outreach" : reaching out to the leftwing of the bourgeois parties. ?] [? if focus == "sympathy" : increasing socialist sympathy within the army. ?] 
+    <p id="status_right_focus"> We are focusing on uniting the RFB and Reichsbanner as a proper united front. </p>
 </div>
 
 <div class = "face-status-container">
@@ -30,11 +41,11 @@ hmm go click on a button
     |
 </div>
 
-Current RFB Reichsbanner Unity [+ rfb_rb_unity +]%
+Current RFB Reichsbanner Unity [+ rfb_rb_unity_2 +]%
 
-Current amount of sympathetic soldiers [+ left_sympathies +]%
+Current amount of sympathetic soldiers [+ left_sympathies_2 +]%
 
-Bourgeois willingness to work [+ bourgeois_left_willingness +]%
+Bourgeois willingness to work [+ bourgeois_left_willingness_2 +]%
 
 
 @military

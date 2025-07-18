@@ -9,10 +9,10 @@ tags: agitation
 
 = Our forces
 
-With our decision to back the KPD, refuting the bourgeois claim that the KPD was also responsible 
+With our decision to back the KPD, refuting the bourgeois claim that the KPD was also responsible for the death of Bruning, we have been forced to protect our selves from the wrath of the state.
 
 - @reichsbanner_menu: The Reichsbanner
-- @state_forces_menu: Security and police.
+- @rfb_menu: Cooperation with the RFB.
 - @return: Perhaps another time.
 - @easy_discard
 
@@ -20,7 +20,9 @@ With our decision to back the KPD, refuting the bourgeois claim that the KPD was
 
 The Reichsbanner is one of our most important tools for controling violence on the streets.
 
-Our leader, [+ rb_leader +] [? if rb_leader != "karl holtermann" : has always called for militarization, while usually we would dispute this, we may need his expertise in this situation. ?] [? if rb_leader == "karl holtermann" : has always called for a broad democratic bulwark, focusing on increasing cooperation with our coalition partners. ?]
+[? if rb_strength_add < 200 : Recruiting is impacted. ?] [? if rb_strength_add >= 200 and rb_strength_add < 300 : Recruiting is normal. ?] [? if rb_strength_add >= 300 : Recruiting has been expanded. ?]
+
+[? if rb_militancy_add < 0.1 : Our militarization efforts are hampered. ?] [? if rb_militancy_add >= 0.1 and rb_militancy_add < 1.5 : Our militarization efforts are normal. ?] [? if rb_militancy_add >= 1.5 : Our militarization efforts have been expanded. ?]
 
 What should we do?
 
@@ -44,19 +46,12 @@ on-arrival: rb_strength +=100; month_actions +=1; paramilitaries_timer = 2; rb_s
 
 We can use our media empire to find new reichsbanner recruits. 
 
-@militarize_budget
-subtitle: -1 budget [? if spd_in_government != 1 : We are not in government. ?]
-choose-if: budget > 0 and spd_in_government
-on-arrival: month_actions +=1; paramilitaries_timer = 2; budget -=1; rb_strength += rb_strength_add * 1.5; rb_militancy += rb_militancy_add * 2
-
-The Reichsbanner now has extra munitions meant for military use, thankfully our coalition partners see this as necessary to save the republic.
-
 @militarize
-subtitle: -3 resources, this will be less effective if we were to use state funds instead.
+subtitle: -3 resources, this will be less effective if we were to use connections in the military instead.
 choose-if: resources > 2 
 on-arrival: month_actions +=1; paramilitaries_timer = 2; resource -=3; rb_militancy += rb_militancy_add * 1.5
 
-The Reichsbanner now has munitions meant for military use, thankfully our coalition partners see this as necessary to save the republic.
+The Reichsbanner now has munitions meant for military use.
 
 @defund
 subtitle: Why?, +3 resources
@@ -64,30 +59,10 @@ on-arrival: rb_dissent +=50; resources +=3; rb_strength *= 0.9; paramilitaries_t
 
 Alright then. The Reichsbanner will remember this. 
 
-@state_forces_menu
+@rfb_menu
 
-With current state of the streets, many of the military and police are split along ideological lines. This could be a bad or good thing for us, depending on how we manage it.
+WIP
 
-There also comes a risk of the military itself intervening if none of the sides manage to gain dominance over the streets.
 
-What should we do?
-
-- @loyalty: Increase loyalty all around
-- @anti_decay: decrease loyalty decay
 - @return: Perhaps another time.
 - @easy_discard
-
-@loyalty
-choose-if: spd_in_government or spd_prussia
-unavailable-subtitle: We do not control any government positions. 
-on-arrival: prussian_police_loyalty += 0.2; interior_police_loyalty +=0.2; month_actions +=1; paramilitaries_timer = 2
-
-We root out corrupt or extremist policemen, we can justify this to our coalition partners with the violence in the streets.
-
-@anti_decay
-choose-if: spd_in_government or spd_prussia
-unavailable-subtitle: We do not control any government positions. 
-on-arrival: loyalty_decay -=0.01 if loyalty_decay > 0; month_actions +=1; paramilitaries_timer = 2
-
-We single out dissident figures within our forces, we can justify this to our coalition partners with the violence in the streets.
-

@@ -532,17 +532,21 @@ d['violence_perceived_addon_' + whichSide] += violenceAmt;
 function unity_focus() {
 
 d.united_focus = "unity"
+document.getElementById('status_right_focus').innerHTML = "We are focusing on uniting the RFB and Reichsbanner as a proper united front.";
 
 }
 
 function outreach_focus() {
 
 d.united_focus = "outreach"
+document.getElementById('status_right_focus').innerHTML = "We are reaching out to the leftwing of the Z and DDP.";
+
 
 }
 
 function sympathy_focus() {
 
 d.united_focus = "sympathy"
+document.getElementById('status_right_focus').innerHTML = "We are spreading socialist sympathy within the army.";
 
 }
