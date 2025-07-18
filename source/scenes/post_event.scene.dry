@@ -413,15 +413,16 @@ Q.list_debt_amount.forEach((amount, i) => {
 switch (Q.united_focus){
 
   case "unity":
-  Q.rfb_rb_unity += 0.1;
+  Q.rfb_rb_unity += 0.05;
+  if (Q.rfb_rb_unity > 1) {Q.rfb_rb_unity = 1}
   break;
 
   case "outreach":
-Q.bourgeois_left_willingness += 0.1;
+Q.bourgeois_left_willingness += 0.05;
   break;
 
 case "sympathy":
-  Q.left_sympathies += 0.1; 
+  Q.left_sympathies += 0.05; 
   break;
 
   default:
@@ -568,6 +569,8 @@ if (Q.violence_timer > 0) {
 
 // Military weariness change
 if (Q.violence_timer > 0) {
+    Q.military_weariness += Math.round(Q.violence_level / 25);
+    
     if (Q.far_right_strength < 50 && Q.weimar_strength < 50 && Q.far_left_strength < 50) {
         if (Q.schleicher_plot === "successful") {
             Q.military_weariness += 2;

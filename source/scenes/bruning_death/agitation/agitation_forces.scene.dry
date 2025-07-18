@@ -11,10 +11,23 @@ tags: agitation
 
 With our decision to back the KPD, refuting the bourgeois claim that the KPD was also responsible for the death of Bruning, we have been forced to protect our selves from the wrath of the state.
 
-- @reichsbanner_menu: The Reichsbanner
-- @rfb_menu: Cooperation with the RFB.
+- @reichsbanner_menu: The Reichsbanner.
+- @unity: We can do drills with the RFB to increase our unity.
+- @unite: We can unite our 2 paramilitaries into one.
 - @return: Perhaps another time.
 - @easy_discard
+
+@unity
+on-arrival: rfb_rb_unity += 0.2; rfb_rb_unity = 1 if rfb_rb_unity > 1
+
+We have started doing drills to increase cooperation between our 2 paramilitary wings.
+
+@unite
+subtitle: WIP
+choose-if: 1 == 2
+on-arrival: rfb_rb_unity += 0.2
+
+WIP
 
 @reichsbanner_menu
 
@@ -58,10 +71,3 @@ on-arrival: rb_dissent +=50; resources +=3; rb_strength *= 0.9; paramilitaries_t
 
 Alright then. The Reichsbanner will remember this. 
 
-@rfb_menu
-
-WIP
-
-
-- @return: Perhaps another time.
-- @easy_discard
