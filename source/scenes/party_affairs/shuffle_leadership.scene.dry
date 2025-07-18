@@ -396,7 +396,7 @@ subtitle: Otto Braun is the Minister-President of Prussia, and one of the most r
 is-card: true
 card-image: img/portraits/BraunOtto.jpg
 tags: reformist_advisor
-view-if: braun_advisor = 0 and n_advisors < 3
+view-if: braun_advisor = 0 and n_advisors < 3 and reformists_resign == 0
 on-arrival: braun_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2
 go-to: advisor_menu
 
@@ -407,7 +407,7 @@ title: Marie Juchacz
 subtitle: Marie Juchacz is the founder of Worker's Welfare, a mutual-aid organization.
 is-card: true
 card-image: img/portraits/JuchaczMarie.jpg
-view-if: juchacz_advisor = 0 and n_advisors < 3
+view-if: juchacz_advisor = 0 and n_advisors < 3 and reformists_resign == 0
 on-arrival: juchacz_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 2; left_dissent += 2
 go-to: advisor_menu
 tags: reformist_advisor
@@ -419,7 +419,7 @@ title: Antonie Pfülf
 subtitle: Antonie Pfülf is a leader in social policy and women's rights.
 is-card: true
 card-image: img/portraits/PfülfAntonie.jpg
-view-if: pfulf_advisor = 0 and n_advisors < 3
+view-if: pfulf_advisor = 0 and n_advisors < 3 and reformists_resign == 0
 on-arrival: pfulf_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: reformist_advisor
