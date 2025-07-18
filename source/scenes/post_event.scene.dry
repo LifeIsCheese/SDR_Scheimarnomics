@@ -448,7 +448,7 @@ Q.economic_goal = (Q.economic_base * Q.tax_reform) -
 
 //dvp stuff
 
-if (Q.spd_bd_position == "support_government" || Q.spd_bd_position == "support_government") {
+if (Q.spd_bd_position == "support_government" || Q.spd_bd_position == "in_government") {
 
     if (Q.violence_timer > 0) {
     if (Q.right_dominance_timer >= 1) Q.dvp_alignment -= 0.5;
