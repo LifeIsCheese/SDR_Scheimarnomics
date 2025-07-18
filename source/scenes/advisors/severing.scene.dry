@@ -1,4 +1,4 @@
-title: Carl Severing
+title: <span style="color:rgba(172, 76, 76, 1);;">**Carl Severing**</span>
 is-pinned-card: true
 tags: advisor, reformist
 card-image: img/portraits/SeveringCarl.jpg
@@ -6,10 +6,11 @@ new-page: true
 
 = Carl Severing
 
-Severing has been Interior Minister for both the German Republic and for the state of Prussia, and his priority is using the security services to target the enemies of the republic.
+Severing has been Interior Minister for both the German Republic and for the state of Prussia. Recently however, he has expanded his reach to covert intelligence using underhanded methods to destroy any enemy he deems destructive to the republic. As such, he cannot be dismissed.
 
-[? if severing_advisor != 1 : Despite his alienation towards the party, he <span style="color:rgba(172, 76, 76, 1);;">**cannot**</span> leave. ?]
-
+<div class = "face-status-container">
+    For he will always be in the shadows, ready to defend the republic at all costs.
+</div>
 - @prussian_bulwark
 - @police_affairs
 - @secret_police_affairs

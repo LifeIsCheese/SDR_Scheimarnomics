@@ -1,7 +1,7 @@
 title: KPD influence
 view-if: far_left_strength < weimar_strength and bruning_plot == "successful" and violence_timer <= 18 and kpd_influence_timer == 0 and violence_timer != -1 and leow_plot != "successful"
 max-visits: 4
-on-arrival: rb_dissent +=25; kpd_influence_timer = 6
+on-arrival: rb_dissent +=50; kpd_influence_timer = 6
 new-page: true
 tags: event
 
@@ -12,9 +12,16 @@ With violence spreading even further in the streets, and the left being weaker t
 **Perhaps it would be good to keep an eye out for this**
 
 - @spies: Spies
+- @ignore: Severing seems to misplace his keys.
 
 @spies
 subtitle: We can use our vast network of spies to single out KPD dissidents.
 unavailable-subtitle: Our spy network does not have the capability to carry this out.
 choose-if: spy_network >= 6
 on-arrival: rb_dissent -= 15
+
+@ignore
+subtitle: Wonder where it went?
+view-if: spy_network >= 6
+
+Ah, never mind that. It turns out Severing's keys was in his pocket, quite the laughable.
