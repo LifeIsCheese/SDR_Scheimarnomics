@@ -24,8 +24,8 @@ The left of our party has criticized our paramilitary and police's actions, citi
 - @military: The military acts by it's self!
 
 @left
-subtitle: -1 resource. To compensate for new police hires and damages. [? if resources < 1 : We don't have enough resources. ?] [? if military_influence >= 50 : We are not in control of the situation. ?]
-choose-if: resources > 0 and military_influence < 50
+subtitle: -1 resource. To compensate for new police hires and damages. Our coalition partners will see this as us admitting it was our fault. [? if resources < 1 : We don't have enough resources. ?] [? if military_influence >= 50 : We are not in control of the situation. ?]
+choose-if: resources > 0 and military_influence < 50; coalition_dissent +=1
 on-arrival: resources -=1
 
 We apologize to the affected civilians, providing them aid, and money to the dead of the families. Yet, we also purge any on the police responsible, and reprimanding Karl Zörgiebel. 

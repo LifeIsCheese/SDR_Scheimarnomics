@@ -1,6 +1,6 @@
 title: Lost of trust
-view-if: right_dominance_timer > 6 and rb_urgency_timer > 0 and in_spd_majority != 1 and spd_in_government
-on-arrival: z_relation -=20; ddp_relation -= 20; dvp_relation -=20 if dvp_in_government
+view-if: right_dominance_timer > 6 and rb_urgency_timer > 0 and in_spd_majority != 1 and spd_in_government and wirth_ascendant !=1
+on-arrival: z_relation -=20; ddp_relation -= 20; dvp_relation -=20 if dvp_in_government; coalition_dissent +=1
 max-visits: 1
 new-page: true
 tags: event

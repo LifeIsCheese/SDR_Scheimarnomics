@@ -1,6 +1,6 @@
 title: RFB militarization
 view-if: violence_timer > 0 and violence_events_id == 1 and spd_bd_position != "support_kpd"
-on-arrival: rfb_militancy += 1.5; military_weariness += 3; violence_events_id = 0;
+on-arrival: rfb_militancy += 1.5; military_weariness += 3; violence_events_id = 0
 new-page: true
 tags: event
 

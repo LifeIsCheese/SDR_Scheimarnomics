@@ -539,13 +539,13 @@ const violenceMultiplier = Math.round((1 + (Q.violence_level / 100) ) * 100) / 1
 if (Q.violence_timer > 0) {
     if (Q.rohm_plot !== "successful") {
         if (Q.dvp_alignment <= 0) {
-            Q.sa_strength += (Q.violence_timer * 3.5) * violenceMultiplier;
-        Q.sh_strength += (Q.violence_timer * 3.2) * violenceMultiplier;
+            Q.sa_strength += (Q.violence_timer * 7) * violenceMultiplier;
+        Q.sh_strength += (Q.violence_timer * 6) * violenceMultiplier;
         } 
         
         else {
-            Q.sa_strength += (Q.violence_timer * 3) * violenceMultiplier;
-        Q.sh_strength += (Q.violence_timer * 2.9) * violenceMultiplier;
+            Q.sa_strength += (Q.violence_timer * 5.2) * violenceMultiplier;
+        Q.sh_strength += (Q.violence_timer * 3.5) * violenceMultiplier;
         }
     } else {
                 if (Q.dvp_alignment <= 0) {
@@ -562,7 +562,7 @@ if (Q.violence_timer > 0) {
 
 // Far left ramp up
 if (Q.violence_timer > 0) {
-    const leftMultiplier = (100 - Q.nationalism) / (Q.leow_plot !== "successful" ? 9 : 13);
+    const leftMultiplier = (Q.socialism / 2) / (Q.leow_plot !== "successful" ? 7 : 14);
     Q.rfb_strength += (Q.violence_timer * leftMultiplier) * violenceMultiplier;
 }
 

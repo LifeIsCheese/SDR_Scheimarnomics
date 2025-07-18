@@ -1,4 +1,4 @@
-title: National affairs
+title: Affairs
 view-if: bruning_plot == "successful" and paramilitaries_timer == 0 and spd_in_government
 frequency: 100
 new-page: true
