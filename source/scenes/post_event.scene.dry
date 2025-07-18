@@ -431,6 +431,8 @@ case "sympathy":
 
 }
 
+if (Q.left_sympathies > 66) {Q.left_sympathies = 66}
+
 // Hiding Targets
 
 if (typeof document !== "undefined") {

@@ -1,0 +1,40 @@
+title: Military connections
+view-if: bruning_plot == "successful" and paramilitaries_timer == 0
+frequency: 100
+new-page: true
+is-card: true
+card-image: img/d_rose.jpg
+tags: agitation
+
+
+= Our connections
+
+We can use, or establish connections in the military.
+
+- @spread_socialism: We can spread socialism among the lower ranks of the military.
+- @sabotage: We can sabotage the military.
+- @militarize: Start a scheme to siphon military equipment into the Reichsbanner.
+- @return: Perhaps another time.
+- @easy_discard
+
+@spread_socialism
+subtitle: We will use our spies to do this. -1 resource.
+choose-if: resources > 0
+on-arrival: left_sympathies += 0.05 if spy_network < 6; left_sympathies += 0.1 if spy_network >=6
+
+[? if spy_network < 6 : We spread propaganda among on lower ranks of the military, but it does seem to be effective. ?]
+
+[? if spy_network >= 6 : Using our pervasive spy network, we can spread our propaganda thoroughly. ?]
+
+
+@sabotage
+subtitle: WIP
+choose-if: 1== 1
+
+We can use our media empire to find new reichsbanner recruits. 
+
+@militarize
+subtitle: WIP
+choose-if: 1 == 1
+
+The Reichsbanner now has munitions meant for military use.
