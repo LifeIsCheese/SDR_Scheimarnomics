@@ -590,34 +590,26 @@ img {
 /* mobile: move the stat box to the top if the screen is too small,
  * and reduce font size slightly. */
 @media screen and (max-width: 560px) {
-  #page {
-      position: static;
-  }
-  #content {
-      position: static;
-      font-size: 1em;
-      line-height: 160%;
-      padding: 1em 1em 1.5em 1em;
-  }
-  #qualities {
-      font-size: 1em;
-  }
   #tools_wrapper {
     position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers children horizontally */
   }
   .tools {
-      width: 90%;
-      margin: 2em 0 1em 0;
-      margin: 0.4em;
+    width: 90%;
+    margin: 0.4em auto; /* centers the sidebar itself */
+    float: none;
+    left: auto;
+    right: auto;
   }
-  .tools.left {
-      float: none;
-      left: 0;
-  }
+  .tools.left,
   .tools.right {
-      float: none;
-      right: 0;
+    float: none;
+    left: auto;
+    right: auto;
   }
+}
   #mid_panel {
       margin: 0 auto;
   }
