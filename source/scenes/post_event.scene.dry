@@ -2,6 +2,8 @@ title: Post Event
 new-page: true
 on-arrival: {!
 
+Q.military_use_reluctance_multiplier = (100 - Q.military_reluctance) / 100
+
 Q.last_advisor_action = 0;
 // thing
 for (const c of Q.classes) {
@@ -431,6 +433,7 @@ case "sympathy":
 
 }
 
+
 if (Q.left_sympathies > 66) {Q.left_sympathies = 66}
 
 // Hiding Targets
@@ -594,6 +597,32 @@ if (Q.violence_timer > 0) {
     }
 }
 
+//military reluctance change
+
+if (Q.spd_bd_position == "support_kpd") {
+
+    if (Q.far_left_strength > Q.weimar_strength || Q.far_right_strength > Q.weimar_strength) {
+
+        if (Q.military_reluctance > 0) {
+
+            Q.military_reluctance -= 5;
+
+        } else {
+
+            Q.reichswehr_strength += ( (24 - Q.violence_timer) * (15 + (Q.military_strength / 10)) ) / violenceMultiplier;
+
+        }
+
+    }
+
+}
+
+// Violence changes
+
+Q.violence_perceived_left = ( (Q.rb_militancy + Q.rfb_militancy) / 2 ) + Q.violence_perceived_addon_left;
+Q.violence_perceived_republic = ( ( (Q.reichswehr_militancy * Q.military_use_reluctance_multiplier ) + 3) / 2 ) + Q.violence_perceived_addon_republic;
+Q.violence_perceived_right = ( (Q.sa_militancy + Q.sh_militancy) / 2 ) + Q.violence_perceived_addon_right;
+
 // Military ramp up
 if (Q.military_weariness >= 50) {
     Q.reichswehr_strength += ( (24 - Q.violence_timer) * (15 + (Q.military_strength / 10)) ) * violenceMultiplier;
@@ -605,7 +634,7 @@ Q.military_available = 1 - (Q.military_weariness / 100);
 // Coalition strengths
 if (Q.spd_bd_position == "support_kpd") {
     
-    Q.weimar_strength = Math.round(Q.rb_force + Q.army_force + (Q.prussia_force * (1 - Q.prussian_police_loyalty)) );
+    Q.weimar_strength = Math.round(Q.rb_force + (Q.army_force * Q.military_use_reluctance_multiplier) + (Q.prussia_force * (1 - Q.prussian_police_loyalty)) );
 
     Q.far_left_strength = Math.round(Q.rfb_force + Q.loyal_prussia + Q.rb_force);
 

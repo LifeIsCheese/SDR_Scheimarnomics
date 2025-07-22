@@ -367,6 +367,7 @@ Q.united_focus = "unity";
 Q.left_sympathies = 0; 
 Q.bourgeois_left_willingness = 0.1;
 Q.rfb_rb_unity = 0.25;
+Q.military_use_reluctance_multiplier = 0;
 
 //violence +
 

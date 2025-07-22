@@ -1,4 +1,4 @@
-title: Military connections
+title: The Military
 view-if: bruning_plot == "successful" and paramilitaries_timer == 0
 frequency: 100
 new-page: true
@@ -7,20 +7,23 @@ card-image: img/d_rose.jpg
 tags: agitation
 
 
-= Our connections
+= The Military
 
 We can use, or establish connections in the military.
+
+On the other hand we could further sabotage their efforts in a variety of ways.
 
 - @spread_socialism: We can spread socialism among the lower ranks of the military.
 - @sabotage: We can sabotage the military.
 - @militarize: Start a scheme to siphon military equipment into the Reichsbanner.
+- @propaganda: We can spread propaganda, highlighting the brutality of the military.
 - @return: Perhaps another time.
 - @easy_discard
 
 @spread_socialism
 subtitle: We will use our spies to do this. -1 resource.
 choose-if: resources > 0
-on-arrival: left_sympathies += 0.05 if spy_network < 6; left_sympathies += 0.1 if spy_network >=6
+on-arrival: left_sympathies += 0.05 if spy_network < 6; left_sympathies += 0.1 if spy_network >=6; resources -= 1
 
 [? if spy_network < 6 : We spread propaganda among on lower ranks of the military, but it does seem to be effective. ?]
 
@@ -28,13 +31,22 @@ on-arrival: left_sympathies += 0.05 if spy_network < 6; left_sympathies += 0.1 i
 
 
 @sabotage
-subtitle: WIP
-choose-if: 1== 1
+subtitle: Simple sabotage, -1 resource.
+choose-if: resources > 0
+on-arrival: resources -= 1; reichswehr_militancy -= 0.1
 
-We can use our media empire to find new reichsbanner recruits. 
+We have successfully sabotaged the reichswehr.
 
 @militarize
-subtitle: WIP
-choose-if: 1 == 1
+subtitle: Should be an operation, but i feel like it would be too hard. Anyways, [? if left_sympathies < 0.33 : The military is not sympathetic to our cause. ?]
+choose-if: left_sympathies > 0.32
+on-arrival: rb_militancy += 0.5; rfb_militancy += 0.25; left_sympathies -= 0.33
 
-The Reichsbanner now has munitions meant for military use.
+Using our connections in the military we now have an array of military grade equipment.
+
+@propaganda
+subtitle: This will increase their reluctance. 1 resource. [? if violence_perceived_left > violence_perceived_republic : The public views us as the main aggressor. ?]
+choose-if: violence_perceived_republic > violence_perceived_left
+on-arrival: military_reluctance += 20; military_reluctance = 100 if military_reluctance > 100; resources -= 1
+
+We have successfully spread propaganda, and now the military is less willing to use, harsher methods.
