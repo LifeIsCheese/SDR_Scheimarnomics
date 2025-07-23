@@ -17,7 +17,7 @@ Many in the party are in favour of forming a united front with the democratic pa
 - @left_path: We have one struggle.
 
 @republic_path
-on-arrival: judicial_reform = 2; z_relation +=33; ddp_relation +=33; dvp_relation +=15; workers_dnvp -=15; workers_ddp +=4; workers_dvp +=1; workers_z += 4; workers_spd += 6; z_party_leader = "Joos"; chancellor = "Wirth" if chancellor_party == "Z"; plot_target = "None"; plot_strength = 0; violence_timer = 24; time_to_election = 3 if spd_in_government != 1; workers_nsdap -= 15; workers_spd +=10; workers_ddp +=2; workers_z +=3; old_middle_dnvp -= 15; old_middle_ddp += 10; old_middle_z +=5; new_middle_nsdap -= 20; new_middle_ddp +=20; rural_dnvp -= 20; rural_spd += 15; rural_ddp += 5; kpd_relation = 0; judicial_reform += 6; rfb_banned = 1; rfb_banned_prussia = 1; sa_banned = 1; sh_banned = 1; dvp_in_government = 0; spd_in_government = 0; {!
+on-arrival: judicial_reform = 2; z_relation +=33; ddp_relation +=33; dvp_relation +=15; workers_dnvp -=15; workers_ddp +=4; workers_dvp +=1; workers_z += 4; workers_spd += 6; z_party_leader = "Joos"; chancellor = "Wirth" if chancellor_party == "Z"; plot_target = "None"; plot_strength = 0; violence_timer = 24; time_to_election = 3 if spd_in_government != 1; workers_nsdap -= 15; workers_spd +=10; workers_ddp +=2; workers_z +=3; old_middle_dnvp -= 15; old_middle_ddp += 10; old_middle_z +=5; new_middle_nsdap -= 20; new_middle_ddp +=20; rural_dnvp -= 20; rural_spd += 15; rural_ddp += 5; kpd_relation = 0; judicial_reform += 6; rfb_banned = 1; rfb_banned_prussia = 1; sa_banned = 1; sh_banned = 1; dvp_in_government = 0; spd_in_government = 0; time_to_election = 3; {!
     side_bar = document.getElementById("stats_sidebar_right");
     side_bar.style.display = "block";
     window.changeTab('status_right.military', 'military', 'right');
@@ -52,6 +52,7 @@ on-arrival: spd_bd_position = "support_kpd"; kpd_relation = 80; prussian_police_
     Q.violence_events_id = 0;
     
 !}
+go-to: set_next_election_time
 
 Members of the Reichstag, most notably Otto Braun and [+ z_party_leader +] have recently called for an emergency session to discuss the course of action, as such an event could spark an upsurge of extremist activity.
 
