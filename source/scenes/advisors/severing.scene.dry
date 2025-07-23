@@ -13,9 +13,11 @@ Severing has been Interior Minister for both the German Republic and for the sta
 <div class = "face-status-container">
     For he will always be in the shadows, ready to defend the republic at all costs.
 </div>
+
 - @prussian_bulwark
 - @police_affairs
 - @secret_police_affairs
+- @fund_spies: We can make use of our spies.
 - @root: Return to main
 
 @prussian_bulwark
@@ -42,4 +44,12 @@ choose-if: advisor_action_timer == 0 and spd_in_government and interior_minister
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not in government. ?][? if interior_minister_party != "SPD": The SPD does not have the Interior ministry. ?]
 on-arrival: advisor_action_timer = 6; police_timer -= 6; last_advisor_action = 1
 go-to: secret_police
+
+@fund_spies
+view-if: spd_in_government != 1
+choose-if: advisor_action_timer == 0 and spd_in_government != 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if spd_in_government : The SPD is in government. ?]
+on-arrival: advisor_action_timer = 6; police_timer -= 6; last_advisor_action = 1
+go-to: spy_network
+
 

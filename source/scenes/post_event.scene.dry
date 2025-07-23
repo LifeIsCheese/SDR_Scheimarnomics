@@ -634,7 +634,7 @@ Q.military_available = 1 - (Q.military_weariness / 100);
 // Coalition strengths
 if (Q.spd_bd_position == "support_kpd") {
     
-    Q.weimar_strength = Math.round(Q.rb_force + (Q.army_force * Q.military_use_reluctance_multiplier) + (Q.prussia_force * (1 - Q.prussian_police_loyalty)) );
+    Q.weimar_strength = Math.round ((Q.army_force * Q.military_use_reluctance_multiplier) + (Q.prussia_force * (1 - Q.prussian_police_loyalty)) );
 
     Q.far_left_strength = Math.round(Q.rfb_force + Q.loyal_prussia + Q.rb_force);
 
