@@ -7,8 +7,13 @@ tags: event
 
 = We have stolen some tanks!
 
-<p style="text-align: center;"> Director [+ director_s +] has created a mastermind of a plan, think about it! Who would expect that generals high up in the Reichswehr would have socialist sympathies, insert comedy. Carl Severing was here personally to serve as a mentor for [+ director_s +] and with his senior expertise we were able to pull of the heist of the century! </p>
+<div class="event-container">
+  <img class="face-status" src="img/portraits/secret_police.jpg" alt="Dih rose">
+  <p>
+  Director [+ director_s +] has created a mastermind of a plan, by using our top spy and turning him into a lonesome farmer who served in the great war, we can get rid of suspicion that he is correlated with us. Than after we steal the prototype of these "tanks" and plant it into a farmers auction. We then buy it off the auction, and when time came to repair it, we can sue the government for the designs of the tanks for right to repair!
+  </p>
+</div>
 
 <div class = "face-status-container">
-    <img class="event-img" src="img/portraits/secret_police.jpg">
+    <img class="event-img" src="img/farmer_dude.jpg">
 </div>
