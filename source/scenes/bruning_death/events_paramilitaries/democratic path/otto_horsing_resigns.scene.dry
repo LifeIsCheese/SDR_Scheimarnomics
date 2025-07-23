@@ -1,5 +1,5 @@
 title: Otto Hörsing's resignation
-view-if: military_influence > 50 and rb_leader != "karl holtermann"
+view-if: military_influence > 50 and rb_leader != "karl holtermann" and spd_bd_position != "support_kpd"
 new-page: true
 max-visits: 1
 on-arrival: rb_dissent += 100; rb_leader = "karl holtermann"

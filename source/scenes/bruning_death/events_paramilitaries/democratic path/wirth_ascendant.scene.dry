@@ -1,5 +1,5 @@
 title: Wirth ascendant
-view-if: weimar_dominance_timer > 4 and violence_timer > 0
+view-if: weimar_dominance_timer > 4 and violence_timer > 0 and spd_bd_position != "support_kpd"
 new-page: true
 max-visits: 1
 on-arrival: wirth_ascendant = 1; z_relation += 15

@@ -1,5 +1,5 @@
 title: Death of Otto Hörsing
-view-if: horsing_death >= 100
+view-if: horsing_death >= 100 and spd_bd_position != "support_kpd"
 new-page: true
 max-visits: 1
 on-arrival: rb_leader = "karl holtermann"; rb_strength *= 0.7; rb_militancy *=0.7

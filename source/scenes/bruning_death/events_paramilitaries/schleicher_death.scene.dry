@@ -1,5 +1,5 @@
 title: Operation Red Dead
-view-if: schleicher_plot == "successful"
+view-if: schleicher_plot == "successful" 
 new-page: true
 max-visits: 1
 on-arrival: plot_target = "None"; plot_strength = 0; violence_add_on +=4

@@ -1,5 +1,5 @@
 title: SA militarization
-view-if: violence_timer > 0 and violence_events_id == 2
+view-if: violence_timer > 0 and violence_events_id == 2 and spd_bd_position != "support_kpd"
 on-arrival: sa_militancy += 1.5; military_weariness += 3; violence_events_id = 0
 new-page: true
 tags: event

@@ -1,5 +1,5 @@
 title: The DVP has joined the Republic!
-view-if: dvp_alignment >= 10 and violence_level >= 33 and dvp_in_government != 1
+view-if: dvp_alignment >= 10 and violence_level >= 33 and dvp_in_government != 1 and spd_bd_position != "support_kpd"
 new-page: true
 max-visits: 1
 tags: event

@@ -1,5 +1,5 @@
 title: Reichsbank Sized!
-view-if: right_dominance_timer > 3 and violence_timer > 0 and hjalmar_plot != "successful"
+view-if: right_dominance_timer > 3 and violence_timer > 0 and hjalmar_plot != "successful" and spd_bd_position != "support_kpd"
 new-page: true
 max-visits: 1
 on-arrival: reichsbank_seized = 1; coalition_dissent +=1

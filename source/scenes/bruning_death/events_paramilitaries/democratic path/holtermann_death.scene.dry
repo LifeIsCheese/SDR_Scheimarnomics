@@ -1,8 +1,8 @@
 title: Death of Karl Höltermann
-view-if: holtermann_death >= 100
+view-if: holtermann_death >= 100 and spd_bd_position != "support_kpd"
 new-page: true
 max-visits: 1
-on-arrival: rb_leader = "vacant"; rb_strength *= 0.7; rb_militancy *=0.7
+on-arrival: rb_leader = "vacant"; rb_strength *= 0.7; rb_militancy *=0.7 
 tags: event
 
 = Death of Karl Höltermann 

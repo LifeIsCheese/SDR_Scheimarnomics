@@ -1,5 +1,5 @@
 title: Military Coup!
-view-if: bruning_plot == "successful" and violence_timer != -1 and military_weariness >= 100 and violence_timer > 0 
+view-if: bruning_plot == "successful" and violence_timer != -1 and military_weariness >= 100 and violence_timer > 0 and spd_bd_position != "support_kpd"
 new-page: true
 tags: event
 

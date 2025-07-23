@@ -1,5 +1,5 @@
 title: KPD influence
-view-if: far_left_strength < weimar_strength and bruning_plot == "successful" and violence_timer <= 18 and kpd_influence_timer == 0 and violence_timer != -1 and leow_plot != "successful"
+view-if: far_left_strength < weimar_strength and bruning_plot == "successful" and violence_timer <= 18 and kpd_influence_timer == 0 and violence_timer != -1 and leow_plot != "successful" and spd_bd_position != "support_kpd"
 max-visits: 4
 on-arrival: rb_dissent +=50; kpd_influence_timer = 6
 new-page: true

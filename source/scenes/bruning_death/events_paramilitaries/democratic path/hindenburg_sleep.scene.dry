@@ -1,5 +1,5 @@
 title: Comatose.
-view-if: violence_timer < 21 and bruning_plot == "successful" and violence_timer != -1
+view-if: violence_timer < 21 and bruning_plot == "successful" and violence_timer != -1 and spd_bd_position != "support_kpd"
 new-page: true
 max-visits: 1
 tags: event
