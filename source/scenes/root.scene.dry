@@ -277,7 +277,8 @@ Q.plotCaps = {
     rohm: { interior: 0.55, prussian: 0.50, rb: 0 },
     leow: { interior: 0.45, prussian: 0.40, rb: 50 },
     schleicher:{ interior: 0.65, prussian: 0.55, rb: 0 },
-    bank:{ interior: 0, prussian: 0, rb: 0 }
+    bank:{ interior: 0, prussian: 0, rb: 0 },
+    tank:{ interior: 0, prussian: 0, rb: 0 }
 };
 
 //plotMap
@@ -288,7 +289,8 @@ Q.plotMap = {
     "rohm": "rohm_plot",
     "leow": "leow_plot",
     "schleicher": "schleicher_plot",
-    "bank": "bank_plot"
+    "bank": "bank_plot",
+    "tank": "tank_plot",
 
 };
 
@@ -301,6 +303,7 @@ Q.bruning_plot = 0;
 Q.rohm_plot = 0;
 Q.leow_plot = 0;
 Q.schleicher_plot = 0;
+Q.tank_plot = 0;
 Q.bank_plot = 0;
 Q.stealing_amount = 0;
 Q.operations_scene = 0;
@@ -359,6 +362,7 @@ Q.violence_perceived_addon_left = 0;
 Q.violence_perceived_addon_republic = 0;
 Q.violence_perceived_addon_right = 0;
 Q.military_reluctance = 80;
+Q.militarization_left_progression = 1;
 
 
 

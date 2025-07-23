@@ -13,9 +13,11 @@ We can use, or establish connections in the military.
 
 On the other hand we could further sabotage their efforts in a variety of ways.
 
+- @militarize22: Start a scheme to siphon military equipment into the Reichsbanner.
+- @militarize44: Start a scheme to siphon even more military equipment into the Reichsbanner.
+- @militarize66: Start a scheme to siphon experimental, highly classified military equipment into the Reichsbanner.
 - @spread_socialism: We can spread socialism among the lower ranks of the military.
 - @sabotage: We can sabotage the military.
-- @militarize: Start a scheme to siphon military equipment into the Reichsbanner.
 - @propaganda: We can spread propaganda, highlighting the brutality of the military.
 - @return: Perhaps another time.
 - @easy_discard
@@ -25,7 +27,7 @@ subtitle: We will use our spies to do this. -1 resource.
 choose-if: resources > 0
 on-arrival: left_sympathies += 0.05 if spy_network < 6; left_sympathies += 0.1 if spy_network >=6; resources -= 1
 
-[? if spy_network < 6 : We spread propaganda among on lower ranks of the military, but it does seem to be effective. ?]
+[? if spy_network < 6 : We spread propaganda among on lower ranks of the military, but it does not seem to be effective. ?]
 
 [? if spy_network >= 6 : Using our pervasive spy network, we can spread our propaganda thoroughly. ?]
 
@@ -37,10 +39,29 @@ on-arrival: resources -= 1; reichswehr_militancy -= 0.1
 
 We have successfully sabotaged the reichswehr.
 
-@militarize
+@militarize22
+view-if: militarization_left_progression == 1
 subtitle: Should be an operation, but i feel like it would be too hard. Anyways, [? if left_sympathies < 0.33 : The military is not sympathetic to our cause. ?]
-choose-if: left_sympathies > 0.32
-on-arrival: rb_militancy += 0.5; rfb_militancy += 0.25; left_sympathies -= 0.33
+choose-if: left_sympathies > 0.21
+on-arrival: rb_militancy += 0.5; rfb_militancy += 0.25; militarization_left_progression = 2
+
+Using our connections in the military we now have an array of military grade equipment.
+
+@militarize44
+view-if: militarization_left_progression == 2
+subtitle: Should be an operation, but i feel like it would be too hard. Anyways, [? if left_sympathies < 0.33 : The military is not sympathetic to our cause. ?]
+choose-if: left_sympathies > 0.43
+on-arrival: rb_militancy += 1; rfb_militancy += 0.5; militarization_left_progression = 3
+
+Using our connections in the military we now have an even further amount of military grade equipment.
+
+@militarize66
+view-if: militarization_left_progression == 3
+subtitle: [? if spy_network < 9 : -2 resources ?] [? if spy_network >= 9 : 0 resources, we have sufficiently built up our spy network to be self reliant. ?], [? if left_sympathies < 0.33 : The military is not sympathetic to our cause. ?]
+choose-if: left_sympathies >= 0.65
+on-arrival: tank_plot +=10; plot_target = "tank"; spy_network +=3 if spy_network < 9; plot_strength = spy_network; resources -=2 if spy_network < 9; assassination_partners = "Spies"; resources +=1; month_actions +=1; paramilitaries_timer = 2; {!
+new_hire()
+!}
 
 Using our connections in the military we now have an array of military grade equipment.
 

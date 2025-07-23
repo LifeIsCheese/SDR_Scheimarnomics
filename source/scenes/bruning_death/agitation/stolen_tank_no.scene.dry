@@ -1,0 +1,10 @@
+title: Operation Steal some tanks
+view-if: tank_plot == "failed"
+new-page: true
+max-visits: 1
+on-arrival: plot_target = "None"; plot_strength = 0; kpd_relation -=3
+tags: event
+
+= Oh well
+
+Well we failed our heist, uh oh.

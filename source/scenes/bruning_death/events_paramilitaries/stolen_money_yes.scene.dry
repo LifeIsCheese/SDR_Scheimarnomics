@@ -1,4 +1,4 @@
-title: operation steal a lot of money
+title: Operation steal a lot of money
 view-if: bank_plot == "successful"
 new-page: true
 max-visits: 1

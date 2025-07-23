@@ -1,0 +1,14 @@
+title: Operation Steal some tanks
+view-if: tank_plot == "successful"
+new-page: true
+max-visits: 1
+on-arrival: plot_target = "None"; plot_strength = 0; rb_militancy += 2.5; rfb_militancy += 1
+tags: event
+
+= We have stolen some tanks!
+
+<p style="text-align: center;"> Director [+ director_s +] has created a mastermind of a plan, think about it! Who would expect that generals high up in the Reichswehr would have socialist sympathies, insert comedy. Carl Severing was here personally to serve as a mentor for [+ director_s +] and with his senior expertise we were able to pull of the heist of the century! </p>
+
+<div class = "face-status-container">
+    <img class="event-img" src="img/portraits/secret_police.jpg">
+</div>
