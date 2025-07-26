@@ -1,4 +1,4 @@
-title: The DVP has fled to the right!
+title: The DVP has fled to the military!
 view-if: dvp_alignment == "military" and spd_bd_position != "support_kpd"
 new-page: true
 max-visits: 1

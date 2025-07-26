@@ -462,7 +462,7 @@ if (Q.spd_bd_position == "support_government" || Q.spd_bd_position == "in_govern
     if (Q.left_dominance_timer >= 1) Q.dvp_alignment -= 1;
 
     // Cap at willing threshold
-    Q.dvp_alignment = Math.min(Q.dvp_alignment, Q.dvp_willing_alignment ?? 10);
+   if (Q.dvp_alignment > Q.dvp_willing_alignment) {Q.dvp_in_government = Q.dvp_willing_alignment}
 
     // Soft boundaries during low violence
     if (Q.violence_level <= 33) {
