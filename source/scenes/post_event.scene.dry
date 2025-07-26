@@ -490,7 +490,7 @@ if (Q.dvp_alignment >= 10) {
     Q.dvp_willing_alignment = 100;
 }
 
-if (Q.dvp_alignment <= 0) {
+if (Q.dvp_alignment <= 0.5) {
     Q.dvp_alignment = -100;
 }
 
