@@ -549,38 +549,37 @@ if (Q.rb_leader in rbLeaders && Q.spd_bd_position != "support_kpd") {
 
 
 // Violence var
-const violenceMultiplier = Math.round((1 + (Q.violence_level / 100) ) * 100) / 100;
+Q.violenceMultiplier = Math.round((1 + (Q.violence_level / 100) ) * 100) / 100;
 
-// Far right ramp up
+// spd gov path
+
+if (Q.spd_bd_position != "support_kpd") {
+
+    // Far right ramp up
 if (Q.violence_timer > 0) {
     if (Q.rohm_plot !== "successful") {
         if (Q.dvp_alignment <= 0) {
-            Q.sa_strength += (Q.violence_timer * 7) * violenceMultiplier;
-        Q.sh_strength += (Q.violence_timer * 6) * violenceMultiplier;
-        } 
-        
-        else {
-            Q.sa_strength += (Q.violence_timer * 5.2) * violenceMultiplier;
-        Q.sh_strength += (Q.violence_timer * 3.5) * violenceMultiplier;
+            AddRightStrength(7, 6);
+        } else {
+            AddRightStrength(5.2, 3.5);
         }
     } else {
-                if (Q.dvp_alignment <= 0) {
-           Q.sa_strength += (Q.violence_timer * 3) * violenceMultiplier;
-        Q.sh_strength += (Q.violence_timer * 2.9) * violenceMultiplier;
-        } 
-        
-        else {
-            Q.sa_strength += (Q.violence_timer * 2) * violenceMultiplier;
-        Q.sh_strength += (Q.violence_timer * 2.1) * violenceMultiplier;
+        if (Q.dvp_alignment <= 0) {
+            AddRightStrength(3, 2.9);
+        } else {
+            AddRightStrength(2, 2.1);
         }
     }
 }
-
-// Far left ramp up
+    // Far left ramp up
 if (Q.violence_timer > 0) {
     const leftMultiplier = (Q.socialism / 2) / (Q.leow_plot !== "successful" ? 7 : 14);
-    Q.rfb_strength += (Q.violence_timer * leftMultiplier) * violenceMultiplier;
+    Q.rfb_strength += (Q.violence_timer * leftMultiplier) * Q.violenceMultiplier;
 }
+
+}
+
+
 
 // Military weariness change
 if (Q.violence_timer > 0) {
@@ -609,6 +608,8 @@ if (Q.left_dominance_timer >= 1) {
 
 }
 
+}
+
 //military reluctance change
 
 if (Q.spd_bd_position == "support_kpd") {
@@ -617,11 +618,11 @@ if (Q.spd_bd_position == "support_kpd") {
 
         if (Q.military_reluctance > 0) {
 
-            Q.military_reluctance -= 5;
+            Q.military_reluctance -= (Q.far_left_strength + Q.far_right_strength) / 10;
 
         } else {
 
-            Q.reichswehr_strength += ( (24 - Q.violence_timer) * (15 + (Q.military_strength / 10)) ) / violenceMultiplier;
+            Q.reichswehr_strength += ( (24 - Q.violence_timer) * (15 + (Q.military_strength / 10)) ) / Q.violenceMultiplier;
 
         }
 
@@ -637,7 +638,7 @@ Q.violence_perceived_right = Math.round((( ( (Q.sa_militancy + Q.sh_militancy) /
 
 // Military ramp up
 if (Q.military_weariness >= 50) {
-    Q.reichswehr_strength += ( (24 - Q.violence_timer) * (15 + (Q.military_strength / 10)) ) * (violenceMultiplier + (Q.military_weariness / 100));
+    Q.reichswehr_strength += ( (24 - Q.violence_timer) * (15 + (Q.military_strength / 10)) ) * (Q.violenceMultiplier + (Q.military_weariness / 100));
 }
 
 // Military availability 

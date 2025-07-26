@@ -229,25 +229,25 @@
 
 }());
 
-var d = window.dendryUI.dendryEngine.state.qualities;
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 function new_hire() {
 
-if (d.resources > 0) {
+if (Q.resources > 0) {
 
-d.director_pointer = Math.floor( Math.random() * d.director_a.length);
+Q.director_pointer = Math.floor( Math.random() * Q.director_a.length);
 
-d.director_s = d.director_a[d.director_pointer];
+Q.director_s = Q.director_a[Q.director_pointer];
 
-d.director_type = Math.floor( Math.random() * 3) + 1;
+Q.director_type = Math.floor( Math.random() * 3) + 1;
 
-if (d.director_s == 'Kanye West') {
+if (Q.director_s == 'Kanye West') {
 
-d.director_type = -1;
+Q.director_type = -1;
 
 }
 
-d.resources -= 1;
+Q.resources -= 1;
 
 window.changeTab('status.Targets', 'Targets');
 
@@ -263,7 +263,7 @@ alert('Broke');
 
 function director_actions() {
 
-d.director_actions = 1;
+Q.director_actions = 1;
 
 window.changeTab('status.Actions', 'Actions')
 
@@ -277,19 +277,19 @@ window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 
 function purge() {
 
-d.interior_police_loyalty += 0.1;
+Q.interior_police_loyalty += 0.1;
 
-d.prussian_police_loyalty += 0.1;
+Q.prussian_police_loyalty += 0.1;
 
-if (d.plotMap[d.plot_target]) {
+if (Q.plotMap[Q.plot_target]) {
 
-d[d.plotMap[d.plot_target]] -= d.plot_strength * 3
+d[Q.plotMap[Q.plot_target]] -= Q.plot_strength * 3
 
 }
 
-d.director_actions_timer = 3;
+Q.director_actions_timer = 3;
 
-d.month_actions += 1;
+Q.month_actions += 1;
 
 window.changeTab('status.Actions', 'Actions')
 
@@ -299,25 +299,25 @@ window.changeTab('status.Actions', 'Actions')
 
 function rush() {
 
-if (d.loyalty_decay < 0.04) {
+if (Q.loyalty_decay < 0.04) {
 
-d.loyalty_decay += 0.01;
-
-}
-
-d.interior_police_loyalty -= 0.1;
-
-d.prussian_police_loyalty -= 0.1;
-
-if (d.plotMap[d.plot_target]) {
-
-d[d.plotMap[d.plot_target]] += d.plot_strength * 3
+Q.loyalty_decay += 0.01;
 
 }
 
-d.director_actions_timer = 3;
+Q.interior_police_loyalty -= 0.1;
 
-d.month_actions += 1;
+Q.prussian_police_loyalty -= 0.1;
+
+if (Q.plotMap[Q.plot_target]) {
+
+d[Q.plotMap[Q.plot_target]] += Q.plot_strength * 3
+
+}
+
+Q.director_actions_timer = 3;
+
+Q.month_actions += 1;
 
 window.changeTab('status.Actions', 'Actions')
 
@@ -329,25 +329,25 @@ window.changeTab('status.Actions', 'Actions')
 
 function train_spies() {
 
-if (d.loyalty_decay > 0) {
+if (Q.loyalty_decay > 0) {
 
-d.loyalty_decay -= 0.01;
+Q.loyalty_decay -= 0.01;
 
 }
 
-if (d.spy_network < 9) {
+if (Q.spy_network < 9) {
 
-d.spy_network += 3;
+Q.spy_network += 3;
 
 }
 
   
 
-if (d.assassination_partners == "Spies") {d.plot_strength = d.spy_network};
+if (Q.assassination_partners == "Spies") {Q.plot_strength = Q.spy_network};
 
-d.director_actions_timer = 12;
+Q.director_actions_timer = 12;
 
-d.month_actions += 1;
+Q.month_actions += 1;
 
 window.changeTab('status.Actions', 'Actions')
 
@@ -357,13 +357,13 @@ window.changeTab('status.Actions', 'Actions')
 
 function train_police() {
 
-d.prussian_police_strength += 10;
+Q.prussian_police_strength += 10;
 
-d.prussian_police_loyalty += 0.05;
+Q.prussian_police_loyalty += 0.05;
 
-d.director_actions_timer = 12;
+Q.director_actions_timer = 12;
 
-d.month_actions += 1;
+Q.month_actions += 1;
 
 window.changeTab('status.Actions', 'Actions')
 
@@ -373,9 +373,9 @@ window.changeTab('status.Actions', 'Actions')
 
 function joke() {
 
-d.coup_progress = 10;
+Q.coup_progress = 10;
 
-d.month_actions += 1;
+Q.month_actions += 1;
 
 window.changeTab('status.Actions', 'Actions')
 
@@ -385,15 +385,15 @@ window.changeTab('status.Actions', 'Actions')
 
 function purge2() {
 
-d.interior_police_loyalty += 0.1;
+Q.interior_police_loyalty += 0.1;
 
-d.prussian_police_loyalty += 0.1;
+Q.prussian_police_loyalty += 0.1;
 
-d.plot_strength /= 2;
+Q.plot_strength /= 2;
 
-d.director_actions_timer = 3;
+Q.director_actions_timer = 3;
 
-d.month_actions += 1;
+Q.month_actions += 1;
 
 window.changeTab('status.Actions', 'Actions')
 
@@ -405,21 +405,21 @@ window.changeTab('status.Actions', 'Actions')
 
 function rush2() {
 
-if (d.loyalty_decay < 0.04) {
+if (Q.loyalty_decay < 0.04) {
 
-d.loyalty_decay += 0.01;
+Q.loyalty_decay += 0.01;
 
 }
 
-d.interior_police_loyalty -= 0.1;
+Q.interior_police_loyalty -= 0.1;
 
-d.prussian_police_loyalty -= 0.1;
+Q.prussian_police_loyalty -= 0.1;
 
-d.plot_strength *= 2;
+Q.plot_strength *= 2;
 
-d.director_actions_timer = 3;
+Q.director_actions_timer = 3;
 
-d.month_actions += 1;
+Q.month_actions += 1;
 
 window.changeTab('status.Actions', 'Actions')
 
@@ -431,17 +431,17 @@ window.changeTab('status.Actions', 'Actions')
 
 function dissent_reduction() {
 
-d.rb_actions_timer = 3;
+Q.rb_actions_timer = 3;
 
   
 
-if (d.rb_leader == "otto horsing") {
+if (Q.rb_leader == "otto horsing") {
 
-d.rb_dissent = Math.max(0, d.rb_dissent - 33);
+Q.rb_dissent = Math.max(0, Q.rb_dissent - 33);
 
-} else if (d.rb_leader == "karl holtermann") {
+} else if (Q.rb_leader == "karl holtermann") {
 
-d.rb_dissent = Math.max(0, d.rb_dissent - 15);
+Q.rb_dissent = Math.max(0, Q.rb_dissent - 15);
 
 }
 
@@ -455,17 +455,17 @@ window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 
 function republic_unity() {
 
-d.rb_actions_timer = 3;
+Q.rb_actions_timer = 3;
 
   
 
-if (d.rb_leader == "otto horsing") {
+if (Q.rb_leader == "otto horsing") {
 
-d.rb_passive += 3;
+Q.rb_passive += 3;
 
-} else if (d.rb_leader == "karl holtermann") {
+} else if (Q.rb_leader == "karl holtermann") {
 
-    d.rb_passive += 6;
+    Q.rb_passive += 6;
 
 }
 
@@ -479,7 +479,7 @@ window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 
 function hiderb() {
 
-d.hiding = 1;
+Q.hiding = 1;
 
 window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 
@@ -489,7 +489,7 @@ window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 
 function showrb() {
 
-d.hiding = 0;
+Q.hiding = 0;
 
 window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 
@@ -499,10 +499,10 @@ window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 
 function bruning() {
 
-d.kpd_party_leader = "Conciliators";
-d.kpd_relation = 100;
-d.left_strength = 60;
-d.bruning_plot = "successful"
+Q.kpd_party_leader = "Conciliators";
+Q.kpd_relation = 100;
+Q.left_strength = 60;
+Q.bruning_plot = "successful"
 
 }
 
@@ -510,7 +510,7 @@ d.bruning_plot = "successful"
 
 function hjalmar() {
 
-d.hjalmar_plot = "successful"
+Q.hjalmar_plot = "successful"
 
 }
 
@@ -519,9 +519,9 @@ d.hjalmar_plot = "successful"
 function ViolenceAddon(whichSide, violenceAmt) {
 
   
-let old_violence = d.violence_level;
+let old_violence = Q.violence_level;
 
-d.violence_add_on += violenceAmt;
+Q.violence_add_on += violenceAmt;
 
 d['violence_perceived_addon_' + whichSide] += violenceAmt;
 
@@ -529,16 +529,21 @@ d['violence_perceived_addon_' + whichSide] += violenceAmt;
 
 }
 
+function AddRightStrength(saMult, shMult) {
+    Q.sa_strength += (Q.violence_timer * saMult) * Q.violenceMultiplier;
+    Q.sh_strength += (Q.violence_timer * shMult) * Q.violenceMultiplier;
+}
+
 function unity_focus() {
 
-d.united_focus = "unity"
+Q.united_focus = "unity"
 document.getElementById('status_right_focus').innerHTML = "We are focusing on uniting the RFB and Reichsbanner as a proper united front.";
 
 }
 
 function outreach_focus() {
 
-d.united_focus = "outreach"
+Q.united_focus = "outreach"
 document.getElementById('status_right_focus').innerHTML = "We are reaching out to the leftwing of the Z and DDP.";
 
 
@@ -546,7 +551,7 @@ document.getElementById('status_right_focus').innerHTML = "We are reaching out t
 
 function sympathy_focus() {
 
-d.united_focus = "sympathy"
+Q.united_focus = "sympathy"
 document.getElementById('status_right_focus').innerHTML = "We are spreading socialist sympathy within the army.";
 
 }

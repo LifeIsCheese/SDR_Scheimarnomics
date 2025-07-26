@@ -351,11 +351,11 @@ Q.reichsbank_seized = 0;
 Q.rb_strength_add = 200;
 Q.rb_militancy_add = 0.1;
 
-
 //violence stuff
 
 Q.violence_level = 0;
 Q.violence_add_on = 0;
+Q.violenceMultiplier = Math.round((1 + (Q.violence_level / 100) ) * 100) / 100;
 
 // united left path
 Q.violence_perceived_addon_left = 0;
