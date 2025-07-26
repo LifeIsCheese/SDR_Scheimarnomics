@@ -472,7 +472,7 @@ if (Q.spd_bd_position == "support_government" || Q.spd_bd_position == "in_govern
 
     // Special if military becomes strongest
 
-    if (spd_bd_position != "support_kpd" && Q.military_strength > Q.far_left_strength && Q.military_strength > Q.far_right_strength && Q.military_strength > Q.weimar_strength) {
+    if (Q.spd_bd_position != "support_kpd" && Q.military_strength > Q.far_left_strength && Q.military_strength > Q.far_right_strength && Q.military_strength > Q.weimar_strength) {
 
         Q.dvp_alignment = "military";
 
@@ -490,7 +490,7 @@ if (Q.dvp_alignment >= 10) {
     Q.dvp_willing_alignment = 100;
 }
 
-if (Q.dvp_alignment <= 0.5) {
+if (Q.dvp_alignment <= 0) {
     Q.dvp_alignment = -100;
 }
 
