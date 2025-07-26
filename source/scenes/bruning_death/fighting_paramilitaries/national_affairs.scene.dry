@@ -96,7 +96,6 @@ The DVP has declared it's neutrality, [? if violence_level < 33 : as of now it w
 - @left_wing: Strengthen the left wing of the DVP, making them more willing to support us.
 - @root: Perhaps another time
 - @easy_discard
-- @return: Perhaps another time.
 
 @talks
 on-arrival: dvp_willing_alignment += 2; month_actions +=1; paramilitaries_timer = 2
