@@ -429,7 +429,7 @@ case "sympathy":
   break;
 
   default:
-  counsole.log("bug");
+  console.log("bug");
   
 
 }
@@ -608,7 +608,6 @@ if (Q.left_dominance_timer >= 1) {
 
 }
 
-}
 
 //military reluctance change
 
@@ -1619,11 +1618,12 @@ if (Q.violence_timer > 0) {
             Q.catholics_spd -= 6/12;
         }
     }
+
 if (Q.normalize_support) {
     for (var party of Q.parties) {
         for (var c of Q.classes) {
             Q[c+'_'+party] = (Q[c+'_'+party+'_normalized']);
-       } 
+       }
     }
 }
 
@@ -1634,7 +1634,7 @@ var choices = this._compileChoices(scene);
 if (choices && choices[0].title != "Continue...") {
     Q.has_event = 1;
 } else {
-    has_event = 0;
+    Q.has_event = 0;
 }
 
 if (typeof window !== "undefined" && window.generateBar) {
