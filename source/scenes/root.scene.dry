@@ -375,9 +375,9 @@ Q.military_use_reluctance_multiplier = 0;
 
 //violence +
 
-Q.violence_perceived_left = ( (Q.rb_militancy + Q.rfb_militancy) / 2 ) + Q.violence_perceived_addon_left;
-Q.violence_perceived_republic = ( (Q.reichswehr_militancy + 3) / 2 ) + Q.violence_perceived_addon_republic;
-Q.violence_perceived_right = ( (Q.sa_militancy + Q.sh_militancy) / 2 ) + Q.violence_perceived_addon_right;
+Q.violence_perceived_left = Math.round(( ( (Q.rb_militancy + Q.rfb_militancy) / 2 ) + Q.violence_perceived_addon_left) * 16.667);
+Q.violence_perceived_republic = Math.round(( ( ((Q.reichswehr_militancy * Q.military_use_reluctance_multiplier) + 3) / 2 ) + Q.violence_perceived_addon_republic) * 16.667);
+Q.violence_perceived_right = Math.round(( ( (Q.sa_militancy + Q.sh_militancy) / 2 ) + Q.violence_perceived_addon_right) * 16.667);
 
 
 
