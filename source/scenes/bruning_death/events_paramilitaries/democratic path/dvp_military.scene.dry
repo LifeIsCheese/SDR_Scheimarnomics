@@ -1,0 +1,13 @@
+title: The DVP has fled to the right!
+view-if: dvp_alignment == "military" and spd_bd_position != "support_kpd"
+new-page: true
+max-visits: 1
+tags: event
+
+= The DVP backs the reichswehr!
+
+Sensing the impending collapse of both the republic and far right, as well with the rapidly interfering military, the party has decided to cut ties with it's ex partners and has now turned to the Reichswehr for protection in exchange for industrial backing.
+
+May God help us
+
+- @root: For now one else can.

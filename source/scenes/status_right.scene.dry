@@ -52,11 +52,13 @@ Bourgeois willingness to work [+ bourgeois_left_willingness_2 +]%
 
 = The Military
 
+[? if dvp_alignment == "military" : Backed by the industrialists. ?]
+
 Military Strength: [+ military_strength +]%
 
 Military Weariness: [+ military_weariness +]% 
 
-[? if military_available < 0.25 : The military is coalescing and getting tired of the current deadlock. ?] [? if military_available >= 0.25 and military_available < 0.5 : The military has enforced discipline. ?] [? if military_available >= 0.5 and military_available < 0.75 : The military is split. ?] [? if military_available >= 0.75 : The military is racked with ideological infighting. ?]
+[? if military_available <= 0 : <span style="color:rgb(182, 45, 45);">**The military is ready to coup, tread carefully.**</span>  ?] [? if military_available < 0.25 and military_available > 0 : The military is coalescing and getting tired of the current deadlock. ?] [? if military_available >= 0.25 and military_available < 0.5 : The military has enforced discipline. ?] [? if military_available >= 0.5 and military_available < 0.75 : The military is split. ?] [? if military_available >= 0.75 : The military is racked with ideological infighting. ?]
 
 [? if spd_in_government : Concessions ?]
 

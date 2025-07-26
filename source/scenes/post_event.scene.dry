@@ -469,6 +469,15 @@ if (Q.spd_bd_position == "support_government" || Q.spd_bd_position == "in_govern
         if (Q.dvp_alignment >= 10) Q.dvp_alignment = 9;
         if (Q.dvp_alignment <= 0) Q.dvp_alignment = 1;
     }
+
+    // Special if military becomes strongest
+
+    if (spd_bd_position != "support_kpd" && Q.military_strength > Q.far_left_strength && Q.military_strength > Q.far_right_strength && Q.military_strength > Q.weimar_strength) {
+
+        Q.dvp_alignment = "military";
+
+    }
+
 }
 
 if (Q.dvp_in_government && Q.violence_timer <= 20) {
@@ -591,10 +600,12 @@ if (Q.violence_timer > 0) {
     }
     if (Q.schleicher_plot == "failed" || Q.violence_acceleration == 1 || Q.left_dominance_timer >= 1) {
         Q.military_weariness += 5;
-        if (Q.left_dominance_timer >= 1) {
+    }
+
+if (Q.left_dominance_timer >= 1) {
             Q.military_weariness += 5;
         }
-    }
+
 }
 
 //military reluctance change
@@ -625,7 +636,7 @@ Q.violence_perceived_right = ( (Q.sa_militancy + Q.sh_militancy) / 2 ) + Q.viole
 
 // Military ramp up
 if (Q.military_weariness >= 50) {
-    Q.reichswehr_strength += ( (24 - Q.violence_timer) * (15 + (Q.military_strength / 10)) ) * violenceMultiplier;
+    Q.reichswehr_strength += ( (24 - Q.violence_timer) * (15 + (Q.military_strength / 10)) ) * (violenceMultiplier + (Q.military_weariness / 100));
 }
 
 // Military availability 
