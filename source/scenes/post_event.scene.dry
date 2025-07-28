@@ -623,7 +623,7 @@ if (Q.spd_bd_position == "support_kpd") {
 
         if (Q.military_reluctance > 0) {
 
-            Q.military_reluctance -= Math.round((Q.far_left_strength + Q.far_right_strength) / 5;)
+            Q.military_reluctance -= Math.round((Q.far_left_strength + Q.far_right_strength) / 5);
 
         } else {
 
