@@ -597,8 +597,8 @@ img {
     align-items: center; /* centers children horizontally */
   }
   .tools {
-    width: 90%;
-    margin: 0.4em auto; /* centers the sidebar itself */
+    width: 95%;
+    margin: 0.3em auto; /* centers the sidebar itself */
     float: none;
     left: auto;
     right: auto;
@@ -609,7 +609,7 @@ img {
     left: auto;
     right: auto;
   }
-}
+
   #mid_panel {
       margin: 0 auto;
   }
@@ -637,6 +637,7 @@ img {
     margin-right: 1em;
     vertical-align: top;
   }
+
 }
 
 
