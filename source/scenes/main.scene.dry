@@ -72,13 +72,14 @@ max-cards: 4
 [? if spd_bd_position == "support_kpd" : Our perceived violence [+ violence_perceived_left +] ?]
 
 [? if violence_timer > 0 : The Republic: [+ weimar_strength +]% ?]
-[? if spd_bd_position == "support_kpd" : The republic's perceived violence [+ violence_perceived_republic +] ?]
+[? if spd_bd_position == "support_kpd" : Perceived violence [+ violence_perceived_republic +] ?]
 
 
 [? if violence_timer > 0 : The Far Right: [+ far_right_strength +]% ?]
-[? if spd_bd_position == "support_kpd" : The far rights's perceived violence [+ violence_perceived_right +] ?]
+[? if spd_bd_position == "support_kpd" : Perceived violence [+ violence_perceived_right +] ?]
 
 </div>
+
 
 [? if violence_timer > 0 : <h1>We have [+ violence_timer +] months to crush the paramilitaries</h1> ?]
 

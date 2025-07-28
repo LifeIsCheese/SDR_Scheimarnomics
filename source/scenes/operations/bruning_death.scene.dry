@@ -50,6 +50,13 @@ on-arrival: spd_bd_position = "support_kpd"; kpd_relation = 80; prussian_police_
     Q.violence_events = shuffleArray(Q.violence_events);
     Q.violence_events_pointer = 0;
     Q.violence_events_id = 0;
+
+    Q.weimar_strength = Math.round ((Q.army_force * Q.military_use_reluctance_multiplier) + (Q.prussia_force * (1 - Q.prussian_police_loyalty)) );
+
+    Q.far_left_strength = Math.round(Q.rfb_force + Q.loyal_prussia + Q.rb_force);
+
+    Q.far_right_strength = Math.round(Q.sa_force + Q.sh_force);
+
     
 !}
 go-to: set_next_election_time
