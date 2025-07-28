@@ -19,7 +19,11 @@ if (Q.bourgeois_left_willingness) {
 }
 !}
 
-= 
+= The Reichswehr
+
+[+ military_reluctance : military_reluctance +]
+
+= RFB Reichsbanner status
 
 <div class = "face-status-container">
     <p id="status_right_focus"> We are focusing on uniting the RFB and Reichsbanner as a proper united front. </p>
