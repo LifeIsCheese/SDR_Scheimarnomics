@@ -590,26 +590,34 @@ img {
 /* mobile: move the stat box to the top if the screen is too small,
  * and reduce font size slightly. */
 @media screen and (max-width: 560px) {
+  #page {
+      position: static;
+  }
+  #content {
+      position: static;
+      font-size: 1em;
+      line-height: 160%;
+      padding: 1em 1em 1.5em 1em;
+  }
+  #qualities {
+      font-size: 1em;
+  }
   #tools_wrapper {
     position: static;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* centers children horizontally */
   }
   .tools {
-    width: 95%;
-    margin: 0.3em auto; /* centers the sidebar itself */
-    float: none;
-    left: auto;
-    right: auto;
+      width: 90%;
+      margin: 2em 0 1em 0;
+      margin: 0.4em;
   }
-  .tools.left,
+  .tools.left {
+      float: none;
+      left: 0;
+  }
   .tools.right {
-    float: none;
-    left: auto;
-    right: auto;
+      float: none;
+      right: 0;
   }
-
   #mid_panel {
       margin: 0 auto;
   }
@@ -629,7 +637,7 @@ img {
   div.blank-card {
     width: 100px;
     height: 125px;
-    border: 8px solid var(---card-border-color);
+    border: 8px solid var(--card-border-color);
     margin-bottom: 0.5em;
   }
   .card-in-hand, .pinned-card, .deck {
@@ -637,7 +645,6 @@ img {
     margin-right: 1em;
     vertical-align: top;
   }
-
 }
 
 
