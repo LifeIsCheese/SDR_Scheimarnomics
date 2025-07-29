@@ -249,7 +249,7 @@ Q.director_type = -1;
 
 Q.resources -= 1;
 
-window.changeTab('status.Targets', 'Targets');
+window.changeTab('status.Targets', 'Targets', 'left');
 
 } else {
 
@@ -265,7 +265,7 @@ function director_actions() {
 
 Q.director_actions = 1;
 
-window.changeTab('status.Actions', 'Actions')
+window.changeTab('status.Actions', 'Actions', 'left');
 
 }
 
