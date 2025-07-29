@@ -582,9 +582,15 @@ img {
   .tools {
       margin-right: 0.4em;
       margin-left: 0.4em;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
   }
   #mid_panel {
       margin-right: 0.4em;
+      margin-left: 0.4em;
+      margin: 0 auto;
   }
 }
 /* mobile: move the stat box to the top if the screen is too small,
@@ -645,6 +651,19 @@ img {
     margin-right: 1em;
     vertical-align: top;
   }
+
+  .tools.left,
+.tools.right,
+#stats_sidebar,
+#stats_sidebar_right {
+  padding: 0.6em;
+  width: 85vw;
+  color: var(--text-color);
+  background-color: var(--mainbg-color);
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
 }
 
 
