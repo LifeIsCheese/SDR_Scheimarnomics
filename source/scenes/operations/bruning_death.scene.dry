@@ -9,9 +9,13 @@ audio: music/1930_1933/Tord-Foleson.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_r
 
 **Then drag the angels down to the plight of humanity, and let them beg to God for their salvation.**
 
-The current Chancellor of the Republic, dubbed The Hunger Chancellor by the working class, was found on the stairs of his residence, slumped over dead with a pool of blood surrounding him. His cause of death, as of now, remains unknown, and any trace of evidence has seemingly been taken away from the scene in a deliberate attempt to cover their tracks.
+Heinrich Brüning, dubbed The Hunger Chancellor by the working class, was found on the stairs of his residence, slumped over dead with a pool of blood surrounding him. His cause of death, as of now, remains unknown, and any trace of evidence has seemingly been taken away from the scene in a deliberate attempt to cover their tracks.
 
 Many in the party are in favour of forming a united front with the democratic parties against the extremist paramilitaries suspected of his death. [? if left_strength >= 40 and kpd_relation >= 40 : But the left instead wish to pursue a united front with the KPD, declaring that now is the most opportune time to overthrow capitalism. ?]
+
+<div class = "face-status-container">
+    <img class="event-img" src="img/bruning_death.jpg">
+</div>
 
 - @republic_path: We stand with the republic!
 - @left_path: We have one struggle.
