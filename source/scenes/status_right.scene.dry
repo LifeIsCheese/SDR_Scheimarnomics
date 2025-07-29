@@ -26,7 +26,7 @@ if (Q.bourgeois_left_willingness) {
 = RFB Reichsbanner status
 
 <div class = "face-status-container">
-    <p id="status_right_focus"> We are focusing on uniting the RFB and Reichsbanner as a proper united front. </p>
+    <p id="status_right_focus"> [? if united_focus == "unity" : We are focusing on uniting the RFB and Reichsbanner as a proper united front. ?] [? if united_focus == "outreach" : We are reaching out to the leftwing of the Z and DDP. ?] [? if united_focus == "sympathy" : We are spreading socialist sympathy within the army. ?] </p>
 </div>
 
 <div class = "face-status-container">
