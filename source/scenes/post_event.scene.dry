@@ -336,6 +336,36 @@ if (Q.in_grand_coalition || Q.in_bourgeois_coalition) {
 
 // Interest Rates, affecting baseline inflation and economic growth
 
+switch (Q.interest_rates) {
+
+    case 2:
+    Q.inflation_growth = 0.025;
+    economic_growth -= 0.2;
+    break;
+
+    case 1:
+    Q.inflation_growth = 0.075;
+    economic_growth -= 0.1;
+    break;
+
+    case 0:
+    Q.inflation_growth = 0.1;
+    break;
+
+    case -1:
+    Q.inflation_growth = 0.125;
+    economic_growth += 0.125;
+    break;
+
+    case -2:
+    Q.inflation_growth = 0.175;
+    economic_growth += 0.25;
+    break;
+
+    default:
+    console.log("bug in interest rates")
+}
+
 // Plot changes
 if (Q.plotMap[Q.plot_target]) {
     Q[Q.plotMap[Q.plot_target]] += Q.plot_strength;
@@ -435,7 +465,7 @@ case "sympathy":
   break;
 
   default:
-  console.log("bug");
+  console.log("bug in passive focus");
   
 
 }
