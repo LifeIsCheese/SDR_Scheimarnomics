@@ -233,6 +233,9 @@ var Q = window.dendryUI.dendryEngine.state.qualities;
 
 function new_hire() {
 
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
+
 if (Q.resources > 0) {
 
 Q.director_pointer = Math.floor( Math.random() * Q.director_a.length);
@@ -263,6 +266,9 @@ alert('Broke');
 
 function director_actions() {
 
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
+
 Q.director_actions = 1;
 
 window.changeTab('status.Actions', 'Actions', 'left');
@@ -270,12 +276,14 @@ window.changeTab('status.Actions', 'Actions', 'left');
 }
 
 function rb_actions() {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 
 }
 
 function purge() {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 Q.interior_police_loyalty += 0.1;
 
@@ -298,6 +306,7 @@ window.changeTab('status.Actions', 'Actions', 'left')
 }
 
 function rush() {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 if (Q.loyalty_decay < 0.04) {
 
@@ -328,6 +337,7 @@ window.changeTab('status.Actions', 'Actions', 'left')
   
 
 function train_spies() {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 if (Q.loyalty_decay > 0) {
 
@@ -356,6 +366,7 @@ window.changeTab('status.Actions', 'Actions', 'left')
   
 
 function train_police() {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 Q.prussian_police_strength += 10;
 
@@ -372,6 +383,7 @@ window.changeTab('status.Actions', 'Actions', 'left')
   
 
 function joke() {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 Q.coup_progress = 10;
 
@@ -384,6 +396,7 @@ window.changeTab('status.Actions', 'Actions', 'left')
   
 
 function purge2() {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 Q.interior_police_loyalty += 0.1;
 
@@ -404,6 +417,7 @@ window.changeTab('status.Actions', 'Actions', 'left')
   
 
 function rush2() {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 if (Q.loyalty_decay < 0.04) {
 
@@ -430,6 +444,7 @@ window.changeTab('status.Actions', 'Actions', 'left')
   
 
 function dissent_reduction() {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 Q.rb_actions_timer = 3;
 
@@ -454,6 +469,7 @@ window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
   
 
 function republic_unity() {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 Q.rb_actions_timer = 3;
 
@@ -478,6 +494,7 @@ window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
   
 
 function hiderb() {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 Q.hiding = 1;
 
@@ -488,6 +505,7 @@ window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
   
 
 function showrb() {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 Q.hiding = 0;
 
@@ -498,6 +516,7 @@ window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
   
 
 function bruning() {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 Q.kpd_party_leader = "Conciliators";
 Q.kpd_relation = 100;
@@ -509,6 +528,7 @@ Q.bruning_plot = "successful"
   
 
 function hjalmar() {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 Q.hjalmar_plot = "successful"
 
@@ -517,6 +537,7 @@ Q.hjalmar_plot = "successful"
   
 
 function ViolenceAddon(whichSide, violenceAmt) {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
   
 let old_violence = Q.violence_level;
@@ -530,11 +551,14 @@ d['violence_perceived_addon_' + whichSide] += violenceAmt;
 }
 
 function AddRightStrength(saMult, shMult) {
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
     Q.sa_strength += (Q.violence_timer * saMult) * Q.violenceMultiplier;
     Q.sh_strength += (Q.violence_timer * shMult) * Q.violenceMultiplier;
 }
 
 function unity_focus() {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 Q.united_focus = "unity"
 document.getElementById('status_right_focus').innerHTML = "We are focusing on uniting the RFB and Reichsbanner as a proper united front.";
@@ -542,6 +566,7 @@ document.getElementById('status_right_focus').innerHTML = "We are focusing on un
 }
 
 function outreach_focus() {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 Q.united_focus = "outreach"
 document.getElementById('status_right_focus').innerHTML = "We are reaching out to the leftwing of the Z and DDP.";
@@ -550,6 +575,7 @@ document.getElementById('status_right_focus').innerHTML = "We are reaching out t
 }
 
 function sympathy_focus() {
+var Q = window.dendryUI.dendryEngine.state.qualities;
 
 Q.united_focus = "sympathy"
 document.getElementById('status_right_focus').innerHTML = "We are spreading socialist sympathy within the army.";
