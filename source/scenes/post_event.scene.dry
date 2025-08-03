@@ -184,7 +184,7 @@ if (Q.month_actions >= 1) {
     // change economic stats...
     // we're basically implicity drawing a Philips curve
     // budget deficits lead to some inflation
-    Q.economic_growth -= Q.foreign_investment_old;
+    Q.economic_growth -= Q.foreign_investment_old / (Q.nationalization_progress + 1);
     if (Q.budget <= 0 && Q.budget > -2 && Q.inflation < 2.5) {
         Q.inflation += Q.inflation_growth;
     }
@@ -1621,7 +1621,7 @@ if(Q.investment_quarterly_timer == 0) {
     }
 
     //foreign investment main
-    Q.economic_growth += Q.foreign_investment;
+    Q.economic_growth += Q.foreign_investment / (Q.nationalization_progress + 1);
     Q.foreign_investment_old = Q.foreign_investment;
     if (Q.chancellor == "Groener") {
         Q.workers_nsdap -= 8/12;

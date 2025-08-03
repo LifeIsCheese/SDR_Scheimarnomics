@@ -9,11 +9,12 @@ Q.unemployed += 6;
 Q.inflation -= 5;
 // historical: -7.7%
 // leave some economic decline for the banking crisis event
-Q.economic_growth -= 5;
+Q.economic_growth -= 3;
 if (Q.works_program) {
     Q.unemployed -= 4;
     Q.inflation += 3;
     Q.economic_growth += 3.5;
+    Q.economic_stability += 1.5;
 }
 if (Q.works_program && Q.works_program > 1) {
     Q.unemployed -= 1.5;
