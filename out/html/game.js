@@ -291,7 +291,7 @@ Q.director_actions_timer = 3;
 
 Q.month_actions += 1;
 
-window.changeTab('status.Actions', 'Actions')
+window.changeTab('status.Actions', 'Actions', 'left')
 
   
 
@@ -319,7 +319,7 @@ Q.director_actions_timer = 3;
 
 Q.month_actions += 1;
 
-window.changeTab('status.Actions', 'Actions')
+window.changeTab('status.Actions', 'Actions', 'left')
 
   
 
@@ -349,7 +349,7 @@ Q.director_actions_timer = 12;
 
 Q.month_actions += 1;
 
-window.changeTab('status.Actions', 'Actions')
+window.changeTab('status.Actions', 'Actions', 'left')
 
 }
 
@@ -365,7 +365,7 @@ Q.director_actions_timer = 12;
 
 Q.month_actions += 1;
 
-window.changeTab('status.Actions', 'Actions')
+window.changeTab('status.Actions', 'Actions', 'left')
 
 }
 
@@ -377,7 +377,7 @@ Q.coup_progress = 10;
 
 Q.month_actions += 1;
 
-window.changeTab('status.Actions', 'Actions')
+window.changeTab('status.Actions', 'Actions', 'left')
 
 }
 
@@ -395,7 +395,7 @@ Q.director_actions_timer = 3;
 
 Q.month_actions += 1;
 
-window.changeTab('status.Actions', 'Actions')
+window.changeTab('status.Actions', 'Actions', 'left')
 
   
 
@@ -421,7 +421,7 @@ Q.director_actions_timer = 3;
 
 Q.month_actions += 1;
 
-window.changeTab('status.Actions', 'Actions')
+window.changeTab('status.Actions', 'Actions', 'left')
 
   
 
