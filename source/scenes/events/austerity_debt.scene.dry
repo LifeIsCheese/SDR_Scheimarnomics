@@ -7,6 +7,7 @@ Q.list_debt_date = [];
 Q.bond_debt = 0;
 Q.bond_need_to_pay = 0;
 Q.bond_payed = 0;
+Q.economic_stability -= 2;
 !}
 new-page: true
 

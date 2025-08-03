@@ -1085,7 +1085,7 @@ We refuse to instate a classist and fundamentally undemocratic form of governanc
 
 @agenda_kpd
 view-if: president == "Thälmann"
-on-arrival: workers_kpd += 10; workers_spd -= 5; unemployed_kpd += 15; unemployed_spd -= 5; unemployed_nsdap -= 5; rfb_strength += 100; rb_strength -= 75; rfb_militancy += 0.05; in_left_front = 1; in_weimar_coalition = 0; in_grand_coalition = 0; in_popular_front = 0; in_spd_majority = 0;
+on-arrival: workers_kpd += 10; workers_spd -= 5; unemployed_kpd += 15; unemployed_spd -= 5; unemployed_nsdap -= 5; rfb_strength += 100; rb_strength -= 75; rfb_militancy += 0.05; in_left_front = 1; in_weimar_coalition = 0; in_grand_coalition = 0; in_popular_front = 0; in_spd_majority = 0; economic_stability -= 10;
 
 The defeat of the reactionaries leaves us and our socialist partners in near uncontested control over the country. [? if president == "Thälmann" : However, the KPD has a significant upper hand in this relationship, so we must be careful. ?]
 
@@ -1103,8 +1103,6 @@ Unfortunately, we do not have much control over the agenda of the new Germany, a
 President Thälmann has prepared multiple decrees to pass via Article 48, and we will not be able to negotiate away all of them. 
 
 @menu
-
-DEBUG: [+ negotiating_power +]
 
 - @chancellorship_kpd: The cabinet.
 - @party_legality: The parties.

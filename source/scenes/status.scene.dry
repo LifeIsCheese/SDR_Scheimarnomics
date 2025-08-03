@@ -28,6 +28,8 @@ if (Q.budget) {
 
 = Status
 
+perceived economic stability (foreign investment) : [+ economic_stability +]
+
 [+ month : month +] [+ year +]
 
 Resources available: [+ resources +]

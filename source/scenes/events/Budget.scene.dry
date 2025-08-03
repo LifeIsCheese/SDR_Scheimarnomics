@@ -17,6 +17,7 @@ Q.unemployed -= Q.economic_growth - Q.inflation;
     }
 if (Q.economic_growth >= Q.economic_goal && Q.economic_growth > Q.inflation) {
     Q.budget += 1;
+    Q.economic_stability +=0.1;
     if (Q.default == 0) {
         Q.hans_opinion = 3;
     }
@@ -25,6 +26,7 @@ if (Q.economic_growth >= Q.economic_goal && Q.economic_growth > Q.inflation) {
 }
 if (Q.economic_growth >= Q.economic_goal * 2 && Q.economic_growth > Q.inflation) {
     Q.budget += 1;
+    Q.economic_stability +=0.1;
     if (Q.default == 0) {
         Q.hans_opinion = 4;
     }
@@ -33,6 +35,7 @@ if (Q.economic_growth >= Q.economic_goal * 2 && Q.economic_growth > Q.inflation)
 }
 if (Q.economic_growth >= Q.economic_goal * 3 && Q.economic_growth > Q.inflation) {
     Q.budget += 1;
+    Q.economic_stability +=0.1;
     if (Q.default == 0) {
         Q.hans_opinion = 5;
     } else {

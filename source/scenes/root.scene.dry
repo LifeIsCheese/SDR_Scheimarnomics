@@ -314,9 +314,14 @@ Q.hans_opinion = 2;
 Q.assassination_partners = "None";
 Q.assassination_partners_string = "None";
 Q.barmat = 0;
+
+
 //foreign investment
 Q.foreign_investment = 1;
 Q.foreign_investment_old = 0;
+Q.economic_stability = 0;
+Q.investment_quarterly_timer = 0;
+
 
 //Event chains 
 Q.hjalmar_event = 0;
@@ -681,7 +686,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
             'sa_ban', 'sh_ban', 'papen_chancellor',
             'kpd_policy', 'kpd_ultimatum', 'popular_front_dispute',
             'high_inflation', 'banking_crisis', 'march_on_berlin', 'abysinnia', 'nazi_peak',
-            'nazi_reform', 'understanding_enemy', 'laissez_faire', 'presidential', 'rb_urgency', 'violence', 'paramilitaries', 'kpd_influence', 'concessions'];
+            'nazi_reform', 'understanding_enemy', 'laissez_faire', 'presidential', 'rb_urgency', 'violence', 'paramilitaries', 'kpd_influence', 'concessions', 'investment_quarterly'];
 Q.advisor_action_timer = 0;
 // party affairs timers
 Q.confronting_nazis_timer = 0;

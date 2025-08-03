@@ -3,7 +3,7 @@ subtitle: Big businesses are losing confidence in our government's policies.
 view-if: (capital_strike_progress >= 6 and capital_strike_progress < 10 and budget > -5) and spd_in_government
 new-page: true
 max-visits: 1
-on-arrival: unemployed += 2; new_middle_spd -= 6; new_middle_spd += 1 if new_middle_conscious; old_middle_spd -= 6; rural_spd -= 5; workers_spd -= 4; unemployed_spd -= 4; dvp_relation -= 6; weimar_dissent += 1 if weimar_plan_adopted; coalition_dissent += 1 if in_grand_coalition; economic_growth -= 1; socialism -= 3
+on-arrival: unemployed += 2; new_middle_spd -= 6; new_middle_spd += 1 if new_middle_conscious; old_middle_spd -= 6; rural_spd -= 5; workers_spd -= 4; unemployed_spd -= 4; dvp_relation -= 6; weimar_dissent += 1 if weimar_plan_adopted; coalition_dissent += 1 if in_grand_coalition; economic_growth -= 1; socialism -= 3; economic_stability += 2
 tags: event
 
 = Businesses Lose Confidence
