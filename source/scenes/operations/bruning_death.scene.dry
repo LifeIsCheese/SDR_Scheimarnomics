@@ -27,6 +27,10 @@ on-arrival: judicial_reform = 2; z_relation +=33; ddp_relation +=33; dvp_relatio
     window.changeTab('status_right.military', 'military', 'right');
     document.getElementById("reichsbanner").style.display="block";
     document.getElementById("military").style.display="block";
+    Q.violence_events = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 3, 0, 0];
+    Q.violence_events = shuffleArray(Q.violence_events);
+    Q.violence_events_pointer = 0;
+    Q.violence_events_id = 0;
 !}
 go-to: set_next_election_time if spd_in_government != 1
 subtitle: (United front with democratic parties)
