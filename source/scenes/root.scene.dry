@@ -322,6 +322,10 @@ Q.foreign_investment_old = 0;
 Q.economic_stability = 0;
 Q.investment_quarterly_timer = 0;
 
+//currency devaluation
+
+Q.devaluation_progress = 0;
+
 
 //Event chains 
 Q.hjalmar_event = 0;

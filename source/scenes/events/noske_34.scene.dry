@@ -15,7 +15,7 @@ To back him would be risky, and certainly hurt our ties with the communists even
 - @get_him_out: Who does he think he is? Tell that loser to go right back up to Hanover.
 
 @back_noske
-on-arrival: reichswehr_loyalty += 0.05; noske_running = 1; kpd_relation -= 10; left_dissent += 25; center_dissent += 10; labor_dissent += 10; workers_spd -= 4
+on-arrival: reichswehr_loyalty += 0.25; noske_running = 1; kpd_relation -= 10; left_dissent += 25; center_dissent += 10; labor_dissent += 10; workers_spd -= 4
 
 @get_him_out
 on-arrival: reformist_dissent += 1; left_dissent -= 5

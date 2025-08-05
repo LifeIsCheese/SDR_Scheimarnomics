@@ -708,6 +708,8 @@ Q.military_strength = Math.round(Q.army_force * (1 - Q.military_available));
 
 // non kpd path 
 
+if (Q.violence_timer > 0) {
+
 if (Q.spd_bd_position != "support_kpd") {
 
     if (Q.far_left_strength >= 50) {
@@ -728,6 +730,8 @@ if (Q.far_right_strength >= 50) {
   Q.right_dominance_timer += 1;
 } else {
   Q.right_dominance_timer = 0;
+}
+
 }
 
 /// violence events

@@ -17,7 +17,7 @@ The League of Nations is hosting a conference to discuss the state of the global
 @economic_recovery
 
 [? if wtb_adopted or budget <= 0: Germany has largely recovered from the crisis, owing in large part to the same sorts of economic policies that Roosevelt is pursuing. ?]
-[? if not wtb_adopted and budget > 0: Germany has largely recovered from the crisis, without having to resort to budget deficits or devaling the currency. ?]
+[? if not wtb_adopted and budget > 0: Germany has largely recovered from the crisis, without having to resort to budget deficits or devaluing the currency. ?]
 
 - @support_roosevelt
 - @support_france
@@ -33,7 +33,15 @@ Germany, like the rest of the world, is still deep in the economic crisis, even 
 - @support_france
 - @stable_currency_out_of_gov
 - @salvage
+- @yap
 - @no_business
+
+@yap
+title: So Britain has the nerve to stand there at the London Conference and preach about “stable currency” after they themselves tore the gold standard to pieces in ’31, dumped the pound, and raked in the profits while the rest of us bled? This is the rotting heart of capitalism — rules for you, none for me. The moment their markets were in trouble they threw every principle out the window, lined the pockets of their bankers and exporters, and now have the gall to tell others to keep their hands tied. It’s a con, a rigged game where the big imperial powers break the system to save themselves and then demand the smaller nations stay loyal to the same rules that just got used as a club against them. This isn’t “stability,” it’s robbery dressed up in a suit, and if we don’t call it what it is and fight back, we’ll be trampled into the mud while they toast to “economic order” in London’s banquet halls.
+
+What...... who said that :3
+
+-@no_recovery
 
 
 @stable_currency_out_of_gov
@@ -49,6 +57,7 @@ As expected, the conservative German bankers support Britain and France's plan t
 
 @support_roosevelt
 title: Support Roosevelt's ideas - we must devalue currency.
+on-arrival: devaluation_progress +=2
 view-if: spd_in_government
 
 

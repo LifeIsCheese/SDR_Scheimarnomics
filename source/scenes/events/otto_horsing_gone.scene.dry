@@ -4,6 +4,7 @@ view-if: year = 1931 and month >= 9 and violence_timer <= 0
 new-page: true
 on-arrival: rb_leader = "karl holtermann"
 max-visits: 1
+priority: 2
 tags: event
 
 = Otto Hörsing Expelled!
