@@ -10,7 +10,7 @@ Hjalmar Schacht, president of the Reichsbank has resigned from his position.
 
 After major disagreements with the government concerning the young plan, which he sees as national economic slavery he has resigned out of protest! Replacing him is ex DVP member Hans Luther.
 
-Despite his resignation, he still holds considerable of informal and economic influence, especially regarding balanced budgets currency stability. We still cannot enact our monetary policies even if Luther supported us.
+Despite his resignation, he still holds considerable of informal and economic influence, especially regarding the budget and currency stability. We still cannot enact our monetary policies even if Luther supported us.
 
 If only their was a way to get rid of all this...
 
@@ -30,7 +30,6 @@ Should we agree?
 
 @hjalmar
 view-if: hjalmar_plot != "successful" or hjalmar_plot != "failed"
-subtitle: [? if investigate_far_right < 1: Despite for our, distaste of Hjalmar Schacht. There is no reason for us to go after him. ?] [? if hjalmar_plot >= 1: We have already begun the plot. ?] [? if resources < 1 and budget < 0 : insufficient funds. ?]
 on-arrival: hjalmar_plot +=10; plot_target = "hjalmar"
 go-to: spies
 
