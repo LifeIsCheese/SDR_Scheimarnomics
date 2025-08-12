@@ -4,7 +4,7 @@ on-arrival: old_republic = pro_republic; {!
 // see post_event.scene.dry for changes.
 Q.economic_growth -= 3.5;
 Q.foreign_investment -=0.5;
-Q.economic_stability -= 1;
+Q.economic_stability -= 0.5;
 
 if (Q.pro_republic > 75 && Q.pro_republic > 59) {
     Q.new_middle_ddp += (Q.pro_republic - 59)

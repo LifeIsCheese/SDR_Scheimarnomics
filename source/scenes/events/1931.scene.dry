@@ -14,7 +14,7 @@ if (Q.works_program) {
     Q.unemployed -= 4;
     Q.inflation += 3;
     Q.economic_growth += 3.5;
-    Q.economic_stability += 1.5;
+    Q.economic_stability += 0.75;
 }
 if (Q.works_program && Q.works_program > 1) {
     Q.unemployed -= 1.5;

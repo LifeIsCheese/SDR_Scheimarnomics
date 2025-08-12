@@ -9,7 +9,7 @@ if (Q.works_program && Q.works_program >= 2) {
     Q.unemployed -= 1;
     Q.inflation += 1;
     Q.economic_growth += 1;
-    Q.economic_stability += 1.5;
+    Q.economic_stability += 0.75;
 }
 if (Q.pro_republic > 75 && Q.pro_republic > Q.older_republic) {
     Q.new_middle_ddp += (Q.pro_republic - Q.older_republic)

@@ -53,7 +53,7 @@ Making the tax system more progressive is popular among our base, but it upsets 
 subtitle: +2 budget
 unavailable-subtitle: [? if not status_quo : Tax rates are already too high. ?][? if status_quo : We have agreed to leave the budget untouched. ?]
 choose-if: upper_tax_rates <= 5 and not status_quo
-on-arrival: upper_tax_rates += 1; capital_strike_progress += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 3; workers_spd += 4*(1-dissent); old_middle_spd -= 4; new_middle_spd -= 4; new_middle_spd += 1 if new_middle_conscious; coalition_dissent += 1 if in_grand_coalition; coalition_dissent += 1 if capital_strike_progress >= 5; budget += 2; dvp_relation -= 4; unemployed += 1; finance_goal_completed += 1; inflation -= 0.6; economic_growth -= 0.4; socialism += 1; economic_stability -= 0.5
+on-arrival: upper_tax_rates += 1; capital_strike_progress += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 3; workers_spd += 4*(1-dissent); old_middle_spd -= 4; new_middle_spd -= 4; new_middle_spd += 1 if new_middle_conscious; coalition_dissent += 1 if in_grand_coalition; coalition_dissent += 1 if capital_strike_progress >= 5; budget += 2; dvp_relation -= 4; unemployed += 1; finance_goal_completed += 1; inflation -= 0.6; economic_growth -= 0.4; socialism += 1; economic_stability -= 0.1
 
 Raising taxes on the rich is popular among our base, but it alienates the bourgeoisie. Increasing taxes also decreases economic demand, which may lead to more unemployment.
 
@@ -62,7 +62,7 @@ view-if: wtb_adopted == 0 or budget >= 3
 subtitle: -3 budget
 unavailable-subtitle: -3 budget - [? if upper_tax_rates < -5 or lower_tax_rates < -5 : Tax rates are already too low. ?][? if status_quo : We have agreed to leave the budget untouched. ?]
 choose-if: budget >= 3 and upper_tax_rates >= -5 and lower_tax_rates >= -5 and not status_quo
-on-arrival: budget -= 3; upper_tax_rates -= 2; lower_tax_rates -= 1; new_middle_spd += 5*(1-dissent); old_middle_spd += 4*(1-dissent); workers_spd += 3*(1-dissent); coalition_dissent += 1 if budget <= 2; dvp_relation += 5*(1-dissent) if budget > 2; z_relation += 5*(1-dissent) if budget > 2; unemployed -= 1 if unemployed >= 5; capital_strike_progress -= 1 if upper_tax_rates < 0; economic_growth += 0.8; socialism -= 1; economic_stability += 1
+on-arrival: budget -= 3; upper_tax_rates -= 2; lower_tax_rates -= 1; new_middle_spd += 5*(1-dissent); old_middle_spd += 4*(1-dissent); workers_spd += 3*(1-dissent); coalition_dissent += 1 if budget <= 2; dvp_relation += 5*(1-dissent) if budget > 2; z_relation += 5*(1-dissent) if budget > 2; unemployed -= 1 if unemployed >= 5; capital_strike_progress -= 1 if upper_tax_rates < 0; economic_growth += 0.8; socialism -= 1; economic_stability += 0.5
 
 Cutting taxes benefits most the rich and middle-class, who pay more taxes than the working class. Our coalition partners are happy at our orthodox economic course.
 
@@ -78,7 +78,7 @@ Cutting taxes benefits most the rich and middle-class, who pay more taxes than t
 subtitle: +3 budget
 unavailable-subtitle: [? if not status_quo or welfare < 1 : Tax rates are already too high. ?][? if status_quo or welfare >= 1 : We have agreed to leave the budget untouched. ?]
 choose-if: upper_tax_rates <= 5 and lower_tax_rates <= 5 and (not status_quo or welfare < 1)
-on-arrival: budget += 3; new_middle_spd -= 4; old_middle_spd -= 4; workers_spd -= 3; rural_spd -= 3; unemployed += 2; kpd_coalition_dissent += 1; coalition_dissent += 1 if welfare > 1; coalition_dissent += 1 if budget >= 6; lower_tax_rates += 1; upper_tax_rates += 2; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 2; workers_spd -= 5 if lower_tax_rates > 1; inflation -= 1.1; economic_growth -= 0.6; economic_stability -= 1;
+on-arrival: budget += 3; new_middle_spd -= 4; old_middle_spd -= 4; workers_spd -= 3; rural_spd -= 3; unemployed += 2; kpd_coalition_dissent += 1; coalition_dissent += 1 if welfare > 1; coalition_dissent += 1 if budget >= 6; lower_tax_rates += 1; upper_tax_rates += 2; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 2; workers_spd -= 5 if lower_tax_rates > 1; inflation -= 1.1; economic_growth -= 0.6; economic_stability -= 0.5;
 
 Raising taxes hurts our support among all those who pay taxes. [? if in_grand_coalition or in_weimar_coalition : However, our coalition partners are more supportive of the idea of "shared sacrifice" than simply taxing the rich. ?] Increasing taxes also decreases economic demand, which may lead to more unemployment.
 
@@ -86,7 +86,7 @@ Raising taxes hurts our support among all those who pay taxes. [? if in_grand_co
 title: Lower taxes on the rich, while increasing consumption taxes (which affect the working class more).
 subtitle: This does not change overall revenue. [? if upper_tax_rates < -5 : Rich tax rates are too low to cut anymore. ?] [? if lower_tax_rates > 5 : Lower-class tax rates are too high to increase. ?]
 choose-if: lower_tax_rates <= 5 and upper_tax_rates >= -5
-on-arrival: workers_spd -= 6; new_middle_spd += 5*(1-dissent); old_middle_spd += 4*(1-dissent); dvp_relation += 5; z_relation += 4; coalition_dissent -= 1 if in_grand_coalition and coalition_dissent > 0; kpd_coalition_dissent += 1; upper_tax_rates -= 1; lower_tax_rates += 1; workers_spd -= 5 if lower_tax_rates >= 2; capital_strike_progress -= 1 if upper_tax_rates < 0; socialism -= 3; economic_stability += 0.5
+on-arrival: workers_spd -= 6; new_middle_spd += 5*(1-dissent); old_middle_spd += 4*(1-dissent); dvp_relation += 5; z_relation += 4; coalition_dissent -= 1 if in_grand_coalition and coalition_dissent > 0; kpd_coalition_dissent += 1; upper_tax_rates -= 1; lower_tax_rates += 1; workers_spd -= 5 if lower_tax_rates >= 2; capital_strike_progress -= 1 if upper_tax_rates < 0; socialism -= 3; economic_stability += 0.25
 
 Our regressive taxation policy benefits the rich while hurting the poor and working-class. Our bourgeois coalition partners approve of this orthodox economic course.
 
@@ -109,7 +109,7 @@ Current tariff level: [+ tariffs : taxation +]
 title: Raise tariffs on imports.
 subtitle: +2 budget. Other countries will retaliate by increasing tariffs of their own. [? if tariffs > 5 : Further increases in tariffs will not raise revenue, as we have already nearly reached econonmic autarky. ?]
 choose-if: tariffs <= 5
-on-arrival: tariffs += 1; inflation += 1 if inflation > 0; inflation += 0.5 if inflation <= 0; unemployed += 1.5; budget += 2; workers_spd -= 5; unemployed_spd -= 5; rural_spd += 4*(1-dissent); old_middle_spd += 3*(1-dissent); ddp_relation -= 5; dvp_relation -= 2; west_relation -= 1; east_relation -= 1; reparations_negotiation -= 2; eu_progress -= 1 if eu_progress > 0; peoples_party_support += 1; economic_growth -= 0.4; capital_strike_progress += 1 if tariffs >= 3; socialism -= 2; economic_stability -= 1
+on-arrival: tariffs += 1; inflation += 1 if inflation > 0; inflation += 0.5 if inflation <= 0; unemployed += 1.5; budget += 2; workers_spd -= 5; unemployed_spd -= 5; rural_spd += 4*(1-dissent); old_middle_spd += 3*(1-dissent); ddp_relation -= 5; dvp_relation -= 2; west_relation -= 1; east_relation -= 1; reparations_negotiation -= 2; eu_progress -= 1 if eu_progress > 0; peoples_party_support += 1; economic_growth -= 0.4; capital_strike_progress += 1 if tariffs >= 3; socialism -= 2; economic_stability -= 0.5
 
 Increasing tariffs leads to higher prices for basic goods, increasing inflation and hurting consumption among the working class. Retaliatory tariffs reduce the competitiveness of German exports, raising unemployment among workers. They also lead to an atmosphere of international suspicion, reducing our ability to negotiate with other countries.
 
@@ -119,7 +119,7 @@ On the other hand, agricultural producers and some small businesses benefit from
 title: Lower tariffs on imports.
 choose-if: budget >= 2 and tariffs > -5
 subtitle: -2 budget. [? if tariffs <= -5 : There are no tariffs left to cut. ?]
-on-arrival: tariffs -= 1; budget -= 2; inflation -= 0.5; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); rural_spd -= 5; old_middle_spd -= 3; west_relation += 1; east_relation += 1; eu_progress += 1 if eu_progress > 0; economic_growth += 0.4; socialism += 2; economic_stability += 1
+on-arrival: tariffs -= 1; budget -= 2; inflation -= 0.5; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); rural_spd -= 5; old_middle_spd -= 3; west_relation += 1; east_relation += 1; eu_progress += 1 if eu_progress > 0; economic_growth += 0.4; socialism += 2; economic_stability += 0.5
 
 Lowering tariffs helps workers and the urban poor by reducing prices for basic necessities. In addition, other countries are pleased by lower tariffs, and are more willing to negotiate on many issues.
 
