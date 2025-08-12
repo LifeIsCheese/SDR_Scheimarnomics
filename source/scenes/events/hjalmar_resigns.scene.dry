@@ -1,0 +1,46 @@
+title: Hjalmar Schacht has resigned!
+view-if: year = 1930 and month >= 3
+new-page: true
+max-visits: 1
+tags: event
+
+= Objections
+
+Hjalmar Schacht, president of the Reichsbank has resigned from his position.
+
+After major disagreements with the government concerning the young plan, which he sees as national economic slavery he has resigned out of protest! Replacing him is ex DVP member Hans Luther.
+
+Despite his resignation, he still holds considerable of informal and economic influence, especially regarding balanced budgets currency stability. We still cannot enact our monetary policies even if Luther supported us.
+
+If only their was a way to get rid of all this...
+
+- @Carl: Carl Severing proposes an idea.
+
+@Carl
+view-if: severing_advisor = 1 and hjalmar_plot != "successful" and hjalmar_plot <= 0
+
+= The Death of Hjalmar Schacht
+
+With Carl Severing's spies having been thoroughly tested against enemies of the republic, Carl vows that his operatives will perform this duty without being caught.
+
+Should we agree?
+
+-@root: This is preposterous!
+-@hjalmar: Perhaps extreme times, call for extreme measures.
+
+@hjalmar
+view-if: hjalmar_plot != "successful" or hjalmar_plot != "failed"
+subtitle: [? if investigate_far_right < 1: Despite for our, distaste of Hjalmar Schacht. There is no reason for us to go after him. ?] [? if hjalmar_plot >= 1: We have already begun the plot. ?] [? if resources < 1 and budget < 0 : insufficient funds. ?]
+on-arrival: hjalmar_plot +=10; plot_target = "hjalmar"
+go-to: spies
+
+With the Reichsbank being controlled by a known reactionary who collaborated with the Nazis. The only way for us to push out our fiscal reforms is by his Death.
+
+Operation Reversed Scale has commenced. 
+
+@spies
+on-arrival: spy_network +=3 if spy_network < 9; plot_strength = spy_network; assassination_partners = "Spies"; resources +=1; month_actions +=1; paramilitaries_timer = 2; {!
+new_hire()
+!}
+
+Using our own network of <span style="color:rgb(0, 0, 0);">**spies**</span> to carry this out instead. This is the slowest option, but perhaps with more funding we can change that.

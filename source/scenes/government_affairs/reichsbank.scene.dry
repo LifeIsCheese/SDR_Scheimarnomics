@@ -9,7 +9,9 @@ card-image: img/Reichsbank.jpg
 
 = Reichsbank
 
-[? if hjalmar_plot != "successful": Hjalmar Schacht opinion: Hateful. ?]
+[? if hjalmar_plot != "successful" and year < 1930 and month < 3: Hjalmar Schacht opinion: Hateful. ?]
+
+[? if hjalmar_plot != "successful" and year >= 1930 and month >= 3: Hjalmar Schacht influence: suffocating. ?]
 
 [? if hjalmar_plot == "successful": Now that the Reichsbank is controlled by Hans Luther, perhaps now the Reichsbank will heed our policies.?]
 
