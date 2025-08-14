@@ -280,7 +280,7 @@ Spy network strength: [+ spy_network : spy_strength +].
 
 [? if schleicher_plot == "successful" : <span style="color:rgb(216, 75, 75);">**Kurt von Schleicher**</span> ?]
 
-[? if hilderfing_dead : <span style="color:rgba(138, 68, 68, 1);">**Rudolf Hilderfing**</span>? ?]
+[? if hilderfing_dead : <span style="color:rgba(138, 68, 68, 1);">**Rudolf Hilderfing**</span>?]
 
 @Targets
 
