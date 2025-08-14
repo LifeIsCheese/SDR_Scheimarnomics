@@ -326,6 +326,7 @@ Q.investment_impact = 10;
 //currency devaluation
 
 Q.devaluation_progress = 0;
+Q.allies_allow_devaluation = 0;
 
 
 //Event chains 

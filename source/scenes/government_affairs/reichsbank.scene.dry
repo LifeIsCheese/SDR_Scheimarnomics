@@ -20,9 +20,11 @@ card-image: img/Reichsbank.jpg
 Reichsbank reserve requirement: 40%
 
 - @raise_interest_rates
-- @lower_interest_rates
+- @lower_interest_rates_normal
+- @lower_interest_rates_very_low
 - @bribe: Maybe 1 million Reichsmarks can change his mind.
 - @troll: Maybe 1 million Reichsmarks can change his mind.
+- @devalue_currency: Off the gold standard we go!
 - @root: No, we're going to our own thing.
 - @easy_discard
 
@@ -36,9 +38,19 @@ Increasing interest rates decreases inflation, especially if inflation is high. 
 
 @lower_interest_rates
 title: Decrease interest rates
+view-if: interest_rates >= 0
 subtitle: Affects middle class and rural much more than workers [? if interest_rates <= -2 : Interest rates are too low. ?] [? if reichsbank_a != 1 : Hjalmar Schacht would never listen to us. ?]
 choose-if: interest_rates > -2 and reichsbank_a == 1 and hans_opinion > 2
 on-arrival: inflation += 1.5 if inflation <= 0; inflation += 1 if inflation > 0; inflation += 1 if inflation >= 4; inflation += 1 if inflation >= 8; workers_spd += 1; unemployed_spd += 1; rural_spd += 1*(1-dissent); old_middle_spd += 3*(1-dissent); new_middle_spd += 4; capital_strike_progress -= 1; interest_rates -=1; economic_growth += 0.5 if economic_growth <= 0; economic_growth += 1 if economic_growth > 0; economic_growth += 1 if economic_growth >= 3; economic_growth += 2 if economic_growth >= 8; month_actions +=1; hans_opinion -= 1 if inflation >= 5
+
+Decreasing interest rates stimulates economic growth, but increases inflation. [? if inflation >= 5: Hans luther reluctanctly agrees, but thinks less of us because he thinks inflation is too high?]
+
+@lower_interest_rates_very_low
+title: Decrease interest rates
+view-if: interest_rates < 0
+subtitle: Affects middle class and rural much more than workers [? if interest_rates <= -2 : Interest rates are far too low. ?] [? if reichsbank_a != 1 : Hjalmar Schacht would never listen to us. ?] [? if allies_allow_devaluation == 0 : Hans Luther, despite his high opinion of us, cannot lower interest rates further. As Foreign capital could leave the Reichsbank, forcing devaluation. ?]
+choose-if: interest_rates > -2 and reichsbank_a == 1 and hans_opinion > 2 and allies_allow_devaluation
+on-arrival: inflation += 1 if inflation <= 0; inflation += 0.5 if inflation > 0; inflation += 0.5 if inflation >= 4; inflation += 0.5 if inflation >= 8; workers_spd += 1; unemployed_spd += 1; rural_spd += 1*(1-dissent); old_middle_spd += 3*(1-dissent); new_middle_spd += 4; capital_strike_progress -= 1; interest_rates -=1; economic_growth += 0.5 if economic_growth <= 0; economic_growth += 1 if economic_growth > 0; economic_growth += 1 if economic_growth >= 3; economic_growth += 2 if economic_growth >= 8; month_actions +=1; hans_opinion -= 1 if inflation >= 5
 
 Decreasing interest rates stimulates economic growth, but increases inflation. [? if inflation >= 5: Hans luther reluctanctly agrees, but thinks less of us because he thinks inflation is too high?]
 
@@ -59,3 +71,9 @@ choose-if: resources > 0
 on-arrival: resources -=1; barmat +=1 if barmat <= 2
 
 No it did not.
+
+@devalue_currency
+subtitle: The SPD right, and center, as well as the bourgeois and moderate right parties would not allow this. Furthermore the west would pull out their capital as we would have to negotiate devaluation with them. Lastly, Many top economists would rather kill themselves than increase inflation.
+
+As the thought of currency devaluation was formulated in his mind, Hilderfing suffered a heart attack!
+

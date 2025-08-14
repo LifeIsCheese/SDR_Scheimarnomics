@@ -133,9 +133,29 @@ view-if: reparations_negotiation >= 3 and black_thursday_seen == 1 and reparatio
 on-arrival: west_relation += 1; reparations = -2; budget += 2 if hoover_memorandum_seen == 0; budget += 1 if hoover_memorandum_seen == 1; coalition_dissent -= 1 if coalition_dissent > 0; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); coup_progress -= 2 if coup_progress > 2; economic_growth += 0.7; economic_growth += 0.5 if economic_growth < 0; reparations_paused = 1; economic_stability +=1
 max-visits: 1
 
+Right before our foreign representatives get shipped off Lausanne, we still have not reached a consensus on currency devaluation. 
+
+Should we include that in our negotiations as well?
+
+- @devaluation_allowed: We must be able to devalue our currency.
+- @devaluation_not_allowed: We do not need to worry about devaluing our currency.
+
+@devaluation_allowed
+subtitle: [? if devaluation_progress < 4 : We do not have enough support for devaluation. ?] [? if west_relation < 2 : The West do not trust us. ?]
+choose-if: devaluation_progress >= 4 and west_relation >= 2
+on-arrival: allies_allow_devaluation = 1
+
 Finally, given both the economic circumstances and our continued negotiations, the Western Allies are willing to pause our reparations payments! Much of the credit must go to American president Hoover, who has been friendlier towards us than the Europeans.
 
 This has reduced tensions within our government, and our party has gotten credit for the achievement.
+
+@devaluation_not_allowed
+subtitle: We can devalue our currency, but without negotiations, this will cause capital flight.
+
+Finally, given both the economic circumstances and our continued negotiations, the Western Allies are willing to pause our reparations payments! Much of the credit must go to American president Hoover, who has been friendlier towards us than the Europeans.
+
+This has reduced tensions within our government, and our party has gotten credit for the achievement.
+
 
 @expose
 title: Expose the secret rearmament plans of the previous foreign ministry!
