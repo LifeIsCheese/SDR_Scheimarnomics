@@ -23,7 +23,7 @@ As expected Hilderfing has sided with the deflationary camp, but I cannot stand 
 
 @kill_hilderfing
 subtitle: Perhaps I can sneak some poison in his drink.
-on-arrival: hilderfing_dead = 1; devaluation_progress +=1; center_strength /= 2; strife *= 2; rfb_strength *= 0.8; sh_strength *= 0.8; sa_strength *= 0.8
+on-arrival: hilderfing_dead = 1; devaluation_progress +=1; center_strength /= 2; strife *= 2; rfb_strength *= 0.8; sh_strength *= 0.8; sa_strength *= 0.8; hilferding_advisor = 0
 
 = Hilderfing Dead!
 
