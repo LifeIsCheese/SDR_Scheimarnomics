@@ -28,7 +28,7 @@ Reichsbank reserve requirement: 40%
 - @root: No, we're going to our own thing.
 - @easy_discard
 
-@raise_interest_rates
+@raise_interest_rates_normal
 title: Increase interest rates
 subtitle: Affects middle class and rural much more than workers. [? if interest_rates >= 2 : Interest rates are too high. ?] [? if reichsbank_a != 1 : Hjalmar Schacht would never listen to us. ?]
 choose-if: 2 > interest_rates and reichsbank_a == 1 and hans_opinion > 2
