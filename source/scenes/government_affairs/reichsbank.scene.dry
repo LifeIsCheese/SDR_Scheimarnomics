@@ -28,7 +28,7 @@ Reichsbank reserve requirement: 40%
 - @root: No, we're going to our own thing.
 - @easy_discard
 
-@raise_interest_rates_normal
+@raise_interest_rates
 title: Increase interest rates
 subtitle: Affects middle class and rural much more than workers. [? if interest_rates >= 2 : Interest rates are too high. ?] [? if reichsbank_a != 1 : Hjalmar Schacht would never listen to us. ?]
 choose-if: 2 > interest_rates and reichsbank_a == 1 and hans_opinion > 2
@@ -36,7 +36,7 @@ on-arrival: inflation -= 1.5 if inflation <= 0; inflation -= 1 if inflation > 0;
 
 Increasing interest rates decreases inflation, especially if inflation is high. [? if economic_growth < 3: Hans luther reluctanctly agrees, but thinks less of us because he thinks economic growth is too low?]
 
-@lower_interest_rates
+@lower_interest_rates_normal
 title: Decrease interest rates
 view-if: interest_rates >= 0
 subtitle: Affects middle class and rural much more than workers [? if interest_rates <= -2 : Interest rates are too low. ?] [? if reichsbank_a != 1 : Hjalmar Schacht would never listen to us. ?]
