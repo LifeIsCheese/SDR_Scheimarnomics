@@ -271,10 +271,16 @@ Spy network strength: [+ spy_network : spy_strength +].
 = Kill list
 
 [? if hjalmar_plot == "successful" : <span style="color:rgb(112, 87, 19);">**Hjalmar Schacht**</span> ?] 
+
 [? if bruning_plot == "successful" : <span style="color:rgb(19, 93, 112);">**Heinrich Brüning**</span> ?] 
+
 [? if rohm_plot == "successful" : <span style="color:rgb(185, 138, 7);">**Ernst Röhm**</span> ?] 
+
 [? if leow_plot == "successful" : <span style="color:rgb(180, 38, 38);">**Willy Leow**</span> ?] 
+
 [? if schleicher_plot == "successful" : <span style="color:rgb(216, 75, 75);">**Kurt von Schleicher**</span> ?]
+
+[? if hilderfing_dead : <span style="color:rgba(138, 68, 68, 1);">**Rudolf Hilderfing**</span>? ?]
 
 @Targets
 

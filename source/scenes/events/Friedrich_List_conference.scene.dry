@@ -1,0 +1,37 @@
+title: Friedrich List conference
+view-if: year = 1931 and month >= 9 and spy_network >= 3
+new-page: true
+max-visits: 1
+tags: event
+
+= Infiltration
+
+With the expanding of Severing's spy network he has managed to put an insider amongst the top ranks of bankers, economists, and officials.
+
+This has lead to the spy in question receiving an invite to a secretive Friedrich List conference, meant for combating our current economic crisis.
+
+He then noticed a familiar face, the man himself Rudolf Hilderfing. 
+
+During the conference, many ideas were brought up but the main gist was 2 camps existed within it. The pro deflationary side, which advocated for minimal government intervention, and to let the crisis run its course. While the pro stimulus side advocated for, economic stimulus 🤯.
+
+Spy POV:
+
+As expected Hilderfing has sided with the deflationary camp, but I cannot stand for this. Why must he be so stubborn in his ways, when fellow workers are dying in the streets?
+
+- @kill_hilderfing: There must be action!
+- @root: I shall report back to Severing...
+
+@kill_hilderfing
+subtitle: Perhaps I can sneak some poison in his drink.
+on-arrival: hilderfing_dead = 1; devaluation_progress +=1; center_strength /= 2; strife *= 2; rfb_strength *= 0.8; sh_strength *= 0.8; sa_strength *= 0.8
+
+= Hilderfing Dead!
+
+<div class = "face-status-container">
+    <img class="event-img" src="img/reichsbank2.jpg">
+</div>
+
+Found collapsed at the stairs of the Reichsbank, Hilderfing has seem to be the target of assassination! Many in the party and out blame the extremists for this, as emergency measures are enacted throughout the country focusing on crushing the suspected paramilitaries.
+
+
+

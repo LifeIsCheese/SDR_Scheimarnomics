@@ -303,6 +303,7 @@ Q.bruning_plot = 0;
 Q.rohm_plot = 0;
 Q.leow_plot = 0;
 Q.schleicher_plot = 0;
+Q.hilderfing_dead = 0;
 Q.tank_plot = 0;
 Q.bank_plot = 0;
 Q.stealing_amount = 0;

@@ -65,7 +65,7 @@ subtitle: -[+ wtb_budget +] budget. [? if wtb_budget == 3 : Our pro-labor polici
 unavailable-subtitle: [? if unemployed <= 8 : Unemployment is low enough that the time for the WTB-Plan has passed. ?][? if economic_minister_party == "DVP" : The DVP-controlled Economic Ministry is obstructing our plans. ?]
 view-if: budget >= wtb_budget and wtb_implemented == 0 and wtb_adopted == 1
 choose-if: unemployed > 8 and economic_minister_party != "DVP"
-on-arrival: budget -= wtb_budget; works_program += 1; unemployed -= 4; workers_spd += 8*(1-dissent); unemployed_spd += 8*(1-dissent); wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 2; economic_growth += 2.8; coalition_dissent += 1 if in_grand_coalition; pro_republic += 3*(1-dissent); socialism -= 3; economic_stability += 0.5
+on-arrival: budget -= wtb_budget; works_program += 1; unemployed -= 4; workers_spd += 8*(1-dissent); unemployed_spd += 8*(1-dissent); wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 2; economic_growth += 2.8; coalition_dissent += 1 if in_grand_coalition; pro_republic += 3*(1-dissent); socialism -= 3; economic_stability += 0.5; devaluation_progress +=1
 achievement: wirtschaftspolitik
 
 We have started to enact the WTB plan. Money is beginning to flow through the economy via investments in large-scale public works.
@@ -78,7 +78,7 @@ subtitle: -[+ wtb_budget +] budget - we will enter deficit spending. [? if wtb_b
 unavailable-subtitle: [? if unemployed <= 8 : Unemployment is low enough that the time for the WTB-Plan has passed. ?][? if economic_minister_party == "DVP" : The DVP-controlled Economic Ministry is obstructing our plans. ?][? if finance_minister_party != "SPD" : Without control over finances, we cannot undertake such deficit spending. ?]
 view-if: budget < wtb_budget and wtb_implemented == 0 and wtb_adopted == 1
 choose-if: unemployed > 8 and economic_minister_party != "DVP" and finance_minister_party == "SPD"
-on-arrival: coalition_dissent += 1; coalition_dissent += 1 if historical_mode; coalition_dissent += 1 if chancellor == "Brüning"; works_program += 1; budget -= wtb_budget; unemployed -= 4; workers += 3; workers_spd += 8*(1-dissent); unemployed_spd += 8*(1-dissent); capital_strike_progress += 1; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 3; economic_growth += 3; coalition_dissent += 1 if in_grand_coalition; pro_republic += 3*(1-dissent); socialism -= 4
+on-arrival: coalition_dissent += 1; coalition_dissent += 1 if historical_mode; coalition_dissent += 1 if chancellor == "Brüning"; works_program += 1; budget -= wtb_budget; unemployed -= 4; workers += 3; workers_spd += 8*(1-dissent); unemployed_spd += 8*(1-dissent); capital_strike_progress += 1; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 3; economic_growth += 3; coalition_dissent += 1 if in_grand_coalition; pro_republic += 3*(1-dissent); socialism -= 4; devaluation_progress +=1
 achievement: wirtschaftspolitik
 
 We have entered the realm of deficit spending. Our coalition partners are disgusted, but the works plan is enacted anyway. Money is beginning to flow through the economy via investments in large-scale public works.
