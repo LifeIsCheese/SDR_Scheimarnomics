@@ -20,7 +20,7 @@ Reichsbank reserve requirement: 40%
 
 - @interest_rates_menu: Interest Rates
 - @bonds_menu: Selling Bonds
-- @devalue_currency: Discuss currency devaluation
+- @devalue_currency1: Discuss currency devaluation
 - @devalue_currency_troll: Discuss currency devaluation
 - @bribe: Maybe 1 million Reichsmarks can change his mind.
 - @troll: Maybe 1 million Reichsmarks can change his mind.
