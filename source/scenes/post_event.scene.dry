@@ -4,6 +4,10 @@ on-arrival: {!
 
 Q.military_use_reluctance_multiplier = (100 - Q.military_reluctance) / 100
 
+//eco growth stuff with currency
+
+Q.economic_growth /= Q.currency_value_old * Q.currency_value_old * Q.currency_value_old * Q.currency_value_old
+
 Q.last_advisor_action = 0;
 // thing
 for (const c of Q.classes) {
@@ -1678,6 +1682,10 @@ if (Q.normalize_support) {
        }
     }
 }
+
+// currency devaluation to economic stuff
+Q.economic_growth *= (Q.currency_value * Q.currency_value * Q.currency_value * Q.currency_value);
+Q.currency_value_old = Q.currency_value;
 
 Q.has_event = 0;
 // check if there are any cards in #event, and then go to main if not.

@@ -28,7 +28,9 @@ if (Q.budget) {
 
 = Status
 
-perceived economic stability (foreign investment) : [+ economic_stability +]
+currency valuation multiplier (dev) : [+ currency_value +]
+
+foreign capital change thing (dev) : [+ economic_stability +]
 
 [+ month : month +] [+ year +]
 

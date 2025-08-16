@@ -322,12 +322,15 @@ Q.foreign_investment = 1;
 Q.foreign_investment_old = 0;
 Q.economic_stability = 0;
 Q.investment_quarterly_timer = 0;
-Q.investment_impact = 10;
+Q.investment_impact = 20;
 
 //currency devaluation
 
 Q.devaluation_progress = 0;
 Q.allies_allow_devaluation = 0;
+Q.devaluation_stage = 0;
+Q.currency_value = 1.0;
+Q.currency_value_old = 0;
 
 
 //Event chains 

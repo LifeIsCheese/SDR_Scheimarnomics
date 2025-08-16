@@ -1,10 +1,9 @@
-title: Reichsbank
+title: Monetary Policy
 new-page: true
 is-card: true
 tags: govt_affairs
 frequency: 500
-view-if: spd_in_government = 1 and finance_minister_party = "SPD" and reichsbank_timer == 0 and reichsbank_seized == 0
-on-arrival: reichsbank_timer += 4; month_actions += 1
+view-if: spd_in_government = 1 and reichsbank_timer == 0 and reichsbank_seized == 0
 card-image: img/Reichsbank.jpg
 
 = Reichsbank
@@ -19,20 +18,26 @@ card-image: img/Reichsbank.jpg
 
 Reichsbank reserve requirement: 40%
 
+- @interest_rates_menu: Interest Rates
+- @bonds_menu: Selling Bonds
+- @devalue_currency: Discuss currency devaluation
+- @devalue_currency_troll: Discuss currency devaluation
+- @bribe: Maybe 1 million Reichsmarks can change his mind.
+- @troll: Maybe 1 million Reichsmarks can change his mind.
+- @root: No, we're going to our own thing.
+- @easy_discard
+
+@interest_rates_menu
+
 - @raise_interest_rates
 - @lower_interest_rates_normal
 - @lower_interest_rates_very_low
-- @bribe: Maybe 1 million Reichsmarks can change his mind.
-- @troll: Maybe 1 million Reichsmarks can change his mind.
-- @devalue_currency: Off the gold standard we go!
-- @root: No, we're going to our own thing.
-- @easy_discard
 
 @raise_interest_rates
 title: Increase interest rates
 subtitle: Affects middle class and rural much more than workers. [? if interest_rates >= 2 : Interest rates are too high. ?] [? if reichsbank_a != 1 : Hjalmar Schacht would never listen to us. ?]
 choose-if: 2 > interest_rates and reichsbank_a == 1 and hans_opinion > 2
-on-arrival: inflation -= 1.5 if inflation <= 0; inflation -= 1 if inflation > 0; inflation -= 2 if inflation >= 4; inflation -= 2 if inflation >= 8; unemployed += inflation; workers_spd -= 1; unemployed_spd -= 1; rural_spd -= 1*(1-dissent); old_middle_spd -= 3*(1-dissent); new_middle_spd -= 4; capital_strike_progress += 1; interest_rates +=1; economic_growth -= 0.5 if economic_growth <= 0; economic_growth -= 1 if economic_growth > 0; economic_growth -= 1 if economic_growth >= 3; economic_growth -= 2 if economic_growth >= 8; month_actions +=1; hans_opinion -=1 if economic_growth < 3
+on-arrival: currency_value -= 0.05 if interest_rates == -2; inflation -= 1.5 if inflation <= 0; inflation -= 1 if inflation > 0; inflation -= 2 if inflation >= 4; inflation -= 2 if inflation >= 8; unemployed += inflation; workers_spd -= 1; unemployed_spd -= 1; rural_spd -= 1*(1-dissent); old_middle_spd -= 3*(1-dissent); new_middle_spd -= 4; capital_strike_progress += 1; interest_rates +=1; economic_growth -= 0.5 if economic_growth <= 0; economic_growth -= 1 if economic_growth > 0; economic_growth -= 1 if economic_growth >= 3; economic_growth -= 2 if economic_growth >= 8; month_actions +=1; hans_opinion -=1 if economic_growth < 3; reichsbank_timer += 4; month_actions += 1
 
 Increasing interest rates decreases inflation, especially if inflation is high. [? if economic_growth < 3: Hans luther reluctanctly agrees, but thinks less of us because he thinks economic growth is too low?]
 
@@ -41,25 +46,69 @@ title: Decrease interest rates
 view-if: interest_rates >= 0
 subtitle: Affects middle class and rural much more than workers [? if interest_rates <= -2 : Interest rates are too low. ?] [? if reichsbank_a != 1 : Hjalmar Schacht would never listen to us. ?]
 choose-if: interest_rates > -2 and reichsbank_a == 1 and hans_opinion > 2
-on-arrival: inflation += 1.5 if inflation <= 0; inflation += 1 if inflation > 0; inflation += 1 if inflation >= 4; inflation += 1 if inflation >= 8; workers_spd += 1; unemployed_spd += 1; rural_spd += 1*(1-dissent); old_middle_spd += 3*(1-dissent); new_middle_spd += 4; capital_strike_progress -= 1; interest_rates -=1; economic_growth += 0.5 if economic_growth <= 0; economic_growth += 1 if economic_growth > 0; economic_growth += 1 if economic_growth >= 3; economic_growth += 2 if economic_growth >= 8; month_actions +=1; hans_opinion -= 1 if inflation >= 5
+on-arrival: inflation += 1.5 if inflation <= 0; inflation += 1 if inflation > 0; inflation += 1 if inflation >= 4; inflation += 1 if inflation >= 8; workers_spd += 1; unemployed_spd += 1; rural_spd += 1*(1-dissent); old_middle_spd += 3*(1-dissent); new_middle_spd += 4; capital_strike_progress -= 1; interest_rates -=1; economic_growth += 0.5 if economic_growth <= 0; economic_growth += 1 if economic_growth > 0; economic_growth += 1 if economic_growth >= 3; economic_growth += 2 if economic_growth >= 8; month_actions +=1; hans_opinion -= 1 if inflation >= 5; reichsbank_timer += 4; month_actions += 1
 
 Decreasing interest rates stimulates economic growth, but increases inflation. [? if inflation >= 5: Hans luther reluctanctly agrees, but thinks less of us because he thinks inflation is too high?]
 
 @lower_interest_rates_very_low
 title: Decrease interest rates
 view-if: interest_rates < 0
-subtitle: Affects middle class and rural much more than workers [? if interest_rates <= -2 : Interest rates are far too low. ?] [? if reichsbank_a != 1 : Hjalmar Schacht would never listen to us. ?] [? if allies_allow_devaluation == 0 : Hans Luther, despite his high opinion of us, cannot lower interest rates further. As Foreign capital could leave the Reichsbank, forcing devaluation. ?]
-choose-if: interest_rates > -2 and reichsbank_a == 1 and hans_opinion > 2 and allies_allow_devaluation
-on-arrival: inflation += 1 if inflation <= 0; inflation += 0.5 if inflation > 0; inflation += 0.5 if inflation >= 4; inflation += 0.5 if inflation >= 8; workers_spd += 1; unemployed_spd += 1; rural_spd += 1*(1-dissent); old_middle_spd += 3*(1-dissent); new_middle_spd += 4; capital_strike_progress -= 1; interest_rates -=1; economic_growth += 0.5 if economic_growth <= 0; economic_growth += 1 if economic_growth > 0; economic_growth += 1 if economic_growth >= 3; economic_growth += 2 if economic_growth >= 8; month_actions +=1; hans_opinion -= 1 if inflation >= 5
+subtitle: Affects middle class and rural much more than workers [? if interest_rates <= -2 : Interest rates are far too low. ?] [? if reichsbank_a != 1 : Hjalmar Schacht would never listen to us. ?] [? if devaluation_stage <= 0 : Lowering Interest rates would force currency devaluation, which both party and Reichsbank detests. ?]
+choose-if: interest_rates > -2 and reichsbank_a == 1 and hans_opinion > 2 and devaluation_stage == 1
+on-arrival: inflation += 1 if inflation <= 0; inflation += 0.5 if inflation > 0; inflation += 0.5 if inflation >= 4; inflation += 0.5 if inflation >= 8; workers_spd += 1; unemployed_spd += 1; rural_spd += 1*(1-dissent); old_middle_spd += 3*(1-dissent); new_middle_spd += 4; capital_strike_progress -= 1; interest_rates -=1; economic_growth += 0.5 if economic_growth <= 0; economic_growth += 1 if economic_growth > 0; economic_growth += 1 if economic_growth >= 3; economic_growth += 2 if economic_growth >= 8; month_actions +=1; hans_opinion -= 1 if inflation >= 5; reichsbank_timer += 4; month_actions += 1; currency_value += 0.05
 
 Decreasing interest rates stimulates economic growth, but increases inflation. [? if inflation >= 5: Hans luther reluctanctly agrees, but thinks less of us because he thinks inflation is too high?]
+
+@bonds_menu
+choose-if: devaluation_stage >= 1
+unavailable-subtitle: We cannot devalue our currency
+
+Instead of citizens buying our bonds, the Reichsbank could buy them instead, affecting our currency exchange rate.
+
+- @issue_bond_1: Issue a small number of bonds.
+- @issue_bond_2: Issue a sizeable number of bonds.
+- @issue_bond_3: Issue a large number of bonds
+- @fiscal_menu: Change domestic taxes instead of tariffs.
+- @root: We are fine as it is.
+- @easy_discard
+
+@issue_bond_1
+subtitle: +1 budget, with interest
+unavailable-subtitle: Wait for [+ bond_timer +] months.
+choose-if: bond_timer == 0
+on-arrival: budget +=1; bond_timer = 12; currency_value +=0.02; {!
+Q.list_debt_date.push(4); Q.list_debt_amount.push(1)
+!}
+
+We have to pay this back at 30% interest rate per year, for 4 years. if we go into deficit spending in this, we *can* have the option to default, this is not recommended.
+
+@issue_bond_2
+subtitle: +2 budget, with interest
+unavailable-subtitle: Wait for [+ bond_timer +] months.
+choose-if: bond_timer == 0
+on-arrival: budget +=2; bond_timer = 12; currency_value +=0.04; {!
+Q.list_debt_date.push(4); Q.list_debt_amount.push(2)
+!}
+
+We have to pay this back at 30% interest rate per year, for 4 years. if we go into deficit spending in this, we *can* have the option to default, this is not recommended.
+
+@issue_bond_3
+subtitle: +3 budget, with interest
+unavailable-subtitle: Wait for [+ bond_timer +] months.
+choose-if: bond_timer == 0
+on-arrival: budget +=3; bond_timer = 12; currency_value +=0.06; {!
+Q.list_debt_date.push(4); Q.list_debt_amount.push(3)
+!}
+
+We have to pay this back at 30% interest rate per year, for 4 years. if we go into deficit spending in this, we *can* have the option to default, this is not recommended.
+
 
 @bribe
 view-if: reichsbank_a == 1 and hans_opinion <= 2
 title: With hans being uncooperative, perhaps he needs an "incentive".
 subtitle: -1 resources
 choose-if: resources > 0
-on-arrival: hans_opinion +=1; resources -=1; barmat +=1 if barmat <= 2
+on-arrival: hans_opinion +=1; resources -=1; barmat +=1 if barmat <= 2; reichsbank_timer += 4; month_actions += 1
 
 By transferring our funds in Hans Luther's wallet, he may think more highly of us.
 
@@ -68,12 +117,27 @@ view-if: reichsbank_a == 0
 title: Perhaps he needs an, "incentive"
 subtitle: -1 resources
 choose-if: resources > 0
-on-arrival: resources -=1; barmat +=1 if barmat <= 2
+on-arrival: resources -=1; barmat +=1 if barmat <= 2; reichsbank_timer += 4; month_actions += 1
 
 No it did not.
 
-@devalue_currency
-subtitle: The SPD right, and center, as well as the bourgeois and moderate right parties would not allow this. Furthermore the west would pull out their capital as we would have to negotiate devaluation with them. Lastly, Many top economists would rather kill themselves than increase inflation.
 
-As the thought of currency devaluation was formulated in his mind, Hilderfing suffered a heart attack!
+@devalue_currency1
+view-if: devaluation_stage == 0
+choose-if: devaluation_progress >= 3 and hjalmar_plot == "successful"
+unavailable-subtitle: [? if devaluation_progress < 3 : Devaluation has little support within the party. ?] [? if hjalmar_plot != "successful" : Schacht would never allow this. ?]
+on-arrival: devaluation_stage = 1
+
+After talks within our party, and Hans Luther, he has agreed to do some policies of monetary devaluation. Such as further reducing interest rates, and buying government bonds.
+
+@devalue_currency_troll
+view-if: hjalmar_plot != "successful"
+
+Hilderfing, surprisingly on board with currency devaluation, goes up to Schacht to discuss plans to do this.
+
+Schacht, horrified of what Hilderfing uttered, hit him in the head with a hammer multiple times!
+
+After the horrifying ordeal, Hilderfing has, surprisingly, came unscathed, except for returning back into his economic orthodoxy of doing nothing. 
+
+<iframe src="https://giphy.com/embed/MaUXRiSomZXMiouCc0" width="480" height="432" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/Clash-Royale-MaUXRiSomZXMiouCc0">via GIPHY</a></p>
 
