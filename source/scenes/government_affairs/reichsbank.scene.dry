@@ -68,7 +68,6 @@ Instead of citizens buying our bonds, the Reichsbank could buy them instead, aff
 - @issue_bond_1: Issue a small number of bonds.
 - @issue_bond_2: Issue a sizeable number of bonds.
 - @issue_bond_3: Issue a large number of bonds
-- @fiscal_menu: Change domestic taxes instead of tariffs.
 - @root: We are fine as it is.
 - @easy_discard
 
