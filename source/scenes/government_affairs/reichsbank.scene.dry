@@ -5,8 +5,9 @@ tags: govt_affairs
 frequency: 500
 view-if: spd_in_government = 1 and reichsbank_timer == 0 and reichsbank_seized == 0
 card-image: img/Reichsbank.jpg
+go-to: @reichsbank_menu
 
-= Reichsbank
+= Monetary Policy
 
 [? if hjalmar_plot != "successful" and year < 1930 and month < 3: Hjalmar Schacht opinion: Hateful. ?]
 
@@ -17,6 +18,8 @@ card-image: img/Reichsbank.jpg
 [? if hjalmar_plot == "successful": Hans Luther opinion: [+ hans_opinion : hans_opinion +]. [? if hans_opinion <= 2 : We can persuade him by talking to him directly. ?] ?]
 
 Reichsbank reserve requirement: 40%
+
+@reichsbank_menu
 
 - @interest_rates_menu: Interest Rates
 - @bonds_menu: Selling Bonds
@@ -32,6 +35,7 @@ Reichsbank reserve requirement: 40%
 - @raise_interest_rates
 - @lower_interest_rates_normal
 - @lower_interest_rates_very_low
+- @reichsbank_menu: Go back.
 
 @raise_interest_rates
 title: Increase interest rates
@@ -68,7 +72,7 @@ Instead of citizens buying our bonds, the Reichsbank could buy them instead, aff
 - @issue_bond_1: Issue a small number of bonds.
 - @issue_bond_2: Issue a sizeable number of bonds.
 - @issue_bond_3: Issue a large number of bonds
-- @root: We are fine as it is.
+- @reichsbank_menu: Go back.
 - @easy_discard
 
 @issue_bond_1
