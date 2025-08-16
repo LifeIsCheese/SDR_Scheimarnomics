@@ -189,8 +189,8 @@ if (Q.month_actions >= 1) {
     Q.economic_growth -= Q.foreign_investment_old;
     //eco growth stuff with currency
 
-Q.economic_growth /= Q.currency_value_old * Q.currency_value_old * Q.currency_value_old * Q.currency_value_old
-
+Q.economic_growth /= Q.currency_value_old * Q.currency_value_old * Q.currency_value_old * Q.currency_value_old;
+Q.inflation /= Q.currency_value_old * Q.currency_value_old * Q.currency_value_old * Q.currency_value_old;
     if (Q.budget <= 0 && Q.budget > -2 && Q.inflation < 2.5) {
         Q.inflation += Q.inflation_growth;
     }
@@ -351,11 +351,11 @@ switch (Q.interest_rates) {
 
     case 1:
     Q.inflation_growth = 0.075;
-    Q.economic_growth -= 0.1;
     break;
 
     case 0:
     Q.inflation_growth = 0.1;
+    Q.economic_growth += 0.075
     break;
 
     case -1:
@@ -1633,6 +1633,7 @@ if(Q.investment_quarterly_timer == 0) {
     //foreign investment main
     // currency devaluation to economic stuff
 Q.economic_growth *= (Q.currency_value * Q.currency_value * Q.currency_value * Q.currency_value);
+Q.inflation *= (Q.currency_value * Q.currency_value * Q.currency_value * Q.currency_value);
 Q.currency_value_old = Q.currency_value;
     Q.economic_growth += Q.foreign_investment;
     Q.foreign_investment_old = Q.foreign_investment;
