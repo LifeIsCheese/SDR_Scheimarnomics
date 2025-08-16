@@ -4,9 +4,6 @@ on-arrival: {!
 
 Q.military_use_reluctance_multiplier = (100 - Q.military_reluctance) / 100
 
-//eco growth stuff with currency
-
-Q.economic_growth *= Q.currency_value_old * Q.currency_value_old * Q.currency_value_old * Q.currency_value_old
 
 Q.last_advisor_action = 0;
 // thing
@@ -189,6 +186,10 @@ if (Q.month_actions >= 1) {
     // we're basically implicity drawing a Philips curve
     // budget deficits lead to some inflation
     Q.economic_growth -= Q.foreign_investment_old;
+    //eco growth stuff with currency
+
+Q.economic_growth *= Q.currency_value_old * Q.currency_value_old * Q.currency_value_old * Q.currency_value_old
+
     if (Q.budget <= 0 && Q.budget > -2 && Q.inflation < 2.5) {
         Q.inflation += Q.inflation_growth;
     }
