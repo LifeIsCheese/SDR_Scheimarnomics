@@ -750,9 +750,29 @@ if (Q.violence_timer > 0) {
 /// foregi ninvestment stab stuff
 
 if(Q.investment_quarterly_timer == 0) {
+    const foreign_investment_cap = Q.foreign_investment
 
     Q.foreign_investment += Q.economic_stability / Q.investment_impact;
+    //cap at 50% of economy, because i am NOT simulating a germany controlled by foreign capital
+    if (Q.foreign_investment > 0 && (foreign_investment_cap * 2) > Q.foreign_investment) {
+        Q.foreign_investment = foreign_investment_cap
+    }
+    // capping the amt of foreign capital leaving germany, because if it only made up 25% of the economy, why should it impact 88% OF IT
+    if (Q.foreign_investment < 0 && Q.foreign_investment < (Q.foreign_investment_stop * -1)) {
+        Q.foreign_investment = Q.foreign_investment_stop;
+    }
+
+
     Q.investment_quarterly_timer = 3;
+    if (Q.foreign_investment < 0) {
+        Q.inflation -= Q.economic_stability / Q.investment_impact
+    }
+
+    // max amount foreign investment reached, and then turning it into a stop cap 
+
+    if (Q.foreign_investment_stop < Q.foreign_investment) {
+        Q.foreign_investment_stop = Q.foreign_investment;
+    }
 
 }
 

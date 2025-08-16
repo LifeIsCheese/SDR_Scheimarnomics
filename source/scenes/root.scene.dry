@@ -323,6 +323,7 @@ Q.foreign_investment_old = 0;
 Q.economic_stability = 0;
 Q.investment_quarterly_timer = 0;
 Q.investment_impact = 20;
+Q.foreign_investment_stop = 0;
 
 //currency devaluation
 
