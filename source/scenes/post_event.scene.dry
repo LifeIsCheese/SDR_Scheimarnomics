@@ -760,7 +760,7 @@ if(Q.investment_quarterly_timer == 0) {
     }
     // capping the amt of foreign capital leaving germany, because if it only made up 25% of the economy, why should it impact 88% OF IT
     if (Q.foreign_investment < 0 && Q.economic_growth < (Q.foreign_investment_stop * -1)) {
-        Q.foreign_investment = Q.foreign_investment_stop;
+        Q.foreign_investment = Q.foreign_investment_stop * -1;
     }
 
 
