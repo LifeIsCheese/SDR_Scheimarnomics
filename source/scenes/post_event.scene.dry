@@ -750,9 +750,7 @@ if (Q.violence_timer > 0) {
 /// foregi ninvestment stab stuff
 
 if(Q.investment_quarterly_timer == 0) {
-// currency devaluation to economic stuff
-Q.economic_growth *= (Q.currency_value * Q.currency_value * Q.currency_value * Q.currency_value);
-Q.currency_value_old = Q.currency_value;
+
     Q.foreign_investment += Q.economic_stability / Q.investment_impact;
     Q.investment_quarterly_timer = 3;
 
@@ -1633,6 +1631,9 @@ Q.currency_value_old = Q.currency_value;
     }
 
     //foreign investment main
+    // currency devaluation to economic stuff
+Q.economic_growth *= (Q.currency_value * Q.currency_value * Q.currency_value * Q.currency_value);
+Q.currency_value_old = Q.currency_value;
     Q.economic_growth += Q.foreign_investment;
     Q.foreign_investment_old = Q.foreign_investment;
     if (Q.chancellor == "Groener") {
