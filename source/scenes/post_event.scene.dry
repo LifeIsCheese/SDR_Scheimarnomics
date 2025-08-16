@@ -1685,6 +1685,7 @@ if (Q.normalize_support) {
 
 // currency devaluation to economic stuff
 Q.economic_growth /= (Q.currency_value * Q.currency_value * Q.currency_value * Q.currency_value);
+Q.economic_growth += 0.1
 Q.currency_value_old = Q.currency_value;
 
 Q.has_event = 0;
