@@ -332,7 +332,7 @@ Q.foreign_investment_stop = 0;
 //currency devaluation
 Q.devaluation_progress = 0;
 Q.allies_allow_devaluation = 0;
-Q.devaluation_stage = 0;\
+Q.devaluation_stage = 0;
 Q.currency_value_cap = 1.15;
 Q.currency_value = 1.0;
 Q.currency_value_old = 1.0;
