@@ -149,7 +149,7 @@ After the horrifying ordeal, Hilderfing has, surprisingly, came unscathed, excep
 @devalue_currency2
 view-if: devaluation_stage == 1
 choose-if: devaluation_progress >= 6 and hjalmar_plot == "successful"
-on-arrival: devaluation_stage = 2; Q.currency_value_cap = 1.3
+on-arrival: devaluation_stage = 2; currency_value_cap = 1.3
 
 
 After or successful policies of devaluation, our party and Hans Luther, has agreed to do formal monetary devaluation. Which means pegging the Reichsmark to a higher or lower amount to gold. He has also agreed to a higher set limit of devaluation at 30%, instead of the previous 15%.
