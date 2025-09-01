@@ -88,7 +88,7 @@ if (Q.devaluation_stage >= 1) {
         Q.devaluation_progress -= 1;
     }
 
-    if (Q.economic_growth >= Q.economic_goal) {
+    if (Q.economic_growth >= Q.economic_goal && Q.inflation < Q.economic_growth) {
         Q.devaluation_progress +=1;
     }
 }
@@ -130,7 +130,7 @@ Q.foreign_investment_change = Q.economic_stability / Q.investment_impact;
 
 [? if foreign_investment_change < 0 : Capital flight has affected our country impacting our growth by [+ foreign_investment_change +]%. ?] [? if foreign_investment_change > 0 : Foreign investment has poured into our country, affecting our growth by [+ foreign_investment_change +]%. ?]
 
-[? if devaluation_stage >= 1 and inflation > economic_growth : Our high inflation has lead to dissent over our devaluationary policies. ?] [? if devaluation_stage >= 1 and economic_growth >= economic_goal : Our high economic growth has lead to increased optimism and approval to our devaluationary policies. ?]
+[? if devaluation_stage >= 1 and inflation > economic_growth : Our high inflation has lead to dissent over our devaluationary policies. ?] [? if devaluation_stage >= 1 and economic_growth >= economic_goal and inflation < economic_growth : Our high economic growth has lead to increased optimism and approval to our devaluationary policies. ?]
 
 - @pay_back: Payback our debts, as usaual.
 - @default: Let's do our own thing. (Default on our debt)

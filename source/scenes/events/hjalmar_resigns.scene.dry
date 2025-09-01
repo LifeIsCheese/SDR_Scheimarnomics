@@ -1,5 +1,5 @@
 title: Hjalmar Schacht has resigned!
-view-if: year = 1930 and month >= 3
+view-if: year = 1930 and month >= 3 and hjalmar_plot != "successful"
 new-page: true
 max-visits: 1
 tags: event
