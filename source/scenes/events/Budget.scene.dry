@@ -3,7 +3,7 @@ subtitle: As the year begins, we have recieved our annual budget. [? if bond_deb
 new-page: true
 tags: event
 priority: 2
-view-if: year >= 1929 and month == 11 and budget_eligible = 1
+view-if: year >= 1929 and month == 2 and budget_eligible = 1
 on-arrival: older_republic = old_republic; old_republic = pro_republic; budget_eligible = 0;{!
 //1929 4.4 1930 0.5 1931 -1.1 1931 -6.4 1932 -7.8
 
