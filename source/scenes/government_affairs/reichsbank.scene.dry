@@ -113,9 +113,18 @@ title: Peg the Reichsmark to gold
 choose-if: devaluation_stage >= 2
 unavailable-subtitle: We cannot formally devalue our currency
 
-- @peg_higher:
-- @peg_lower
+- @peg_higher: peg higher (5%)
+- @peg_lower: peg lower (5%)
 
+@peg_higher
+on-arrival: currency_value -=0.05
+
+We increased the reichsmark to gold ratio.
+
+@peg_lower
+on-arrival: currency_value +=0.05
+
+We decreased the reichsmark to gold ratio.
 
 @bribe
 view-if: reichsbank_a == 1 and hans_opinion <= 2
