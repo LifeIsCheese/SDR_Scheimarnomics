@@ -3,7 +3,7 @@ subtitle: As the year begins, we have recieved our annual budget. [? if bond_deb
 new-page: true
 tags: event
 priority: 2
-view-if: year >= 1929 and month == 1 and budget_eligible = 1
+view-if: year >= 1929 and month == 11 and budget_eligible = 1
 on-arrival: older_republic = old_republic; old_republic = pro_republic; budget_eligible = 0;{!
 //1929 4.4 1930 0.5 1931 -1.1 1931 -6.4 1932 -7.8
 
@@ -58,6 +58,8 @@ if (Q.economic_base > Q.economic_growth) {
      (Q.upper_tax_rates / 3 / Q.inflation) +
      (Q.tariffs / 6 / Q.inflation)) + Q.inflation / 15;
 }
+
+Q.economic_goal = Q.economic_goal.toFixed(1)
 
 if (Q.economic_growth >= Q.economic_base) {
     Q.economic_base = 3.29;
@@ -127,7 +129,7 @@ Q.foreign_investment_change = Q.economic_stability / Q.investment_impact;
 
 [? if economic_growth < 3 and economic_growth > inflation: Due to our low economic growth our finances hasn't improved. ?] [? if inflation > economic_growth: Due to our inflation being higher than our economic growth, our finances hasn't improved. ?] [? if economic_growth >= 3 and economic_growth > inflation and economic_growth < 7: With the economy steadily growing, the fruits of our growth pour into our coffers. ?] [? if economic_growth >= 7 and economic_growth > inflation and economic_growth < 12: With the economy experiencing high levels of growth, that leads to us getting the benefits. ?] [? if economic_growth >= 12 and economic_growth > inflation: The economy is booming, largley due to our involvement. Not only does this mean more budget for us, but it heavily increases our popularity and reputation among the country. ?] [? if economic_growth < 0: The recession forces us to have a deficit in our spending. ?] [? if economic_growth >= economic_goal and economic_goal >= inflation and default == 0: Hans luther's opinion of us has grown. ?] [? if economic_growth >= economic_goal and economic_goal >= inflation and default == 1: despite our economic growth, unless we have an economic boom hans luther's opinion of us has not changed. ?]
 
-[? if old_economic_goal != economic_goal : Our old economic goal was [+ old_economic_goal +]%, but due to us missing our target it is now [+ economic_goal_2 +] ?]
+[? if old_economic_goal != economic_goal : Our old economic goal was [+ old_economic_goal +]%, but due to us missing our target it is now [+ economic_goal +]% ?]
 
 [? if foreign_investment_change < 0 : Capital flight has affected our country impacting our growth by [+ foreign_investment_change +]%. ?] [? if foreign_investment_change > 0 : Foreign investment has poured into our country, affecting our growth by [+ foreign_investment_change +]%. ?]
 
