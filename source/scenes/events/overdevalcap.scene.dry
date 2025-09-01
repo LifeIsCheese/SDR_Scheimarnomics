@@ -1,0 +1,13 @@
+title: We have gone over our devaluation limit.
+new-page: true
+tags: event
+priority: 1
+view-if: currency_value > currency_value_cap
+on-arrival: currency_value = currency_value_cap; hans_opinion -=1
+
+= Correction
+
+With the value of our currency having gone down from the agreed limit, hans Luther has taken swift actions to correct this mistake. 
+
+His opinion of us has dropped, due to us not upholding our agreed limit.
+

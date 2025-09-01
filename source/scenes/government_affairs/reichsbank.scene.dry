@@ -17,6 +17,8 @@ go-to: @reichsbank_menu
 
 [? if hjalmar_plot == "successful": Hans Luther opinion: [+ hans_opinion : hans_opinion +]. [? if hans_opinion <= 2 : We can persuade him by talking to him directly. ?] ?]
 
+Current devaluation [+ deval_currency_string +]%
+
 Reichsbank reserve requirement: 40%
 
 @reichsbank_menu
@@ -106,6 +108,14 @@ Q.list_debt_date.push(4); Q.list_debt_amount.push(3)
 
 We have to pay this back at 30% interest rate per year, for 4 years. if we go into deficit spending in this, we *can* have the option to default, this is not recommended.
 
+@pegging_menu
+title: Peg the Reichsmark to gold
+choose-if: devaluation_stage >= 2
+unavailable-subtitle: We cannot formally devalue our currency
+
+- @peg_higher:
+- @peg_lower
+
 
 @bribe
 view-if: reichsbank_a == 1 and hans_opinion <= 2
@@ -148,7 +158,8 @@ After the horrifying ordeal, Hilderfing has, surprisingly, came unscathed, excep
 
 @devalue_currency2
 view-if: devaluation_stage == 1
-choose-if: devaluation_progress >= 6 and hjalmar_plot == "successful"
+choose-if: devaluation_progress >= 6 and hjalmar_plot == "successful" and allies_allow_devaluation
+unavailable-subtitle: [? if allies_allow_devaluation != 1 : The allies would never allow this, without further negotiations. ?]
 on-arrival: devaluation_stage = 2; currency_value_cap = 1.3
 
 

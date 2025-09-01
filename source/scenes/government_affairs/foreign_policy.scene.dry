@@ -129,9 +129,8 @@ Negotiations precede smoothly for the most part. The Western powers are convince
 @reduce_reparations
 title: The Western Allies are finally willing to pause our reparations payments!
 subtitle: Our negotiations have been successful.
-view-if: reparations_negotiation >= 3 and black_thursday_seen == 1 and reparations > -2
+view-if: reparations_negotiation >= 3 and black_thursday_seen == 1 and reparations > -2 and reparations_paused == 0
 on-arrival: west_relation += 1; reparations = -2; budget += 2 if hoover_memorandum_seen == 0; budget += 1 if hoover_memorandum_seen == 1; coalition_dissent -= 1 if coalition_dissent > 0; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); coup_progress -= 2 if coup_progress > 2; economic_growth += 0.7; economic_growth += 0.5 if economic_growth < 0; reparations_paused = 1; economic_stability +=1
-max-visits: 1
 
 Right before our foreign representatives get shipped off Lausanne, we still have not reached a consensus on currency devaluation. 
 
@@ -139,9 +138,10 @@ Should we include that in our negotiations as well?
 
 - @devaluation_allowed: We must be able to devalue our currency.
 - @devaluation_not_allowed: We do not need to worry about devaluing our currency.
+- @postpone: We should wait until we can get the allies to accept devaluation.
 
 @devaluation_allowed
-subtitle: [? if devaluation_progress < 4 : We do not have enough support for devaluation. ?] [? if west_relation < 2 : The West do not trust us. ?]
+subtitle: [? if devaluation_progress < 3 : We do not have enough support for devaluation. ?] [? if west_relation < 2 : The West do not trust us. ?]
 choose-if: devaluation_progress >= 4 and west_relation >= 2
 on-arrival: allies_allow_devaluation = 1
 
@@ -156,6 +156,11 @@ Finally, given both the economic circumstances and our continued negotiations, t
 
 This has reduced tensions within our government, and our party has gotten credit for the achievement.
 
+@postpone
+subtitle: This will cause mild dissent
+on-arrival: coalition_dissent +=1; center_dissent += 5; left_dissent +=5
+
+Our coalition partners, as well as our party are annoyed at our postponement. Seeing it as completely unnecessary, stressing that the reduction of reparations should hold more importance over the devaluation of our currency.
 
 @expose
 title: Expose the secret rearmament plans of the previous foreign ministry!

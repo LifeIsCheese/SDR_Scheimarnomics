@@ -336,7 +336,7 @@ Q.devaluation_stage = 0;
 Q.currency_value_cap = 1.15;
 Q.currency_value = 1.0;
 Q.currency_value_old = 1.0;
-Q.currency_value_cap = 
+Q.deval_currency_string = (2 - currency_value) * 100
 
 
 //Event chains 

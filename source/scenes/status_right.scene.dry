@@ -78,6 +78,8 @@ Undecided:
 
 [? if dvp_alignment < 10 and dvp_alignment > 0 : [? if dvp_alignment == dvp_willing_alignment : We must reach out to them. ?] ?]
 
+[? if dvp_alignment < 10 and dvp_alignment > 0 : [? if violence_level < 33 : They will not be convinced of joining a side until violence is high enough. ?] ?]
+
 <span style="color:rgb(107, 107, 107);">**Others**</span>
 
 The Far Left:
