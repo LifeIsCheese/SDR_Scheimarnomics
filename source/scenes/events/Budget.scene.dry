@@ -49,8 +49,14 @@ if (Q.economic_growth < 0) {
         Q.budget -=1;
     }
 }
+Q.old_economic_goal = Q.economic_goal
+
 if (Q.economic_base > Q.economic_growth) {
     Q.economic_base -= (Q.economic_growth / 2);
+    Q.economic_goal = (Q.economic_base * Q.tax_reform) -
+    ((Q.lower_tax_rates / 4 / Q.inflation) +
+     (Q.upper_tax_rates / 3 / Q.inflation) +
+     (Q.tariffs / 6 / Q.inflation)) + Q.inflation / 15;
 }
 if (Q.economic_growth >= Q.economic_base) {
     Q.economic_base = 3.29;
@@ -76,9 +82,55 @@ for (i in Q.list_debt_amount) {
   Q.counter +=1;
   
 }
+
+if (Q.devaluation_stage >= 1) {
+    if (Q.inflation > Q.economic_growth) {
+        Q.devaluation_progress -= 1;
+    }
+
+    if (Q.economic_growth >= Q.economic_goal) {
+        Q.devaluation_progress +=1;
+    }
+}
+
+//foeign investment stuff
+
+const foreign_investment_cap = Q.foreign_investment
+
+Q.foreign_investment_change = Q.economic_stability / Q.investment_impact;
+
+    Q.foreign_investment += Q.foreign_investment_change;
+
+    //cap at 50% of economy, because i am NOT simulating a germany controlled by foreign capital
+    if (Q.foreign_investment > 0 && (foreign_investment_cap * 2) > Q.economic_growth) {
+        Q.foreign_investment = foreign_investment_cap
+    }
+    // capping the amt of foreign capital leaving germany, because if it only made up 25% of the economy, why should it impact 88% of it
+    if (Q.foreign_investment < 0 && Q.economic_growth < (Q.foreign_investment_stop * -1)) {
+        Q.foreign_investment = Q.foreign_investment_stop * -1;
+    }
+
+
+    if (Q.foreign_investment < 0) {
+        Q.inflation -= Q.economic_stability / Q.investment_impact
+    }
+
+    // max amount foreign investment reached, and then turning it into a stop cap 
+
+    if (Q.foreign_investment_stop < Q.foreign_investment) {
+        Q.foreign_investment_stop = Q.foreign_investment;
+    }
+
 !}
 
+
 [? if economic_growth < 3 and economic_growth > inflation: Due to our low economic growth our finances hasn't improved. ?] [? if inflation > economic_growth: Due to our inflation being higher than our economic growth, our finances hasn't improved. ?] [? if economic_growth >= 3 and economic_growth > inflation and economic_growth < 7: With the economy steadily growing, the fruits of our growth pour into our coffers. ?] [? if economic_growth >= 7 and economic_growth > inflation and economic_growth < 12: With the economy experiencing high levels of growth, that leads to us getting the benefits. ?] [? if economic_growth >= 12 and economic_growth > inflation: The economy is booming, largley due to our involvement. Not only does this mean more budget for us, but it heavily increases our popularity and reputation among the country. ?] [? if economic_growth < 0: The recession forces us to have a deficit in our spending. ?] [? if economic_growth >= economic_goal and economic_goal >= inflation and default == 0: Hans luther's opinion of us has grown. ?] [? if economic_growth >= economic_goal and economic_goal >= inflation and default == 1: despite our economic growth, unless we have an economic boom hans luther's opinion of us has not changed. ?]
+
+[? if old_economic_goal != economic_goal : Our old economic goal was [+ old_economic_goal +], but due to us missing our target it is now [? economic_goal ?] ?]
+
+[? if foreign_investment_change < 0 : Capital flight has affected our country impacting our growth by [+ foreign_investment_change +]%. ?] [? if foreign_investment_change > 0 : Foreign investment has poured into our country, affecting our growth by [+ foreign_investment_change +]%. ?]
+
+[? if devaluation_stage >= 1 and inflation > economic_growth : Our high inflation has lead to dissent over our devaluationary policies. ?] [? if devaluation_stage >= 1 and economic_growth >= economic_goal : Our high economic growth has lead to increased optimism and approval to our devaluationary policies. ?]
 
 - @pay_back: Payback our debts, as usaual.
 - @default: Let's do our own thing. (Default on our debt)
@@ -87,7 +139,7 @@ for (i in Q.list_debt_amount) {
 view-if: bond_debt > 0 and spd_in_government
 on-arrival: budget -= bond_debt; bond_payed += bond_debt
 
-With us paying back our bond debt, it improves confidence in our economy
+With us paying back our bond debt, it improves confidence in our economy.
 
 @default
 view-if: bond_debt > 0 and spd_in_government

@@ -23,6 +23,7 @@ Reichsbank reserve requirement: 40%
 
 - @interest_rates_menu: Interest Rates
 - @bonds_menu: Selling Bonds
+- @devalue_currency2: Move onto formal devaluation
 - @devalue_currency1: Discuss currency devaluation
 - @devalue_currency_troll: Discuss currency devaluation
 - @bribe: Maybe 1 million Reichsmarks can change his mind.
@@ -129,12 +130,13 @@ No it did not.
 view-if: devaluation_stage == 0
 choose-if: devaluation_progress >= 3 and hjalmar_plot == "successful"
 unavailable-subtitle: [? if devaluation_progress < 3 : Devaluation has little support within the party. ?] [? if hjalmar_plot != "successful" : Schacht would never allow this. ?]
-on-arrival: devaluation_stage = 1
+on-arrival: devaluation_stage = 1; currency_value_cap = 1.15
 
 After talks within our party, and Hans Luther, he has agreed to do some policies of monetary devaluation. Such as further reducing interest rates, and buying government bonds.
+Note, that Hans Luther has only agreed to this on the condition that the maximum amount of devaluation we do do is 15%.
 
 @devalue_currency_troll
-view-if: hjalmar_plot != "successful"
+max-visits: 1
 
 Hilderfing, surprisingly on board with currency devaluation, goes up to Schacht to discuss plans to do this.
 
@@ -144,3 +146,10 @@ After the horrifying ordeal, Hilderfing has, surprisingly, came unscathed, excep
 
 <iframe src="https://giphy.com/embed/MaUXRiSomZXMiouCc0" width="480" height="432" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/Clash-Royale-MaUXRiSomZXMiouCc0">via GIPHY</a></p>
 
+@devalue_currency2
+view-if: devaluation_stage == 1
+choose-if: devaluation_progress >= 6 and hjalmar_plot == "successful"
+on-arrival: devaluation_stage = 2; Q.currency_value_cap = 1.3
+
+
+After or successful policies of devaluation, our party and Hans Luther, has agreed to do formal monetary devaluation. Which means pegging the Reichsmark to a higher or lower amount to gold. He has also agreed to a higher set limit of devaluation at 30%, instead of the previous 15%.

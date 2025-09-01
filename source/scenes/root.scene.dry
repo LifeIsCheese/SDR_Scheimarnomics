@@ -227,7 +227,11 @@ Q.inflation = 2.9;
 // economic growth - same source as above, Table 2 (preisbereinigt) - this is also the source for the yearly changes in the great depression.
 Q.economic_growth = 3.4;
 Q.economic_goal = 3.6;
+
+//economic base is the baseline economic goal, not affected by tax rates or tarrifs.
 Q.economic_base = 3.29;
+// old economic goal is just visual, used in budget Scene
+Q.old_economic_goal = 1;
 Q.budget_eligible = 1;
 
 //Added Interest reates
@@ -321,17 +325,18 @@ Q.barmat = 0;
 Q.foreign_investment = 1;
 Q.foreign_investment_old = 0;
 Q.economic_stability = 0;
-Q.investment_quarterly_timer = 0;
-Q.investment_impact = 20;
+Q.investment_impact = 10;
+Q.foreign_investment_change = 0;
 Q.foreign_investment_stop = 0;
 
 //currency devaluation
-
 Q.devaluation_progress = 0;
 Q.allies_allow_devaluation = 0;
-Q.devaluation_stage = 0;
+Q.devaluation_stage = 0;\
+Q.currency_value_cap = 1.15;
 Q.currency_value = 1.0;
 Q.currency_value_old = 1.0;
+Q.currency_value_cap = 
 
 
 //Event chains 
