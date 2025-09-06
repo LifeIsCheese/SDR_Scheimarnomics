@@ -283,6 +283,7 @@ window.changeTab('status_right.Actions_rb', 'Actions_rb', 'right');
 }
 
 function purge() {
+
 var Q = window.dendryUI.dendryEngine.state.qualities;
 
 Q.interior_police_loyalty += 0.1;
@@ -291,7 +292,7 @@ Q.prussian_police_loyalty += 0.1;
 
 if (Q.plotMap[Q.plot_target]) {
 
-d[Q.plotMap[Q.plot_target]] -= Q.plot_strength * 3
+Q[Q.plotMap[Q.plot_target]] -= Q.plot_strength * 3
 
 }
 
@@ -306,6 +307,7 @@ window.changeTab('status.Actions', 'Actions', 'left')
 }
 
 function rush() {
+
 var Q = window.dendryUI.dendryEngine.state.qualities;
 
 if (Q.loyalty_decay < 0.04) {
@@ -320,7 +322,7 @@ Q.prussian_police_loyalty -= 0.1;
 
 if (Q.plotMap[Q.plot_target]) {
 
-d[Q.plotMap[Q.plot_target]] += Q.plot_strength * 3
+Q[Q.plotMap[Q.plot_target]] += Q.plot_strength * 3
 
 }
 
@@ -388,6 +390,8 @@ var Q = window.dendryUI.dendryEngine.state.qualities;
 Q.coup_progress = 99;
 
 Q.month_actions += 1;
+
+Q.director_actions_timer = 12;
 
 window.changeTab('status.Actions', 'Actions', 'left')
 

@@ -82,7 +82,7 @@ Instead of citizens buying our bonds, the Reichsbank could buy them instead, aff
 subtitle: +1 budget, with interest
 unavailable-subtitle: Wait for [+ bond_timer +] months.
 choose-if: bond_timer == 0
-on-arrival: budget +=1; bond_timer = 12; currency_value +=0.02; {!
+on-arrival: budget +=1; bond_timer = 12; currency_value +=0.02; month_actions +=1; {!
 Q.list_debt_date.push(4); Q.list_debt_amount.push(1)
 !}
 
@@ -92,7 +92,7 @@ We have to pay this back at 30% interest rate per year, for 4 years. if we go in
 subtitle: +2 budget, with interest
 unavailable-subtitle: Wait for [+ bond_timer +] months.
 choose-if: bond_timer == 0
-on-arrival: budget +=2; bond_timer = 12; currency_value +=0.04; {!
+on-arrival: budget +=2; bond_timer = 12; currency_value +=0.04; month_actions +=1; {!
 Q.list_debt_date.push(4); Q.list_debt_amount.push(2)
 !}
 
@@ -102,7 +102,7 @@ We have to pay this back at 30% interest rate per year, for 4 years. if we go in
 subtitle: +3 budget, with interest
 unavailable-subtitle: Wait for [+ bond_timer +] months.
 choose-if: bond_timer == 0
-on-arrival: budget +=3; bond_timer = 12; currency_value +=0.06; {!
+on-arrival: budget +=3; bond_timer = 12; currency_value +=0.06; month_actions +=1; {!
 Q.list_debt_date.push(4); Q.list_debt_amount.push(3)
 !}
 

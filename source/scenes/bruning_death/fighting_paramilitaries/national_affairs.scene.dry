@@ -27,6 +27,8 @@ Military supporting the republic : [+ military_support_republic +]%
 
 Military loyalty : [+ reichswehr_loyalty : loyalty +]
 
+Unless absolutely necessary, we should not give the military any concessions.
+
 - @promise_spending: We promise the army to fund them once this is over.
 - @spending_1: We allocate a part of their budget to placate them.
 - @delegate_1: We can delegate some of our paramilitary suppression operations to the Reichswehr.
