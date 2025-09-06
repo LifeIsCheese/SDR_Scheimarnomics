@@ -112,6 +112,7 @@ We have to pay this back at 30% interest rate per year, for 4 years. if we go in
 title: Peg the Reichsmark to gold
 choose-if: devaluation_stage >= 2 and exchange_controls != 1
 subtitle: [? if devaluation_stage < 2 : We cannot formally devalue our currency ?] [? if exchange_controls == 1 : The Reichsmark is not stable. ?]
+
 - @peg_higher: peg higher (+5%)
 - @peg_lower: peg lower (-5%)
 - @reichsbank_menu: Go back.
