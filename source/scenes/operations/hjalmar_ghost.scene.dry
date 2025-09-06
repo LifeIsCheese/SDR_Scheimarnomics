@@ -18,6 +18,7 @@ Christians from all sectors are replused by this act of clear satanism, many abh
 
 @banish
 on-arrival: z_relation += 50; old_middle_nsdap -= 6; new_middle_nsdap -= 6; rural_nsdap -= 6; workers_nsdap -= 6; new_middle_dnvp -=6; old_middle_dnvp -=6; rural_dnvp -=6; workers_dnvp -=6
+achievement: true_nature
 
 With help from the center party Z, they brought in newly ordained cardinal Ludwig Kaas to get rid of Hjalmar Schacht. Finally getting rid of him once and for all.
 

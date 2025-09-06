@@ -112,6 +112,23 @@ if ((Q.chancellor_party == "NSDAP" || Q.chancellor == "Hitler" || Q.president ==
 if ((Q.welfare > 0 && Q.judicial_reform >= 2 && Q.womens_work >= 1 && Q.family_law >= 1 && Q.upper_tax_rates > Q.lower_tax_rates && Q.works_councils > 0 && Q.eu > 0)) {
     this.achieve('heidelberger_programm');
 }
+// Full house - Kill everybody
+if (Q.hjalmar_plot == "successful" && Q.bruning_plot == "successful" && Q.rohm_plot == "successful" && Q.leow_plot == "successful" && Q.schleicher_plot == "successful" && Q.hilderfing_dead) {
+    this.achieve('full_house');
+}
+// Wonder weapon - Steal a tank
+if (Q.tank_plot == "successful") {
+    this.achieve('wonder_weapon');
+}
+// Stasi - Have a dominant spy network
+if (Q.spy_network >= 9) {
+    this.achieve('stasi');
+}
+// SPD's strongest soldier - Have Hans Luther's opinion of the SPD reach ecstatic
+if (Q.hans_opinion >= 5) {
+    this.achieve('luther_spd');
+}
+
 !}
 
 = End
@@ -541,8 +558,29 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_stolperstein: **Stolperstein** - we lost, but history might memorialize us... ?]
 
+[? if achievement_full_house : **Volles Haus** - Kill everybody. ?]
+
+[? if achievement_wonder_weapon : **Wunderwaffen** - Steal a tank. ?]
+
+[? if achievement_true_nature: **Wahres Wesen** - Exorcise Hjalmar Schacht. ?]
+
+[? if achievement_stasi: **Stasi** - Have a dominant spy network. ?]
+
+[? if achievement_wonder_weapon : **Wunderwaffen** - Steal a tank. ?]
+
+[? if achievement_luther_spd : **Der stärkste Kämpfer der SPD** - Have Hans Luther's opinion of the SPD reach ecstatic. ?]
 
 = Incomplete Achievements
+
+[? if not achievement_luther_spd : **Der stärkste Kämpfer der SPD** - Have Hans Luther's opinion of the SPD reach ecstatic. ?]
+
+[? if not achievement_stasi: **Stasi** - Have a dominant spy network. ?]
+
+[? if not achievement_true_nature: **Wahres Wesen** - Exorcise Hjalmar Schacht. ?]
+
+[? if not achievement_wonder_weapon : **Wunderwaffen** - Steal a tank. ?]
+
+[? if not achievement_full_house : **Volles Haus** - Kill everybody. ?]
 
 [? if not achievement_eiserne_front : **Eiserne Front** - form the Iron Front. ?]
 
@@ -608,7 +646,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_die_rote_fahne: **Die Rote Fahne** - join the KPD in their May Day march. ?]
 
-[? if not achievement_panik_im_mittelstand: **Panik im Mittelstand** - SPD new middle class support is at least 50%. ?]
+[? if not achievement_gk_im_mittelstand: **Panik im Mittelstand** - SPD new middle class support is at least 50%. ?]
 
 [? if not achievement_bauernrevolution: **Bauernrevolution** - SPD rural support is at least 50%. ?]
 
