@@ -337,6 +337,8 @@ Q.currency_value_cap = 1.15;
 Q.currency_value = 1.0;
 Q.currency_value_old = 1.0;
 Q.deval_currency_string = (2 - Q.currency_value) * 100;
+Q.rm_to_gold = 0.358;
+Q.exchange_controls = 0;
 
 
 //Event chains 
@@ -702,7 +704,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
             'sa_ban', 'sh_ban', 'papen_chancellor',
             'kpd_policy', 'kpd_ultimatum', 'popular_front_dispute',
             'high_inflation', 'banking_crisis', 'march_on_berlin', 'abysinnia', 'nazi_peak',
-            'nazi_reform', 'understanding_enemy', 'laissez_faire', 'presidential', 'rb_urgency', 'violence', 'paramilitaries', 'kpd_influence', 'concessions', 'investment_quarterly'];
+            'nazi_reform', 'understanding_enemy', 'laissez_faire', 'presidential', 'rb_urgency', 'violence', 'paramilitaries', 'kpd_influence', 'concessions', 'exchange_controls'];
 Q.advisor_action_timer = 0;
 // party affairs timers
 Q.confronting_nazis_timer = 0;

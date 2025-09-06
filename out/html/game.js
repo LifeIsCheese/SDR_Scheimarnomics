@@ -385,7 +385,7 @@ window.changeTab('status.Actions', 'Actions', 'left')
 function joke() {
 var Q = window.dendryUI.dendryEngine.state.qualities;
 
-Q.coup_progress = 10;
+Q.coup_progress = 99;
 
 Q.month_actions += 1;
 

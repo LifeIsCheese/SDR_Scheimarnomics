@@ -1,0 +1,10 @@
+title: Lifting controls
+new-page: true
+tags: event
+view-if: unemployed < 15 and exchange_controls == 1 and economic_growth > 1
+max-visits: 1
+on-arrival: exchange_controls = 0; economic_stability += 1; foreign_investment += 1
+
+= Stabilization
+
+With the current economic situation seeming to be recovering, Hans Luther has decided to lift all exchange controls, allowing for the Reichsmark to be converted into gold and foreign currencies again! This immediately brings trust back, helping our economic pariah status in the world.

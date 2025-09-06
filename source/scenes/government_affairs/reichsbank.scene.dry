@@ -9,17 +9,17 @@ go-to: @reichsbank_menu
 
 = Monetary Policy
 
-[? if hjalmar_plot != "successful" and year < 1930 and month < 3: Hjalmar Schacht opinion: Hateful. ?]
+[? if hjalmar_plot != "successful" and year < 1930: Hjalmar Schacht opinion: Hateful. ?]
 
-[? if hjalmar_plot != "successful" and year >= 1930 and month >= 3: Hjalmar Schacht influence: suffocating. ?]
+[? if hjalmar_plot != "successful" and year >= 1930: Hjalmar Schacht influence: suffocating. ?]
 
 [? if hjalmar_plot == "successful": Now that the Reichsbank is controlled by Hans Luther, perhaps now the Reichsbank will heed our policies.?]
 
 [? if hjalmar_plot == "successful": Hans Luther opinion: [+ hans_opinion : hans_opinion +]. [? if hans_opinion <= 2 : We can persuade him by talking to him directly. ?] ?]
 
-Current devaluation [+ deval_currency_string +]%
+Current valuation [+ deval_currency_string +]%
 
-Reichsbank reserve requirement: 40%
+[? if exchange_controls != 1 : 1 Reichsmark = [+ rm_to_gold +] of gold. ?] [? exchange_controls == 1 : Reichsmark to Gold has been suspended. ?]
 
 @reichsbank_menu
 
@@ -27,8 +27,8 @@ Reichsbank reserve requirement: 40%
 - @bonds_menu: Selling Bonds
 - @devalue_currency2: Move onto formal devaluation
 - @devalue_currency1: Discuss currency devaluation
-- @devalue_currency_troll: Discuss currency devaluation
 - @bribe: Maybe 1 million Reichsmarks can change his mind.
+- @pegging_menu
 - @troll: Maybe 1 million Reichsmarks can change his mind.
 - @root: No, we're going to our own thing.
 - @easy_discard
@@ -110,11 +110,11 @@ We have to pay this back at 30% interest rate per year, for 4 years. if we go in
 
 @pegging_menu
 title: Peg the Reichsmark to gold
-choose-if: devaluation_stage >= 2
-unavailable-subtitle: We cannot formally devalue our currency
-
-- @peg_higher: peg higher (5%)
-- @peg_lower: peg lower (5%)
+choose-if: devaluation_stage >= 2 and exchange_controls != 1
+subtitle: [? if devaluation_stage < 2 : We cannot formally devalue our currency ?] [? if exchange_controls == 1 : The Reichsmark is not stable. ?]
+- @peg_higher: peg higher (+5%)
+- @peg_lower: peg lower (-5%)
+- @reichsbank_menu: Go back.
 
 @peg_higher
 on-arrival: currency_value -=0.05
@@ -153,17 +153,6 @@ on-arrival: devaluation_stage = 1; currency_value_cap = 1.15
 
 After talks within our party, and Hans Luther, he has agreed to do some policies of monetary devaluation. Such as further reducing interest rates, and buying government bonds.
 Note, that Hans Luther has only agreed to this on the condition that the maximum amount of devaluation we do do is 15%.
-
-@devalue_currency_troll
-max-visits: 1
-
-Hilderfing, surprisingly on board with currency devaluation, goes up to Schacht to discuss plans to do this.
-
-Schacht, horrified of what Hilderfing uttered, hit him in the head with a hammer multiple times!
-
-After the horrifying ordeal, Hilderfing has, surprisingly, came unscathed, except for returning back into his economic orthodoxy of doing nothing. 
-
-<iframe src="https://giphy.com/embed/MaUXRiSomZXMiouCc0" width="480" height="432" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/Clash-Royale-MaUXRiSomZXMiouCc0">via GIPHY</a></p>
 
 @devalue_currency2
 view-if: devaluation_stage == 1

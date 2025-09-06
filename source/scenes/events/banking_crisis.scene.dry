@@ -1,14 +1,14 @@
 title: Banking Crisis
 subtitle: The collapse of the German banking system...
 new-page: true
-on-arrival: banking_crisis_seen = 1; workers_kpd += 3; workers_kpd += 2 if sapd_consolidated == 0; workers_sapd += 2 if sapd_consolidated == 1; workers_nsdap += 3; new_middle_nsdap += 3; old_middle_nsdap += 4; rural_nsdap += 3; unemployed += 3; crisis_urgency += 1; workers_spd -= 4 if spd_in_government; new_middle_spd -= 5 if spd_in_government; old_middle_spd -= 5 if spd_in_government; rural_spd -= 4 if spd_in_government; economic_growth -= 1; socialism += 1; economic_stability -=2
+on-arrival: banking_crisis_seen = 1; workers_kpd += 3; workers_kpd += 2 if sapd_consolidated == 0; workers_sapd += 2 if sapd_consolidated == 1; workers_nsdap += 3; new_middle_nsdap += 3; old_middle_nsdap += 4; rural_nsdap += 3; unemployed += 3; crisis_urgency += 1; workers_spd -= 4 if spd_in_government; new_middle_spd -= 5 if spd_in_government; old_middle_spd -= 5 if spd_in_government; rural_spd -= 4 if spd_in_government; economic_growth -= 1; socialism += 1; economic_stability -=2; exchange_controls_timer = 3
 tags: event
 view-if: customs_union = 1 and banking_crisis_timer = 0
 max-visits: 1
 
 = Banking Crisis
 
-The Darmstädter und Nationalbank, or Danat Bank, has collapsed! Along with it goes much of the German banking system. The cause seemed to be due to the government's pursuit of a customs union with Austria, which led to de facto international sanctions.
+The Darmstädter und Nationalbank, or, has collapsed! Along with it goes much of the German banking system. The cause seemed to be due to the government's pursuit of a customs union with Austria, which led to de facto international sanctions.
 
 This is a bourgeois dispute, but the costs will be borne by the proletariat. The people are facing ever-increasing hunger and poverty, and perhaps we are partly to blame.
 
@@ -33,7 +33,7 @@ In the face of the banking crisis, we have taken emergency action to stabilize t
 
 @austerity
 view-if: spd_in_government = 0
-on-arrival: welfare -= 1; workers_spd -= 3; unemployed_spd -= 3; pro_republic -= 3; economic_growth -= 1;
+on-arrival: welfare -= 1; workers_spd -= 3; unemployed_spd -= 3; pro_republic -= 3; economic_growth -= 1; budget +=1
 
 Chancellor [+ chancellor +] responds to the banking crisis with more cuts to welfare.
 

@@ -1627,6 +1627,8 @@ if (Q.violence_timer > 0) {
 Q.economic_growth *= (Q.currency_value * Q.currency_value * Q.currency_value * Q.currency_value);
 Q.inflation *= (Q.currency_value * Q.currency_value * Q.currency_value * Q.currency_value);
 Q.currency_value_old = Q.currency_value;
+Q.rm_to_gold = 0.358 * (Q.deval_currency_string / 100)
+//base game stuff
     Q.economic_growth += Q.foreign_investment;
     Q.foreign_investment_old = Q.foreign_investment;
     if (Q.chancellor == "Groener") {

@@ -1,0 +1,65 @@
+title: Outreach
+subtitle: Hans Luther seeks help...
+new-page: true
+tags: event
+view-if: banking_crisis_seen and exchange_controls_timer = 0
+max-visits: 1
+
+= Helping hand
+
+With the collapse of the Danat-Bank, the Reichsmark now edges on the brink of freefall, held up only temporarily by Luther’s domestic guarantee syndicate. At this stage, there remain only three possible paths to stabilization:
+
+Foreign credit: Restoring confidence in the Reichsmark and replenishing our depleted reserves. 
+
+Exchange controls: Restricting the conversion of Reichsmarks into gold and foreign currencies. Though this would risk further alienation from international markets, it would at least be preferable to endless austerity.
+
+Austerity: We all know what this is.
+
+Hans Luther heads off to london and afterwards, paris. Hopefully we improved our relations with them.
+
+-@london_success: Fair well.
+-@london_fail: Fair well.
+
+@london_success
+view-if: west_relation >= 4
+on-arrival: foreign_investment += 1; economic_stability +=1 
+
+His requests to meet with Montagu Norman has been accepted, and after rounds of tense negotiations Hans Luther has successfully gained support from the bank of england!
+
+-@paris_success: Now off to paris.
+-@paris_fail: Now off to paris.
+
+@london_fail
+view-if: west_relation < 4
+on-arrival: foreign_investment -= 0.5; economic_stability -=1 
+
+Citing strained reserves Montagu Norman has rejected Hans Luther's requests to meet with him! Immediately foreign capital has started to leave Germany, and consequently the confidence in the Reichsmark leaves with it. 
+
+-@paris_fail: Atleast we have Paris?
+
+@paris_fail
+view-if: west_relation < 6
+on-arrival: foreign_investment -= 0.5
+
+During his trip to Paris, Hans Luther was swiftly turned down by Clément Moret. His reasoning blunt:
+
+Germany must demonstrate even stricter fiscal discipline.
+
+Reparations must continue to be honored on schedule.
+
+[? if west_relation >= 4 : Well at least we have Britain's support. ?] [? if west_relation < 4 : We don't even have French OR the english, it's so over. ?]
+
+-@exchange_controls: We must enact exchange controls
+
+@exchange_controls
+view-if: west_relation < 4
+subtitle: This is getting out of hand
+on-arrival: exchange_controls = 1; foreign_investment = 0; economic_growth -= 1
+
+Hans Luther has been forced to implement Exchange controls, ending the Reichsmark convertibility to gold and other foreign currencies. 
+
+@paris_success
+view-if: west_relation >= 6
+on-arrival: foreign_investment += 2; economic_stability +=2
+
+Holy moly the French working with the Germans, good job!
