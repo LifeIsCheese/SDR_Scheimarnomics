@@ -19,7 +19,7 @@ go-to: @reichsbank_menu
 
 Current valuation [+ deval_currency_string +]%
 
-[? if exchange_controls != 1 : 1 Reichsmark = [+ rm_to_gold +] of gold. ?] [? exchange_controls == 1 : Reichsmark to Gold has been suspended. ?]
+[? if exchange_controls != 1 : 1 Reichsmark = [+ rm_to_gold +] of gold. ?] [? if exchange_controls == 1 : Reichsmark to Gold has been suspended. ?]
 
 @reichsbank_menu
 
