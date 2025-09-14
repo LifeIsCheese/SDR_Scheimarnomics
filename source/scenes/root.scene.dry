@@ -339,6 +339,7 @@ Q.currency_value_old = 1.0;
 Q.deval_currency_string = (2 - Q.currency_value) * 100;
 Q.rm_to_gold = 0.358;
 Q.exchange_controls = 0;
+Q.exchange_controls_timer = 0;
 
 
 //Event chains 
@@ -787,7 +788,7 @@ Q.concessions_timer = 0;
 
 Q.rb_loyalty = 0;
 Q.rb_dissent = 0;
-
+Q.banking_crisis_seen = 0;
 //whaha
 Q.end_disabled = 1
 

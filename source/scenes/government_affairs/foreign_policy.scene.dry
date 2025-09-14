@@ -20,6 +20,7 @@ What should our foreign policy priority be?
 - @customs_union
 - @negotiate
 - @reduce_reparations
+- @negotiate_devaluation: Negotiate devaluation
 - @expose
 - @withdraw_nonintervention
 - @spanish_aid
@@ -32,6 +33,14 @@ What should our foreign policy priority be?
 - @root: Do not enact any policies for now.
 - @easy_discard
 - @cancel_advisor_action
+
+@negotiate_devaluation
+view-if: reparations_paused == 1 and allies_allow_devaluation != 1
+choose-if: devaluation_progress >= 4
+unavailable-subtitle: We do not have enough support for devaluation yet.
+
+Even though the topic of reparations have been settled, this is not the case for currency devaluation.
+
 
 @improve_west
 title: Improve our relations with the Western Allies.

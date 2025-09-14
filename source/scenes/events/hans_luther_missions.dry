@@ -2,7 +2,7 @@ title: Outreach
 subtitle: Hans Luther seeks help...
 new-page: true
 tags: event
-view-if: banking_crisis_seen and exchange_controls_timer = 0
+view-if: banking_crisis_seen and exchange_controls_timer = 0 and year > 1929
 max-visits: 1
 
 = Helping hand

@@ -566,8 +566,6 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_stasi: **Stasi** - Have a dominant spy network. ?]
 
-[? if achievement_wonder_weapon : **Wunderwaffen** - Steal a tank. ?]
-
 [? if achievement_luther_spd : **Der stärkste Kämpfer der SPD** - Have Hans Luther's opinion of the SPD reach ecstatic. ?]
 
 = Incomplete Achievements
