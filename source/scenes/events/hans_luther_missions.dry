@@ -2,7 +2,7 @@ title: Outreach
 subtitle: Hans Luther seeks help...
 new-page: true
 tags: event
-view-if: banking_crisis_seen and exchange_controls_timer = 0 and year > 1929
+view-if: banking_crisis_seen and exchange_controls_timer == 0 and year > 1929 
 max-visits: 1
 
 = Helping hand
@@ -19,6 +19,7 @@ Hans Luther heads off to london and afterwards, paris. Hopefully we improved our
 
 -@london_success: Fair well.
 -@london_fail: Fair well.
+
 
 @london_success
 view-if: west_relation >= 4
