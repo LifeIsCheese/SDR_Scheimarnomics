@@ -117,22 +117,26 @@
                 <input type="radio" id="eventImg_no" name="event" value="0" onclick="disableEventImg();">
              </td>
             </tr>
-                <td>
-                        Colored text:
-                    </td>
-                    <td>
-                        <label for="gray_on">Disable</label>
-                    </td>
-                    <td>
-                        <input type="radio" id="gray_on" name="gray_mode" value="0" onclick="window.enableGrayMode();">
-                    </td>
-                    <td>
-                        <label for="gray_no">Enable</label>
-                    </td>
-                    <td>
-                        <input type="radio" id="gray_no" name="gray_mode" value="1" onclick="window.disableGrayMode();">
-                    </td>
                 <tr>
+                    <td> <hr> </td>
+                </tr>
+            <tr>
+               <td>
+                 <label for="eventImg_yes">Colored text On</label>
+              </td>
+              <td>
+                        <input type="radio" id="gray_on" name="gray_mode" value="0" onclick="window.enableGrayMode();">
+             </td>
+            </tr>
+            <tr>
+               <td>
+                 <label for="eventImg_no">Colored text Off</label>
+              </td>
+              <td>
+                        <input type="radio" id="gray_no" name="gray_mode" value="1" onclick="window.disableGrayMode();">
+             </td>
+            </tr>
+                <td>
                 <tr>
                     <td>
                         <button onclick="window.hideOptions();">Close</button>

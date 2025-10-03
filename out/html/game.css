@@ -408,6 +408,10 @@ ul.decks, ul.hand, ul.pinned-cards {
 
 }
 
+.gray-mode span {
+  color: inherit !important;
+}
+
 .deck {
 
 }
