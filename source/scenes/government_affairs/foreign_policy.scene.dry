@@ -39,7 +39,35 @@ view-if: reparations_paused == 1 and allies_allow_devaluation != 1
 choose-if: devaluation_progress >= 4
 unavailable-subtitle: We do not have enough support for devaluation yet.
 
-Even though the topic of reparations have been settled, this is not the case for currency devaluation.
+Even though the topic of reparations have been settled, this is not the case for currency devaluation. We can send Hans Luther as an emissary to the Allies to discuss this, as this regards monetary policy.
+
+-@ye: We bid hans Luther farewell
+-@no: We bid hans Luther farewell
+
+@yes
+view-if: economic_growth >= economic_goal and west_relation >= 8 and economic_stability >= 0 and budget > 0
+on-arrival: allies_allow_devaluation = 1
+
+The negotiations have been a success! 
+
+With the stabilization of the markets and us proving our fiscal responsibility, while having achieving high economic growth the Allies have finally granted us permission to have control over our fiscal matters fully.
+
+
+@no
+view-if: west_relation < 8 or economic_growth < economic_goal or economic_stability < 0 or budget <=0
+
+We have been rejected! The reasons are listed:
+
+[? if west_relation < 8 : France has refused to meet us. ?] 
+
+[? if west_relation < 4 : Britain has refused to meet us. ?]
+
+[? if economic_growth < economic_goal: The Allies are do not have faith in our economy. ?]
+
+[? if economic_stability < 0 : The markets have no stabilized. ?]
+
+[? if budget <=0 : We have not proved our fiscal responsibility. ?]
+
 
 
 @improve_west

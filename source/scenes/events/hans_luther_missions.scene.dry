@@ -40,7 +40,7 @@ Citing strained reserves Montagu Norman has rejected Hans Luther's requests to m
 
 @paris_fail
 view-if: west_relation < 6
-on-arrival: foreign_investment -= 0.5
+on-arrival: foreign_investment -= 0.5; devaluation_progress +=1 if west_relation < 4
 
 During his trip to Paris, Hans Luther was swiftly turned down by Clément Moret. His reasoning blunt:
 
@@ -48,7 +48,7 @@ Germany must demonstrate even stricter fiscal discipline.
 
 Reparations must continue to be honored on schedule.
 
-[? if west_relation >= 4 : Well at least we have Britain's support. ?] [? if west_relation < 4 : We don't even have French OR the english, it's so over. ?]
+[? if west_relation >= 4 : Well at least we have Britain's support. ?] [? if west_relation < 4 : The results have are clear, without foreign credit, Hans Luther has been emboldened to enact currency devaluation. ?]
 
 -@exchange_controls: We must enact exchange controls
 

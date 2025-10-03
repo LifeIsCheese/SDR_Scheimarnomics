@@ -120,12 +120,12 @@ subtitle: [? if devaluation_stage < 2 : We cannot formally devalue our currency 
 @peg_higher
 on-arrival: currency_value -=0.05
 
-We increased the reichsmark to gold ratio.
+We increased the reichsmark to gold ratio. This will lead to less inflation, but slower economic growth.
 
 @peg_lower
 on-arrival: currency_value +=0.05
 
-We decreased the reichsmark to gold ratio.
+We decreased the reichsmark to gold ratio. This will lead to more inflation, but faster economic growth.
 
 @bribe
 view-if: reichsbank_a == 1 and hans_opinion <= 2
