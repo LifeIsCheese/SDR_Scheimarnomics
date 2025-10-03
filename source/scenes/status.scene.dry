@@ -28,10 +28,6 @@ if (Q.budget) {
 
 = Status
 
-currency valuation multiplier (dev) : [+ currency_value +]
-
-foreign capital change thing (dev) : [+ economic_stability +]
-
 [+ month : month +] [+ year +]
 
 Resources available: [+ resources +]

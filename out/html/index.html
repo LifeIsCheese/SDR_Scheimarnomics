@@ -14,6 +14,7 @@
     <script src="core.js"></script>
     <script src="game.js" defer></script>
     <script type ="text/javascript" src="darkmode.js" defer></script>
+    <script defer>window.enableGrayMode();</script>
   </head>
   <body>
     <div class="background" id="bg2">
@@ -116,6 +117,21 @@
                 <input type="radio" id="eventImg_no" name="event" value="0" onclick="disableEventImg();">
              </td>
             </tr>
+                <td>
+                        Colored text:
+                    </td>
+                    <td>
+                        <label for="gray_on">Disable</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="gray_on" name="gray_mode" value="0" onclick="window.enableGrayMode();">
+                    </td>
+                    <td>
+                        <label for="gray_no">Enable</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="gray_no" name="gray_mode" value="1" onclick="window.disableGrayMode();">
+                    </td>
                 <tr>
                 <tr>
                     <td>

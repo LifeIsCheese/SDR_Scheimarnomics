@@ -133,7 +133,7 @@ on-arrival: tax_reform -= 0.1; month_actions +=1
 
 @reform_bond
 view-if: young_plan_seen == 1 and bond_reform == 0
-subtitle: We can now borrow money, from the people and private investors [? if in_weimar_coalition or in_grand_coalition and z_relation <= 30 : The center is reluctant on this ?] [? if in_grand_coalition and dvp_relation <= 40 : The DVP opposes this. ?] 
+subtitle: We can now borrow money, from the people and private investors. [? if in_weimar_coalition or in_grand_coalition and z_relation <= 30 : The center is reluctant on this. ?] [? if in_grand_coalition and dvp_relation <= 40 : The DVP opposes this. ?] 
 choose-if: in_spd_majority or (in_weimar_coalition and z_relation > 30) or (in_grand_coalition and z_relation > 30 and dvp_relation > 40)
 on-arrival: bond_reform = 1
 

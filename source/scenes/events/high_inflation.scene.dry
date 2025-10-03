@@ -45,7 +45,7 @@ on-arrival: capital_strike_progress -= 1
 
 With Hans Luther as president, the Reichsbank is tentatively reaching out to the government for solutions to fix the high inflation.
 
-- @interest_rates: The Reichsbank suggests heavily increasing interest_rates will fix the inflation.
+- @interest_rates: The Reichsbank suggests heavily increasing interest rates will fix the inflation.
 - @reject: We reject this proposal.
 
 @interest_rates

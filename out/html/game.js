@@ -92,7 +92,16 @@
       window.dendryUI.toggle_audio(true);
       window.dendryUI.saveSettings();
   };
-
+window.enableGrayMode = function() {
+    window.dendryUI.gray_mode = true;
+    document.body.classList.add('gray-mode');
+    window.dendryUI.saveSettings();
+};
+window.disableGrayMode = function() {
+    window.dendryUI.gray_mode = false;
+    document.body.classList.remove('gray-mode');
+    window.dendryUI.saveSettings();
+};
 
   // populates the checkboxes in the options view
   window.populateOptions = function() {
@@ -113,6 +122,11 @@
         $('#audio_no')[0].checked = true;
     } else {
         $('#audio_yes')[0].checked = true;
+    }
+    if (window.dendryUI.gray_mode) {
+        $('#gray_on')[0].checked = true;
+    } else {
+        $('#gray_no')[0].checked = true;
     }
   };
 
@@ -225,6 +239,10 @@
     window.updateSidebar();
     window.statusTabRight = "status_right";
     window.updateSidebarRight();
+
+        if (window.dendryUI.gray_mode) {
+        document.body.classList.add('gray-mode');
+    }
   };
 
 }());
