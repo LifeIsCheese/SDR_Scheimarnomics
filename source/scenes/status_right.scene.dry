@@ -6,6 +6,36 @@ is-special: true
 
 hmm go click on a button 
 
+@kanye
+
+= Kanye Omari West
+
+[? if year < 1930 : <img class="face-status" src="img/kanye/classic_ye.jpg"> ?]
+
+Sanity: <span style="color:rgb(95, 131, 65);">**Sane**</span>
+
+Influence: <span style="color:rgb(95, 131, 65);">**Minor**</span>
+
+<button class = "status_button_wide" onclick ="republic_unity()">Infiltrate Army</button>
+
+<button class = "status_button_wide" onclick ="republic_unity()">Indoctrinate Police</button>
+
+<button class = "status_button_wide" onclick ="republic_unity()">Discipline Interior Police</button>
+
+Special Yearly Actions (One time only):
+
+<button class = "status_button_wide" onclick ="republic_unity()">Album Funds</button>
+
++6 Resources.
+
+<button class = "status_button_wide" onclick ="republic_unity()">Country Tour</button>
+
+Heavily decrease dissent.
+
+<button class = "status_button_wide" onclick ="republic_unity()">Export Globally</button>
+
+Increase foreign investment, and economic stability.
+
 @status
 on-arrival: {!
 if (Q.rfb_rb_unity) {

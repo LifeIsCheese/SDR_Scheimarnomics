@@ -300,7 +300,7 @@ Plot power: [+ plot_strength +]%
 
 = Informants
 
-Director: [+ director_s +].
+Chief: [+ director_s +].
 
 Focus: [? if director_type == 1 or director_type == 3 : Operations ?] [? if director_type == 2 : Training. ?] [? if director_type == -1 : Gooning. ?]
 
@@ -317,7 +317,7 @@ Focus: [? if director_type == 1 or director_type == 3 : Operations ?] [? if dire
 
 @Actions
 
-= Director Actions
+= Chief Actions
 
 [? if director_actions_timer == 0 and director_type == 1 : <button class = "status_button_wide" onclick ="purge()">Purge</button> ?]
 

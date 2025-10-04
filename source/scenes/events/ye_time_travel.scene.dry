@@ -1,0 +1,26 @@
+title: American Foreigner
+new-page: true
+tags: event
+view-if: year == 1928 and month == 10
+max-visits: 1
+
+= Newcommer
+
+
+Within the bustling center of Berlin, Carl Severing took a stroll to the local cafe, when suddenly a a large tremor shook the city. People rushed out fearing for their lives, as rubble and debris fell from nearby buildings injuring many. Despite the scale of this tremor only a small unnoticeable crack appeared in the ground, that only Severing was observant enough to notice. In there he found an african man laying in the crevice slightly bruised, but seemingly alright. When he awoke, he found that much to the surprise of both Severing and the man, he could speak and understand the language.
+
+- @help: I must tend to his injuries properly, I shall check up on him when I can.
+- @let_go: I will bring him to the nearest hospital.
+
+@help
+on-arrival: ye_path = 1; {! document.getElementById("kanye").style.display="block"; !}
+
+Taking an interest in the man, Severing brought him to the nearest hospital and offered to pay any fees regarding the duration of his stay. He promised to comeback and after exchanging goodbyes, he caught the name of the man. 
+
+Kanye West.
+
+@let_go
+
+After tending to his bruises Carl Severing brought him to the nearest hospital and offered to pay any fees regarding the duration of his stay. After exchanging goodbyes, he caught the name of the man. 
+
+Kanye West.
