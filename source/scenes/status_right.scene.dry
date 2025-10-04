@@ -10,7 +10,9 @@ hmm go click on a button
 
 = Kanye Omari West
 
+<div class = "face-status-container">
 [? if year < 1930 : <img class="face-status" src="img/kanyes/classic_ye.jpg"> ?]
+</div>
 
 Sanity: <span style="color:rgb(95, 131, 65);">**Sane**</span>
 

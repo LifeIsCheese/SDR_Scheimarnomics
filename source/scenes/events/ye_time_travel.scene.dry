@@ -16,7 +16,8 @@ Within the bustling center of Berlin, Carl Severing took a stroll to the local c
 on-arrival: ye_path = 1; {! 
     side_bar = document.getElementById("stats_sidebar_right");
     side_bar.style.display = "block";
-document.getElementById("kanye").style.display="block"; !}
+document.getElementById("kanye").style.display="block";
+window.changeTab('status_right.kanye', 'kanye', 'right'); !}
 
 Taking an interest in the man, Severing brought him to the nearest hospital and offered to pay any fees regarding the duration of his stay. He promised to comeback and after exchanging goodbyes, he caught the name of the man. 
 
