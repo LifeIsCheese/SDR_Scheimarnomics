@@ -18,25 +18,51 @@ Sanity: <span style="color:rgb(95, 131, 65);">**Sane**</span>
 
 Influence: <span style="color:rgb(95, 131, 65);">**Minor**</span>
 
-<button class = "status_button_wide" onclick ="republic_unity()">Infiltrate Army</button>
+[? if kanye_actions_timer == 0 : <button class = "status_button_wide" onclick ="infiltrate_army()">Infiltrate Army</button> ?] 
 
-<button class = "status_button_wide" onclick ="republic_unity()">Indoctrinate Police</button>
+[? if kanye_actions_timer == 0 : <button class = "status_button_wide" onclick ="indoctrinate_police()">Indoctrinate Police</button> ?] 
 
-<button class = "status_button_wide" onclick ="republic_unity()">Discipline Interior Police</button>
+[? if kanye_actions_timer == 0 : <button class = "status_button_wide" onclick ="discipline_interior_police()">Discipline Interior Police</button> ?] 
 
-Special Yearly Actions (One time only):
+[? if kanye_actions_timer > 0 : Kanye is busy, please wait [+ kanye_actions_timer +] months. ?]
 
-<button class = "status_button_wide" onclick ="republic_unity()">Album Funds</button>
+
+
+[? if special_kanye_actions == 1: Special Yearly Actions (One time only): ?]
+
+[? if special_kanye_actions == 1 and year < 1930 : 
+
+<button class = "status_button_wide" onclick ="album_funds()">Album Funds</button>
 
 +6 Resources.
 
-<button class = "status_button_wide" onclick ="republic_unity()">Country Tour</button>
+<button class = "status_button_wide" onclick ="country_tour()">Country Tour</button>
 
 Heavily decrease dissent.
 
-<button class = "status_button_wide" onclick ="republic_unity()">Export Globally</button>
+<button class = "status_button_wide" onclick ="export_globally()">Export Globally</button>
 
 Increase foreign investment, and economic stability.
+
+ ?]
+
+ [? if special_kanye_actions == 1 and year = 1930 :
+ 
+<button class = "status_button_wide" onclick ="republic_unity()">o</button>
+
++6 Resources.
+
+<button class = "status_button_wide" onclick ="republic_unity()">o</button>
+
+Heavily decrease dissent.
+
+<button class = "status_button_wide" onclick ="republic_unity()">o</button>
+
+Increase foreign investment, and economic stability.
+
+ ?]
+
+Currently producing album "Der Studienabbrecher".
 
 @status
 on-arrival: {!

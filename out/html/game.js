@@ -299,6 +299,101 @@ window.changeTab('status_right.kanye', 'kanye', 'right');
 
 } 
 
+function infiltrate_army() {
+
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
+Q.reichswehr_loyalty += 0.05;
+
+Q.kanye_actions_timer = 6;
+
+window.changeTab('status_right.kanye', 'kanye', 'right');
+
+  
+
+}
+
+function indoctrinate_police() {
+
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
+Q.prussian_police_loyalty += 0.05;
+
+Q.kanye_actions_timer = 6;
+
+window.changeTab('status_right.kanye', 'kanye', 'right');
+
+  
+
+}
+
+function discipline_interior_police() {
+
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
+Q.interior_police_loyalty += 0.05;
+
+
+Q.kanye_actions_timer = 6;
+
+window.changeTab('status_right.kanye', 'kanye', 'right');
+
+  
+
+}
+
+function album_funds() {
+
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
+Q.resources += 6;
+
+
+Q.special_kanye_actions = 0;
+
+window.changeTab('status_right.kanye', 'kanye', 'right');
+
+  
+
+}
+
+function export_globally() {
+
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
+Q.foreign_investment += 1;
+Q.economic_stability +=5;
+
+
+Q.special_kanye_actions = 0;
+
+window.changeTab('status_right.kanye', 'kanye', 'right');
+
+  
+
+}
+
+function country_tour() {
+
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
+Q.left_dissent -= 25;
+Q.center_dissent -= 25;
+Q.labor_dissent -= 25;
+Q.reformist_dissent -= 25;
+Q.neorevisionist_dissent -= 25;
+
+
+Q.special_kanye_actions = 0;
+
+window.changeTab('status_right.kanye', 'kanye', 'right');
+
+  
+
+}
+
+
+
 function director_actions() {
 
 var Q = window.dendryUI.dendryEngine.state.qualities;

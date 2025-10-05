@@ -125,6 +125,7 @@ Q.foreign_investment_change = Q.economic_stability / Q.investment_impact;
     }
 
     Q.Budget_foreign_investment_stop = Q.foreign_investment_stop * -1;
+    Q.special_kanye_actions = 1;
 
 !}
 
