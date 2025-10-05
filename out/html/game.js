@@ -258,6 +258,10 @@ if (Q.resources > 0) {
 
 Q.director_pointer = Math.floor( Math.random() * Q.director_a.length);
 
+    if (Q.ye_path == "unpromoted") {
+        Q.director_pointer = Q.director_a.indexOf('Kanye West')
+    }
+
 Q.director_s = Q.director_a[Q.director_pointer];
 
 Q.director_type = Math.floor( Math.random() * 3) + 1;
@@ -280,7 +284,20 @@ alert('Broke');
 
 }
 
-  
+function promote_kanye() {
+
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
+
+Q.director_actions = 1;
+
+Q.ye_path = "promoted";
+    side_bar = document.getElementById("stats_sidebar_right");
+    side_bar.style.display = "block";
+document.getElementById("kanye").style.display="block";
+window.changeTab('status_right.kanye', 'kanye', 'right');
+
+} 
 
 function director_actions() {
 

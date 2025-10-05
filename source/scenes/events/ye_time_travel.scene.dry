@@ -13,7 +13,8 @@ Within the bustling center of Berlin, Carl Severing took a stroll to the local c
 - @let_go: I will bring him to the nearest hospital.
 
 @help
-on-arrival: ye_path = 1; {! 
+on-arrival: {! 
+Q.ye_path = "unpromoted";
     side_bar = document.getElementById("stats_sidebar_right");
     side_bar.style.display = "block";
 document.getElementById("kanye").style.display="block";

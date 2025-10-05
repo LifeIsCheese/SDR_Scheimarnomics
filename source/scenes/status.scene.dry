@@ -302,6 +302,8 @@ Plot power: [+ plot_strength +]%
 
 Chief: [+ director_s +].
 
+[? if ye_path == "unpromoted" : <button class = "status_button_wide" onclick ="promote_kanye()">Promote</button> ?]
+
 Focus: [? if director_type == 1 or director_type == 3 : Operations ?] [? if director_type == 2 : Training. ?] [? if director_type == -1 : Gooning. ?]
 
 [? if plot_target != "None" : <button title = "-1 resource" class = "status_button" onclick ="new_hire()">New Hire</button> ?]

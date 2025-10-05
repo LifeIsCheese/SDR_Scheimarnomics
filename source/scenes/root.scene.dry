@@ -342,7 +342,7 @@ Q.exchange_controls = 0;
 Q.exchange_controls_timer = 0;
 
 //Kanye
-Q.ye_path = 0;
+Q.ye_path = "no";
 
 //Event chains 
 Q.hjalmar_event = 0;
