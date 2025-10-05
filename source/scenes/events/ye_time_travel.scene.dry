@@ -13,12 +13,7 @@ Within the bustling center of Berlin, Carl Severing took a stroll to the local c
 - @let_go: I will bring him to the nearest hospital.
 
 @help
-on-arrival: {! 
-Q.ye_path = "unpromoted";
-    side_bar = document.getElementById("stats_sidebar_right");
-    side_bar.style.display = "block";
-document.getElementById("kanye").style.display="block";
-window.changeTab('status_right.kanye', 'kanye', 'right'); !}
+on-arrival: {! Q.ye_path = "unpromoted";!}
 
 Taking an interest in the man, Severing brought him to the nearest hospital and offered to pay any fees regarding the duration of his stay. He promised to comeback and after exchanging goodbyes, he caught the name of the man. 
 
