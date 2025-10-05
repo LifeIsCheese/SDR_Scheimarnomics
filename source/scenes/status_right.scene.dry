@@ -30,39 +30,20 @@ Influence: <span style="color:rgb(95, 131, 65);">**Minor**</span>
 
 [? if special_kanye_actions == 1: Special Yearly Actions (One time only): ?]
 
-[? if special_kanye_actions == 1 and year < 1930 : 
+[? if special_kanye_actions == 1 and year < 1930 : <button class = "status_button_wide" onclick ="album_funds()">Album Funds</button> ?]
 
-<button class = "status_button_wide" onclick ="album_funds()">Album Funds</button>
+[? if special_kanye_actions == 1 and year < 1930 : +6 Resources.  ?]
 
-+6 Resources.
+[? if special_kanye_actions == 1 and year < 1930 : <button class = "status_button_wide" onclick ="country_tour()">Country Tour</button> ?]
 
-<button class = "status_button_wide" onclick ="country_tour()">Country Tour</button>
+[? if special_kanye_actions == 1 and year < 1930 : Heavily decrease dissent.  ?]
 
-Heavily decrease dissent.
+[? if special_kanye_actions == 1 and year < 1930 : <button class = "status_button_wide" onclick ="export_globally()">Export Globally</button> ?]
 
-<button class = "status_button_wide" onclick ="export_globally()">Export Globally</button>
+[? if special_kanye_actions == 1 and year < 1930 : Increase foreign investment, and economic stability. ?]
 
-Increase foreign investment, and economic stability.
 
- ?]
-
- [? if special_kanye_actions == 1 and year = 1930 :
- 
-<button class = "status_button_wide" onclick ="republic_unity()">o</button>
-
-+6 Resources.
-
-<button class = "status_button_wide" onclick ="republic_unity()">o</button>
-
-Heavily decrease dissent.
-
-<button class = "status_button_wide" onclick ="republic_unity()">o</button>
-
-Increase foreign investment, and economic stability.
-
- ?]
-
-Currently producing album "Der Studienabbrecher".
+[? if year < 1930 : Currently producing album "Der Studienabbrecher".?]
 
 @status
 on-arrival: {!
