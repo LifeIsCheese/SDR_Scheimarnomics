@@ -402,7 +402,7 @@ if (Q.resources > 0) {
 Q.resources -=1;
 }
 
-window.changeTab('status_right.kanye', 'kanye', 'right');
+window.changeTab('status_right.album', 'album', 'right');
 
   
 
