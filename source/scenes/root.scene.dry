@@ -343,6 +343,10 @@ Q.exchange_controls_timer = 0;
 
 //Kanye
 Q.ye_path = "no";
+Q.album_success = "no";
+Q.album_funding = 0;
+Q.album_potential = "high";
+Q.ye_sanity = 3;
 
 //Event chains 
 Q.hjalmar_event = 0;

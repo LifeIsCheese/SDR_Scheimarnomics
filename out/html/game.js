@@ -291,7 +291,7 @@ var Q = window.dendryUI.dendryEngine.state.qualities;
 
 Q.director_actions = 1;
 
-Q.ye_path = "promoted";
+Q.ye_path = "yes";
     side_bar = document.getElementById("stats_sidebar_right");
     side_bar.style.display = "block";
 document.getElementById("kanye").style.display="block";
@@ -389,6 +389,33 @@ Q.special_kanye_actions = 0;
 window.changeTab('status_right.kanye', 'kanye', 'right');
 
   
+
+}
+
+function fund_kanye() {
+
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
+if (Q.resources > 0) {
+    Q.album_funding +=1;
+
+Q.resources -=1;
+}
+
+window.changeTab('status_right.kanye', 'kanye', 'right');
+
+  
+
+}
+
+function album_menu() {
+
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
+
+Q.director_actions = 1;
+
+window.changeTab('status_right.album', 'album', 'right');
 
 }
 

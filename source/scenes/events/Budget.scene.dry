@@ -127,6 +127,20 @@ Q.foreign_investment_change = Q.economic_stability / Q.investment_impact;
     Q.Budget_foreign_investment_stop = Q.foreign_investment_stop * -1;
     Q.special_kanye_actions = 1;
 
+    if (Q.year == 1930 && Q.album_success == "yes") {
+        if (Q.spd_in_government) {
+            Q.budget +=1;
+        } else {
+            Q.resources += 3;
+        }
+    }
+
+    if (Q.year == 1930 && Q. album_success == "no") {
+        Q.ye_sanity -=1;
+    }
+
+    Q.album_funding = 0;
+
 !}
 
 
@@ -137,6 +151,10 @@ Q.foreign_investment_change = Q.economic_stability / Q.investment_impact;
 [? if foreign_investment_change < 0 and foreign_investment == Budget_foreign_investment_stop : Capital flight has bottomed out. ?] [? if foreign_investment_change < 0 and foreign_investment != Budget_foreign_investment_stop : Capital flight has affected our country impacting our growth by [+ foreign_investment_change +]%. ?] [? if foreign_investment_change > 0 : Foreign investment has poured into our country, affecting our growth by [+ foreign_investment_change +]%. ?]
 
 [? if devaluation_stage >= 1 and inflation > economic_growth : Our high inflation has lead to dissent over our devaluationary policies. ?] [? if devaluation_stage >= 1 and economic_growth >= economic_goal and inflation < economic_growth : Our high economic growth has lead to increased optimism and approval to our devaluationary policies. ?]
+
+[? if ye_path == "yes" and year == 1930 and album_success ==  "yes": Mr. West's album "Der Studienabbrecher" has been a major success! Owing in part in our generous funding, he has donated [? if spd_in_government : directly to our government! ?] [? if not spd_in_government : directly to our party! ?] ?]
+
+[? if ye_path == "yes" and year == 1930 and album_success ==  "no": Sadly Mr. West's album "Der Studienabbrecher" has been a failure, owning in part to lack of funds. Mr. West's sanity has taken a toll. ?]
 
 - @pay_back: Payback our debts, as usual.
 - @default: Let's do our own thing. (Default on our debt)

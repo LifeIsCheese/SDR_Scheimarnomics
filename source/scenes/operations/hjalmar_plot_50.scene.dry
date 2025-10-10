@@ -24,7 +24,7 @@ Current interior police loyalty: [+ interior_police_loyalty : loyalty +]. [? if 
 - @root: We are fine as it is.
 
 @purge
-subtitle: We can purge the most suspicous of our police, this well set us back by a few months.
+subtitle: We can purge the most suspicous of our police, this will set us back by a few months.
 on-arrival: hjalmar_plot = 10; interior_police_loyalty *= 1.5; prussian_police_loyalty *= 1.5; loyalty_decay = 0
 
 Despite our crude efforts, the results seem promising.

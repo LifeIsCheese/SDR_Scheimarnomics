@@ -747,6 +747,49 @@ if (Q.violence_timer > 0) {
     Q.violence_events_id = Q.violence_events[Q.violence_events_pointer];
 }
 
+// Ye album success chance calculations
+if (Q.ye_path == "yes") {
+
+switch (Q.album_potential) {
+
+    case "high":
+
+    if (Q.album_funding > 0) {
+        Q.album_success = "yes";
+    } else {
+        Q.album_success = "no";
+    }
+
+    break;
+
+    case "medium":
+
+    if (Q.album_funding > 1) {
+        Q.album_success = "yes";
+    } else {
+        Q.album_success = "no";
+    }
+
+    break;
+
+    case "low":
+
+        if (Q.album_funding > 2) {
+        Q.album_success = "yes";
+    } else {
+        Q.album_success = "no";
+    }
+
+
+    break;
+
+    default:
+    console.log("bug in album stuff")
+}
+
+}
+
+
 /// foregi ninvestment stab stuff
 
     /// economy effects support

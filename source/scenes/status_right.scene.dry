@@ -14,9 +14,11 @@ hmm go click on a button
 [? if year < 1930 : <img class="face-status" src="img/kanyes/classic_ye.jpg"> ?]
 </div>
 
-Sanity: <span style="color:rgb(95, 131, 65);">**Sane**</span>
+Sanity: [+ ye_sanity +]
 
 Influence: <span style="color:rgb(95, 131, 65);">**Minor**</span>
+
+<button class = "status_button_wide" onclick ="album_menu()">Album Development</button>
 
 [? if kanye_actions_timer == 0 : <button class = "status_button_wide" onclick ="infiltrate_army()">Infiltrate Army</button> ?] 
 
@@ -30,7 +32,7 @@ Influence: <span style="color:rgb(95, 131, 65);">**Minor**</span>
 
 [? if special_kanye_actions == 1: Special Yearly Actions (One time only): ?]
 
-[? if special_kanye_actions == 1 and year < 1930 : <button class = "status_button_wide" onclick ="album_funds()">Album Funds</button> ?]
+[? if special_kanye_actions == 1 and year < 1930 : <button class = "status_button_wide" onclick ="album_funds()">Sample Sales</button> ?]
 
 [? if special_kanye_actions == 1 and year < 1930 : +6 Resources.  ?]
 
@@ -44,6 +46,20 @@ Influence: <span style="color:rgb(95, 131, 65);">**Minor**</span>
 
 
 [? if year < 1930 : Currently producing album "Der Studienabbrecher".?]
+
+@album
+
+= [? if year < 1930 : Der Studienabbrecher ?]
+
+<div class = "face-status-container">
+[? if year < 1930 : <img class="face-status" src="img/TCD.jpg"> ?]
+</div>
+
+Funding: [+album_funding +]
+
+<button class = "status_button_wide" onclick ="fund_kanye()">Send Funding</button>
+
+Promise: [+ album_potential +]
 
 @status
 on-arrival: {!
