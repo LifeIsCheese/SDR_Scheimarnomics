@@ -127,7 +127,7 @@ Q.foreign_investment_change = Q.economic_stability / Q.investment_impact;
     Q.Budget_foreign_investment_stop = Q.foreign_investment_stop * -1;
     Q.special_kanye_actions = 1;
 
-    if (Q.year == 1930 && Q.album_success == "yes" && Q.ye_path == "yes") {
+    if (Q.year > 1928 && Q.album_success == "yes" && Q.ye_path == "yes") {
         if (Q.spd_in_government) {
             Q.budget +=1;
         } else {
@@ -135,7 +135,7 @@ Q.foreign_investment_change = Q.economic_stability / Q.investment_impact;
         }
     }
 
-    if (Q.year == 1930 && Q.album_success == "no" && Q.ye_path == "yes") {
+    if (Q.year > 1928 && Q.album_success == "no" && Q.ye_path == "yes") {
         Q.ye_sanity -=1;
     }
     
@@ -159,9 +159,10 @@ if (Q.year == 1931) { Q.album_potential = "medium";}
 
 [? if devaluation_stage >= 1 and inflation > economic_growth : Our high inflation has lead to dissent over our devaluationary policies. ?] [? if devaluation_stage >= 1 and economic_growth >= economic_goal and inflation < economic_growth : Our high economic growth has lead to increased optimism and approval to our devaluationary policies. ?]
 
-[? if ye_path == "yes" and year == 1930 and album_success ==  "yes": Mr. West's album "Der Studienabbrecher" has been a major success! Owing in part in our generous funding, he has donated [? if spd_in_government : directly to our government! ?] [? if not spd_in_government : directly to our party! ?] ?]
+[? if ye_path == "yes" and album_success ==  "yes": Mr. West's album [? if year == 1930 : "Der Studienabbrecher" ?] [? if year == 1931 : "Meine düstere, wunderschöne Fantasie" ?] [? if year == 1932 : "Jesus ist König" ?] has been a major success! Owing in part in our generous funding, he has donated [? if spd_in_government : directly to our government! ?] [? if not spd_in_government : directly to our party! ?] ?]
 
-[? if ye_path == "yes" and year == 1930 and album_success ==  "no": Sadly Mr. West's album "Der Studienabbrecher" has been a failure, owning in part to lack of funds. Mr. West's sanity has taken a toll. ?]
+[? if ye_path == "yes" and album_success ==  "no": Sadly Mr. West's album [? if year == 1930 : "Der Studienabbrecher" ?] [? if year == 1931 : "Meine düstere, wunderschöne Fantasie" ?] [? if year == 1932 : "Jesus ist König" ?] has been a failure, owning in part to lack of funds. Mr. West's sanity has taken a toll. ?]
+
 
 - @pay_back: Payback our debts, as usual.
 - @default: Let's do our own thing. (Default on our debt)
