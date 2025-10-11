@@ -127,7 +127,7 @@ Q.foreign_investment_change = Q.economic_stability / Q.investment_impact;
     Q.Budget_foreign_investment_stop = Q.foreign_investment_stop * -1;
     Q.special_kanye_actions = 1;
 
-    if (Q.year == 1930 && Q.album_success == "yes") {
+    if (Q.year == 1930 && Q.album_success == "yes" && Q.ye_path == "yes") {
         if (Q.spd_in_government) {
             Q.budget +=1;
         } else {
@@ -135,8 +135,15 @@ Q.foreign_investment_change = Q.economic_stability / Q.investment_impact;
         }
     }
 
-    if (Q.year == 1930 && Q. album_success == "no") {
+    if (Q.year == 1930 && Q.album_success == "no" && Q.ye_path == "yes") {
         Q.ye_sanity -=1;
+    }
+    
+        if ( Q.ye_path == "yes") {
+        
+if (Q.year == 1930) { Q.album_potential = "high";}
+if (Q.year == 1931) { Q.album_potential = "medium";}
+
     }
 
     Q.album_funding = 0;

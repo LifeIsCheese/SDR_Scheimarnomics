@@ -392,6 +392,54 @@ window.changeTab('status_right.kanye', 'kanye', 'right');
 
 }
 
+function nuke_sa() {
+
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
+Q.sa_strength /= 2;
+
+
+Q.special_kanye_actions = 0;
+
+window.changeTab('status_right.kanye', 'kanye', 'right');
+
+  
+
+}
+
+
+
+function nuke_sh() {
+
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
+Q.sh_strength /= 2;
+
+
+Q.special_kanye_actions = 0;
+
+window.changeTab('status_right.kanye', 'kanye', 'right');
+
+  
+
+}
+
+function nuke_rfb() {
+
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
+Q.rfb_strength /= 2;
+
+
+Q.special_kanye_actions = 0;
+
+window.changeTab('status_right.kanye', 'kanye', 'right');
+
+  
+
+}
+
+
 function fund_kanye() {
 
 var Q = window.dendryUI.dendryEngine.state.qualities;

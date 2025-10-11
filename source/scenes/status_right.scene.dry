@@ -11,7 +11,7 @@ hmm go click on a button
 = Kanye Omari West
 
 <div class = "face-status-container">
-[? if year < 1930 : <img class="face-status" src="img/kanyes/classic_ye.jpg"> ?]
+[? if year < 1930 : <img class="face-status" src="img/kanyes/classic_ye.jpg"> ?] [? if year == 1930 : <img class="face-status" src="img/kanyes/cool_ye.jpg"> ?]
 </div>
 
 Sanity: [+ ye_sanity +]
@@ -45,17 +45,28 @@ Influence: <span style="color:rgb(95, 131, 65);">**Minor**</span>
 [? if special_kanye_actions == 1 and year < 1930 : Increase foreign investment, and economic stability. ?]
 
 
-[? if year < 1930 : Currently producing album "Der Studienabbrecher".?]
+
+[? if special_kanye_actions == 1 and year == 1930 : <button class = "status_button_wide" onclick ="nuke_sa()">Nuke the SA</button> ?]
+
+[? if special_kanye_actions == 1 and year == 1930 : Erase 50% of the Sturmabteilung.  ?]
+
+[? if special_kanye_actions == 1 and year == 1930 : <button class = "status_button_wide" onclick ="nuke_sh()">Nuke the SH</button> ?]
+
+[? if special_kanye_actions == 1 and year == 1930 : Erase 50% of the Stahlhelm.  ?]
+
+[? if special_kanye_actions == 1 and year == 1930 : <button class = "status_button_wide" onclick ="nuke_rfb()">Nuke the RFB</button> ?]
+
+[? if special_kanye_actions == 1 and year == 1930 : Erase 50% of the RFB. ?]
 
 @album
 
-= [? if year < 1930 : Der Studienabbrecher ?]
+= [? if year == 1929 : Der Studienabbrecher ?] [? if year == 1930 : Meine düstere, wunderschöne Fantasie ?] [? if year == 1931 : Jesus ist König ?] 
 
 <div class = "face-status-container">
-[? if year < 1930 : <img class="face-status" src="img/TCD.jpg"> ?]
+[? if year == 1929 : <img class="face-status" src="img/TCD.jpg"> ?] [? if year == 1930 : <img class="face-status" src="img/mbdtf.jpg"> ?] [? if year == 1931 : <img class="face-status" src="img/JIK.jpg"> ?]
 </div>
 
-Funding: [+album_funding +]
+Funding: [+album_funding +]0000 Reichsmarks
 
 <button class = "status_button_wide" onclick ="fund_kanye()">Send Funding</button>
 
