@@ -1,6 +1,8 @@
 title: A meeting with the Pope
 new-page: true
 view-if: ye_concordat == 1
+on-arrival: reichskonkordat = 1; z_relation += 15*(1-dissent); catholics_spd += 8*(1-dissent); catholics_z += 5 if in_weimar_coalition or in_grand_coalition or in_popular_front;
+achievement: reichskonkordat
 tags: event
 max-visits: 1
 
