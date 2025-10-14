@@ -11,7 +11,7 @@ hmm go click on a button
 = Kanye Omari West
 
 <div class = "face-status-container">
-[? if year < 1930 : <img class="face-status" src="img/kanyes/classic_ye.jpg"> ?] [? if year == 1930 : <img class="face-status" src="img/kanyes/cool_ye.jpg"> ?]
+[? if year < 1930 : <img class="face-status" src="img/kanyes/classic_ye.jpg"> ?] [? if year == 1930 : <img class="face-status" src="img/kanyes/cool_ye.jpg"> ?] [? if year == 1931 : <img class="face-status" src="img/kanyes/jik_ye.jpg"> ?]
 </div>
 
 Sanity: [+ ye_sanity +]
@@ -58,9 +58,24 @@ Influence: <span style="color:rgb(95, 131, 65);">**Minor**</span>
 
 [? if special_kanye_actions == 1 and year == 1930 : Erase 50% of the RFB. ?]
 
+
+
+[? if special_kanye_actions == 1 and year == 1931 : <button class = "status_button_wide" onclick ="ye_convert()">Convert to Catholicism</button> ?]
+
+[? if special_kanye_actions == 1 and year == 1931 : Unlocks 2 of the actions, but Kanye will be more inclined to support the Zentrum if he is disillusioned with us..  ?]
+
+[? if special_kanye_actions == 1 and year == 1931 and ye_convert : <button class = "status_button_wide" onclick ="ye_concordat()">Concordat</button> ?]
+
+[? if special_kanye_actions == 1 and year == 1931 and ye_convert : Kanye negotiates a Concordat with the catholic church.  ?]
+
+[? if special_kanye_actions == 1 and year == 1931 and ye_convert : <button class = "status_button_wide" onclick ="ye_zentrum()">Meet with the Zentrum</button> ?]
+
+[? if special_kanye_actions == 1 and year == 1931 and ye_convert : Significantly improve Z relations. ?]
+
+
 @album
 
-= [? if year == 1929 : Der Studienabbrecher ?] [? if year == 1930 : Meine düstere, wunderschöne Fantasie ?] [? if year == 1931 : Jesus ist König ?] 
+= [? if year == 1929 and month > 2 : Der Studienabbrecher ?] [? if year == 1930 and month > 2  : Meine düstere, wunderschöne Fantasie ?] [? if year == 1931 and month > 2 : Jesus ist König ?] 
 
 <div class = "face-status-container">
 [? if year == 1929 : <img class="face-status" src="img/TCD.jpg"> ?] [? if year == 1930 : <img class="face-status" src="img/mbdtf.jpg"> ?] [? if year == 1931 : <img class="face-status" src="img/JIK.jpg"> ?]

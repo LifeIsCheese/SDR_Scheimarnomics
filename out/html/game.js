@@ -266,12 +266,6 @@ Q.director_s = Q.director_a[Q.director_pointer];
 
 Q.director_type = Math.floor( Math.random() * 3) + 1;
 
-if (Q.director_s == 'Kanye West') {
-
-Q.director_type = -1;
-
-}
-
 Q.resources -= 1;
 
 window.changeTab('status.Targets', 'Targets', 'left');
@@ -430,6 +424,51 @@ var Q = window.dendryUI.dendryEngine.state.qualities;
 
 Q.rfb_strength /= 2;
 
+
+Q.special_kanye_actions = 0;
+
+window.changeTab('status_right.kanye', 'kanye', 'right');
+
+  
+
+}
+
+function ye_convert() {
+
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
+Q.ye_convert = 1;
+Q.month_actions +=1;
+
+window.changeTab('status_right.kanye', 'kanye', 'right');
+
+  
+
+}
+
+function ye_concordat() {
+
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
+Q.ye_concordat = 1;
+
+Q.month_actions +=1;
+
+Q.special_kanye_actions = 0;
+
+window.changeTab('status_right.kanye', 'kanye', 'right');
+
+  
+
+}
+
+function ye_zentrum() {
+
+var Q = window.dendryUI.dendryEngine.state.qualities;
+
+Q.z_relation += 25;
+
+Q.month_actions +=1;
 
 Q.special_kanye_actions = 0;
 

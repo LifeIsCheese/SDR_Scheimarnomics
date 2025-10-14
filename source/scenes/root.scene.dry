@@ -347,6 +347,8 @@ Q.album_success = "no";
 Q.album_funding = 0;
 Q.album_potential = "high";
 Q.ye_sanity = 3;
+Q.ye_conversion = 0;
+Q.ye_concordat = 0;
 
 //Event chains 
 Q.hjalmar_event = 0;
