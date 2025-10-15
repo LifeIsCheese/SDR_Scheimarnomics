@@ -6,6 +6,13 @@ on-arrival: economic_policy_timer += 12; month_actions += 1; synthesis_budget = 
 view-if: spd_in_government = 1 and (economic_minister_party == "SPD" or finance_minister_party == "SPD") and economic_policy_timer <= 0 and economic_plan > 0
 card-image: img/portraits/SchmidtRobert.jpg
 #subtitle: Policies to address the economic crisis.
+on-arrival: {!
+if (Q.devaluation_stage >= 1 && Q.hans_opinion > 2) {
+    Q.wtb_deficit_allowed = 1;
+} else {
+    Q.wtb_deficit_allowed = 0;
+}
+!}
 
 = Economic Policy
 
@@ -40,10 +47,12 @@ on-arrival: works_program += 1; budget -= 3; workers_spd += 7*(1-dissent); worke
 @wtb_2_deficit
 title: Continue the implementation of the WTB-Plan.
 subtitle: -3 budget - we will enter a deficit.
-unavailable-subtitle: [? if unemployed <= 10 : Unemployment is low enough that we should not do deficit spending. ?][? if economic_minister_party == "DVP" : The DVP-controlled Economic Ministry is obstructing our plans. ?][? if finance_minister_party != "SPD" : Without control over finances, we cannot undertake such deficit spending. ?]
+unavailable-subtitle: [? if unemployed <= 10 : Unemployment is low enough that we should not do deficit spending. ?][? if economic_minister_party == "DVP" : The DVP-controlled Economic Ministry is obstructing our plans. ?][? if finance_minister_party != "SPD" : Without control over finances, we cannot undertake such deficit spending. ?] [? if not wtb_deficit_allowed : The Reichsbank refuses to finance deficit spending ?]
 view-if: wtb_implemented > 2 and budget < 3 and budget >= -3
-choose-if: unemployed > 10 and economic_minister_party != "DVP" and finance_minister_party == "SPD"
-on-arrival: works_program += 1; budget -= 3; workers_spd += 6*(1-dissent); workers += 2; unemployed -= 3 if unemployed > 8; unemployed_spd += 6*(1-dissent); workers_kpd -= 2; workers_nsdap -= 2; coalition_dissent += 1; coalition_dissent += 1 if in_grand_coalition; capital_strike_progress += 1; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 3; economic_growth += 1.6; economic_growth -= 0.6 if economic_growth > 5; socialism -= 4; economic_stability += 0.5
+choose-if: unemployed > 10 and economic_minister_party != "DVP" and finance_minister_party == "SPD" and wtb_deficit_allowed
+on-arrival: works_program += 1; budget -= 3; workers_spd += 6*(1-dissent); workers += 2; unemployed -= 3 if unemployed > 8; unemployed_spd += 6*(1-dissent); workers_kpd -= 2; workers_nsdap -= 2; coalition_dissent += 1; coalition_dissent += 1 if in_grand_coalition; capital_strike_progress += 1; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 3; economic_growth += 1.6; economic_growth -= 0.6 if economic_growth > 5; socialism -= 4; economic_stability += 0.5; {!
+Q.list_debt_date.push(4); Q.list_debt_amount.push(Q.budget * -1); Q.budget = 0;
+!}
 
 We have continued our implementation of the WTB-Plan, despite the continued deficit spending. In addition to public works, we are now focusing on rebuilding our industries.
 
@@ -75,10 +84,12 @@ We have started to enact the WTB plan. Money is beginning to flow through the ec
 @implement_wtb_deficit
 title: Implement the WTB plan.
 subtitle: -[+ wtb_budget +] budget - we will enter deficit spending. [? if wtb_budget == 3 : Our pro-labor policies have reduced the cost of the plan. ?]
-unavailable-subtitle: [? if unemployed <= 8 : Unemployment is low enough that the time for the WTB-Plan has passed. ?][? if economic_minister_party == "DVP" : The DVP-controlled Economic Ministry is obstructing our plans. ?][? if finance_minister_party != "SPD" : Without control over finances, we cannot undertake such deficit spending. ?]
+unavailable-subtitle: [? if unemployed <= 8 : Unemployment is low enough that the time for the WTB-Plan has passed. ?][? if economic_minister_party == "DVP" : The DVP-controlled Economic Ministry is obstructing our plans. ?][? if finance_minister_party != "SPD" : Without control over finances, we cannot undertake such deficit spending. ?] [? if not wtb_deficit_allowed : The Reichsbank refuses to finance deficit spending ?]
 view-if: budget < wtb_budget and wtb_implemented == 0 and wtb_adopted == 1
-choose-if: unemployed > 8 and economic_minister_party != "DVP" and finance_minister_party == "SPD"
-on-arrival: coalition_dissent += 1; coalition_dissent += 1 if historical_mode; coalition_dissent += 1 if chancellor == "Brüning"; works_program += 1; budget -= wtb_budget; unemployed -= 4; workers += 3; workers_spd += 8*(1-dissent); unemployed_spd += 8*(1-dissent); capital_strike_progress += 1; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 3; economic_growth += 3; coalition_dissent += 1 if in_grand_coalition; pro_republic += 3*(1-dissent); socialism -= 4; devaluation_progress +=1
+choose-if: unemployed > 8 and economic_minister_party != "DVP" and finance_minister_party == "SPD" and wtb_deficit_allowed
+on-arrival: coalition_dissent += 1; coalition_dissent += 1 if historical_mode; coalition_dissent += 1 if chancellor == "Brüning"; works_program += 1; budget -= wtb_budget; unemployed -= 4; workers += 3; workers_spd += 8*(1-dissent); unemployed_spd += 8*(1-dissent); capital_strike_progress += 1; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 3; economic_growth += 3; coalition_dissent += 1 if in_grand_coalition; pro_republic += 3*(1-dissent); socialism -= 4; devaluation_progress +=1;  {!
+Q.list_debt_date.push(4); Q.list_debt_amount.push(Q.budget * -1); Q.budget = 0;
+!}
 achievement: wirtschaftspolitik
 
 We have entered the realm of deficit spending. Our coalition partners are disgusted, but the works plan is enacted anyway. Money is beginning to flow through the economy via investments in large-scale public works.
