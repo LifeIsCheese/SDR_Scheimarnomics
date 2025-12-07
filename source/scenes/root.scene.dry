@@ -952,6 +952,7 @@ For other, non-difficulty related tweaks.
 - @disable_unfinished: disable unfished stuff (recomended) 
 - @menu: Back.
 
+
 @enable_unfinished
 view-if: unfinished_stuff != 1
 on-arrival: unfinished_stuff = 1
@@ -965,11 +966,6 @@ on-arrival: unfinished_stuff = 0
 go-to: menu
 
 recomended
-
-@enable_end
-view-if: end_disabled = 1
-on-arrival: end_disabled = 0
-go-to: menu
 
 @disable_end
 view-if: end_disabled != 1
