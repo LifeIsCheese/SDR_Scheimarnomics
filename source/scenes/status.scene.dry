@@ -59,7 +59,7 @@ Reichstag composition:
 # 1928: 10, 1930: 13
 <span style="color:rgb(92, 0, 0);">**KPD**</span>: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DstP)
-<span style="color:rgb(255, 242, 67);">**DDP**</span>: [+ ddp_r +]%
+<span style="color:rgba(228, 221, 125, 1);">**DDP**</span>: [+ ddp_r +]%
 # 1928: 9, 1930: 5
 <span style="color:rgb(187, 185, 52);">**DVP**</span>: [+ dvp_r +]%
 # 1928: 14, 1930: 7
@@ -98,7 +98,7 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 <span style="color:var(--Z-color);">**Z**</span>: [+ z_relation : relationships +]
 
-<span style="color:rgb(241, 235, 143);">**DDP**</span>: [+ ddp_relation : relationships +]
+<span style="color:rgba(228, 221, 125, 1);">**DDP**</span>: [+ ddp_relation : relationships +]
 
 <span style="color:rgb(187, 185, 52);">**DVP**</span>: [+ dvp_relation : relationships +]
 
@@ -200,7 +200,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 <span style="color:rgb(92, 0, 0);">**KPD**</span>: [+ kpd_votes +]%
 
-[? if not ddp_name: <span style="color:rgb(241, 235, 143);">**DDP**</span>?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ ddp_votes +]%
+[? if not ddp_name: <span style="color:rgba(228, 221, 125, 1);">**DDP**</span>>?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ ddp_votes +]%
 
 <span style="color:rgb(187, 185, 52);">**DVP**</span>: [+ dvp_votes +]%
 
