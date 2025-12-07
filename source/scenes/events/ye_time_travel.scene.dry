@@ -1,7 +1,7 @@
 title: American Foreigner
 new-page: true
 tags: event
-view-if: year == 1928 and month == 10
+view-if: year == 1928 and month == 10 and unfinished_stuff = 1
 max-visits: 1
 
 = Newcommer

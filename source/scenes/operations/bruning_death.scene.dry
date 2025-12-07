@@ -43,7 +43,7 @@ The Reichstag has spoken, we will crush the paramilitaries as much as possible.
 
 @left_path
 subtitle: (United front with KPD) (NOT FINISHED) [? if kpd_relation < 40 : We don't know the KPD like that ?] [? if left_strength < 40 : The left isn't strong enough ?] [? if kpd_party_leader != "Conciliators" : The conciliators are not in charge of the KPD. ?]
-choose-if: kpd_relation >= 40 and left_strength >= 40 and kpd_party_leader == "Conciliators"
+choose-if: kpd_relation >= 40 and left_strength >= 40 and kpd_party_leader == "Conciliators" and unfinished_stuff = 1
 on-arrival: spd_bd_position = "support_kpd"; kpd_relation = 80; prussian_police_loyalty /= 2; reichswehr_loyalty = 0; plot_target = "None"; plot_strength = 0; violence_timer = 24; dvp_in_government = 0; spd_in_government = 0; spd_prussia = 0;{!
     side_bar = document.getElementById("stats_sidebar_right");
     side_bar.style.display = "block";

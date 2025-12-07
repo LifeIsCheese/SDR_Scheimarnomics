@@ -806,6 +806,8 @@ Q.end_disabled = 1
 Q.violence_timer = -1;
 Q.paramilitaries_timer = 0;
 
+Q.unfinished_stuff = 0;
+
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
 Q.muller_advisor = 1; // Hermann Müller
@@ -946,7 +948,28 @@ For other, non-difficulty related tweaks.
 - @disable_hyperinflation: Disable hyperinflation
 - @1930: Begin the game in 1930.
 - @1928: Begin the game in 1928.
+- @enable_unfinished: enable unfished stuff (not recomended at all)
+- @disable_unfinished: disable unfished stuff (recomended) 
 - @menu: Back.
+
+@enable_unfinished
+view-if: unfinished_stuff != 1
+on-arrival: unfinished_stuff = 1
+go-to: menu
+
+Not recomended
+
+@disable_unfinished
+view-if: unfinished_stuff = 1
+on-arrival: unfinished_stuff = 0
+go-to: menu
+
+recomended
+
+@enable_end
+view-if: end_disabled = 1
+on-arrival: end_disabled = 0
+go-to: menu
 
 @disable_end
 view-if: end_disabled != 1

@@ -28,8 +28,6 @@ if (Q.budget) {
 
 = Status
 
-test
-
 [+ month : month +] [+ year +]
 
 Resources available: [+ resources +]
