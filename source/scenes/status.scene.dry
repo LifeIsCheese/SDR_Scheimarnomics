@@ -244,13 +244,13 @@ if (Q.capital_strike_progress) {
 
 <script src="game.js"></script>
 
-<button class = "status_button" onclick ="bruning()">kill Bruning</button>
+[? if cheats == 1 : <button class = "status_button" onclick ="bruning()">kill Bruning</button>  ?]
 
-The streets will be lit on fire, can you handle it?
+[? if cheats == 1 : The streets will be lit on fire, can you handle it? ?]
 
-<button class = "status_button" onclick ="hjalmar()">kill Hjalmar</button>
+[? if cheats == 1 : <button class = "status_button" onclick ="hjalmar()">kill Hjalmar</button> ?]
 
-This is a net positive thing, the game will be so much more easier if you do this.
+[? if cheats == 1 : This is a net positive thing, the game will be so much more easier if you do this. ?]
 
 <span style="color:rgb(54, 43, 12);">**Coup likelihood**</span>: [? if investigate_far_right >= 1 and coup_progress >= 1 : [+ coup_progress_2 +]% ?] [? if investigate_far_right == 0 : We don't have any information on the right. ?] [? if coup_progress == 0 and investigate_far_right >= 1 : The right aren't doing anything. ?]
 

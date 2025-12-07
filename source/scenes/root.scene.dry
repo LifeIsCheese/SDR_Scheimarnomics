@@ -807,6 +807,7 @@ Q.violence_timer = -1;
 Q.paramilitaries_timer = 0;
 
 Q.unfinished_stuff = 0;
+Q.cheats = 0;
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
@@ -950,8 +951,23 @@ For other, non-difficulty related tweaks.
 - @1928: Begin the game in 1928.
 - @enable_unfinished: enable unfished stuff (not recomended at all)
 - @disable_unfinished: disable unfished stuff (recomended) 
+- @cheats_yes: enable cheats
+- @cheats_no: disbale cheats
 - @menu: Back.
 
+@cheats_yes
+view-if: cheats != 1
+on-arrival: cheats = 1
+go-to: menu
+
+ok
+
+@cheats_no
+view-if: cheats = 1
+on-arrival: cheats = 0
+go-to: menu
+
+ok
 
 @enable_unfinished
 view-if: unfinished_stuff != 1
