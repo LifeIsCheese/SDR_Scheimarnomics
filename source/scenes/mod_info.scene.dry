@@ -8,36 +8,65 @@ new-page: true
 
 = Mod Info
 
-This mod adds a variety of changes to the base game, mostly in the form of flavor and minor improvements.
+Note: Most content in this mode comes from killing Schacht or Bruning, the latter being much more harder to do, if you want to skip the convoluted steps you can enable cheats in settings. There should be a button to accomplish both.
 
-text above is old news, there are 2 paths you can take in this game, Social fasicist maxxing, or revisionist paradise.
+A lot of new stuff.
 
 - @writers_credits: Writers Credits
-- @dynamic_budget: Budget + Economy
-- @interest_rates: Interest + Housing
-- @QOL: Stuff
+- @economy: Economy
+- @spy: Scheming
+- @civil-war: The Civil War
 
-@dynamic_budget
+@economy
 
 = Budget Changes
 
-Budget is now based on economic growth, 3% > is 1 budget, 6% > is 2 budget, 10% triggers an economic miracle. (Lasts after 1936) (Inflation has to be lower than economic growth)
+Budget is based on economic growth, and if you reach the economic goal you get 1 budget. If you reach double the economic goal, you get 2, and so on.
+
+Economic goal is based on taxes and tarrifs, the higher taxes the less economic growth (thus a lower needed economic goal) is needed to achieve 1 budget.
+You can also reform taxation to further decrease the economic goal
+
+= Interest rates and devaluation
+
+Interest rates are unlocked by killing Schacht and having good relations with Luther. You can only decrease interest rates to low, and very low is limited because it leads to devaluation.
+
+Interest rates have a very big impact on the economy, and a little on investor confidence.
+
+Devaluation is the process of devaluing ones currency for economic gain, the country is scarred by the hyperinflation of the early 20's to do this. The WTB plan is limited because of this, due to a core part of it relying on slight devaluation.
+
+Devaluation comes in three stages, interest rates, bonds, and formal devaluation. 
+
+To increase devaluation support, just support the wtb plan, events along the way will increase it to guarantee a 31 or 32 WTB plan. Have a strong spy network also helps.
+
+Investor confidence is a hidden variable that influences whether capital leaves or enters the country every time theres a new budget update.
+
+To increase investor confidence, fix the economy in a not socialist way.
 
 - @flavors: Back
 
-@interest_rates
+@spy
 
-= Fiscal Changes + Inflation and economic growth
+= Plots and stuff
 
-Base inflation rate is determined by interest rates, a basic housing issue event will happen if interest rates are too high and economic growth is stagnant (will polish this)
+The main part of the mod, lies with Schacht and Bruning's deaths. One leads to civil war the other leads to the economy of the game, thus messing this part up will lock you out of most of the games content.
+
+Just make sure you keep an eye on the loyalties of the partners you have selected, pick spies if you want to be safe.
+
+A strong spy network can make you gain access to alot decisions and also decreases loyalty decay, and at max strength passively increases loyalty.
 
 - @flavors: Back
 
-@QOL
+@civil-war
 
-= More information
+= The Violence
 
-Investigating now actually gives information on what the right is up to.
+Right now the left is not finished.
+
+To kill Bruning you need him to be chancellor when the hunger chancellor event fires, then kill him using the secret police or spies.
+
+What happens is a civil war, where you blame the extremists for killing them, try to win it.
+
+Also make sure to establish dominance for most of the run, or else the military will get angry and coup you. To lower their anger give them concessions.
 
 - @flavors: Back
 
