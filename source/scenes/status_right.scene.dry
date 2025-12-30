@@ -104,23 +104,25 @@ if (Q.bourgeois_left_willingness) {
 
 [+ military_reluctance : military_reluctance +]
 
-= RFB Reichsbanner status
+= Focus
 
 <div class = "face-status-container">
     <p id="status_right_focus"> [? if united_focus == "unity" : We are focusing on uniting the RFB and Reichsbanner as a proper united front. ?] [? if united_focus == "outreach" : We are reaching out to the leftwing of the Z and DDP. ?] [? if united_focus == "sympathy" : We are spreading socialist sympathy within the army. ?] </p>
 </div>
-
 <div class = "face-status-container">
     <button class = "status_button" onclick ="unity_focus()">Unity</button>
     <button class = "status_button" onclick ="outreach_focus()">Outreach</button>
     <button class = "status_button" onclick ="sympathy_focus()">Sympathy</button>
 </div>
 
+= RFB Reichsbanner status
+
 Current RFB Reichsbanner Unity [+ rfb_rb_unity_2 +]%
 
 Current amount of sympathetic soldiers [+ left_sympathies_2 +]%
 
 Bourgeois willingness to work [+ bourgeois_left_willingness_2 +]%
+
 
 
 @military

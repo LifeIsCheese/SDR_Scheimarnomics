@@ -532,7 +532,8 @@ word-break: break-word;
 div.face-status-container {
   display:flex;
   justify-content:center;
-    gap: 12px;
+  gap: 12px;
+  text-align: center;
 }
 
 .face-image {
