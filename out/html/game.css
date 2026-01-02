@@ -529,12 +529,20 @@ div.face-status-container {
   justify-content:center;
   gap: 12px;
   text-align: center;
+  font-weight: 600;
+}
+
+div.face-status-container > div {
+  text-align: center;
+  font-weight: 400;
 }
 
 .face-image {
   width: 140px;
   object-fit: cover;
 }
+
+
 
 /*
  * sprite stuff- feel free to comment out/remove if not using
@@ -671,6 +679,8 @@ img {
 
   background-color: var(--button-bg-color);
   padding: 1px;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
   
 }
 
