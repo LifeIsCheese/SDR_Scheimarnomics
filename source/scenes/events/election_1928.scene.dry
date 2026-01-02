@@ -1802,7 +1802,7 @@ Braun has resigned as Minister-President of Prussia. The bourgeois parties accep
 on-arrival: leverage -= 15 if dvp_relation < 20
 go-to: budget_dispute if not budget_resolved and historical_mode
 
-[? if n_elections <= 1 : With the death of Heinrich Brüning the center party is in disarray, and owing to our good relations they let us take the lead role in the formation of the next government, including selecting the chancellor. President [+ president +] has asked us to form a majority coalition with the Center (Z), Bavarian People's ([+ bvp_name +]), Democratic ([+ ddp_name +]), and People's (DVP) parties. ?]
+[? if bruning_plot == "successful" : With the death of Heinrich Brüning the center party is in disarray, and owing to our good relations they let us take the lead role in the formation of the next government, including selecting the chancellor. President [+ president +] has asked us to form a majority coalition with the Center (Z), Bavarian People's ([+ bvp_name +]), Democratic ([+ ddp_name +]), and People's (DVP) parties. ?]
 
 [? if dvp_relation < 20 : As our relation with the DVP is poor, they are demanding more minister posts in order to remain part of the coalition. ?]
 
