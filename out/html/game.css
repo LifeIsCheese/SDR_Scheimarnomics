@@ -230,8 +230,6 @@ blockquote + blockquote.attribution {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  text-shadow: rgba(0, 0, 0, 0.75) 2px 2px 2px,
-               rgba(0, 0, 0, 0.1) -1px -1px 2px;
 }
 #qualities h1 + p:first-line {
   font-weight: normal;
@@ -262,8 +260,6 @@ blockquote + blockquote.attribution {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  text-shadow: rgba(0, 0, 0, 0.75) 2px 2px 2px,
-               rgba(0, 0, 0, 0.1) -1px -1px 2px;
 }
 #qualities_right h1 + p:first-line {
   font-weight: normal;
@@ -312,7 +308,6 @@ blockquote + blockquote.attribution {
   outline: none;
   border-radius: 0.4rem;
   padding: 4px;
-  box-shadow: 1px 1px 5px var(--bgBack-color);
 }
 .status_button:hover {
   background-color: var(--hover-color);

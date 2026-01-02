@@ -102,8 +102,9 @@ if (Q.bourgeois_left_willingness) {
 
 = The Reichswehr
 
+<div class = "face-status-container">
 [+ military_reluctance : military_reluctance +]
-
+</div>
 = Focus
 
 <div class = "face-status-container">
@@ -115,7 +116,7 @@ if (Q.bourgeois_left_willingness) {
     <button class = "status_button" onclick ="sympathy_focus()">Sympathy</button>
 </div>
 
-= RFB Reichsbanner status
+= RFB / Reichsbanner status
 
 Current RFB Reichsbanner Unity [+ rfb_rb_unity_2 +]%
 

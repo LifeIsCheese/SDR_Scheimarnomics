@@ -14,11 +14,14 @@ max-cards: 3
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
+
+<div style="background-color: var(--button-bg-color)">
+
 [? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?] 
 
 [? if violence_timer > 0 : <h1>Balance of Power</h1> ?]
 
-<div class = "face-status-container">
+<div class = "face-status-container">`
 
 [? if violence_timer > 0 : The Far Left: [+ far_left_strength +]% ?]
 [? if spd_bd_position == "support_kpd" : Our perceived violence [+ violence_perceived_left +] ?]
@@ -39,6 +42,8 @@ max-cards: 3
 <div class = "face-status-container">
 
 [? if violence_timer > 0 : Violence Level : [+ violence_level +]% ?]
+
+</div>
 
 </div>
 
@@ -66,6 +71,10 @@ max-cards: 4
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
+<div style="background-color: var(--button-bg-color)">
+
+
+
 [? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
 
 [? if violence_timer > 0 : <h1>Balance of Power</h1> ?]
@@ -91,6 +100,8 @@ max-cards: 4
 <div class = "face-status-container">
 
 [? if violence_timer > 0 : Violence Level : [+ violence_level +]% ?]
+
+</div>
 
 </div>
 
