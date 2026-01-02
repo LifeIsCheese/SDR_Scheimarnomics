@@ -529,7 +529,6 @@ div.face-status-container {
   justify-content:center;
   gap: 12px;
   text-align: center;
-  font-weight: 600;
 }
 
 .violence-div {
@@ -537,13 +536,16 @@ div.face-status-container {
   background-color: var(--button-bg-color);
   padding: 1px;
   font-family: "Courier New", monospace;
-  font-weight: 500;
   
 }
 
 .violence-div > div {
   text-align: center;
   font-weight: 450;
+}
+
+.violence-div > h1{
+    font-weight: 650;
 }
 
 .face-image {
