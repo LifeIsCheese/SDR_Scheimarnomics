@@ -14,7 +14,6 @@ max-cards: 3
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
-
 <div class="violence-div">
 
 [? if year = 1928 and month <= 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?] 
@@ -35,9 +34,7 @@ max-cards: 3
 
 </div>
 
-
 [? if violence_timer > 0 : <h1>We have [+ violence_timer +] months to crush the paramilitaries</h1> ?]
-
 
 <div class = "face-status-container">
 
@@ -53,7 +50,6 @@ max-cards: 3
 - @agitation
 - #advisor
 - @shuffle_leadership_pinned
-
 
 @main_easy
 set-bg: img/map_2.jpg
@@ -73,8 +69,6 @@ max-cards: 4
 
 <div class="violence-div">
 
-
-
 [? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
 
 [? if violence_timer > 0 : <h1>Balance of Power</h1> ?]
@@ -87,15 +81,12 @@ max-cards: 4
 [? if violence_timer > 0 : The Republic: [+ weimar_strength +]% ?]
 [? if spd_bd_position == "support_kpd" : Perceived violence [+ violence_perceived_republic +] ?]
 
-
 [? if violence_timer > 0 : The Far Right: [+ far_right_strength +]% ?]
 [? if spd_bd_position == "support_kpd" : Perceived violence [+ violence_perceived_right +] ?]
 
 </div>
 
-
 [? if violence_timer > 0 : <h1>We have [+ violence_timer +] months to crush the paramilitaries</h1> ?]
-
 
 <div class = "face-status-container">
 
@@ -111,7 +102,6 @@ max-cards: 4
 - @agitation
 - #advisor
 - @shuffle_leadership_pinned
-
 
 @party
 title: Party Affairs
