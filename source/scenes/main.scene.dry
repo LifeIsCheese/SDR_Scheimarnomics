@@ -17,7 +17,7 @@ max-cards: 3
 
 <div style="background-color: var(--button-bg-color)">
 
-[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?] 
+[? if year = 1928 and month <= 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?] 
 
 [? if violence_timer > 0 : <h1>Balance of Power</h1> ?]
 
