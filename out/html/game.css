@@ -667,6 +667,12 @@ img {
 
 }
 
+.violence-div {
+
+  background-color: var(--button-bg-color);
+  padding: 16px;
+  
+}
 
 /* New stuff just for this game */
 
