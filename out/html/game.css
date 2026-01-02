@@ -532,9 +532,18 @@ div.face-status-container {
   font-weight: 600;
 }
 
-div.face-status-container > div {
+.violence-div {
+
+  background-color: var(--button-bg-color);
+  padding: 1px;
+  font-family: "Courier New", monospace;
+  font-weight: 500;
+  
+}
+
+.violence-div > div {
   text-align: center;
-  font-weight: 400;
+  font-weight: 450;
 }
 
 .face-image {
@@ -673,15 +682,6 @@ img {
   border-radius: 8px;
 }
 
-}
-
-.violence-div {
-
-  background-color: var(--button-bg-color);
-  padding: 1px;
-  font-family: "Courier New", monospace;
-  font-weight: bold;
-  
 }
 
 /* New stuff just for this game */
