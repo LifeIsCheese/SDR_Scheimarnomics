@@ -531,7 +531,7 @@ div.face-status-container {
   text-align: center;
 }
 
-.violence-div {
+#violence-div {
 
   background-color: var(--button-bg-color);
   padding: 1px;
@@ -539,12 +539,12 @@ div.face-status-container {
   
 }
 
-.violence-div > div {
+#violence-div > div {
   text-align: center;
   font-weight: 450;
 }
 
-#content .violence-div > h1{
+#content #violence-div > h1{
     font-weight: 600;
 }
 
