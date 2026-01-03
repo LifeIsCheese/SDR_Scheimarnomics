@@ -544,6 +544,10 @@ div.face-status-container {
   font-weight: 450;
 }
 
+#violende-div {
+  display: none;
+}
+
 #content #violence-div > h1{
     font-weight: 600;
 }
