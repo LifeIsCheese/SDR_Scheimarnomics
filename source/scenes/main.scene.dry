@@ -139,9 +139,12 @@ is-deck: true
 - #agitation
 
 @confrontation
-view-if: violence_timer > 0 and spd_bd_position == "support_kpd"
+view-if: ( violence_timer > 0 and spd_bd_position == "support_kpd" ) or 1 == 1
 title: Agitation
 card-image: img/d_rose.jpg
+new-page: true
+is-card: true
+is-pinned-card: true
 
 = Confrontation
 
