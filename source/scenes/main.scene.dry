@@ -139,13 +139,12 @@ is-deck: true
 - #agitation
 
 @confrontation
-view-if: ( violence_timer > 0 and spd_bd_position == "support_kpd" ) or 1 == 1
-title: Agitation
-card-image: img/d_rose.jpg
+title: Shuffle Leadership
+view-if: 1 == 1
 new-page: true
 is-card: true
 is-pinned-card: true
+on-arrival: month_activities += 1; shuffle_leadership_timer = 6;
+card-image: img/vorwarts_2.jpg
+go-to: shuffle_leadership.rm_main
 
-= Confrontation
-
-- @main: Not now.
