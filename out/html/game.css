@@ -532,7 +532,7 @@ div.face-status-container {
 }
 
 #violence-div {
-
+  display: none;
   background-color: var(--button-bg-color);
   padding: 1px;
   font-family: "Courier New", monospace;
@@ -542,10 +542,6 @@ div.face-status-container {
 #violence-div > div {
   text-align: center;
   font-weight: 450;
-}
-
-#violende-div {
-  display: none;
 }
 
 #content #violence-div > h1{
