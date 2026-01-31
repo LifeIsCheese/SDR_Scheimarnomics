@@ -25,10 +25,9 @@ on-arrival: judicial_reform = 2; z_relation +=33; ddp_relation +=33; dvp_relatio
 on-display: {!
     side_bar = document.getElementById("stats_sidebar_right");
     side_bar.style.display = "block";
+    document.getElementById("military").style.display="block";
     window.changeTab('status_right.military', 'military', 'right');
     document.getElementById("reichsbanner").style.display="block";
-    document.getElementById("violence-div").style.display="block";
-    document.getElementById("military").style.display="block";
     Q.violence_events = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 3, 0, 0];
     Q.violence_events = shuffleArray(Q.violence_events);
     Q.violence_events_pointer = 0;
@@ -52,7 +51,6 @@ on-display: {!
     side_bar.style.display = "block";
     window.changeTab('status_right.status', 'status', 'right');
     document.getElementById("status").style.display="block";
-    document.getElementById("violence-div").style.display="block";
     Q.violence_events = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     Q.violence_events = shuffleArray(Q.violence_events);
     Q.violence_events_pointer = 0;
