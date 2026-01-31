@@ -532,7 +532,6 @@ div.face-status-container {
 }
 
 #violence-div {
-  display: none;
   background-color: var(--button-bg-color);
   padding: 1px;
   font-family: "Courier New", monospace;
