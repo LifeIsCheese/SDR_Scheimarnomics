@@ -78,15 +78,15 @@ max-cards: 4
 <div class = "face-status-container">
 <div>
 [? if violence_timer > 0 : The Far Left: [+ far_left_strength +]% ?]
-[? if spd_bd_position == "support_kpd" : Our perceived violence [+ violence_perceived_left +] ?]
+[? if spd_bd_position == "support_kpd" :<div class = "face-status-container">Our perceived violence [+ violence_perceived_left +]</div>?]
 </div>
 <div>
 [? if violence_timer > 0 : The Republic: [+ weimar_strength +]% ?]
-[? if spd_bd_position == "support_kpd" : Perceived violence [+ violence_perceived_republic +] ?]
+[? if spd_bd_position == "support_kpd" :<div class = "face-status-container">Perceived violence [+ violence_perceived_republic +]</div>?]
 </div>
 <div>
 [? if violence_timer > 0 : The Far Right: [+ far_right_strength +]% ?]
-[? if spd_bd_position == "support_kpd" : Perceived violence [+ violence_perceived_right +] ?]
+[? if spd_bd_position == "support_kpd" :<div class = "face-status-container">Perceived violence [+ violence_perceived_right +]</div>?]
 </div>
 </div>
 
