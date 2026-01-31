@@ -531,6 +531,22 @@ div.face-status-container {
   text-align: center;
 }
 
+.balance-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.faction {
+  flex: 1;
+}
+
+.perceived-violence {
+  margin-top: 6px;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
 #violence-div {
   background-color: var(--button-bg-color);
   padding: 1px;
