@@ -395,6 +395,7 @@ Q.violence_perceived_addon_republic = 0;
 Q.violence_perceived_addon_right = 0;
 Q.military_reluctance = 80;
 Q.militarization_left_progression = 1;
+Q.bd_investigation = 0;
 
 
 

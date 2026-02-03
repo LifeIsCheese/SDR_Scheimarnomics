@@ -41,7 +41,7 @@ We have successfully sabotaged the reichswehr.
 
 @militarize22
 view-if: militarization_left_progression == 1
-subtitle: Should be an operation, but i feel like it would be too hard. Anyways, [? if left_sympathies < 0.33 : The military is not sympathetic to our cause. ?]
+subtitle: [? if left_sympathies < 0.20 : The military is not sympathetic to our cause. ?]
 choose-if: left_sympathies > 0.21
 on-arrival: rb_militancy += 0.5; rfb_militancy += 0.25; militarization_left_progression = 2
 
@@ -49,7 +49,7 @@ Using our connections in the military we now have an array of military grade equ
 
 @militarize44
 view-if: militarization_left_progression == 2
-subtitle: Should be an operation, but i feel like it would be too hard. Anyways, [? if left_sympathies < 0.33 : The military is not sympathetic to our cause. ?]
+subtitle: [? if left_sympathies < 0.42 : The military is not sympathetic to our cause. ?]
 choose-if: left_sympathies > 0.43
 on-arrival: rb_militancy += 1; rfb_militancy += 0.5; militarization_left_progression = 3
 
@@ -66,7 +66,7 @@ new_hire()
 Using our connections in the military we now have an array of military grade equipment.
 
 @propaganda
-subtitle: This will increase their reluctance. 1 resource. [? if violence_perceived_left > violence_perceived_republic : The public views us as the main aggressor. ?]
+subtitle: This will increase their reluctance to use heavy armory. 1 resource. [? if violence_perceived_left > violence_perceived_republic : The public views us as the main aggressor. ?]
 choose-if: violence_perceived_republic > violence_perceived_left
 on-arrival: military_reluctance += 20; military_reluctance = 100 if military_reluctance > 100; resources -= 1
 

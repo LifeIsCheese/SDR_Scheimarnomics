@@ -1,0 +1,10 @@
+title: A Meeting with the Moderates    
+view-if: violence_timer > 0 and bourgeois_left_willingness >= 0.99 and spd_bd_position == "support_kpd"
+on-arrival: bd_investigation = 1
+new-page: true
+max-visits: 1
+tags: event
+
+= Meeting with the Moderates
+
+After months of outreach to the left wings of the moderate parties, we have finally arranged a meeting with representatives of the Zentrum, and DDP to plead our case of the KPD's innocence in the assassination of Chancellor Brüning.
