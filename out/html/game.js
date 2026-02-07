@@ -838,6 +838,8 @@ document.getElementById('display-container-violence').innerHTML  ="";
 function violence_menu() {
   const container = document.getElementById('display-container-violence');
 
+  var Q = window.dendryUI.dendryEngine.state.qualities;
+
   container.innerHTML = `
     <h1>Balance of Power</h1>
 
@@ -846,7 +848,7 @@ function violence_menu() {
       <div class="faction">
         The Far Left:
         <div style="margin-top:auto;">
-          ${far_left_strength}%
+          ${Q.far_left_strength}%
         </div>
 
         ${
@@ -854,7 +856,7 @@ function violence_menu() {
             ? `<div class="perceived-violence">
                  <span style="color:rgb(109,156,61);"><b>Our</b></span>
                  perceived violence:
-                 ${violence_perceived_left}
+                 ${Q.violence_perceived_left}
                </div>`
             : ``
         }
@@ -862,12 +864,12 @@ function violence_menu() {
 
       <div class="faction">
         The Republic:
-        ${weimar_strength}%
+        ${Q.weimar_strength}%
 
         ${
           spd_bd_position === "support_kpd"
             ? `<div class="perceived-violence">
-                 Perceived violence ${violence_perceived_republic}
+                 Perceived violence ${Q.violence_perceived_republic}
                </div>`
             : ``
         }
@@ -875,12 +877,12 @@ function violence_menu() {
 
       <div class="faction">
         The Far Right:
-        ${far_right_strength}%
+        ${Q.far_right_strength}%
 
         ${
           spd_bd_position === "support_kpd"
             ? `<div class="perceived-violence">
-                 Perceived violence ${violence_perceived_right}
+                 Perceived violence ${Q.violence_perceived_right}
                </div>`
             : ``
         }
@@ -889,11 +891,11 @@ function violence_menu() {
     </div>
 
     <h1>
-      We have ${violence_timer} months to crush the paramilitaries
+      We have ${Q.violence_timer} months to crush the paramilitaries
     </h1>
 
     <div class="face-status-container">
-      Violence Level: ${violence_level}%
+      Violence Level: ${Q.violence_level}%
     </div>
   `;
 }
