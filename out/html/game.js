@@ -831,7 +831,18 @@ document.getElementById('status_right_focus').innerHTML = "We are spreading soci
 }
 
 function investigation_menu() {
-document.getElementById('display-container-violence').innerHTML  ="";
+document.getElementById('display-container-violence').innerHTML  =`
+
+    <h1>Who Killed Heinrich Brüning?</h1>
+    <img class="face-status" src="img/portraits/BrüningHeinrich.jpg">
+
+    <h2> Suspiscion of KPD : 95% </h2>
+    <h2> Suspiscion of NDSAP : 5% </h2>
+    <h2> Suspiscion of <span style="color:rgb(156, 61, 61);">us</span>: 5% </h2>
+
+
+
+`;
 
 }
 
@@ -843,7 +854,7 @@ function violence_menu() {
       <div class="faction">
         The Far Left:
         <div style="margin-top: auto;">${Q.far_left_strength}%</div>
-        <div class="perceived-violence"><span style="color:rgb(109, 156, 61);">**Our**</span> perceived violence : <div style="margin-top: auto;"> ${Q.violence_perceived_left} </div> </div>
+        <div class="perceived-violence"><span style="color:rgb(109, 156, 61);">Our</span> perceived violence : <div style="margin-top: auto;"> ${Q.violence_perceived_left} </div> </div>
       </div>
 
       <div class="faction">
