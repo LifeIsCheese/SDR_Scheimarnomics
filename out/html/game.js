@@ -836,35 +836,31 @@ document.getElementById('display-container-violence').innerHTML  ="";
 }
 
 function violence_menu() {
-document.getElementById('display-container-violence').innerHTML = `
-#
-<h1>Balance of Power</h1>
-#
-<div class="balance-container">
-<div class="faction">
-The Far Left: <div style="margin-top: auto;"> [+ far_left_strength +]% </div>
-[? if spd_bd_position == "support_kpd" :<div class="perceived-violence"><span style="color:rgb(109, 156, 61);">**Our**</span> perceived violence : <div style="margin-top: auto;"> [+ violence_perceived_left +] </div> </div>?]
-</div>
-<div class="faction">
-The Republic: [+ weimar_strength +]%
-[? if spd_bd_position == "support_kpd" :<div class="perceived-violence">Perceived violence [+ violence_perceived_republic +]</div>?]
-</div>
-<div class="faction">
-The Far Right: [+ far_right_strength +]%
-[? if spd_bd_position == "support_kpd" :<div class="perceived-violence">Perceived violence [+ violence_perceived_right +]</div>?]
-</div>
-</div>
-#
-<h1>We have [+ violence_timer +] months to crush the paramilitaries</h1>
-#
-<div class = "face-status-container">
-#
-Violence Level : [+ violence_level +]%
-#
-</div>
-#
-</div>
-#
-`;
+  document.getElementById('display-container-violence').innerHTML = `
+    <h1>Balance of Power</h1>
+
+    <div class="balance-container">
+      <div class="faction">
+        The Far Left:
+        <div style="margin-top: auto;">[+ far_left_strength +]%</div>
+      </div>
+
+      <div class="faction">
+        The Republic:
+        <div>[+ weimar_strength +]%</div>
+      </div>
+
+      <div class="faction">
+        The Far Right:
+        <div>[+ far_right_strength +]%</div>
+      </div>
+    </div>
+
+    <h1>We have [+ violence_timer +] months to crush the paramilitaries</h1>
+
+    <div class="face-status-container">
+      Violence Level : [+ violence_level +]%
+    </div>
+  `;
 
 }
