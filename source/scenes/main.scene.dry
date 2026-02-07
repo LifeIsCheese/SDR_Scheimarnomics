@@ -80,7 +80,8 @@ max-cards: 4
 
 [? if year = 1928 and month = 2 : 
 The current bourgeois-right government has fallen. The next elections are slated for May of this year.
-[? if 1 = 1 : Hi?]
+
+[? if 1 = 1 : Hi ?]
 ?]
 
 [? if violence_timer > 0 : <div id="violence-div"> ?]
