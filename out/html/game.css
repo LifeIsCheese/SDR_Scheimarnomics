@@ -564,7 +564,9 @@ div.face-status-container {
 }
 
 .violence-container-buttons {
-  
+  padding: 10px;
+  color: var(--text-color);
+  background-color: var(--button-border-color);
 }
 
 .face-image {
