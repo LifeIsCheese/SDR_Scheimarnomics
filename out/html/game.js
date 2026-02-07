@@ -843,16 +843,19 @@ function violence_menu() {
       <div class="faction">
         The Far Left:
         <div style="margin-top: auto;">${Q.far_left_strength}%</div>
+        <div class="perceived-violence"><span style="color:rgb(109, 156, 61);">**Our**</span> perceived violence : <div style="margin-top: auto;"> ${Q.violence_perceived_left} </div> </div>
       </div>
 
       <div class="faction">
         The Republic:
         <div>${Q.weimar_strength}%</div>
+        <div class="perceived-violence">Perceived violence ${Q.violence_perceived_republic}</div>
       </div>
 
       <div class="faction">
         The Far Right:
         <div>${Q.far_right_strength}%</div>
+        <div class="perceived-violence">Perceived violence ${Q.violence_perceived_right}</div>
       </div>
     </div>
 
