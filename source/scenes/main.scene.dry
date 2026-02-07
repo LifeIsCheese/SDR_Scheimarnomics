@@ -15,12 +15,7 @@ max-cards: 3
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
 [? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
-[? if violence_timer > 0 :
-#
-<button class="violence-container-buttons">Violence</button>
-#
-<button class="violence-container-buttons">Investigation</button>
-?]
+
 [? if violence_timer > 0 : <div id="violence-div">
 #
 <button class="violence-container-buttons">Violence</button>

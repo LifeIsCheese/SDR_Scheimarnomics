@@ -567,6 +567,7 @@ div.face-status-container {
   padding: 10px;
   color: var(--text-color);
   background-color: var(--button-border-color);
+  border: 0px;
 }
 
 .face-image {
