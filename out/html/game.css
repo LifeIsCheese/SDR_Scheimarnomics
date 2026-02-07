@@ -571,7 +571,7 @@ div.face-status-container {
 }
 
 .violence-container-buttons:hover {
-  background-color: var(--button-border-color);
+  background-color: var(--active-color);
   color: var(--text-hover);
 }
 
