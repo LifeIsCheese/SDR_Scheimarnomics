@@ -847,19 +847,19 @@ function violence_menu() {
 
       <div class="faction">
         The Republic:
-        <div>[+ weimar_strength +]%</div>
+        <div>${Q.weimar_strength}%</div>
       </div>
 
       <div class="faction">
         The Far Right:
-        <div>[+ far_right_strength +]%</div>
+        <div>${Q.far_right_strength}%</div>
       </div>
     </div>
 
-    <h1>We have [+ violence_timer +] months to crush the paramilitaries</h1>
+    <h1>We have ${Q.violence_timer} months to crush the paramilitaries</h1>
 
     <div class="face-status-container">
-      Violence Level : [+ violence_level +]%
+      Violence Level : ${Q.violence_level}%
     </div>
   `;
 
