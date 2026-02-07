@@ -22,7 +22,7 @@ max-cards: 3
 #
 <button class="violence-container-buttons">Investigation</button>
 #
-<div class="display-container-violence">
+<div id="display-container-violence">
 #
 <h1>Balance of Power</h1>
 #
@@ -83,11 +83,11 @@ max-cards: 4
 
 [? if violence_timer > 0 : <div id="violence-div">
 #
-<button class="violence-container-buttons">Violence</button>
+<button class="violence-container-buttons" onclick="violence_menu()">Violence</button>
 #
-<button class="violence-container-buttons">Investigation</button>
+<button class="violence-container-buttons" onclick="investigation_menu()">Investigation</button>
 #
-<div class="display-container-violence">
+<div id="display-container-violence">
 #
 <h1>Balance of Power</h1>
 #
