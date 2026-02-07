@@ -566,8 +566,12 @@ div.face-status-container {
 .violence-container-buttons {
   padding: 10px;
   color: var(--text-color);
-  background-color: var(--button-border-color);
+  background-color: var(--button-bg-color);
   border: 0px;
+}
+
+.violence-container-buttons :hover {
+  background-color: var(--button-border-color);
 }
 
 .face-image {
