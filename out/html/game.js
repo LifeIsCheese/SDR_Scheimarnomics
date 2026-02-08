@@ -836,12 +836,24 @@ document.getElementById('display-container-violence').innerHTML  =`
     <h1>Who Killed Heinrich Brüning?</h1>
     <img class="face-status" src="img/portraits/BrüningHeinrich.jpg">
 
-    <h2> Suspiscion of KPD : 95% </h2>
-    <h2> Suspiscion of NDSAP : 5% </h2>
-    <h2> Suspiscion of <span style="color:rgb(156, 61, 61);">us</span>: 5% </h2>
+    <div class="balance-container">
 
+    <div class="faction">
+    <img class="face-status" src="img/KPD_logo.png">
+    <div style="margin-top: auto;">Suspicion of the KPD</div>
+    </div>
 
+    <div class="faction">
+    <img class="face-status" src="img/iron_front.png">
+    <div style="margin-top: auto;">Suspicion of <span style="color:rgb(156, 69, 61);">us</span></div>
+    </div>
 
+    <div class="faction">
+    <img class="face-status" src="img/NDSAP_logo.png">
+    <div style="margin-top: auto;">Suspicion of the Right</div>
+    </div>
+
+    </div>
 `;
 
 }
