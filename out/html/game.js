@@ -834,12 +834,10 @@ function investigation_menu() {
 document.getElementById('display-container-violence').innerHTML  =`
 
     <h1>Who Killed Heinrich Brüning?</h1>
-    <img class="face-status" src="img/portraits/BrüningHeinrich.jpg">
-
     <div class="balance-container">
 
     <div class="faction">
-    <img class="face-status" src="img/KPD_logo.png">
+    <img class="face-status" src="img/KPD_Logo.png">
     <div style="margin-top: auto;">Suspicion of the KPD</div>
     </div>
 
