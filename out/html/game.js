@@ -837,7 +837,7 @@ document.getElementById('display-container-violence').innerHTML  =`
     <div class="balance-container">
 
     <div class="faction">
-    <img class="face-status" src="img/KPD_Logo.png">
+    <img class="face-status" src="img/rkfb_logo.png">
     <div style="margin-top: auto;">Suspicion of the KPD</div>
     </div>
 
