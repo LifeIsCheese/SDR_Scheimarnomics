@@ -837,18 +837,21 @@ document.getElementById('display-container-violence').innerHTML  =`
     <div class="balance-container">
 
     <div class="faction">
-    <img class="face-status" src="img/rkfb_logo.png">
+    <img class="face-status" src="img/KPD_logo.png">
     <div style="margin-top: auto;">Suspicion of the KPD</div>
+    Because I hate commies
     </div>
 
     <div class="faction">
     <img class="face-status" src="img/iron_front.png">
     <div style="margin-top: auto;">Suspicion of <span style="color:rgb(156, 69, 61);">us</span></div>
+    Its me
     </div>
 
     <div class="faction">
     <img class="face-status" src="img/NDSAP_logo.png">
     <div style="margin-top: auto;">Suspicion of the Right</div>
+    yyabadabaoo
     </div>
 
     </div>
