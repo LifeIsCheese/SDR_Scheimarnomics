@@ -6,6 +6,15 @@ frequency: 500
 view-if: spd_in_government = 1 and reichsbank_timer == 0 and reichsbank_seized == 0
 card-image: img/Reichsbank.jpg
 go-to: @reichsbank_menu
+on-arrival: {!
+if (Q.deval_currency_string) {
+    Q.deval_currency_string_2 = Q.rb_strength.toFixed(2);
+}
+
+if (Q.rm_to_gold) {
+    Q.rm_to_gold_2 = Q.rm_to_gold.toFixed(3);
+}
+!}
 
 = Monetary Policy
 
@@ -17,9 +26,9 @@ go-to: @reichsbank_menu
 
 [? if hjalmar_plot == "successful": Hans Luther opinion: [+ hans_opinion : hans_opinion +]. [? if hans_opinion <= 2 : We can persuade him by talking to him directly. ?] ?]
 
-Current valuation [+ deval_currency_string +]%
+Current valuation [+ deval_currency_string_2 +]%
 
-[? if exchange_controls != 1 : 1 Reichsmark = [+ rm_to_gold +]g of gold. ?] [? if exchange_controls == 1 : Reichsmark to Gold has been suspended. ?]
+[? if exchange_controls != 1 : 1 Reichsmark = [+ rm_to_gold_2 +]g of gold. ?] [? if exchange_controls == 1 : Reichsmark to Gold has been suspended. ?]
 
 @reichsbank_menu
 
