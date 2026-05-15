@@ -8,7 +8,7 @@ card-image: img/Reichsbank.jpg
 go-to: @reichsbank_menu
 on-arrival: {!
 if (Q.deval_currency_string) {
-    Q.deval_currency_string_2 = Q.rb_strength.toFixed(2);
+    Q.deval_currency_string_2 = Q.deval_currency_string.toFixed(2);
 }
 
 if (Q.rm_to_gold) {
