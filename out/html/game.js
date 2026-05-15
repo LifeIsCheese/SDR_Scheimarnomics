@@ -837,7 +837,7 @@ document.getElementById('display-container-violence').innerHTML  =`
     <div class="balance-container">
 
     <div class="faction">
-    <img class="face-status" src="img/KPD_logo.png">
+    <img class="face-status" src="img/kpd_2.jpg">
     <div style="margin-top: auto;">Suspicion of the KPD</div>
     Because I hate commies
     </div>
