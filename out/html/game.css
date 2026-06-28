@@ -537,7 +537,7 @@ div.face-status-container {
   text-align: center;
 }
 
-.faction {
+.investigation-faction-div {
   flex: 1;
 }
 
@@ -579,7 +579,9 @@ div.face-status-container {
   object-fit: cover;
 }
 
-
+.investigation-div-text {
+  margin-top: auto;
+}
 
 /*
  * sprite stuff- feel free to comment out/remove if not using

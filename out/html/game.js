@@ -836,21 +836,21 @@ document.getElementById('display-container-violence').innerHTML  =`
     <h1>Who Killed Heinrich Brüning?</h1>
     <div class="balance-container">
 
-    <div class="faction">
+    <div class="investigation-faction-div">
     <img class="face-status" src="img/kpd_2.jpg">
-    <div style="margin-top: auto;">Suspicion of the KPD</div>
+    <div class="investigation-div-text">Suspicion of the KPD</div>
     Because I hate commies
     </div>
 
-    <div class="faction">
+    <div class="investigation-faction-div">
     <img class="face-status" src="img/iron_front.png">
-    <div style="margin-top: auto;">Suspicion of <span style="color:rgb(156, 69, 61);">us</span></div>
+    <div class="investigation-div-text"">Suspicion of <span style="color:rgb(156, 69, 61);">us</span></div>
     Its me
     </div>
 
-    <div class="faction">
+    <div class="investigation-faction-div">
     <img class="face-status" src="img/NDSAP_logo.png">
-    <div style="margin-top: auto;">Suspicion of the Right</div>
+    <div class="investigation-div-text">Suspicion of the Right</div>
     yyabadabaoo
     </div>
 
@@ -864,19 +864,19 @@ function violence_menu() {
     <h1>Balance of Power</h1>
 
     <div class="balance-container">
-      <div class="faction">
+      <div class="investigation-faction-div">
         The Far Left:
         <div style="margin-top: auto;">${Q.far_left_strength}%</div>
         <div class="perceived-violence"><span style="color:rgb(109, 156, 61);">Our</span> perceived violence : <div style="margin-top: auto;"> ${Q.violence_perceived_left} </div> </div>
       </div>
 
-      <div class="faction">
+      <div class="investigation-faction-div">
         The Republic:
         <div>${Q.weimar_strength}%</div>
         <div class="perceived-violence">Perceived violence ${Q.violence_perceived_republic}</div>
       </div>
 
-      <div class="faction">
+      <div class="investigation-faction-div">
         The Far Right:
         <div>${Q.far_right_strength}%</div>
         <div class="perceived-violence">Perceived violence ${Q.violence_perceived_right}</div>

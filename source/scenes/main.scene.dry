@@ -85,7 +85,7 @@ max-cards: 4
 #
 <button class="violence-container-buttons" onclick="violence_menu()">Violence</button>
 #
-<button class="violence-container-buttons" onclick="investigation_menu()">Investigation</button>
+[? if spd_bd_position == "support_kpd" : <button class="violence-container-buttons" onclick="investigation_menu()">Investigation</button> ?]
 #
 <div id="display-container-violence">
 #
