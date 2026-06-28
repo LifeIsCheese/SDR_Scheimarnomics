@@ -583,6 +583,12 @@ div.face-status-container {
   margin-top: auto;
 }
 
+.investigation-div-text > div {
+  margin-top: auto;
+  background-color: var(--bg-color);
+  font-size: 0.5rem;
+}
+
 /*
  * sprite stuff- feel free to comment out/remove if not using
  */

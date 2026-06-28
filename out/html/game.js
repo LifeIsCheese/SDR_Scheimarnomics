@@ -839,19 +839,19 @@ document.getElementById('display-container-violence').innerHTML  =`
     <div class="investigation-faction-div">
     <img class="face-status" src="img/kpd_2.jpg">
     <div class="investigation-div-text">Suspicion of the KPD</div>
-    Because I hate commies
+    <div> Because I hate commies </div>
     </div>
 
     <div class="investigation-faction-div">
     <img class="face-status" src="img/iron_front.png">
     <div class="investigation-div-text"">Suspicion of <span style="color:rgb(156, 69, 61);">us</span></div>
-    Its me
+    <div>Its me</div>
     </div>
 
     <div class="investigation-faction-div">
     <img class="face-status" src="img/NDSAP_logo.png">
     <div class="investigation-div-text">Suspicion of the Right</div>
-    yyabadabaoo
+    <div>yyabadabaoo</div>
     </div>
 
     </div>
@@ -883,7 +883,7 @@ function violence_menu() {
       </div>
     </div>
 
-    <h1>We have ${Q.violence_timer} months to crush the paramilitaries</h1>
+    <h1>We have ${Q .violence_timer} months to crush the paramilitaries</h1>
 
     <div class="face-status-container">
       Violence Level : ${Q.violence_level}%
