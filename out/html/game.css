@@ -583,10 +583,10 @@ div.face-status-container {
   margin-top: auto;
 }
 
-.investigation-div-text > div {
-  margin-top: auto;
-  background-color: var(--bg-color);
-  font-size: 0.5rem;
+.investigation-description {
+    margin-top: auto;
+    background-color: var(--bg-color);
+    font-size: 0.5rem;
 }
 
 /*

@@ -839,19 +839,19 @@ document.getElementById('display-container-violence').innerHTML  =`
     <div class="investigation-faction-div">
     <img class="face-status" src="img/kpd_2.jpg">
     <div class="investigation-div-text">Suspicion of the KPD</div>
-    <div> Because I hate commies </div>
+    <div class="investigation-description"> Because I hate commies </div>
     </div>
 
     <div class="investigation-faction-div">
     <img class="face-status" src="img/iron_front.png">
-    <div class="investigation-div-text"">Suspicion of <span style="color:rgb(156, 69, 61);">us</span></div>
-    <div>Its me</div>
+    <div class="investigation-div-text">Suspicion of <span style="color:rgb(156, 69, 61);">us</span></div>
+    <div class="investigation-description">Its me</div>
     </div>
 
     <div class="investigation-faction-div">
     <img class="face-status" src="img/NDSAP_logo.png">
     <div class="investigation-div-text">Suspicion of the Right</div>
-    <div>yyabadabaoo</div>
+    <div class="investigation-description">yyabadabaoo</div>
     </div>
 
     </div>
