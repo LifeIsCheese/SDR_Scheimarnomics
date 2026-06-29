@@ -64,11 +64,11 @@ on-display: {!
 
     Q.bourgeois_left_willingness = ( Q.z_relation + Q.ddp_relation + Q.dvp_relation ) / 600;
 
-    Q.bourgeois_left_willingness = Q.bourgeois_right_willingness.toFixed(2);
+    Q.bourgeois_left_willingness = Q.bourgeois_left_willingness.toFixed(2);
 
     
 !}
-go-to: set_next_election_time
+### make an even preventing elections
 
 Members of the Reichstag, most notably Otto Braun and [+ z_party_leader +] have recently called for an emergency session to discuss the course of action, as such an event could spark an upsurge of extremist activity.
 
