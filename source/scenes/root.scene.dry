@@ -427,7 +427,7 @@ Q.nsdap_suspicion_level = 3;
 //focusing
 Q.united_focus = "unity";
 Q.left_sympathies = 0; 
-Q.bourgeois_left_willingness = 0.1;
+Q.bourgeois_left_willingness = 0;
 Q.rfb_rb_unity = 0.25;
 Q.military_use_reluctance_multiplier = 0;
 
