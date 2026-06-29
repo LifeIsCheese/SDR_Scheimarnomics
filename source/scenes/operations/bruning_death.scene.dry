@@ -64,7 +64,7 @@ on-display: {!
 
     Q.bourgeois_left_willingness = ( Q.z_relation + Q.ddp_relation + Q.dvp_relation ) / 600;
 
-    Q.bourgeois_right_willingness = Q.bourgeois_right_willingness.toFixed(2);
+    Q.bourgeois_left_willingness = Q.bourgeois_right_willingness.toFixed(2);
 
     
 !}
