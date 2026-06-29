@@ -463,7 +463,7 @@ switch (Q.united_focus){
   break;
 
   case "outreach":
-Q.bourgeois_left_willingness += 0.05;
+Q.bourgeois_left_willingness += 0.1;
   break;
 
 case "sympathy":
