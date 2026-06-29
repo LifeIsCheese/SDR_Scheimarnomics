@@ -396,6 +396,31 @@ Q.violence_perceived_addon_right = 0;
 Q.military_reluctance = 80;
 Q.militarization_left_progression = 1;
 Q.bd_investigation = 0;
+Q.spd_suspicion_descriptions = [
+    "They do not suspect us.",
+    "They are suspicious of us, yet investigation has been launched, to our knowledge.",
+    "They are suspicious of us, and have launched a formal investigation.",
+    "We have been caught."
+];
+Q.spd_suspicion_level = 0;
+
+Q.kpd_suspicion_descriptions = [
+    "Only a fringe few think the KPD is guilty for Brüning's death.",
+    "Some in the republic suspect that the KPD played a role in Brüning's death. ",
+    "A majority of parliament suspect that the KPD played a role in Brüning's death, but public opinion is changing.",
+    "The republic thinks that the KPD is complicit in Brüning's death."
+];
+Q.kpd_suspicion_level = 3;
+
+Q.nsdap_suspicion_descriptions = [
+    "sus level 0 - you messed up.",
+    "sus level 1 - some think the nazis did something.",
+    "sus level 2 - majority thinks the nazis did something.",
+    "sus level 3 - evb thinks the nazis did something"
+];
+Q.nsdap_suspicion_level = 3;
+
+
 
 
 

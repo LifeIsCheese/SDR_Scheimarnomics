@@ -833,25 +833,25 @@ document.getElementById('status_right_focus').innerHTML = "We are spreading soci
 function investigation_menu() {
 document.getElementById('display-container-violence').innerHTML  =`
 
-    <h1>Who Killed Heinrich Brüning?</h1>
+    <h1>Who Really Killed Heinrich Brüning?</h1>
     <div class="balance-container">
 
     <div class="investigation-faction-div">
     <img class="face-status" src="img/kpd_2.jpg">
     <div class="investigation-div-text">Suspicion of the KPD</div>
-    <div class="investigation-description"> Because I hate commies </div>
+    <div class="investigation-description"> ${Q.kpd_suspicion_descriptions[Q.kpd_suspicion_level]} </div>
     </div>
 
     <div class="investigation-faction-div">
     <img class="face-status" src="img/iron_front.png">
-    <div class="investigation-div-text">Suspicion of <span style="color:rgb(156, 69, 61);">us</span></div>
-    <div class="investigation-description">Its me</div>
+    <div class="investigation-div-text">Suspicion of the <span style="color:rgb(156, 69, 61);">SPD</span></div>
+    <div class="investigation-description"> ${Q.spd_suspicion_descriptions[Q.spd_suspicion_level]} </div>
     </div>
 
     <div class="investigation-faction-div">
     <img class="face-status" src="img/NDSAP_logo.png">
     <div class="investigation-div-text">Suspicion of the Right</div>
-    <div class="investigation-description">yyabadabaoo</div>
+    <div class="investigation-description"> ${Q.nsdap_suspicion_descriptions[Q.nsdap_suspicion_level]} </div>
     </div>
 
     </div>
