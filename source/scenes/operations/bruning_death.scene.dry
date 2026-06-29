@@ -62,10 +62,7 @@ on-display: {!
 
     Q.far_right_strength = Math.round(Q.sa_force + Q.sh_force);
 
-    Q.bourgeois_left_willingness = ( Q.z_relation + Q.ddp_relation + Q.dvp_relation ) / 600;
-
-    Q.bourgeois_left_willingness = Q.bourgeois_left_willingness.toFixed(2);
-
+    Q.bourgeois_left_willingness = (( Q.z_relation + Q.ddp_relation + Q.dvp_relation ) / 600 );
     
 !}
 ### make an even preventing elections
