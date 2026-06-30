@@ -1,0 +1,31 @@
+title: The Volksmark question
+new-page: true
+is-card: true
+tags: govt_affairs
+view-if: devaluation_progress < 2 and new_currency_support_card_flag = 1
+card-image: img/reichstag_1.jpg
+frequency: 1000
+
+= The Volksmark question
+
+We still have a long way to go before we can adopt a new currency Decoupled from gold. 
+
+- @increase_support: Increase support.
+- @volksmark: Adopt the Volksmark.
+- @root: Do nothing.
+
+@volksmark
+choose-if: devaluation_progress >= 2 and z_relation >= 40 and ddp_relation >= 50;
+on-arrival: volksmark = 1; inflation = 5; hyperinflation = 0; economic_growth = 1; month_actions += 1;
+suntitle: [? if devaluation_progress < 2 : Decoupling the Volksmark from gold is not feasible yes, more work needs to be done convincing the party. ?] [? if z_relation < 40 : The Zentrum are not convinced of the benefits of a new currency. ?] [? if ddp_relation < 50 : The DDP are weary of the initiative. ?]
+
+Finally, after support from our party, and our coalition partners, we can adopt a new currency, the Volksmark, which is completely decoupled from gold.
+
+@increase_currency_acceptance
+view-if: devaluation_progress < 2
+on-arrival: devaluation_progress += 1; month_actions += 1;
+
+We are working on increasing the acceptance of a new currency, unpegged to gold. This will take time, and is as of now, theoretical work, however the benefits of a new currency are clear, as it will allow us to have more control over our monetary policy.
+
+@root
+view-if: devaluation_progress < 2

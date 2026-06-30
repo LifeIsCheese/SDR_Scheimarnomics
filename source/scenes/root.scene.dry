@@ -93,6 +93,9 @@ Q.economic_plan = 0;
 // have we officially adopted the WTB plan?
 Q.wtb_adopted = 0;
 Q.hyperinflation = 0;
+Q.new_currency_support_card_flag = 0;
+Q.volksmark = 0;
+Q.hyperinflation_enabled = 1;
 // have we formed the iron front?
 Q.iron_front_formed = 0;
 // people's party support
@@ -973,8 +976,6 @@ For other, non-difficulty related tweaks.
 - @enable_end: Enable end in 1934.
 - @enable_normalize: Enable experimental support changes (Not Recommended)
 - @disable_normalize: Disable experimental support changes.
-- @enable_hyperinflation: Enable hyperinflation (janky)
-- @disable_hyperinflation: Disable hyperinflation
 - @1930: Begin the game in 1930.
 - @1928: Begin the game in 1928.
 - @enable_unfinished: enable unfished stuff (not recomended at all)
@@ -1040,20 +1041,6 @@ on-arrival: normalize_support = 0
 go-to: menu
 
 Experimental support changes disabled.
-
-@enable_hyperinflation
-view-if: hyperinflation_enabled != 1
-on-arrival: hyperinflation_enabled = 1
-go-to: menu
-
-Hyperinflation enabled.
-
-@disable_hyperinflation
-view-if: hyperinflation_enabled
-on-arrival: hyperinflation_enabled = 0
-go-to: menu
-
-Hyperinflation disabled.
 
 @1930
 view-if: year != 1930

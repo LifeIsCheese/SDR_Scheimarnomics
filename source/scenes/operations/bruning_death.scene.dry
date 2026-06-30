@@ -34,15 +34,17 @@ function shuffleArray(arr) {
   return arrayCopy;
 }
 
+    Q.violence_events = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 3, 0, 0];
+    Q.violence_events = shuffleArray(Q.violence_events);
+    Q.violence_events_pointer = 0;
+    Q.violence_events_id = 0;
+
     side_bar = document.getElementById("stats_sidebar_right");
     side_bar.style.display = "block";
     document.getElementById("military").style.display="block";
     window.changeTab('status_right.military', 'military', 'right');
     document.getElementById("reichsbanner").style.display="block";
-    Q.violence_events = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 3, 0, 0];
-    Q.violence_events = shuffleArray(Q.violence_events);
-    Q.violence_events_pointer = 0;
-    Q.violence_events_id = 0;
+
 !}
 go-to: set_next_election_time if spd_in_government != 1
 subtitle: (United front with democratic parties)
@@ -70,6 +72,14 @@ function shuffleArray(arr) {
   return arrayCopy;
 }
 
+    Q.weimar_strength = Math.round ((Q.army_force * Q.military_use_reluctance_multiplier) + (Q.prussia_force * (1 - Q.prussian_police_loyalty)) );
+
+    Q.far_left_strength = Math.round(Q.rfb_force + Q.loyal_prussia + Q.rb_force);
+
+    Q.far_right_strength = Math.round(Q.sa_force + Q.sh_force);
+
+    Q.bourgeois_left_willingness = (( Q.z_relation + Q.ddp_relation + Q.dvp_relation ) / 600 );
+
     side_bar = document.getElementById("stats_sidebar_right");
     side_bar.style.display = "block";
     window.changeTab('status_right.status', 'status', 'right');
@@ -78,14 +88,6 @@ function shuffleArray(arr) {
     Q.violence_events = shuffleArray(Q.violence_events);
     Q.violence_events_pointer = 0;
     Q.violence_events_id = 0;
-
-    Q.weimar_strength = Math.round ((Q.army_force * Q.military_use_reluctance_multiplier) + (Q.prussia_force * (1 - Q.prussian_police_loyalty)) );
-
-    Q.far_left_strength = Math.round(Q.rfb_force + Q.loyal_prussia + Q.rb_force);
-
-    Q.far_right_strength = Math.round(Q.sa_force + Q.sh_force);
-
-    Q.bourgeois_left_willingness = (( Q.z_relation + Q.ddp_relation + Q.dvp_relation ) / 600 );
     
 !}
 ### make an even preventing elections

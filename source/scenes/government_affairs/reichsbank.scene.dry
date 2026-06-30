@@ -38,6 +38,7 @@ Current valuation [+ deval_currency_string_2 +]%
 - @devalue_currency1: Discuss currency devaluation
 - @bribe: Maybe 1 million Reichsmarks can change his mind.
 - @pegging_menu
+- @printing_menu
 - @troll: Maybe 1 million Reichsmarks can change his mind.
 - @root: No, we're going to our own thing.
 - @easy_discard
@@ -119,8 +120,8 @@ We have to pay this back at 30% interest rate per year, for 4 years. if we go in
 
 @pegging_menu
 title: Peg the Reichsmark to gold
-choose-if: devaluation_stage >= 2 and exchange_controls != 1
-subtitle: [? if devaluation_stage < 2 : We cannot formally devalue our currency ?] [? if exchange_controls == 1 : The Reichsmark is not stable. ?]
+choose-if: devaluation_stage >= 2 and exchange_controls != 1 and volksmark != 1
+subtitle: [? if devaluation_stage < 2 : We cannot formally devalue our currency ?] [? if exchange_controls == 1 : The Reichsmark is not stable. ?] [? if volksmark == 1 : The Volksmark is already in use. ?]
 
 - @peg_higher: peg higher (+5%)
 - @peg_lower: peg lower (-5%)
@@ -172,3 +173,24 @@ on-arrival: devaluation_stage = 2; currency_value_cap = 1.3
 
 
 After or successful policies of devaluation, our party and Hans Luther, has agreed to do formal monetary devaluation. Which means pegging the Reichsmark to a higher or lower amount to gold. He has also agreed to a higher set limit of devaluation at 30%, instead of the previous 15%.
+
+@printing_menu
+title: Print money
+choose-if: devaluation_stage >= 2 and exchange_controls != 1 and volksmark == 1
+subtitle: [? if devaluation_stage < 2 : We cannot formally devalue our currency ?] [? if exchange_controls == 1 : The Reichsmark is not stable. ?] [? if volksmark != 1 : The Volksmark is not yet in use. ?]
+
+- @print_money: Print 1 budget.
+- @print_money2: Print 2 budget.
+- @reichsbank_menu: Go back.
+
+@print_money
+on-arrival: budget +=1; currency_value +=0.05; month_actions +=1; inflation += 2;
+subtitle: This will increase inflation!
+
+We have printed 1 budget.
+
+@print_money2
+on-arrival: budget +=2; currency_value +=0.1; month_actions +=1; inflation += 4;
+subtitle: This will increase inflation!
+
+We have printed 2 budget.

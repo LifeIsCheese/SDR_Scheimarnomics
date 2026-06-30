@@ -70,7 +70,7 @@ Cutting taxes benefits most the rich and middle-class, who pay more taxes than t
 view-if: wtb_adopted == 1 and budget < 3
 choose-if: upper_tax_rates >= -5 and lower_tax_rates >= -5 and not status_quo
 subtitle: -3 budget. We will enter deficit spending. [? if upper_tax_rates < -5 or lower_tax_rates < -5 : Tax rates are already too low. ?][? if status_quo : We have agreed to leave the budget untouched. ?]
-on-arrival: budget -= 3; upper_tax_rates -= 2; lower_tax_rates -= 1; new_middle_spd += 5*(1-dissent); old_middle_spd += 4*(1-dissent); workers_spd += 3*(1-dissent); dvp_relation -= 3; z_relation -= 2; unemployed -= 1 if unemployed >= 5; unemployed -= 1 if works_program > 1; capital_strike_progress -= 1 if upper_tax_rates < 0; inflation += 0.7; hyperinflation += 0.1; coalition_dissent += 1 if in_grand_coalition; center_dissent += 5; economic_growth_rate += 1; socialism -= 2
+on-arrival: budget -= 3; upper_tax_rates -= 2; lower_tax_rates -= 1; new_middle_spd += 5*(1-dissent); old_middle_spd += 4*(1-dissent); workers_spd += 3*(1-dissent); dvp_relation -= 3; z_relation -= 2; unemployed -= 1 if unemployed >= 5; unemployed -= 1 if works_program > 1; capital_strike_progress -= 1 if upper_tax_rates < 0; inflation += 0.7; hyperinflation += 0.05; coalition_dissent += 1 if in_grand_coalition; center_dissent += 5; economic_growth_rate += 1; socialism -= 2
 
 Cutting taxes benefits most the rich and middle-class, who pay more taxes than the working class. Our coalition partners are upset at our deficit spending, warning that it will lead to a repeat of the hyperinflation in the early history of our republic. The Center Marxists join in these warnings.
 
