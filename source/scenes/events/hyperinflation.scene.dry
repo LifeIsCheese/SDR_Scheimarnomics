@@ -37,7 +37,7 @@ Price controls are very unpopular with the bourgeoisie and their representatives
 @volksmark
 choose-if: devaluation_progress >= 2 and z_relation >= 40 and ddp_relation >= 50;
 on-arrival: volksmark = 1; inflation = 5; hyperinflation = 0; economic_growth = 1; 
-suntitle: [? if devaluation_progress < 3 : Decoupling the Volksmark from gold is not feasible yes, more work needs to be done convincing the party. ?] [? if z_relation < 40 : The Zentrum are not convinced of the benefits of a new currency. ?] [? if ddp_relation < 50 : The DDP are weary of the initiative. ?]
+subtitle: [? if devaluation_progress < 3 : Decoupling the Volksmark from gold is not feasible yes, more work needs to be done convincing the party. ?] [? if z_relation < 40 : The Zentrum are not convinced of the benefits of a new currency. ?] [? if ddp_relation < 50 : The DDP are weary of the initiative. ?]
 
 Finally, after support from our party, and our coalition partners, we can adopt a new currency, the Volksmark, which is completely decoupled from gold.
 
