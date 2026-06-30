@@ -2,9 +2,9 @@ title: The Volksmark question
 new-page: true
 is-card: true
 tags: govt_affairs
-view-if: devaluation_progress < 2 and new_currency_support_card_flag = 1
-card-image: img/reichstag_1.jpg
-frequency: 1000
+view-if: volksmark != 1 and new_currency_support_card_flag = 1
+card-image: img/volksmark_card_img.jpg
+frequency: 500
 
 = The Volksmark question
 
