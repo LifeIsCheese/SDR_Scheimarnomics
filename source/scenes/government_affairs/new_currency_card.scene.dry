@@ -21,7 +21,7 @@ subtitle: [? if devaluation_progress < 2 : Decoupling the Volksmark from gold is
 
 Finally, after support from our party, and our coalition partners, we can adopt a new currency, the Volksmark, which is completely decoupled from gold.
 
-@increase_currency_acceptance
+@increase_support
 view-if: devaluation_progress < 2
 on-arrival: devaluation_progress += 1; month_actions += 1;
 
