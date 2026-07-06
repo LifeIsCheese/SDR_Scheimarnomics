@@ -168,6 +168,12 @@ if (Q.month_actions >= 1) {
         }
     }
     // decrement timers
+    const fallbackTimers = ['violence', 'paramilitaries', 'kpd_influence', 'concessions', 'exchange_controls', 'kanye_actions'];
+    for (const timer of fallbackTimers) {
+        if (!Q.timers.includes(timer)) {
+            Q.timers.push(timer);
+        }
+    }
     for (timer of Q.timers) {
         if (Q[timer+'_timer'] && Q[timer+'_timer'] > 0) {
             Q[timer+'_timer'] -= 1;
@@ -1672,6 +1678,10 @@ Q.inflation *= (Q.currency_value * Q.currency_value * Q.currency_value * Q.curre
 Q.currency_value_old = Q.currency_value;
 Q.deval_currency_string = (2 - Q.currency_value) * 100;
 Q.rm_to_gold = 0.358 * (Q.deval_currency_string / 100);
+//make sure unemployment isnt over 100%
+if (Q.unemployed > 100) {
+    Q.unemployed = 100;
+}
 //base game stuff
     Q.economic_growth += Q.foreign_investment;
     Q.foreign_investment_old = Q.foreign_investment;

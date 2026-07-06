@@ -2,7 +2,7 @@ title: Monetary Policy
 new-page: true
 is-card: true
 tags: govt_affairs
-frequency: 500
+frequency: 100
 view-if: spd_in_government = 1 and reichsbank_timer == 0 and reichsbank_seized == 0
 card-image: img/Reichsbank.jpg
 go-to: @reichsbank_menu
