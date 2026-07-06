@@ -52,7 +52,7 @@ Violence Level : [+ violence_level +]%
 </div>
 #
 </div>
-#display-container-violence
+#display-container_violence
 ?]
 
 - @party
