@@ -20,7 +20,8 @@ Love Schleicher
 - @accelerate: The best way to reduce violence, is to kill the violent.
 
 @bide
-subtitle: [? if military_concessions == 5 : If we give them anymore concessions, we will get couped. ?] [? if military_concessions == 1 : -1 budget ?] [? if military_concessions == 3 : -2 budget ?]
+choose-if: budget > 0 and military_concessions < 5
+subtitle: [? if military_concessions == 5 : If we give them anymore concessions, we will get couped. ?] [? if military_concessions == 1 : -1 budget ?] [? if military_concessions == 3 : -2 budget ?] [? if budget < 1 : We are BROKE. ?]
 on-arrival: military_concessions += 1; budget -=1 if military_concessions == 0; budget -= 2 if military_concessions == 2; {!
 
 if (Q.military_concessions == 1) {
@@ -76,12 +77,17 @@ if (Q.military_concessions == 5) {
 
 @work
 subtitle: not finished but if military influence too high ts will be the only option
-choose-if: 1 == 2
+view-if: military_influence >= 75
+on-arrival: military_weariness += 15; violence_add_on += 6
+
+The military has forced our hand. We have no choice but to work with them, their influence has spread not just to government, but in our party as well.
+
 
 AHHHHHHHHHh
 
 @accelerate
-subtitle: We must accelerate our efforts. Schleicher might be a little angry
-on-arrival: violence_add_on += 3; military_weariness += 10; z_relation -= 20
+choose-if: military_influence < 75
+subtitle: We must accelerate our efforts. Schleicher might be a little angry [? if military_influence >= 75 :  The Military has far too much influence within our party. ?]
+on-arrival: violence_add_on += 6; military_weariness += 10; z_relation -= 20
 
-The Z, [? if year <= 1932 and month <= 7 : with Franz von Papen being it's main instigator ?], detest us for our intransigence to work with the Reicshwehr. 
+We must accelerate our efforts to reduce the violence in the streets. Although our response being "more killing" does not reassure the military.

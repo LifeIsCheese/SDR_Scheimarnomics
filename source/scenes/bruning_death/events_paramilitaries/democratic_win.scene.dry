@@ -5,6 +5,8 @@ new-page: true
 tags: event
 go-to: democratic if military_influence < 25; influence_25 if military_influence >= 25 and military_influence < 50; influence_50 if military_influence >=50 and military_influence < 75; military if military_influence >= 75
 
+= The End of the Civil War.
+
 @democratic
 
 The streets know now peace after 2 years of strife.
