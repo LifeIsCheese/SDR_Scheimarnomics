@@ -20,7 +20,7 @@ The streets know now peace after 2 years of strife.
 The streets know now peace after 2 years of strife.
 
 
-The death of Brüning, at first seeming to be a disaster, has led to the weimar parties grow significantly closer, and has strengthened the left wing of the party [? if wirth_ascendant : as the new parliamentary leader ?], Joseph Wirth has emphasized cooperation with the SPD rather than the far-right parties such as DNVP or NSDAP in order to protect parliamentary democracy. This has worked wonders on German Democracy with our party assuming the responsibilities of government more often than assuming opposition as it was prior. The Reichswehr however, remains only loyal to us out of goodwill, how many steps we have taken to undermine the Ebert-Groener Pact the next government would walk that step back, yet we still have the military under our good graces and command their personal loyalty.
+The death of Brüning, at first seeming to be a disaster, has led to the weimar parties grow significantly closer, and has strengthened the left wing of the party [? if wirth_ascendant : as the new parliamentary leader ?], Joseph Wirth has emphasized cooperation with the SPD. This has worked wonders on German Democracy with our party assuming the responsibilities of government more often than assuming opposition as it was prior. The Reichswehr however, remains only loyal to us out of goodwill, how many steps we have taken to undermine the Ebert-Groener Pact the next government would walk that step back, yet we still have the military under our good graces and command their personal loyalty.
 
 - @game_over: Game over.
 
@@ -28,13 +28,13 @@ The death of Brüning, at first seeming to be a disaster, has led to the weimar 
 
 The streets know now peace after this 2 years of strife.
 
-The death of Brüning has strengthened the left wing of the Center party as the newly elected parliamentary leader, Joseph Wirth has convinced Zentrum to abandon coalitioning with the DNVP or NSDAP, as he argues successfully that German Democracy would weaken for every time Zentrum coalitions with the far right rather than the SPD. This has worked until his VONC as later Zentrum leaders have begun to shift towards the right rather than maintain Wirth's sane coalition policies. The reichswehr has become disillusioned with the SPD ever since attempts to reform and reign in the military has failed. We have heard from whistleblowers that the military is planning a soft coup in order to rid themselves of government oversight but we can't risk German stability or a hard coup to eliminate our government. We answer and govern to all the people, we can't allow the military to govern as they answer only to themselves.
+We have heard from whistleblowers that the military is planning a soft coup in order to rid themselves of government oversight but we can't risk German stability or lest a hard coup to eliminate our government.
 
 - @game_over: Game over.
 
 @military
 
-The death of Brüning has given a golden card to the "Red General" as the new leader: Franz Bracht. However, instead of coalitioning with the far-right as we have expected Franz Bracht has called for coalitioning with the SPD instead. This is a welcome change however, we have become concerned with the consistent appointments at Zentrum's expense of general [? if schleicher_plot == "successful" : Bredow ?] [? if schleicher_plot != "successful" : Schleicher ?] as defense minister but yet the military remains loyal. However, a rising star within our faction calls for greater cooperation with the military led by Lothar Erdmann, he has called upon the SPD to take on a more nationalistic tone as he declares our decades of peace will not undo the justices of Versailles. It has reached many ears and has gained many voices perhaps the SPD shall change direction again.
+The death of Brüning has given a golden card to a rising star within our party that calls for greater cooperation with the military led by Lothar Erdmann, he has called upon the SPD to take on a more nationalistic tone as he declares our decades of peace will not undo the justices of Versailles. 
 
 - @game_over: Game over.
 
