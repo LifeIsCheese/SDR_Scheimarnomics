@@ -3,90 +3,60 @@ set-bg: img/map_2.jpg
 is-hand: true
 on-arrival: {!
 if (Q.advisor_action_timer <= 0) {
-Q.pinnedCardsDescription = 'Advisors - an action is available.';
+    Q.pinnedCardsDescription = 'Advisors - an action is available.';
 } else if (Q.advisor_action_timer == 1) {
-Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
+    Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
 } else {
-Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
+    Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
 !}
-
 max-cards: 3
 
-#Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
-
-[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
-
 [? if violence_timer > 0 : <div id="violence-div">
-
 #
-
-<button class="violence-container-buttons" onclick="violence_menu()">Violence</button>
-
+<button class="violence-container-buttons">Violence</button>
 #
-
 <button class="violence-container-buttons">Investigation</button>
-
 #
-
 <div id="display-container-violence">
-
 #
-
 <h1>Balance of Power</h1>
-
 #
-
 <div class="balance-container">
-
 <div class="investigation-faction-div">
-
-The Far Left: <div style="margin-top: auto;"> [+ far_left_strength +]% </div>
-
-<div class="perceived-violence"><span style="color:rgb(109, 156, 61);">***Our****</span> perceived violence : <div style="margin-top: auto;"> [+ violence_perceived_left +] </div> </div>
-
+The Far Left:
+<div style="margin-top: auto;">[+ far_left_strength +]%</div>
+<div class="perceived-violence">
+<span style="color:rgb(109, 156, 61);">Our</span> perceived violence :
+<div style="margin-top: auto;">[+ violence_perceived_left +]</div>
 </div>
-
-<div class="faction">
-
-The Republic: [+ weimar_strength +]%
-
-[? if spd_bd_position == "support_kpd" :<div class="perceived-violence">Perceived violence [+ violence_perceived_republic +]</div>?]
-
 </div>
-
 <div class="investigation-faction-div">
-
-The Far Right: <div style="margin-top: auto;"> [+ far_right_strength +]% </div>
-
-<div class="perceived-violence">Perceived violence [+ violence_perceived_right +]</div>
-
+The Republic:
+<div>[+ weimar_strength +]%</div>
+<div class="perceived-violence">
+Perceived violence [+ violence_perceived_republic +]
 </div>
-
 </div>
-
+<div class="investigation-faction-div">
+The Far Right:
+<div>[+ far_right_strength +]%</div>
+<div class="perceived-violence">
+Perceived violence [+ violence_perceived_right +]
+</div>
+</div>
+</div>
 #
-
 <h1>We have [+ violence_timer +] months to crush the paramilitaries</h1>
-
 #
-
 <div class="face-status-container">
-
 Violence Level : [+ violence_level +]%
-
 </div>
-
 #
-
 </div>
-
 #
-
 </div>
-
 #display-container-violence
-
 ?]
 
 - @party
@@ -98,169 +68,109 @@ Violence Level : [+ violence_level +]%
 - @shuffle_leadership_pinned
 
 @main_easy
-
 set-bg: img/map_2.jpg
-
 is-hand: true
-
 on-arrival: {!
 if (Q.advisor_action_timer <= 0) {
-Q.pinnedCardsDescription = 'Advisors - an action is available.';
+    Q.pinnedCardsDescription = 'Advisors - an action is available.';
 } else if (Q.advisor_action_timer == 1) {
-Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
+    Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
 } else {
-Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
+    Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
 !}
-
 max-cards: 4
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
-[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
+[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year.?]
 
 [? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
 
 [? if violence_timer > 0 : <div id="violence-div">
-
 #
-
-<button class="violence-container-buttons" onclick="violence_menu()">Violence</button>
-
+<button class="violence-container-buttons">Violence</button>
 #
-
 <button class="violence-container-buttons">Investigation</button>
-
 #
-
 <div id="display-container-violence">
-
 #
-
 <h1>Balance of Power</h1>
-
 #
-
 <div class="balance-container">
-
-<div class="investigation-faction-div">
-
+<div class="faction">
 The Far Left: <div style="margin-top: auto;"> [+ far_left_strength +]% </div>
-
-<div class="perceived-violence"><span style="color:rgb(109, 156, 61);">***Our****</span> perceived violence : <div style="margin-top: auto;"> [+ violence_perceived_left +] </div> </div>
-
+[? if spd_bd_position == "support_kpd" :<div class="perceived-violence"><span style="color:rgb(109, 156, 61);">**Our**</span> perceived violence : <div style="margin-top: auto;"> [+ violence_perceived_left +] </div> </div>?]
 </div>
-
-<div class="investigation-faction-div">
-
+<div class="faction">
 The Republic: [+ weimar_strength +]%
-
-<div class="perceived-violence">Perceived violence [+ violence_perceived_republic +]</div>
-
+[? if spd_bd_position == "support_kpd" :<div class="perceived-violence">Perceived violence [+ violence_perceived_republic +]</div>?]
 </div>
-
-<div class="investigation-faction-div">
-
+<div class="faction">
 The Far Right: [+ far_right_strength +]%
-
-<div class="perceived-violence">Perceived violence [+ violence_perceived_right +]</div>
-
+[? if spd_bd_position == "support_kpd" :<div class="perceived-violence">Perceived violence [+ violence_perceived_right +]</div>?]
 </div>
-
 </div>
-
 #
-
 <h1>We have [+ violence_timer +] months to crush the paramilitaries</h1>
-
 #
-
-<div class="face-status-container">
-
+<div class = "face-status-container">
+#
 Violence Level : [+ violence_level +]%
-
-</div>
-
 #
-
 </div>
-
 #
-
 </div>
-
+#
+</div>
 #display-container-violence
-
 ?]
 
 - @party
 - @govt
 - @paramilitaries
 - @agitation
-- @confrontation
 - #advisor
 - @shuffle_leadership_pinned
 
 @party
-
 title: Party Affairs
-
 card-image: img/Vorwaerts_nr_1.png
-
 is-deck: true
 
-* #party_affairs
+- #party_affairs
 
 @govt
-
 title: Government Affairs
-
 view-if: time >= 6 and spd_bd_position != "support_kpd"
-
 card-image: img/reichstag_2.jpg
-
 is-deck: true
 
-* #govt_affairs
+- #govt_affairs
 
 @paramilitaries
-
 view-if: violence_timer > 0 and spd_bd_position !="support_kpd"
-
 title: Fighting the Paramilitaries
-
 card-image: img/anti_paramillitary.jpg
-
 is-deck: true
 
-* #fighting_paramilitaries
+- #fighting_paramilitaries
 
 @agitation
-
 view-if: violence_timer > 0 and spd_bd_position == "support_kpd"
-
 title: Agitation
-
 card-image: img/d_rose.jpg
-
 is-deck: true
 
-* #agitation
+- #agitation
 
 @confrontation
-
 title: Shuffle Leadership
-
 view-if: 1 == 1
-
 new-page: true
-
 is-card: true
-
 is-pinned-card: true
-
 on-arrival: month_activities += 1; shuffle_leadership_timer = 6;
-
 card-image: img/vorwarts_2.jpg
-
 go-to: shuffle_leadership.rm_main
+
