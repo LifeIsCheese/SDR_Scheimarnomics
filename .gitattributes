@@ -1,0 +1,14 @@
+# Dendry source files must use LF line endings.
+#
+# The dendrynexus content parser mis-parses CRLF files: its blank-line feature
+# regex (^[ \t]*\n) also matches the \n half of a CRLF pair, because in
+# multiline mode ^ asserts after \r as well. That turns every line break inside
+# a multi-line conditional ([? if cond : ... ?]) into a paragraph break, which
+# shatters the conditional and aborts the build with:
+#   TypeError: Cannot read properties of undefined (reading 'type')
+#     at _extractPredicate (.../parsers/content.js)
+#
+# Without this rule, Windows checkouts with core.autocrlf=true get CRLF files
+# and `dendrynexus make-html` fails locally even though the committed blobs
+# (and CI, which checks out on Linux) are fine.
+*.dry text eol=lf
