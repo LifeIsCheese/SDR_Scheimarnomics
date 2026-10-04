@@ -56,22 +56,22 @@ Internal dissent: [+ dissent_percent : dissent +]
 Reichstag composition:
 
 # 1928: 30, 1930: 25, 1932: 22
-<span style="color:rgb(182, 45, 45);">**SPD**</span>: [+ spd_r +]%
-[? if sapd_formed == 1 : <span style="color:rgb(255, 93, 93);">**SAPD**</span>: [+ sapd_r +]% ?]
+SPD: [+ spd_r +]%
+[? if sapd_formed == 1 : SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-<span style="color:var(--Z-color);">**Z**</span> + <span style="color:rgb(62, 107, 206);">**BVP**</span>: [+ z_r +]%
+Z + BVP: [+ z_r +]%
 # 1928: 10, 1930: 13
-<span style="color:rgb(92, 0, 0);">**KPD**</span>: [+ kpd_r +]%
+KPD: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DstP)
-<span style="color:rgba(228, 221, 125, 1);">**DDP**</span>: [+ ddp_r +]%
+DDP: [+ ddp_r +]%
 # 1928: 9, 1930: 5
-<span style="color:rgb(187, 185, 52);">**DVP**</span>: [+ dvp_r +]%
+DVP: [+ dvp_r +]%
 # 1928: 14, 1930: 7
-<span style="color:rgb(0, 26, 255);">**DNVP**</span>: [+ dnvp_r +]%
+DNVP: [+ dnvp_r +]%
 # 1928: 3, 1930: 18
-<span style="color:rgb(100, 78, 17);">**NDSAP**</span>: [+ nsdap_r +]%
+NDSAP: [+ nsdap_r +]%
 # 1928: 9, 1930: 10
-<span style="color:rgb(107, 107, 107);">**Others**</span>: [+ other_r +]%
+Others: [+ other_r +]%
 
 [? if spd_in_government = 1 : Budget: [+ budget_2 +] ?]
 
@@ -79,19 +79,19 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 = Economics
 
-<span style="color:rgb(61, 150, 156);">**Inflation**</span>: [+ inflation_2 +]%
+<span style="color:rgb(61, 150, 156);">Inflation</span>: [+ inflation_2 +]%
 
 [? if black_thursday_seen = 1 : <span style="color:#990a0a;">**Unemployment**</span>: [+ unemployed_2 +]% ?]
 
-<span style="color:rgb(65, 131, 74);">**Economic growth**</span>: [+ economic_growth_2 +]%
+<span style="color:rgb(65, 131, 74);">Economic growth</span>: [+ economic_growth_2 +]%
 
-<span style="color:rgb(95, 131, 65);">**Economic goal**</span>: [+ economic_goal_2 +]%
+<span style="color:rgb(95, 131, 65);">Economic goal</span>: [+ economic_goal_2 +]%
 
-<span style="color:rgb(152, 158, 68);">**Interest Rates**</span>: [+ interest_rates : interest +]
+<span style="color:rgb(152, 158, 68);">Interest Rates</span>: [+ interest_rates : interest +]
 
 [? if foreign_investment > 0 : <span style="color:rgb(110, 65, 131);">**Foreign investment**</span>: +[+ foreign_investment_2 +]% to <span style="color:rgb(95, 131, 65);">**growth**</span> ?] [? if foreign_investment < 0 : <span style="color:rgba(97, 131, 65, 1);">**Capital**</span> <span style="color:rgba(131, 78, 65, 1);">**Flight**</span>: [+ foreign_investment_2 +]% to <span style="color:rgb(95, 131, 65);">**growth**</span> ?]
 
-[? if bond_debt > 0 : <span style="color:rgb(131, 65, 65);">**Annual Debt**</span>: [+ bond_debt_2 +] ?]
+[? if bond_debt > 0 : <span style="color:rgb(131, 65, 65);">Annual Debt</span>: [+ bond_debt_2 +] ?]
 
 # = Public Opinion
 
@@ -100,17 +100,17 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 = Inter-party Relations
 
 
-<span style="color:var(--Z-color);">**Z**</span>: [+ z_relation : relationships +]
+Z: [+ z_relation : relationships +]
 
-<span style="color:rgba(228, 221, 125, 1);">**DDP**</span>: [+ ddp_relation : relationships +]
+DDP: [+ ddp_relation : relationships +]
 
-<span style="color:rgb(187, 185, 52);">**DVP**</span>: [+ dvp_relation : relationships +]
+DVP: [+ dvp_relation : relationships +]
 
-<span style="color:rgb(92, 0, 0);">**KPD**</span>: [+ kpd_relation : relationships +]
+KPD: [+ kpd_relation : relationships +]
 
-<span style="color:rgb(0, 26, 255);">**DNVP**</span>: [+ dnvp_relation : relationships +]
+DNVP: [+ dnvp_relation : relationships +]
 
-<span style="color:rgb(100, 78, 17);">**NDSAP**</span>: [+ nsdap_relation : relationships +]
+NDSAP: [+ nsdap_relation : relationships +]
 
 = Internal Factions of the SPD
 
@@ -196,21 +196,21 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 (if the election were to be held now):
 
-<span style="color:rgb(182, 45, 45);">**SPD**</span>: [+ spd_votes +]%
+SPD: [+ spd_votes +]%
 
-[? if sapd_formed == 1 : <span style="color:rgb(255, 93, 93);">**SAPD**</span>: [+ sapd_votes +]% ?]
+[? if sapd_formed == 1 : SAPD: [+ sapd_votes +]% ?]
 
-<span style="color:var(--Z-color);">**Z**</span> + <span style="color:rgb(62, 107, 206);">**BVP**</span>: [+ z_votes +]%
+Z + BVP: [+ z_votes +]%
 
-<span style="color:rgb(92, 0, 0);">**KPD**</span>: [+ kpd_votes +]%
+KPD: [+ kpd_votes +]%
 
-[? if not ddp_name: <span style="color:rgba(228, 221, 125, 1);">**DDP**</span>>?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ ddp_votes +]%
+[? if not ddp_name: DDP ?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ ddp_votes +]%
 
-<span style="color:rgb(187, 185, 52);">**DVP**</span>: [+ dvp_votes +]%
+DVP: [+ dvp_votes +]%
 
-<span style="color:rgb(0, 26, 255);">**DNVP**</span>: [+ dnvp_votes +]%
+DNVP: [+ dnvp_votes +]%
 
-<span style="color:rgb(100, 78, 17);">**NDSAP**</span>: [+ nsdap_votes +]%
+NDSAP: [+ nsdap_votes +]%
 
 Others: [+ other_votes +]%
 
@@ -256,9 +256,9 @@ if (Q.capital_strike_progress) {
 
 [? if cheats == 1 : This is a net positive thing, the game will be so much more easier if you do this. ?]
 
-<span style="color:rgb(54, 43, 12);">**Coup likelihood**</span>: [? if investigate_far_right >= 1 and coup_progress >= 1 : [+ coup_progress_2 +]% ?] [? if investigate_far_right == 0 : We don't have any information on the right. ?] [? if coup_progress == 0 and investigate_far_right >= 1 : The right aren't doing anything. ?]
+<span style="color:rgb(54, 43, 12);">Coup likelihood</span>: [? if investigate_far_right >= 1 and coup_progress >= 1 : [+ coup_progress_2 +]% ?] [? if investigate_far_right == 0 : We don't have any information on the right. ?] [? if coup_progress == 0 and investigate_far_right >= 1 : The right aren't doing anything. ?]
 
-<span style="color:rgb(0, 26, 255);">**Capital strike likelihood**</span>: [? if investigate_corruption >= 1 and capital_strike_progress >= 1 : [+ capital_strike_progress_2 +]%, ?] [? if investigate_corruption == 0 : We don't have any information on big businesses. ?] [? if capital_strike_progress == 0 and investigate_corruption >= 1 : Businesses aren't doing anything. ?]
+<span style="color:rgb(0, 26, 255);">Capital strike likelihood</span>: [? if investigate_corruption >= 1 and capital_strike_progress >= 1 : [+ capital_strike_progress_2 +]%, ?] [? if investigate_corruption == 0 : We don't have any information on big businesses. ?] [? if capital_strike_progress == 0 and investigate_corruption >= 1 : Businesses aren't doing anything. ?]
 
 = The police
 
