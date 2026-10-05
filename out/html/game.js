@@ -149,7 +149,7 @@ window.disableGrayMode = function() {
     ['Others',      'rgb(107, 107, 107)'],
     ['Reichsbanner','rgb(192, 0, 0)'],
     ['RFB',         'rgb(139, 0, 0)'],
-    ['Stahlhelm',   'rgb(62, 136, 179)'],
+    ['Stalhelm',   'rgb(62, 136, 179)'],
     ['SH',          'rgb(62, 136, 179)'],
     ['SA',          'rgb(122, 60, 0)'],
     ['Prussia',     'rgb(125, 125, 125)'],
