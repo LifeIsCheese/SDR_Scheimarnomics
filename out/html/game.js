@@ -130,20 +130,7 @@ window.disableGrayMode = function() {
     }
   };
 
-  
-  // ---------------------------------------------------------------------------
   // Automatic colouring of party names.
-  //
-  // Historically every mention of a party was written out by hand in the .dry
-  // sources as <span style="color: rgb(...);">**KPD**</span>. Instead, the
-  // colours live here and window.displayText (below) wraps the keywords in a
-  // span whenever text is rendered - main prose, choice buttons and the
-  // status sidebars all go through this function.
-  //
-  // To colour another special name, just add a [keyword, colour] pair. Colours
-  // may be any CSS colour value, including a var() from game.css (see
-  // --Z-color, which is black in the light theme and white in the dark one).
-  // ---------------------------------------------------------------------------
   var partyColours = [
     // keyword       colour (matches the spans previously hard-coded in status.scene.dry)
     ['Zentrum',     'var(--Z-color)'],
@@ -159,7 +146,17 @@ window.disableGrayMode = function() {
     ['DDP',         'rgba(228, 221, 125, 1)'],
     ['DStP',        'rgba(228, 221, 125, 1)'], // ddp_name after the rename
     ['DVP',         'rgb(187, 185, 52)'],
-    ['Others',      'rgb(107, 107, 107)']
+    ['Others',      'rgb(107, 107, 107)'],
+    ['Reichsbanner','rgb(192, 0, 0)'],
+    ['RFB',         'rgb(139, 0, 0)'],
+    ['Stahlhelm',   'rgb(62, 136, 179)'],
+    ['SH',          'rgb(62, 136, 179)'],
+    ['SA',          'rgb(122, 60, 0)'],
+    ['Prussia',     'rgb(125, 125, 125)'],
+    ['Prussian',     'rgb(125, 125, 125)'],
+    ['Reichswehr',   'rgb(59, 58, 58)'],
+    ['Army',         'rgb(59, 58, 58)'],
+    ['Interior ',       'rgb(72, 81, 102)'],
   ];
 
   var escapeRegex = function(str) {

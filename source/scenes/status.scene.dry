@@ -264,7 +264,7 @@ if (Q.capital_strike_progress) {
 
 Current interior police loyalty: [+ interior_police_loyalty : loyalty +].
 
-Current prussian police loyalty: [+ prussian_police_loyalty : loyalty +]. 
+Current Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]. 
 
 Loyalty decay: [+ loyalty_decay_rate : loyalty_decay +].
 
