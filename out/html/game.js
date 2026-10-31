@@ -839,6 +839,8 @@ Q.kpd_party_leader = "Conciliators";
 Q.kpd_relation = 100;
 Q.left_strength = 60;
 Q.bruning_plot = "successful"
+Q.month_actions += 1;
+
 
 }
 
@@ -848,6 +850,8 @@ function hjalmar() {
 var Q = window.dendryUI.dendryEngine.state.qualities;
 
 Q.hjalmar_plot = "successful"
+Q.month_actions += 1;
+
 
 }
 
