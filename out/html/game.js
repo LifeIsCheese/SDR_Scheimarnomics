@@ -130,85 +130,102 @@ window.disableGrayMode = function() {
     }
   };
 
-  // Automatic colouring of party names.
-  var partyColours = [
-    // keyword       colour (matches the spans previously hard-coded in status.scene.dry)
-    ['Zentrum',     'var(--Z-color)'],
-    ['Z',           'var(--Z-color)'],
-    ['NSDAP',       'rgb(100, 78, 17)'],
-    ['NDSAP',       'rgb(100, 78, 17)'],   // the spelling used in status.scene.dry
-    ['SAPD',        'rgb(255, 93, 93)'],
-    ['DNVP',        'rgb(0, 26, 255)'],
-    ['KPD',         'rgb(92, 0, 0)'],
-    ['SPD',         'rgb(182, 45, 45)'],
-    ['BVP',         'rgb(62, 107, 206)'],
-    ['BAP',         'rgb(62, 107, 206)'],  // bvp_name after bvp_reform.scene.dry
-    ['DDP',         'rgba(228, 221, 125, 1)'],
-    ['DStP',        'rgba(228, 221, 125, 1)'], // ddp_name after the rename
-    ['DVP',         'rgb(187, 185, 52)'],
-    ['Others',      'rgb(107, 107, 107)'],
-    ['Reichsbanner','rgb(192, 0, 0)'],
-    ['RFB',         'rgb(139, 0, 0)'],
-    ['Stalhelm',   'rgb(62, 136, 179)'],
-    ['SH',          'rgb(62, 136, 179)'],
-    ['SA',          'rgb(122, 60, 0)'],
-    ['Prussia',     'rgb(125, 125, 125)'],
-    ['Prussian',     'rgb(125, 125, 125)'],
-    ['Reichswehr',   'rgb(59, 58, 58)'],
-    ['Army',         'rgb(59, 58, 58)'],
-    ['Interior ',       'rgb(72, 81, 102)'],
-    ['Center',  'var(--Z-color)'],
-  ];
 
-  var escapeRegex = function(str) {
-      return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  };
+/* Automatic colouring of party names. */
 
-  // Longest keyword first, so 'Zentrum' can never be shadowed by 'Z'.
-  partyColours.sort(function(a, b) { return b[0].length - a[0].length; });
+var partyColours = [
+    ['Zentrum', 'var(--Z-color)'],
+    ['Z', 'var(--Z-color)'],
+    ['NSDAP', 'rgb(100, 78, 17)'],
+    ['NDSAP', 'rgb(100, 78, 17)'],
+    ['SAPD', 'rgb(255, 93, 93)'],
+    ['DNVP', 'rgb(0, 26, 255)'],
+    ['KPD', 'rgb(92, 0, 0)'],
+    ['SPD', 'rgb(182, 45, 45)'],
+    ['BVP', 'rgb(62, 107, 206)'],
+    ['BAP', 'rgb(62, 107, 206)'],
+    ['DDP', 'rgba(228, 221, 125, 1)'],
+    ['DStP', 'rgba(228, 221, 125, 1)'],
+    ['DVP', 'rgb(187, 185, 52)'],
+    ['Others', 'rgb(107, 107, 107)'],
+    ['Reichsbanner', 'rgb(192, 0, 0)'],
+    ['RFB', 'rgb(139, 0, 0)'],
+    ['Stalhelm', 'rgb(62, 136, 179)'],
+    ['SH', 'rgb(62, 136, 179)'],
+    ['SA', 'rgb(122, 60, 0)'],
+    ['Prussia', 'rgb(125, 125, 125)'],
+    ['Prussian', 'rgb(125, 125, 125)'],
+    ['Reichswehr', 'rgb(59, 58, 58)'],
+    ['Army', 'rgb(59, 58, 58)'],
+    ['Interior', 'rgb(72, 81, 102)'],
+    ['Center', 'var(--Z-color)']
+];
 
-  var partyLookup = {};
-  for (var i = 0; i < partyColours.length; i++) {
-      partyLookup[partyColours[i][0]] = partyColours[i][1];
-  }
+// Escape special regex characters.
+var escapeRegex = function(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+};
 
-  // A leading (^|[^\w-]) capture group is used instead of a lookbehind, so the
-  // pattern also works in browsers without lookbehind support. The trailing
-  // (?![\w-]) keeps hyphenated forms such as 'SPD-led' out of it.
-  var partyRegex = new RegExp(
-      '(^|[^\\w-])(' +
-          partyColours.map(function(c) { return escapeRegex(c[0]); }).join('|') +
-      ')(?![\\w-])',
-      'g'
-  );
+// Match longer names first.
+partyColours.sort(function(a, b) {
+    return b[0].length - a[0].length;
+});
 
-  // Fragments handed to displayText may contain raw HTML (e.g. the '**bold**'
-  // markers arrive as <strong> and literal spans stay as tags), so tags are kept
-  // verbatim and only the text between them is coloured.
-  var colourPartyNames = function(text) {
-      return text.replace(/(<[^>]*>)|([^<]+)/g, function(segment, tag, plain) {
-          if (tag !== undefined) {
-              return tag;
-          }
-          return plain.replace(partyRegex, function(match, before, keyword) {
-              return before + '<span style="color: ' + partyLookup[keyword] + ';">' +
-                  keyword + '</span>';
-          });
-      });
-  };
+// Create colour lookup.
+var partyLookup = Object.create(null);
 
-  // This function allows you to modify the text before it's displayed.
-  // E.g. wrapping chat-like messages in spans.
-  window.displayText = function(text) {
-      if (typeof text !== 'string') {
-          return text;
-      }
-      return colourPartyNames(text);
-  };
+partyColours.forEach(function(entry) {
+    partyLookup[entry[0]] = entry[1];
+});
 
-  // This function allows you to do something in response to signals.
-  window.handleSignal = function(signal, event, scene_id) {
-  };
+// Match whole names, excluding hyphenated forms.
+var partyRegex = new RegExp(
+    '(^|[^\\w-])(' +
+    partyColours.map(function(c) {
+        return escapeRegex(c[0]);
+    }).join('|') +
+    ')(?![\\w-])',
+    'g'
+);
+
+// Colour text without modifying existing HTML tags.
+var colourPartyNames = function(text) {
+    return text.replace(
+        /(<[^>]*>)|([^<]+)/g,
+        function(match, tag, plain) {
+
+            // Preserve HTML tags unchanged.
+            if (tag !== undefined) {
+                return tag;
+            }
+
+            return plain.replace(
+                partyRegex,
+                function(match, before, keyword) {
+                    return before +
+                        '<span class="party-colour" style="color: ' +
+                        partyLookup[keyword] +
+                        ';">' +
+                        keyword +
+                        '</span>';
+                }
+            );
+        }
+    );
+};
+
+// Modify text before display.
+window.displayText = function(text) {
+    if (typeof text !== 'string') {
+        return text;
+    }
+
+    return colourPartyNames(text);
+};
+
+// Signal handler.
+window.handleSignal = function(signal, event, scene_id) {
+};
   
   // This function runs on a new page. Right now, this auto-saves.
   window.onNewPage = function() {
