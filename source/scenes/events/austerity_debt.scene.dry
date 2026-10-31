@@ -2,8 +2,7 @@ title: Austerity
 subtitle: The government implements austerity to pay back our own debts, this will not bode well for us.
 view-if: budget < 0 and bond_debt > 0
 on-arrival: workers_spd -= 10; unemployed_spd -= 10; workers_kpd += 7; workers_nsdap += 3; unemployed_kpd += 5; unemployed_nsdap += 5; left_dissent += 15; center_dissent += 10; labor_dissent += 15; reformist_dissent += 5; welfare -= bond_debt_2; budget = 0; budget += bond_debt_2; unemployed += 3; kpd_coalition_dissent += 1; kpd_relation -= 10 if in_popular_front; bond_debt = 0; {!
-Q.list_debt_amount = [];
-Q.list_debt_date = [];
+Q.debts = [];
 Q.bond_debt = 0;
 Q.bond_need_to_pay = 0;
 Q.bond_payed = 0;

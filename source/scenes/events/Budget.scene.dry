@@ -70,21 +70,21 @@ if (Q.pro_republic > 75 && Q.pro_republic > Q.older_republic) {
     Q.new_middle_dvp += ((Q.pro_republic - Q.older_republic)/2)
     Q.old_middle_dvp += (Q.pro_republic - Q.older_republic)
 }
-Q.counter = 0;
+// Debt: a year passes on every outstanding bond - interest for that year falls due,
+// and bonds that reach maturity are removed from the list.
+Q.debts = Q.debts || [];
 Q.bond_debt = 0;
-for (i in Q.list_debt_amount) {
-  if (Q.list_debt_date[Q.counter] > 0) {
-    Q.list_debt_date[Q.counter] -= 1;
-    Q.bond_debt += (Q.list_debt_amount[Q.counter] * 0.3);
+for (const debt of Q.debts) {
+  if (debt.years > 0) {
+    Q.bond_debt += debt.amount * 0.3;
+    debt.years -= 1;
+    if (debt.years === 0) {
+      Q.bond_payed -= debt.amount;
+    }
   }
-  if (Q.list_debt_date[Q.counter] == 0) {
-    Q.bond_payed -= Q.list_debt_amount[Q.counter];
-    delete Q.list_debt_date[Q.counter];
-    delete Q.list_debt_amount[Q.counter];
-  }
-  Q.counter +=1;
-  
 }
+Q.debts = Q.debts.filter((debt) => debt.years > 0);
+  
 
 if (Q.devaluation_stage >= 1) {
     if (Q.inflation > Q.economic_growth) {
@@ -184,8 +184,7 @@ view-if: bond_debt > 0 and spd_in_government
 view-if: (bond_need_to_pay - bond_payed) >= 2
 subtitle: May God help us.
 on-arrival: workers_spd -= (bond_need_to_pay - bond_payed) * 7; new_middle_spd -= (bond_need_to_pay - bond_payed) * 7; old_middle_spd -= (bond_need_to_pay - bond_payed) * 7; rural_spd -= (bond_need_to_pay - bond_payed) * 7; economic_growth /= bond_need_to_pay; economic_growth -= (bond_need_to_pay / 10); coalition_dissent += 100 if spd_in_government; {!
-Q.list_debt_amount = [];
-Q.list_debt_date = [];
+Q.debts = [];
 Q.bond_debt = 0;
 Q.bond_need_to_pay = 0;
 Q.bond_payed = 0;
@@ -198,8 +197,7 @@ fuck.
 view-if: (bond_need_to_pay - bond_payed) < 2
 subtitle: This will lose trust in the economy, despite us not owing much
 on-arrival: workers_spd -= (bond_need_to_pay - bond_payed) * 7; new_middle_spd -= (bond_need_to_pay - bond_payed) * 7; old_middle_spd -= (bond_need_to_pay - bond_payed) * 7; rural_spd -= (bond_need_to_pay - bond_payed) * 7; economic_growth /= bond_need_to_pay; coalition_dissent += 2 if spd_in_government; {!
-Q.list_debt_amount = [];
-Q.list_debt_date = [];
+Q.debts = [];
 Q.bond_debt = 0;
 Q.bond_need_to_pay = 0;
 Q.bond_payed = 0;

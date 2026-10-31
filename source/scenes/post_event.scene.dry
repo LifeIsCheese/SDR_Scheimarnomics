@@ -449,15 +449,28 @@ if (Q.assassination_partners in assassinationPartners) {
     Q.assassination_partners_string = assassinationPartners[Q.assassination_partners];
 }
 
-// Word is bond
+// Debt: work out the interest due this year and the principal still outstanding.
+// (Saves made before the debt rework stored two parallel lists; convert them once.)
+if (Q.list_debt_amount) {
+    Q.debts = Q.debts || [];
+    Q.list_debt_amount.forEach((amount, i) => {
+        const years = (Q.list_debt_date || [])[i] || 0;
+        if (amount && years > 0) {
+            Q.debts.push({ amount: amount, years: years });
+        }
+    });
+    delete Q.list_debt_amount;
+    delete Q.list_debt_date;
+}
+Q.debts = Q.debts || [];
 Q.bond_debt = 0;
 Q.bond_need_to_pay = 0;
-Q.list_debt_amount.forEach((amount, i) => {
-    if (Q.list_debt_date[i] > 0) {
-        Q.bond_debt += amount * 0.3;
-        Q.bond_need_to_pay += amount;
+for (const debt of Q.debts) {
+    if (debt.years > 0) {
+        Q.bond_debt += debt.amount * 0.3;
+        Q.bond_need_to_pay += debt.amount;
     }
-});
+}
 
 //passive focusing
 

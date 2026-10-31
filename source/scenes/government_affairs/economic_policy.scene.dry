@@ -50,7 +50,8 @@ unavailable-subtitle: [? if unemployed <= 10 : Unemployment is low enough that w
 view-if: wtb_implemented > 2 and budget < 3 and budget >= -3
 choose-if: unemployed > 10 and economic_minister_party != "DVP" and finance_minister_party == "SPD" and wtb_deficit_allowed
 on-arrival: works_program += 1; budget -= 3; workers_spd += 6*(1-dissent); workers += 2; unemployed -= 3 if unemployed > 8; unemployed_spd += 6*(1-dissent); workers_kpd -= 2; workers_nsdap -= 2; coalition_dissent += 1; coalition_dissent += 1 if in_grand_coalition; capital_strike_progress += 1; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 3; economic_growth += 1.6; economic_growth -= 0.6 if economic_growth > 5; socialism -= 4; economic_stability += 0.5; {!
-Q.list_debt_date.push(4); Q.list_debt_amount.push(Q.budget * -1); Q.budget = 0;
+// deficit spending becomes debt: the shortfall is issued as a 4-year bond
+Q.debts.push({ amount: Q.budget * -1, years: 4 }); Q.budget = 0;
 !}
 
 We have continued our implementation of the WTB-Plan, despite the continued deficit spending. In addition to public works, we are now focusing on rebuilding our industries.
@@ -87,7 +88,8 @@ unavailable-subtitle: [? if unemployed <= 8 : Unemployment is low enough that th
 view-if: budget < wtb_budget and wtb_implemented == 0 and wtb_adopted == 1
 choose-if: unemployed > 8 and economic_minister_party != "DVP" and finance_minister_party == "SPD" and wtb_deficit_allowed
 on-arrival: coalition_dissent += 1; coalition_dissent += 1 if historical_mode; coalition_dissent += 1 if chancellor == "Brüning"; works_program += 1; budget -= wtb_budget; unemployed -= 4; workers += 3; workers_spd += 8*(1-dissent); unemployed_spd += 8*(1-dissent); capital_strike_progress += 1; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 3; economic_growth += 3; coalition_dissent += 1 if in_grand_coalition; pro_republic += 3*(1-dissent); socialism -= 4; devaluation_progress +=1;  {!
-Q.list_debt_date.push(4); Q.list_debt_amount.push(Q.budget * -1); Q.budget = 0;
+// deficit spending becomes debt: the shortfall is issued as a 4-year bond
+Q.debts.push({ amount: Q.budget * -1, years: 4 }); Q.budget = 0;
 !}
 achievement: wirtschaftspolitik
 

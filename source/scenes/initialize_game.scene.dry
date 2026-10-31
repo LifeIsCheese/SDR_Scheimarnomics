@@ -228,11 +228,11 @@ Q.inflation_growth = 0.1;
 //Reichsbank
 Q.reparations_paused = 0;
 Q.bond_reform = 0;
-Q.list_debt_amount = [];
-Q.list_debt_date = [];
-Q.counter = 0;
+// Outstanding bonds, one entry per issue: { amount: principal, years: years until maturity }.
+// Interest is 30% of the principal per year (see post_event.scene.dry / Budget.scene.dry).
+Q.debts = [];
 Q.bond_debt = 0;
-Q.defualt = 0;
+Q.default = 0;
 Q.bond_payed = 0;
 Q.bond_need_to_pay = 0;
 
