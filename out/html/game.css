@@ -588,6 +588,15 @@ div.face-status-container {
     font-size: 0.8rem;
 }
 
+
+/* Keep highlighted names inline with surrounding text */
+.party-colour {
+    display: inline !important;
+    white-space: inherit;
+    float: none;
+}
+
+
 /*
  * sprite stuff- feel free to comment out/remove if not using
  */
