@@ -157,6 +157,7 @@ window.disableGrayMode = function() {
     ['Reichswehr',   'rgb(59, 58, 58)'],
     ['Army',         'rgb(59, 58, 58)'],
     ['Interior ',       'rgb(72, 81, 102)'],
+    ['Center',  'var(--Z-color)'],
   ];
 
   var escapeRegex = function(str) {
