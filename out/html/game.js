@@ -279,6 +279,7 @@ window.handleSignal = function(signal, event, scene_id) {
   window.onDisplayContent = function() {
       window.updateSidebar();
       window.updateSidebarRight();
+      restore_violence_panel();
   };
 
   /*
@@ -920,8 +921,32 @@ document.getElementById('status_right_focus').innerHTML = "We are spreading soci
 
 }
 
+// The scene recreates this panel after actions; keep the selection in saveable state.
+function restore_violence_panel() {
+  if (!document.getElementById('display-container-violence')) {
+    return;
+  }
+  var Q = window.dendryUI.dendryEngine.state.qualities;
+  if (Q.violence_panel === 'investigation' && Q.spd_bd_position === 'support_kpd') {
+    investigation_menu();
+  } else {
+    // The scene already contains the default Violence view.
+    Q.violence_panel = 'violence';
+  }
+}
+
 function investigation_menu() {
-document.getElementById('display-container-violence').innerHTML  =`
+  var container = document.getElementById('display-container-violence');
+  if (!container) {
+    return;
+  }
+  var Q = window.dendryUI.dendryEngine.state.qualities;
+  if (Q.spd_bd_position !== 'support_kpd') {
+    violence_menu();
+    return;
+  }
+  Q.violence_panel = 'investigation';
+  container.innerHTML =`
 
     <h1>Who Really Killed Heinrich Brüning?</h1>
     <div class="balance-container">
@@ -950,30 +975,36 @@ document.getElementById('display-container-violence').innerHTML  =`
 }
 
 function violence_menu() {
-  document.getElementById('display-container-violence').innerHTML = `
+  var container = document.getElementById('display-container-violence');
+  if (!container) {
+    return;
+  }
+  var Q = window.dendryUI.dendryEngine.state.qualities;
+  Q.violence_panel = 'violence';
+  container.innerHTML = `
     <h1>Balance of Power</h1>
 
     <div class="balance-container">
       <div class="investigation-faction-div">
         The Far Left:
         <div style="margin-top: auto;">${Q.far_left_strength}%</div>
-        <div class="perceived-violence"><span style="color:rgb(109, 156, 61);">Our</span> perceived violence : <div style="margin-top: auto;"> ${Q.violence_perceived_left} </div> </div>
+        ${Q.spd_bd_position === 'support_kpd' ? `<div class="perceived-violence"><span style="color:rgb(109, 156, 61);">Our</span> perceived violence : <div style="margin-top: auto;"> ${Q.violence_perceived_left} </div> </div>` : ''}
       </div>
 
       <div class="investigation-faction-div">
         The Republic:
         <div>${Q.weimar_strength}%</div>
-        <div class="perceived-violence">Perceived violence ${Q.violence_perceived_republic}</div>
+        ${Q.spd_bd_position === 'support_kpd' ? `<div class="perceived-violence">Perceived violence ${Q.violence_perceived_republic}</div>` : ''}
       </div>
 
       <div class="investigation-faction-div">
         The Far Right:
         <div>${Q.far_right_strength}%</div>
-        <div class="perceived-violence">Perceived violence ${Q.violence_perceived_right}</div>
+        ${Q.spd_bd_position === 'support_kpd' ? `<div class="perceived-violence">Perceived violence ${Q.violence_perceived_right}</div>` : ''}
       </div>
     </div>
 
-    <h1>We have ${Q .violence_timer} months to crush the paramilitaries</h1>
+    <h1>We have ${Q.violence_timer} months to crush the paramilitaries</h1>
 
     <div class="face-status-container">
       Violence Level : ${Q.violence_level}%
