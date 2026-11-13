@@ -11,4 +11,5 @@
 # Without this rule, Windows checkouts with core.autocrlf=true get CRLF files
 # and `dendrynexus make-html` fails locally even though the committed blobs
 # (and CI, which checks out on Linux) are fine.
+# Repository configuration
 *.dry text eol=lf

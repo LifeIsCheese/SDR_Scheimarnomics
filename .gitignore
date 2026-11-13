@@ -8,3 +8,4 @@ dist/
 *.exe
 *.zip
 .env
+# Repository configuration
