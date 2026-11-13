@@ -54,7 +54,7 @@ on-arrival: sa_strength *= 0.9; sa_strength *= 0.75 if prussian_police_loyalty >
 As it turns out, the Nazi SA has many allies in the police and bureaucracy. Our relationship with the police weakens, and the SA can still organize illegally, right under the police's noses. [? if prussian_police_loyalty >= 0.7 : Nevertheless, the SA is substantially weakend by our ban. ?] 
 
 @unban_sa
-view-if: sa_banned = 1
+view-if: sa_banned = 1 and violence_timer <= 0
 on-arrival: sa_banned = 0; sa_strength += 100; sa_militancy += 0.05
 
 The SA is no longer banned. They immediately go on a recruiting spree.
@@ -66,20 +66,20 @@ view-if: sh_banned == 0
 [? if president == "Hindenburg": Banning the Stahlhelm weakens our relationship with President Hindenburg, as well as the political right and the police. ?][? if president != "Hindenburg": Banning the Stahlhelm weakens our relationship with the political right and the police. ?] [? if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg" : It also weakens our coalition due to the influence of Hindenburg on the right wing of our coalition. ?] In addition, the Stahlhelm still operates out of public sight. 
 
 @unban_sh
-view-if: sh_banned = 1
+view-if: sh_banned = 1 and violence_timer <= 0
 on-arrival: sh_banned = 0; sh_strength += 100
 
 The Stahlhelm is no longer banned.
 
 
 @ban_rfb
-view-if: communist_coalition < 3 and rfb_banned = 0
+view-if: communist_coalition < 3 and rfb_banned = 0 and spd_bd_position != "support_kpd"
 on-arrival: kpd_relation -= 15; rfb_strength -= 50; rfb_banned = 1; communist_coalition -= 1; z_relation += 5; dvp_relation += 5; prussian_police_loyalty += 0.1
 
 The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The Communists take this as one more reason why the Socialists are traitors to the left. However, the moderate and center-right parties approve, as do the police.
 
 @unban_rfb
-view-if: rfb_banned = 1
+view-if: rfb_banned = 1 and ( violence_timer <= 0 or (spd_bd_position == "support_kpd" ) )
 on-arrival: rfb_banned = 0; rfb_strength += 50; prussian_police_loyalty -= 0.1
 
 The Communist RFB is no longer banned.
