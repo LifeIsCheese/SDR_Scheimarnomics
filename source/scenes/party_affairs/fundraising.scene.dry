@@ -10,7 +10,7 @@ tags: party_affairs
 
 = Fundraising
 
-[? if violence <= 0 : For better or for worse, the party cannot exist without money. ?] 
+[? if violence_timer <= 0 : For better or for worse, the party cannot exist without money. ?] 
 
 - @maintain: Maintain our current dues.
 - @reduce: Reduce dues.
@@ -39,8 +39,6 @@ Our members grumble at this, and some of the less committed members leave. But n
 [? if unemployed >= 15 : Because of the presently high unemployment, our members are feeling the extra burden hard. ?]
 
 @emergency
-
-= Emergency Fundraising
 
 [? if spd_bd_position == "support_kpd" : Cut off from government, we may need to rely more heavily on internal fundraising. ?]
 [? if spd_bd_position != "support_kpd" : During times of crisis, perhaps it is necessary to increase our fees. ?]
