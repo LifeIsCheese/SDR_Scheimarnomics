@@ -79,17 +79,17 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 = Economics
 
-<span style="color:rgb(61, 150, 156);">Inflation</span>: [+ inflation_2 +]%
+Inflation: [+ inflation_2 +]%
 
 [? if black_thursday_seen = 1 : <span style="color:#990a0a;">**Unemployment**</span>: [+ unemployed_2 +]% ?]
 
-<span style="color:rgb(65, 131, 74);">Economic growth</span>: [+ economic_growth_2 +]%
+Economic Growth: [+ economic_growth_2 +]%
 
-<span style="color:rgb(95, 131, 65);">Economic goal</span>: [+ economic_goal_2 +]%
+Economic Goal: [+ economic_goal_2 +]%
 
 <span style="color:rgb(152, 158, 68);">Interest Rates</span>: [+ interest_rates : interest +]
 
-[? if foreign_investment > 0 : <span style="color:rgb(110, 65, 131);">**Foreign investment**</span>: +[+ foreign_investment_2 +]% to <span style="color:rgb(95, 131, 65);">**growth**</span> ?] [? if foreign_investment < 0 : <span style="color:rgba(97, 131, 65, 1);">**Capital**</span> <span style="color:rgba(131, 78, 65, 1);">**Flight**</span>: [+ foreign_investment_2 +]% to <span style="color:rgb(95, 131, 65);">**growth**</span> ?]
+[? if foreign_investment > 0 : Foreign Investment: +[+ foreign_investment_2 +]% to <span style="color:rgb(95, 131, 65);">**Growth**</span> ?] [? if foreign_investment < 0 : <span style="color:rgba(97, 131, 65, 1);">**Capital**</span> <span style="color:rgba(131, 78, 65, 1);">**Flight**</span>: [+ foreign_investment_2 +]% to <span style="color:rgb(95, 131, 65);">**Growth**</span> ?]
 
 [? if bond_debt > 0 : <span style="color:rgb(131, 65, 65);">Annual Debt</span>: [+ bond_debt_2 +] ?]
 
@@ -314,7 +314,7 @@ Focus: [? if director_type == 1 or director_type == 3 : Operations ?] [? if dire
 
 = Effects
 
-[? if plot_target == "hjalmar" : Reichsbank can be influenced. RFB banned. <span style="color:var(--Z-color);">**Z**</span> max relations (secret oooh). ?]
+[? if plot_target == "hjalmar" : Reichsbank can be influenced. RFB banned. Z max relations (secret oooh). ?]
 [? if plot_target == "bruning" : The Streets will burn, will the republic stand? ?]
 [? if plot_target == "rohm" : Hampered SA. ?]
 [? if plot_target == "leow" : Hampered RFB, and reduced influence. ?]

@@ -134,6 +134,13 @@ window.disableGrayMode = function() {
 /* Automatic colouring of party names. */
 
 var partyColours = [
+    ['Inflation', 'rgb(61, 150, 156)'],
+    ['Economic Growth', 'rgb(65, 131, 74)'],
+    ['Economic growth', 'rgb(65, 131, 74)'],
+    ['Economic Goal', 'rgb(95, 131, 65)'],
+    ['Economic goal', 'rgb(95, 131, 65)'],
+    ['Foreign Investment', 'rgb(110, 65, 131)'],
+    ['Foreign investment', 'rgb(110, 65, 131)'],
     ['Zentrum', 'var(--Z-color)'],
     ['Z', 'var(--Z-color)'],
     ['NSDAP', 'rgb(100, 78, 17)'],
