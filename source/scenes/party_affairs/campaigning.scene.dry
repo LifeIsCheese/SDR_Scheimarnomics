@@ -6,7 +6,7 @@ is-card: true
 card-image: img/flags.jpg
 frequency: 100
 tags: party_affairs
-view-if: violence_timer <= 0 or (spd_bd_position != "support_kpd" and time_to_election >= 0 and time_to_election <= 3)
+view-if: violence_timer <= 0 or (spd_bd_position != "support_kpd" and next_election_time >= time and next_election_time <= time + 3)
 
 = Campaigning
 
