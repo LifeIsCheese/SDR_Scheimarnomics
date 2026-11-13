@@ -15,8 +15,8 @@ max-cards: 3
 # Balance of Power panel (violence_timer > 0). Keep in sync by hand with the copy in @main_easy.
 [? if violence_timer > 0 :
     <div id="violence-div">
-        <button class="violence-container-buttons" onclick="violence_menu()">Violence</button>
-        [? if spd_bd_position == "support_kpd" : <button class="violence-container-buttons" onclick="investigation_menu()">Investigation</button> ?]
+        <button class="violence-container-buttons">Violence</button>
+        [? if spd_bd_position == "support_kpd" : <button class="violence-container-buttons" onclick ="investigation_menu()">Investigation</button> ?]
         <div id="display-container-violence">
             <h1>Balance of Power</h1>
             <div class="balance-container">
@@ -80,8 +80,8 @@ max-cards: 4
 # Balance of Power panel - copy of the one in @main (dendry has no include syntax).
 [? if violence_timer > 0 :
     <div id="violence-div">
-        <button class="violence-container-buttons" onclick="violence_menu()">Violence</button>
-        [? if spd_bd_position == "support_kpd" : <button class="violence-container-buttons" onclick="investigation_menu()">Investigation</button> ?]
+        <button class="violence-container-buttons">Violence</button>
+        [? if spd_bd_position == "support_kpd" : <button class="violence-container-buttons" onclick ="investigation_menu()">Investigation</button> ?]
         <div id="display-container-violence">
             <h1>Balance of Power</h1>
             <div class="balance-container">
