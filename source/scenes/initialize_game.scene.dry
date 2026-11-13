@@ -393,8 +393,8 @@ Q.spd_suspicion_level = 0;
 
 Q.kpd_suspicion_descriptions = [
     "Only a fringe few think the KPD is guilty for BrÃ¼ning's death.",
-    "Some in the republic suspect that the KPD played a role in BrÃ¼ning's death. ",
-    "A majority of parliament suspect that the KPD played a role in BrÃ¼ning's death, but public opinion is changing.",
+    "Some in the republic suspect that the KPD played a role in Bruning's death. ",
+    "A majority of parliament suspect that the KPD played a role in Bruning's death, but public opinion is changing.",
     "The republic thinks that the KPD is complicit in BrÃ¼ning's death."
 ];
 Q.kpd_suspicion_level = 3;
