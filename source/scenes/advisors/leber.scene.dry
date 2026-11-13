@@ -67,7 +67,7 @@ go-to: peoples_party
 @campaigning_peoples_party
 title: Campaigning as a People's Party
 subtitle: Campaigning with some of our previously nontraditional demographics.
-view-if: peoples_party = 1 and (violence_timer <= 0 or (spd_bd_position != "support_kpd" and time_to_election >= 0 and time_to_election <= 3))
+view-if: peoples_party = 1 and (violence_timer <= 0 or (spd_bd_position != "support_kpd" and next_election_time >= time and next_election_time <= time + 3))
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1

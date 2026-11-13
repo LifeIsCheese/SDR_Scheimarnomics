@@ -2,7 +2,7 @@ title: Media
 new-page: true
 is-card: true
 tags: party_affairs
-view-if: media_timer <= 0 or violence_timer <= 0
+view-if: media_timer <= 0 and violence_timer <= 0
 on-arrival: month_actions += 1; media_timer += 6;
 card-image: img/sangerbund.jpg
 #subtitle: Setting the direction for our newspapers and radio.
@@ -33,7 +33,7 @@ on-arrival: resources += 1; commercialized_media += 1; new_middle_spd += 4*(1 - 
 Our commercialized newspapers are able to bring in more funds. However, the left and labor factions express their displeasure.
 
 @campaign
-view-if: violence_timer <= 1 or (spd_bd_position != "support_kpd" and time_to_election >= 0 and time_to_election <= 3)
+view-if: violence_timer <= 0 or (spd_bd_position != "support_kpd" and next_election_time >= time and next_election_time <= time + 3)
 title: The purpose of our media is to elect more Social Democrats.
 subtitle: Our newspapers will focus on the electoral campaign.
 on-arrival: campaign_media += 1; workers_spd += 4*(1 - dissent); unemployed_spd += 2*(1-dissent);
