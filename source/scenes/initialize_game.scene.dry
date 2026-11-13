@@ -109,7 +109,7 @@ Q.NSDAP_relation = 0;
 
 Q.kpd_leader = "ThÃ¤lmann";
 Q.kpd_party_leader = "ThÃ¤lmann";
-Q.z_leader = "BrÃ¼ning";
+Q.z_leader = "Brüning";
 // party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the SPD.
 Q.z_party_leader = "Marx";
 Q.nsdap_leader = "Hitler";
@@ -392,10 +392,10 @@ Q.spd_suspicion_descriptions = [
 Q.spd_suspicion_level = 0;
 
 Q.kpd_suspicion_descriptions = [
-    "Only a fringe few think the KPD is guilty for BrÃ¼ning's death.",
-    "Some in the republic suspect that the KPD played a role in Bruning's death. ",
-    "A majority of parliament suspect that the KPD played a role in Bruning's death, but public opinion is changing.",
-    "The republic thinks that the KPD is complicit in BrÃ¼ning's death."
+    "Only a fringe few think the KPD is guilty for Brüning's death.",
+    "Some in the republic suspect that the KPD played a role in Brüning's death. ",
+    "A majority of parliament suspect that the KPD played a role in Brüning's death, but public opinion is changing.",
+    "The republic thinks that the KPD is complicit in Brüning's death."
 ];
 Q.kpd_suspicion_level = 3;
 

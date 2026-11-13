@@ -946,6 +946,10 @@ function investigation_menu() {
     return;
   }
   Q.violence_panel = 'investigation';
+  // Older saves contain descriptions with a misencoded umlaut.
+  Q.kpd_suspicion_descriptions = Q.kpd_suspicion_descriptions.map(function(text) {
+    return text.replace(/Br(?:\u00c3\u00bc|u)ning/g, 'Br\u00fcning');
+  });
   container.innerHTML =`
 
     <h1>Who Really Killed Heinrich Brüning?</h1>
