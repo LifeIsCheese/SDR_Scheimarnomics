@@ -39,6 +39,7 @@ on-arrival: resources -= 1; workers_aid += 1; unemployed_spd += 5*(1 - dissent);
 We have increased funding to Workers' Welfare. [? if black_thursday_seen > 0 : In an age of economic crisis, this will be helpful for improving our standing among the unemployed. ?]
 
 @culture
+view-if: violence_timer <= 0
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources

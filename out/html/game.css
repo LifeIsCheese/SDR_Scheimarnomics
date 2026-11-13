@@ -592,6 +592,7 @@ div.face-status-container {
 /* Keep highlighted names inline with surrounding text */
 .party-colour {
     display: inline !important;
+    font-weight: bold;
     white-space: inherit;
     float: none;
 }

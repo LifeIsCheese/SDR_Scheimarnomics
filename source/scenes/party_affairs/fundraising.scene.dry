@@ -1,7 +1,8 @@
 title: Fundraising
 new-page: true
-view-if: fundraising_timer <= 0 and (not historical_mode)
+view-if: fundraising_timer <= 0 and ((not historical_mode) or violence_timer > 0)
 on-arrival: fundraising_timer = 6; month_actions += 1
+go-to: emergency if violence_timer > 0
 frequency: 300
 is-card: true
 card-image: img/poster_2.jpg
@@ -36,4 +37,53 @@ view-if: dues <= 4
 Our members grumble at this, and some of the less committed members leave. But now, we have access to additional resources. 
 
 [? if unemployed >= 15 : Because of the presently high unemployment, our members are feeling the extra burden hard. ?]
+
+@emergency
+
+= Emergency Fundraising
+
+[? if spd_bd_position == "support_kpd" : Cut off from government, we may need to rely more heavily on internal fundraising. ?]
+[? if spd_bd_position != "support_kpd" : During times of crisis, perhaps it is necessary to increase our fees. ?]
+
+- @emergency_regular: Collect regular contributions.
+- @emergency_solidarity: Launch a solidarity appeal.
+- @emergency_levy: Request an extraordinary levy.
+- @emergency_unions: Seek trade-union support.
+- @emergency_relief: Reduce the burden on distressed members.
+
+@emergency_regular
+subtitle: [+ dues +] resources gained.
+on-arrival: resources += dues
+
+We do not have a need for a a large amount of capital, for now...
+
+@emergency_solidarity
+subtitle: [+ dues + 1 +] resources gained; +1 more with an established welfare network.
+choose-if: dissent < 0.3
+unavailable-subtitle: Party divisions prevent a coordinated appeal.
+on-arrival: resources += dues + 1; resources += 1 if workers_aid >= 2
+
+The workers support us in droves! This is owed to our party cohesion[? if workers_aid >= 2 : and our established welfare network ?].
+
+@emergency_levy
+subtitle: [+ dues + 2 +] resources gained. Some in our party will be unhappy with this.
+on-arrival: resources += dues + 2; left_dissent += 2; center_dissent += 2; reformist_dissent += 2; labor_dissent += 2
+
+We put a massive emergency levy on our party memebers. This is not popular, but we gotta ( rewrite later ).
+@emergency_unions
+subtitle: [+ dues + 2 +] resources gained. +10 labor dissent.
+view-if: not unions_independent
+choose-if: labor_dissent < 40
+unavailable-subtitle: The unions are unwilling to make an extraordinary contribution.
+on-arrival: resources += dues + 2; labor_dissent += 10
+
+The unions reluctantly agree to make large contributions to the party, but are understandably unhappy about it.
+
+@emergency_relief
+subtitle: [+ dues - 1 +] resources gained.
+choose-if: dues > 1
+unavailable-subtitle: Contributions cannot be reduced further while keeping the party funded.
+on-arrival: resources += dues - 1; left_dissent -= 6; center_dissent -= 6; reformist_dissent -= 6; labor_dissent -= 6; neorevisionist_dissent -= 6
+
+ We temporarily reduce the burden on our members, decreasing dissent.
 

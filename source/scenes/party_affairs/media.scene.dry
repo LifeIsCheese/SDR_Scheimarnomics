@@ -11,6 +11,8 @@ card-image: img/sangerbund.jpg
 
 The SPD runs a veritable media empire, with many newspapers throughout every German city and region. We could use the media for various purposes...
 
+[? if violence_timer > 2 : PLACEHOLDER: We can't campaign at this moment. ?]
+
 - @commercial
 - @campaign
 - @ideological
@@ -23,6 +25,7 @@ The SPD runs a veritable media empire, with many newspapers throughout every Ger
 - @cancel_advisor_action
 
 @commercial
+view-if: violence_timer <= 1
 title: Make our newspapers more commercialized by broadening their appeal beyond party supporters.
 subtitle: This might upset ideological purists, but it may bring in more funds and perhaps expose the middle class to socialist views.
 on-arrival: resources += 1; commercialized_media += 1; new_middle_spd += 4*(1 - dissent); old_middle_spd += 3*(1-dissent); left_dissent += 10; labor_dissent += 10
@@ -30,6 +33,7 @@ on-arrival: resources += 1; commercialized_media += 1; new_middle_spd += 4*(1 - 
 Our commercialized newspapers are able to bring in more funds. However, the left and labor factions express their displeasure.
 
 @campaign
+view-if: violence_timer <= 1 or (spd_bd_position != "support_kpd" and time_to_election >= 0 and time_to_election <= 3)
 title: The purpose of our media is to elect more Social Democrats.
 subtitle: Our newspapers will focus on the electoral campaign.
 on-arrival: campaign_media += 1; workers_spd += 4*(1 - dissent); unemployed_spd += 2*(1-dissent);
@@ -37,6 +41,7 @@ on-arrival: campaign_media += 1; workers_spd += 4*(1 - dissent); unemployed_spd 
 Our campaign media is mostly reaching the workers who are already saturated with Socialist propaganda, but it must be doing *something*, or at least that is what we hope.
 
 @ideological
+view-if: violence_timer <= 1
 title: We will have vibrant ideological debate within our newspapers.
 subtitle: There will be space for all factions to air their views.
 on-arrival: left_dissent -= 6; labor_dissent -= 6; center_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6

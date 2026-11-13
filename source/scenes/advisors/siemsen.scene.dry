@@ -15,6 +15,7 @@ Anna Siemsen is an and educational reform advocate and pacifist, who was one of 
 - @root: Return to main
 
 @campaign_pacifism
+view-if: violence_timer <= 0 or (spd_bd_position != "support_kpd" and time_to_election >= 0 and time_to_election <= 3)
 title: Rally for pacifism.
 subtitle: Campaign for internationalism and against militarism.
 choose-if: advisor_action_timer = 0
@@ -24,6 +25,7 @@ go-to: rally.pacifism
 
 
 @curriculum_
+view-if: violence_timer <= 0
 title: Change the educational curriculum.
 choose-if: advisor_action_timer = 0 and spd_in_government and chancellor_party = "SPD" and spd_prussia and curriculum_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not currently in government. ?][? if chancellor_party != "SPD": The SPD must control the chancellorship. ?][? if not spd_prussia: The SPD must control the Prussian government. ?][? if curriculum_timer > 0 : It is too early to change the curriculum again. ?]
@@ -32,6 +34,7 @@ go-to: education_science.curriculum
 
 
 @structure_
+view-if: violence_timer <= 0
 title: Change the structure and funding of education.
 choose-if: advisor_action_timer = 0 and spd_in_government and chancellor_party = "SPD" and spd_prussia
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not currently in government. ?][? if chancellor_party != "SPD": The SPD must control the chancellorship. ?][? if not spd_prussia: The SPD must control the Prussian government. ?]

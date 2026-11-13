@@ -2,7 +2,7 @@ title: Political Rally
 new-page: true
 is-card: true
 tags: party_affairs
-view-if: rally_timer <= 0
+view-if: rally_timer <= 0 and (violence_timer <= 0 or (spd_bd_position != "support_kpd" and time_to_election >= 0 and time_to_election <= 3))
 on-arrival: month_actions += 1; rally_timer = 6
 card-image: img/protest.jpg
 go-to: main_rally; sa_disrupt if sa_strength > 180 and not sa_banned and not return_to_normalcy

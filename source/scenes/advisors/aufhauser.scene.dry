@@ -51,6 +51,7 @@ on-arrival: advisor_action_timer = 6
 go-to: crisis_program.support_moderate
 
 @radicalize_middle
+view-if: violence_timer <= 0
 title: Radicalize the new middle class.
 subtitle: Awaken the class consciousness of the white collar worker.
 choose-if: socialism >= 54 and new_middle_spd_normalized >= 10
