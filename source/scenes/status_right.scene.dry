@@ -148,36 +148,36 @@ Military Weariness: [+ military_weariness +]%
 
 Undecided:
 
-[? if dvp_alignment < 10 and dvp_alignment > 0 : <span style="color:rgb(187, 185, 52);">**DVP**</span> : [+ dvp_alignment : alignment +] ?]
+[? if dvp_alignment >= 10 : DVP : [+ dvp_alignment : alignment +] ?]
 
 [? if dvp_alignment < 10 and dvp_alignment > 0 : [? if dvp_alignment == dvp_willing_alignment : We must reach out to them. ?] ?]
 
 [? if dvp_alignment < 10 and dvp_alignment > 0 : [? if violence_level < 33 : They will not be convinced of joining a side until violence is high enough. ?] ?]
 
-<span style="color:rgb(107, 107, 107);">**Others**</span>
+Others
 
 The Far Left:
 
-<span style="color:rgb(92, 0, 0);">**KPD**</span>
+KPD
 
-[? if spd_bd_position == "support_kpd" :<span style="color:rgb(182, 45, 45);">**SPD**</span>  ?]
+[? if spd_bd_position == "support_kpd" :SPD  ?]
 
-[? if spd_bd_position == "support_kpd" and sapd_formed :<span style="color:rgb(255, 93, 93);">**SAPD**</span>  ?]
+[? if spd_bd_position == "support_kpd" and sapd_formed :SAPD  ?]
 
 The Republic:
 
-[? if spd_bd_position != "support_kpd" :<span style="color:rgb(182, 45, 45);">**SPD**</span>  ?]
-[? if spd_bd_position != "support_kpd" and sapd_formed :<span style="color:rgb(255, 93, 93);">**SAPD**</span>  ?]
-<span style="color:var(--Z-color);">**Z**</span>
-<span style="color:rgb(62, 107, 206);">**BVP**</span>
-<span style="color:rgba(228, 221, 125, 1);">**DDP**</span>
-[? if dvp_alignment >= 10 : <span style="color:rgb(187, 185, 52);">**DVP**</span> ?]
+[? if spd_bd_position != "support_kpd" :SPD  ?]
+[? if spd_bd_position != "support_kpd" and sapd_formed :SAPD  ?]
+Z
+BVP
+DDP
+[? if dvp_alignment >= 10 : DVP ?]
 
 The Far Right:
 
-<span style="color:rgb(0, 26, 255);">**DNVP**</span>
-<span style="color:rgb(100, 78, 17);">**NDSAP**</span>
-[? if dvp_alignment <= 0 : <span style="color:rgb(187, 185, 52);">**DVP**</span> ?]
+DNVP
+NDSAP
+[? if dvp_alignment <= 0 : DVP ?]
 
 @reichsbanner
 
