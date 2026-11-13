@@ -103,7 +103,7 @@ if (Q.bourgeois_left_willingness) {
 = The Reichswehr
 
 <div class = "face-status-container">
-[+ military_reluctance : military_reluctance +]
+<p style="margin: 0;">[+ military_reluctance : military_reluctance +]</p>
 </div>
 = Focus
 
