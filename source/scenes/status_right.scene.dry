@@ -111,7 +111,7 @@ if (Q.bourgeois_left_willingness) {
     <p id="status_right_focus"> [? if united_focus == "unity" : We are focusing on uniting the RFB and Reichsbanner as a proper united front. ?] [? if united_focus == "outreach" : We are reaching out to the leftwing of the Z and DDP. ?] [? if united_focus == "sympathy" : We are spreading socialist sympathy within the army. ?] </p>
 </div>
 <div class = "face-status-container">
-    <button class = "status_button" onclick ="unity_focus()">Unity</button>
+     [? if rfb_rb_unity < 1 : <button class = "status_button" onclick ="unity_focus()">Unity</button> ?]
     <button class = "status_button" onclick ="outreach_focus()">Outreach</button>
     <button class = "status_button" onclick ="sympathy_focus()">Sympathy</button>
 </div>

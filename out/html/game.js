@@ -897,28 +897,22 @@ var Q = window.dendryUI.dendryEngine.state.qualities;
 }
 
 function unity_focus() {
-var Q = window.dendryUI.dendryEngine.state.qualities;
-
-Q.united_focus = "unity"
-document.getElementById('status_right_focus').innerHTML = "We are focusing on uniting the RFB and Reichsbanner as a proper united front.";
-
+  set_united_focus('unity');
 }
 
 function outreach_focus() {
-var Q = window.dendryUI.dendryEngine.state.qualities;
-
-Q.united_focus = "outreach"
-document.getElementById('status_right_focus').innerHTML = "We are reaching out to the leftwing of the Z and DDP.";
-
-
+  set_united_focus('outreach');
 }
 
 function sympathy_focus() {
-var Q = window.dendryUI.dendryEngine.state.qualities;
+  set_united_focus('sympathy');
+}
 
-Q.united_focus = "sympathy"
-document.getElementById('status_right_focus').innerHTML = "We are spreading socialist sympathy within the army.";
-
+function set_united_focus(focus) {
+  var Q = window.dendryUI.dendryEngine.state.qualities;
+  Q.united_focus = focus;
+  // Render the scene again so focus text uses the same formatting as initial display.
+  window.updateSidebarRight();
 }
 
 // The scene recreates this panel after actions; keep the selection in saveable state.
