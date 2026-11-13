@@ -157,7 +157,6 @@ var partyColours = [
     ['Prussian', 'rgb(125, 125, 125)'],
     ['Reichswehr', 'rgb(59, 58, 58)'],
     ['Army', 'rgb(59, 58, 58)'],
-    ['Interior', 'rgb(72, 81, 102)'],
     ['Center', 'var(--Z-color)']
 ];
 

@@ -1,6 +1,6 @@
 title: Fundraising
 new-page: true
-view-if: fundraising_timer <= 0 and ((not historical_mode) or violence_timer > 0)
+view-if: fundraising_timer <= 0 and ((not historical_mode))
 on-arrival: fundraising_timer = 6; month_actions += 1
 go-to: emergency if violence_timer > 0
 frequency: 300
@@ -10,7 +10,7 @@ tags: party_affairs
 
 = Fundraising
 
-For better or for worse, the party cannot exist without money.
+[? if violence <= 0 : For better or for worse, the party cannot exist without money. ?] 
 
 - @maintain: Maintain our current dues.
 - @reduce: Reduce dues.
