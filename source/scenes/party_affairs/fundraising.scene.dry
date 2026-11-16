@@ -53,7 +53,7 @@ Our members grumble at this, and some of the less committed members leave. But n
 subtitle: [+ dues +] resources gained.
 on-arrival: resources += dues
 
-We do not have a need for a a large amount of capital, for now...
+We do not have a need for a large amount of capital, for now...
 
 @emergency_solidarity
 subtitle: [+ dues + 1 +] resources gained; +1 more with an established welfare network.
@@ -61,7 +61,7 @@ choose-if: dissent < 0.3
 unavailable-subtitle: Party divisions prevent a coordinated appeal.
 on-arrival: resources += dues + 1; resources += 1 if workers_aid >= 2
 
-The workers support us in droves! This is owed to our party cohesion[? if workers_aid >= 2 : and our established welfare network ?].
+make this sound better later : The workers support us in droves! This is owed to our party cohesion[? if workers_aid >= 2 : and our established welfare network ?].
 
 @emergency_levy
 subtitle: [+ dues + 2 +] resources gained. Some in our party will be unhappy with this.

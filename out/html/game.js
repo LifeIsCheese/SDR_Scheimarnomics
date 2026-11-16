@@ -142,7 +142,7 @@ var partyColours = [
     ['Foreign Investment', 'rgb(110, 65, 131)'],
     ['Foreign investment', 'rgb(110, 65, 131)'],
     ['Zentrum', 'var(--Z-color)'],
-    ['Z', 'var(--Z-color)'],
+    ['Z ', 'var(--Z-color)'],
     ['NSDAP', 'rgb(100, 78, 17)'],
     ['NDSAP', 'rgb(100, 78, 17)'],
     ['SAPD', 'rgb(255, 93, 93)'],
