@@ -1,5 +1,5 @@
 title: A great Heist
-view-if: bruning_plot == "successful" and paramilitaries_timer == 0 and spd_in_government and reichsbank_seized == 1
+view-if: bruning_plot == "successful" and spd_in_government and reichsbank_seized == 1
 frequency: 100
 new-page: true
 is-card: true

@@ -1,5 +1,5 @@
 title: Our plots
-view-if: bruning_plot == "successful" and paramilitaries_timer == 0 and plot_target == "None"
+view-if: bruning_plot == "successful" and plot_target == "None"
 frequency: 100
 new-page: true
 is-card: true

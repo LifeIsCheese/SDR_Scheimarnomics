@@ -1,5 +1,5 @@
 title: Injection of cash
-view-if: bruning_plot == "successful" and paramilitaries_timer == 0 and spd_in_government and reichsbank_seized == 0
+view-if: bruning_plot == "successful" and spd_in_government and reichsbank_seized == 0
 frequency: 100
 new-page: true
 is-card: true
@@ -20,7 +20,7 @@ We can issue bonds to fund our forces. This will be controversial, within our pa
 subtitle: +1 budget, with interest
 unavailable-subtitle: Wait for [+ bond_timer +] months.
 choose-if: bond_timer == 0
-on-arrival: budget +=1; bond_timer = 12; paramilitaries_timer = 2; {!
+on-arrival: budget +=1; bond_timer = 12; paramilitaries_timer = 2; month_actions +=1; {!
 Q.debts.push({ amount: 1, years: 4 });
 !}
 
@@ -30,7 +30,7 @@ We have to pay this back at 30% interest rate per year, for 4 years. if we go in
 subtitle: +2 budget, with interest
 unavailable-subtitle: Wait for [+ bond_timer +] months.
 choose-if: bond_timer == 0
-on-arrival: budget +=2; bond_timer = 12; paramilitaries_timer = 2; {!
+on-arrival: budget +=2; bond_timer = 12; paramilitaries_timer = 2; month_actions +=1; {!
 Q.debts.push({ amount: 2, years: 4 });
 !}
 
@@ -40,7 +40,7 @@ We have to pay this back at 30% interest rate per year, for 4 years. if we go in
 subtitle: +3 budget, with interest
 unavailable-subtitle: Wait for [+ bond_timer +] months.
 choose-if: bond_timer == 0
-on-arrival: budget +=3; bond_timer = 12; paramilitaries_timer = 2; {!
+on-arrival: budget +=3; bond_timer = 12; paramilitaries_timer = 2; month_actions +=1; {!
 Q.debts.push({ amount: 3, years: 4 });
 !}
 

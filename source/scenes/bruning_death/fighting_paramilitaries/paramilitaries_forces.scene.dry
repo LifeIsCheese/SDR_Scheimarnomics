@@ -1,5 +1,5 @@
 title: Our forces
-view-if: bruning_plot == "successful" and paramilitaries_timer == 0
+view-if: bruning_plot == "successful"
 frequency: 100
 new-page: true
 is-card: true
@@ -46,32 +46,42 @@ What should we do?
 @reichsbanner
 subtitle: -1 resource
 choose-if: resources > 0
-on-arrival: rb_militancy +=0.05; month_actions +=1; paramilitaries_timer = 2; resources -=1; rb_strength += rb_strength_add / 2
+on-arrival: rb_militancy +=0.025; month_actions +=1; paramilitaries_timer = 2; resources -=1; {!
+// Halve positive recruitment rewards, but preserve dissent-driven losses.
+Q.rb_strength += Q.rb_strength_add > 0 ? Q.rb_strength_add / 4 : Q.rb_strength_add / 2;
+!}
 
 We fund the Reichsbanner.
 
 @reichsbanner_free
-on-arrival: rb_strength +=100; month_actions +=1; paramilitaries_timer = 2; rb_strength += rb_strength_add / 3
+on-arrival: rb_strength +=50; month_actions +=1; paramilitaries_timer = 2; {!
+Q.rb_strength += Q.rb_strength_add > 0 ? Q.rb_strength_add / 6 : Q.rb_strength_add / 3;
+!}
 
 We can use our media empire to find new reichsbanner recruits. 
 
 @militarize_budget
 subtitle: -1 budget [? if spd_in_government != 1 : We are not in government. ?]
 choose-if: budget > 0 and spd_in_government
-on-arrival: month_actions +=1; paramilitaries_timer = 2; budget -=1; rb_strength += rb_strength_add * 1.5; rb_militancy += rb_militancy_add * 2
+on-arrival: month_actions +=1; paramilitaries_timer = 2; budget -=1; {!
+Q.rb_strength += Q.rb_strength_add > 0 ? Q.rb_strength_add * 0.75 : Q.rb_strength_add * 1.5;
+Q.rb_militancy += Q.rb_militancy_add > 0 ? Q.rb_militancy_add : Q.rb_militancy_add * 2;
+!}
 
 The Reichsbanner now has extra munitions meant for military use, thankfully our coalition partners see this as necessary to save the republic.
 
 @militarize
 subtitle: -3 resources, this will be less effective if we were to use state funds instead.
 choose-if: resources > 2 
-on-arrival: month_actions +=1; paramilitaries_timer = 2; resource -=3; rb_militancy += rb_militancy_add * 1.5
+on-arrival: month_actions +=1; paramilitaries_timer = 2; resources -=3; {!
+Q.rb_militancy += Q.rb_militancy_add > 0 ? Q.rb_militancy_add * 0.75 : Q.rb_militancy_add * 1.5;
+!}
 
 The Reichsbanner now has munitions meant for military use, thankfully our coalition partners see this as necessary to save the republic.
 
 @defund
 subtitle: Why?, +3 resources
-on-arrival: rb_dissent +=50; resources +=3; rb_strength *= 0.9; paramilitaries_timer = 2; rb_militancy *= 0.9
+on-arrival: rb_dissent +=50; resources +=3; rb_strength *= 0.9; paramilitaries_timer = 2; rb_militancy *= 0.9; month_actions +=1
 
 Alright then. The Reichsbanner will remember this. 
 
