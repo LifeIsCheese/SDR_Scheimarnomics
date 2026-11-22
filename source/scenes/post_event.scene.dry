@@ -618,24 +618,27 @@ if (Q.spd_bd_position != "support_kpd") {
 
     // Far right ramp up
 if (Q.violence_timer > 0) {
+    const saRate = Q.crisis_sa_preban && Q.sa_banned && Q.violenceMultiplier > 0 ? 0.75 : 1;
+    const shRate = Q.crisis_sh_preban && Q.sh_banned && Q.violenceMultiplier > 0 ? 0.75 : 1;
     if (Q.rohm_plot !== "successful") {
         if (Q.dvp_alignment <= 0) {
-            AddRightStrength(7, 6);
+            AddRightStrength(7 * saRate, 6 * shRate);
         } else {
-            AddRightStrength(5.2, 3.5);
+            AddRightStrength(5.2 * saRate, 3.5 * shRate);
         }
     } else {
         if (Q.dvp_alignment <= 0) {
-            AddRightStrength(3, 2.9);
+            AddRightStrength(3 * saRate, 2.9 * shRate);
         } else {
-            AddRightStrength(2, 2.1);
+            AddRightStrength(2 * saRate, 2.1 * shRate);
         }
     }
 }
     // Far left ramp up
 if (Q.violence_timer > 0) {
     const leftMultiplier = (Q.socialism / 2) / (Q.leow_plot !== "successful" ? 7 : 14);
-    Q.rfb_strength += (Q.violence_timer * leftMultiplier) * Q.violenceMultiplier;
+    const recruitment = Q.violence_timer * leftMultiplier * Q.violenceMultiplier;
+    Q.rfb_strength += recruitment > 0 && Q.crisis_rfb_preban && Q.rfb_banned ? recruitment * 0.75 : recruitment;
 }
 
 }

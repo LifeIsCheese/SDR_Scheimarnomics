@@ -78,7 +78,7 @@ subtitle: We relinquish full operational control in key cities. Short-term order
 The Reichsbanner are absolutely pissed.
 
 @martial_law
-on-arrival: month_actions +=1
+on-arrival: crisis_outcome = "martial_law"; month_actions +=1
 view-if: military_concessions == 5
 subtitle: If the devil want's to dance with you, you better say never.
 

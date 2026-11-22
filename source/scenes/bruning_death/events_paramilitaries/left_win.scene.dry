@@ -1,7 +1,7 @@
 title: Leftist victory
 view-if: bruning_plot == "successful" and far_left_strength > weimar_strength and far_left_strength > far_right_strength and violence_timer == 0 and spd_bd_position != "support_kpd"
 max-visits: 1
-on-arrival: 
+on-arrival: crisis_outcome = "left"
 new-page: true
 tags: event
 

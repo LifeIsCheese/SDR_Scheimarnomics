@@ -102,6 +102,9 @@ const foreign_investment_cap = Q.foreign_investment
 
 Q.foreign_investment_change = Q.economic_stability / Q.investment_impact;
 
+    if (!Q.exchange_controls && Q.tariffs < 0 && Q.upper_tax_rates < 0 && Q.lower_tax_rates < 0 && Q.interest_rates < 0) {
+        Q.foreign_investment_change += 0.1;
+    }
     Q.foreign_investment += Q.foreign_investment_change;
 
     //cap at 50% of economy, because i am NOT simulating a germany controlled by foreign capital
@@ -113,6 +116,8 @@ Q.foreign_investment_change = Q.economic_stability / Q.investment_impact;
         Q.foreign_investment = Q.foreign_investment_stop * -2;
     }
 
+
+    Q.foreign_investment_change = Q.foreign_investment - foreign_investment_cap;
 
     if (Q.foreign_investment < 0) {
         Q.inflation -= Q.economic_stability / Q.investment_impact

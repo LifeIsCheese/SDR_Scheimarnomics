@@ -8,6 +8,7 @@ go-to: democratic if military_influence < 25; influence_25 if military_influence
 = The End of the Civil War.
 
 @democratic
+on-arrival: crisis_outcome = "republic_democratic"
 
 The streets know now peace after 2 years of strife.
 
@@ -16,6 +17,7 @@ The streets know now peace after 2 years of strife.
 - @game_over: Game over.
 
 @influence_25
+on-arrival: crisis_outcome = "republic_influence_25"
 
 The streets know now peace after 2 years of strife.
 
@@ -25,6 +27,7 @@ The death of Brüning, at first seeming to be a disaster, has led to the weimar 
 - @game_over: Game over.
 
 @influence_50
+on-arrival: crisis_outcome = "republic_influence_50"
 
 The streets know now peace after this 2 years of strife.
 
@@ -33,6 +36,7 @@ We have heard from whistleblowers that the military is planning a soft coup in o
 - @game_over: Game over.
 
 @military
+on-arrival: crisis_outcome = "republic_military"
 
 The death of Brüning has given a golden card to a rising star within our party that calls for greater cooperation with the military led by Lothar Erdmann, he has called upon the SPD to take on a more nationalistic tone as he declares our decades of peace will not undo the justices of Versailles. 
 

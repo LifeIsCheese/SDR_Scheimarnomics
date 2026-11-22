@@ -2,6 +2,7 @@ title: Operation Ivory Tower
 view-if: bruning_plot == "successful"
 new-page: true
 max-visits: 1
+on-arrival: crisis_sa_preban = sa_banned; crisis_sh_preban = sh_banned; crisis_rfb_preban = rfb_banned
 tags: event
 audio: music/1930_1933/Tord-Foleson.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normalized.ogg
 

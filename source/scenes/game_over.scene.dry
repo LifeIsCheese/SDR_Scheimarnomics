@@ -3,13 +3,17 @@ new-page: true
 go-to: eg_menu
 on-arrival: {!
 Q.game_over = 1;
+const outcome = Q.crisis_outcome;
+Q.crisis_republic_win = !!outcome && (outcome === 'bourgeois' || outcome.indexOf('republic_') === 0);
+const officesApply = !outcome || Q.crisis_republic_win;
+const republicWon = outcome ? Q.crisis_republic_win : Q.republic_victory;
 // Achievements:
 // Große Koalition - form a grand coalition
 // Eiserne Front - Form the Iron Front.
 this.achieve('game_completed');
 
 // Roter Zar von Preußen - At the end of the game, Otto Braun is president, chancellor, and minister-president of prussia at the same time.
-if (Q.president == 'Braun' && Q.chancellor == 'Braun' && Q.spd_prussia) {
+if (officesApply && Q.president == 'Braun' && Q.chancellor == 'Braun' && Q.spd_prussia) {
     this.achieve('red_tzar_of_prussia');
 }
 // Bürgerkrieg - enter a long civil war.
@@ -17,7 +21,7 @@ if (Q.long_war) {
     this.achieve('civil_war');
 }
 // Sieg für die Republik - victory for the republic
-if (Q.republic_victory) {
+if (republicWon) {
     this.achieve('victory_for_the_republic');
 }
 // Einigkeit - survive on easy without a civil war.
@@ -35,7 +39,7 @@ if (Q.year >= 1932  && Q.unemployed < 8.6 && Q.budget > 0 && Q.inflation < 5) {
     this.achieve('wirtschaftswunder');
 }
 // Bollwerk der Demokratie - resist the Prussian Coup, and win.
-if (Q.republic_victory && Q.resist_coup) {
+if (Q.republic_victory && Q.resist_coup && (!outcome || republicWon)) {
     this.achieve('bollwerk_der_demokratie');
 }
 // Der österreichische Gefreiter - deport hitler
@@ -51,7 +55,7 @@ if ((Q.womens_work && Q.womens_rights >= 5) || (Q.abortion_rights && Q.womens_ri
 }
 
 // Sohn seiner Klasse - elect Ernst Thälmann as president or chancellor.
-if (Q.chancellor == "Thälmann" || Q.president == "Thälmann") {
+if (officesApply && (Q.chancellor == "Thälmann" || Q.president == "Thälmann")) {
     this.achieve('sohn_seiner_klasse');
 }
 
@@ -93,7 +97,7 @@ if (Q.spd_in_government && ((Q.nationalization_progress >= 2 && Q.economic_democ
     this.achieve('raterepublik');
 }
 // Polykrise - survive both a fascist coup and a capital strike.
-if (Q.march_on_berlin_seen && Q.capital_strike_seen && Q.chancellor != "Hitler" && Q.president != "Hitler" && !Q.total_defeat) {
+if (officesApply && Q.march_on_berlin_seen && Q.capital_strike_seen && Q.chancellor != "Hitler" && Q.president != "Hitler" && !Q.total_defeat) {
     this.achieve("polykrise");
 }
 // Wirtschaftsexperiment - implement two different economic plans.
@@ -105,7 +109,7 @@ if (Q.factory_takeovers >= 2) {
     this.achieve("syndikalismus");
 }
 // Stolperstein - lose the civil war against Hitler.
-if ((Q.chancellor_party == "NSDAP" || Q.chancellor == "Hitler" || Q.president == "Hitler") && Q.total_defeat) {
+if (outcome ? outcome === "right" && !Q.hitler_deported : (Q.chancellor_party == "NSDAP" || Q.chancellor == "Hitler" || Q.president == "Hitler") && Q.total_defeat) {
     this.achieve('stolperstein');
 }
 // Heidelberger Programm - fulfill the goals of the Heidelberg programm - increase welfare, reform justice, support women's rights, progressive taxation, works councils, build a European Union.
@@ -141,7 +145,7 @@ if (Q.hans_opinion >= 5) {
 
 
 @hitler_wins
-view-if: (chancellor == "Hitler" or president == "Hitler") and (total_defeat==1 or civil_war_seen == 0)
+view-if: (not crisis_outcome and ((chancellor == "Hitler" or president == "Hitler") and (total_defeat==1 or civil_war_seen == 0))) or (crisis_outcome == "right" and not hitler_deported)
 title: Adolf Hitler is in undisputed control over Germany.
 tags: endings
 go-to: eg_menu
@@ -151,7 +155,7 @@ Adolf Hitler is in undisputed control over Germany. The SPD, along with all of t
 [? if civil_war_seen == 1 : At the very least, we fought back. Perhaps our resistance will be celebrated in an impossible-to-forsee future. ?]
 
 @war_against_hitler
-view-if: (chancellor == "Hitler" or president == "Hitler") and (long_war == 1)
+view-if: not crisis_outcome and ((chancellor == "Hitler" or president == "Hitler") and (long_war == 1))
 title: Adolf Hitler is in power, but we are fighting to stop him.
 tags: endings
 go-to: eg_menu
@@ -160,7 +164,7 @@ Adolf Hitler has taken power in Germany. However, we have rallied the democratic
 
 
 @no_hitler
-view-if: chancellor != "Hitler" and president != "Hitler" and president != "Göring" and chancellor_party != "NSDAP"
+view-if: (not crisis_outcome and (chancellor != "Hitler" and president != "Hitler" and president != "Göring" and chancellor_party != "NSDAP")) or (crisis_outcome and crisis_outcome != "right")
 title: Hitler does not yet control Germany...
 tags: endings
 go-to: eg_menu
@@ -170,7 +174,7 @@ Hitler does not yet control Germany. [? if chancellor == "Papen" : However, Chan
 [? if hitler_deported == 1 : We have deported Hitler back to Austria. Hopefully he will never return. ?]
 
 @nsdap_win
-view-if: chancellor == "Goebbels" or president == "Göring"
+view-if: (not crisis_outcome and (chancellor == "Goebbels" or president == "Göring")) or (crisis_outcome == "right" and hitler_deported)
 title: Despite the deportation of Hitler, the Nazis have still taken power...
 tags: endings
 go-to: eg_menu
@@ -180,7 +184,7 @@ Despite the deportation of Hitler, the NSDAP has somehow still wormed its way in
 
 @civil_war_won
 title: We have won the civil war.
-view-if: republic_victory == 1
+view-if: (not crisis_outcome and (republic_victory == 1)) or (crisis_republic_win)
 tags: endings
 go-to: eg_menu
 
@@ -188,7 +192,7 @@ We have won the civil war against the reactionary forces. Germany will be change
 
 @civil_war_lost
 title: We lost the civil war.
-view-if: total_defeat == 1
+view-if: not crisis_outcome and (total_defeat == 1)
 tags: endings
 go-to: eg_menu
 
@@ -196,7 +200,7 @@ We have lost the civil war. At least it was a quick coup, and ended before Germa
 
 @long_war
 title: Germany is gripped by civil war.
-view-if: long_war == 1
+view-if: not crisis_outcome and (long_war == 1)
 tags: endings
 go-to: eg_menu
 
@@ -207,7 +211,7 @@ Germany is currently in the grip of a civil war, a brutal affair that has no obv
 
 @braun_victorious
 title: Otto Braun victorious
-view-if: president == "Braun"
+view-if: (not crisis_outcome or crisis_republic_win) and (president == "Braun")
 tags: endings
 go-to: eg_menu
 
@@ -215,7 +219,7 @@ Otto Braun has been elected as President of Germany. He had never desired to be 
 
 @president_schumacher
 title: Kurt Schumacher victorious
-view-if: president == "Schumacher"
+view-if: (not crisis_outcome or crisis_republic_win) and (president == "Schumacher")
 tags: endings
 go-to: eg_menu
 
@@ -223,7 +227,7 @@ Kurt Schumacher has been elected as President of Germany. As a young and ambitio
 
 @president_juchacz
 title: Marie Juchacz is President
-view-if: president == "Juchacz"
+view-if: (not crisis_outcome or crisis_republic_win) and (president == "Juchacz")
 tags: endings
 go-to: eg_menu
 
@@ -231,7 +235,7 @@ Marie Juchacz has been elected as President of Germany. She is the first woman t
 
 @president_einstein
 title: Albert Einstein is President
-view-if: president == "Einstein"
+view-if: (not crisis_outcome or crisis_republic_win) and (president == "Einstein")
 tags: endings
 go-to: eg_menu
 
@@ -239,7 +243,7 @@ Albert Einstein, possibly the most famous scientist in the world, has been elect
 
 @spd_victorious
 title: SPD still in government
-view-if: spd_in_government == 1 and chancellor_party == "SPD" and total_defeat == 0 and long_war == 0
+view-if: (not crisis_outcome or crisis_republic_win) and (spd_in_government == 1 and chancellor_party == "SPD" and total_defeat == 0 and long_war == 0)
 tags: endings
 go-to: eg_menu
 
@@ -247,7 +251,7 @@ The SPD is still in government, under Chancellor [+ chancellor +]. Given the cir
 
 @communist_victory
 title: Communist victory
-view-if: chancellor_party == "KPD" or president == "Thälmann" or socialist_unity and total_defeat == 0 and long_war == 0
+view-if: not crisis_outcome and (chancellor_party == "KPD" or president == "Thälmann" or socialist_unity and total_defeat == 0 and long_war == 0)
 tags: endings
 go-to: eg_menu
 
@@ -255,7 +259,7 @@ The KPD has won power in Germany, with our assistance. They will try to remake G
 
 @reactionary_victory
 title: Reactionary victory
-view-if: chancellor == "Seldte"
+view-if: not crisis_outcome and (chancellor == "Seldte")
 tags: endings
 go-to: eg_menu
 
@@ -289,7 +293,7 @@ Unemployment levels have fallen substantially! This is a success of our economic
 
 @unemployment_high
 title: Unemployment is still too high.
-view-if: unemployed >= 20 and (chancellor != "Hitler" and president != "Hitler") and (total_defeat == 0) and long_war == 0
+view-if: crisis_outcome != "right" and (unemployed >= 20 and (chancellor != "Hitler" and president != "Hitler") and (total_defeat == 0) and long_war == 0)
 tags: endings
 go-to: eg_menu
 
@@ -298,7 +302,7 @@ Unemployment is still at dangerously high levels. Even though Hitler is not in p
 
 @emergency_government
 title: SPD ruling in an emergency government.
-view-if: in_emergency_government == 1
+view-if: (not crisis_outcome or crisis_republic_win) and (in_emergency_government == 1)
 tags: endings
 go-to: eg_menu
 
