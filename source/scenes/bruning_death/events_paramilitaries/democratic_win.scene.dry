@@ -5,40 +5,31 @@ new-page: true
 tags: event
 go-to: democratic if military_influence < 25; influence_25 if military_influence >= 25 and military_influence < 50; influence_50 if military_influence >=50 and military_influence < 75; military if military_influence >= 75
 
-= The End of the Civil War.
+= Democratic victory
 
 @democratic
 on-arrival: crisis_outcome = "republic_democratic"
 
-The streets know now peace after 2 years of strife.
-
- The death of Brüning, at first seeming to be a disaster, has led to the weimar parties grow significantly closer [? if wirth_ascendant : and has strengthened the left wing of the party led by Joseph Wirth ?], combined with our increasing popularity and peace keeping efforts we have finally stabilized our political system underneath the majority [? if in_grand_coalition : Grand coalition?] [? if in_weimar_coalition != 1 : Weimar coalition?]! With our new political capital we have begun to undo the emergency agreement of the Ebert-Groener Pact. Under the leadership of Reichswehr Minister; Julius Leber, our substantial reforms succeeded with all members of the military loyally serving our republic. 
+The death of Brüning, at first seeming to be a disaster, has led to the weimar parties grow significantly closer [? if wirth_ascendant : and has strengthened the left wing of the party led by Joseph Wirth ?], combined with our increasing popularity and peace keeping efforts we have finally stabilized our political system underneath the majority [? if in_grand_coalition : Grand coalition?] [? if in_weimar_coalition != 1 : Weimar coalition?]! With our new political capital we have begun to undo the emergency agreement of the Ebert-Groener Pact. Under the leadership of Reichswehr Minister; Julius Leber, our substantial reforms succeeded with all members of the military loyally serving our republic. 
 
 - @game_over: Game over.
 
 @influence_25
 on-arrival: crisis_outcome = "republic_influence_25"
 
-The streets know now peace after 2 years of strife.
-
-
-The death of Brüning, at first seeming to be a disaster, has led to the weimar parties grow significantly closer, and has strengthened the left wing of the party [? if wirth_ascendant : as the new parliamentary leader ?], Joseph Wirth has emphasized cooperation with the SPD. This has worked wonders on German Democracy with our party assuming the responsibilities of government more often than assuming opposition as it was prior. The Reichswehr however, remains only loyal to us out of goodwill, how many steps we have taken to undermine the Ebert-Groener Pact the next government would walk that step back, yet we still have the military under our good graces and command their personal loyalty.
-
+The death of Brüning, at first seeming to be a disaster, has led to the Weimar parties growing significantly closer, and has strengthened the left wing of the party with Joseph Wirth emphasizing cooperation with the SPD. This has worked wonders on German Democracy with our party assuming the responsibilities of government more often than assuming opposition as it was prior. The Reichswehr however, remains only loyal to us out of goodwill, how many leaps we have taken to undermine the Ebert-Groener Pact. Our current government took 2 steps back, yet we still have the military under our good graces and command their personal loyalty.
 - @game_over: Game over.
 
 @influence_50
 on-arrival: crisis_outcome = "republic_influence_50"
 
-The streets know now peace after this 2 years of strife.
-
-We have heard from whistleblowers that the military is planning a soft coup in order to rid themselves of government oversight but we can't risk German stability or lest a hard coup to eliminate our government.
+After 2 years of strife that has enveloped our country, the streets now know peace. However, there are whispers within the party of the military planning to launch a “ soft coup “, ridding the party of its pacifism and directing it towards more nationalist sentiment. However, these are but rumors, and the military have demonstrated to us that they serve the republic.
 
 - @game_over: Game over.
 
 @military
 on-arrival: crisis_outcome = "republic_military"
 
-The death of Brüning has given a golden card to a rising star within our party that calls for greater cooperation with the military led by Lothar Erdmann, he has called upon the SPD to take on a more nationalistic tone as he declares our decades of peace will not undo the justices of Versailles. 
-
+The death of Brüning, and the subsequent Violence that followed it, has given a golden card to a rising star within our party that calls for greater cooperation with the military led by Lothar Erdmann. Using his influence among the SPD, and the Reichswehr, he has influenced the party to take on a more nationalistic tone as he declares our decades of peace will not undo the justices of Versailles. Time will tell whether these ideas will take root within our party, hopefully it will just be a passing fad.
 - @game_over: Game over.
 

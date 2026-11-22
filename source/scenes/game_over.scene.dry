@@ -6,7 +6,6 @@ Q.game_over = 1;
 const outcome = Q.crisis_outcome;
 Q.crisis_republic_win = !!outcome && (outcome === 'bourgeois' || outcome.indexOf('republic_') === 0);
 const officesApply = !outcome || Q.crisis_republic_win;
-const republicWon = outcome ? Q.crisis_republic_win : Q.republic_victory;
 // Achievements:
 // Große Koalition - form a grand coalition
 // Eiserne Front - Form the Iron Front.
@@ -21,7 +20,7 @@ if (Q.long_war) {
     this.achieve('civil_war');
 }
 // Sieg für die Republik - victory for the republic
-if (republicWon) {
+if (Q.republic_victory) {
     this.achieve('victory_for_the_republic');
 }
 // Einigkeit - survive on easy without a civil war.
@@ -39,7 +38,7 @@ if (Q.year >= 1932  && Q.unemployed < 8.6 && Q.budget > 0 && Q.inflation < 5) {
     this.achieve('wirtschaftswunder');
 }
 // Bollwerk der Demokratie - resist the Prussian Coup, and win.
-if (Q.republic_victory && Q.resist_coup && (!outcome || republicWon)) {
+if (Q.republic_victory && Q.resist_coup) {
     this.achieve('bollwerk_der_demokratie');
 }
 // Der österreichische Gefreiter - deport hitler
@@ -109,7 +108,7 @@ if (Q.factory_takeovers >= 2) {
     this.achieve("syndikalismus");
 }
 // Stolperstein - lose the civil war against Hitler.
-if (outcome ? outcome === "right" && !Q.hitler_deported : (Q.chancellor_party == "NSDAP" || Q.chancellor == "Hitler" || Q.president == "Hitler") && Q.total_defeat) {
+if ((Q.chancellor_party == "NSDAP" || Q.chancellor == "Hitler" || Q.president == "Hitler") && Q.total_defeat) {
     this.achieve('stolperstein');
 }
 // Heidelberger Programm - fulfill the goals of the Heidelberg programm - increase welfare, reform justice, support women's rights, progressive taxation, works councils, build a European Union.
@@ -184,7 +183,7 @@ Despite the deportation of Hitler, the NSDAP has somehow still wormed its way in
 
 @civil_war_won
 title: We have won the civil war.
-view-if: (not crisis_outcome and (republic_victory == 1)) or (crisis_republic_win)
+view-if: republic_victory == 1
 tags: endings
 go-to: eg_menu
 
@@ -192,7 +191,7 @@ We have won the civil war against the reactionary forces. Germany will be change
 
 @civil_war_lost
 title: We lost the civil war.
-view-if: not crisis_outcome and (total_defeat == 1)
+view-if: total_defeat == 1
 tags: endings
 go-to: eg_menu
 
@@ -200,7 +199,7 @@ We have lost the civil war. At least it was a quick coup, and ended before Germa
 
 @long_war
 title: Germany is gripped by civil war.
-view-if: not crisis_outcome and (long_war == 1)
+view-if: long_war == 1
 tags: endings
 go-to: eg_menu
 

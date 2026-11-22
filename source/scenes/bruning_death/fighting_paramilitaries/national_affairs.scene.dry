@@ -57,7 +57,7 @@ The left our party are irritated. They cite it shows weakness, and could start a
 view-if: military_concessions == 2
 choose-if: military_weariness > 15
 on-arrival: reichswehr_loyalty += 0.25; military_weariness -= 15; military_concessions = 3; rb_dissent += 25; month_actions +=1; paramilitaries_timer = 2
-subtitle: We let the Reichswehr handle some suppression. This helps — but we lose some civilian oversight. The Reichsbanner are insulted by this. 
+subtitle: We let the Reichswehr handle some suppression. This helps, but we lose some civilian oversight. The Reichsbanner are insulted by this. 
 
 The Reichsbanner are untrusting of the Reichswehr, yet for now at least, most tolerate their presence.
 
