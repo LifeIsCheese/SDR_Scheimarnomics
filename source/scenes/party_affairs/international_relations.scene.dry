@@ -15,6 +15,7 @@ At the Labor and Socialist International, we can forge contacts with our fratern
 - @scandi: Learn the path of economics and reform from the Scandinavian social democrats.
 - @comintern: Forget the second international - embed a spy in the Comintern's conference.
 - @america: Contact the Socialist party of America.
+- @america_democrats: Contact the Democratic Party of America.
 - @spain: Send aid to the Spanish Republicans in their fight against fascism.
 - @return: We do not need international contacts at the moment.
 - @easy_discard
@@ -75,11 +76,21 @@ Using our contacts to reach Stalin would necessarily require revealing that we h
 
 @america
 subtitle: -1 resources
+view-if: peoples_party = 0
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1
 
 The Socialist Party of America is tiny and has limited support. There is not much we can do for them, and conversely, not much they can do for us.
+
+@america_democrats
+subtitle: -1 resources
+view-if: peoples_party = 1
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; foreign_investment += 0.2;
+
+After abandoning Marxism in favour of becoming a people's party, we have decided to reach out the to Democratic Party and build cordial relations with it.
 
 @spain
 subtitle: -1 resources

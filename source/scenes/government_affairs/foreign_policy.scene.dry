@@ -64,9 +64,9 @@ We have been rejected! The reasons are listed:
 
 [? if economic_growth < economic_goal: The Allies are do not have faith in our economy. ?]
 
-[? if economic_stability < 0 : The markets have no stabilized. ?]
+[? if economic_stability < 0 : The markets have not stabilized. ?]
 
-[? if budget <=0 : We have not proved our fiscal responsibility. ?]
+[? if budget <= 0 : We have not proved our fiscal responsibility. ?]
 
 
 

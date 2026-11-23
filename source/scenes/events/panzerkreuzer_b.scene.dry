@@ -3,7 +3,7 @@ subtitle: A political question
 tags: event
 on-arrival: panzerkreuzer_b_seen = 1
 new-page: true
-view-if: panzerkreuzer_b_seen = 0 and year = 1931 and month >= 2 and (spd_in_government = 1 or spd_toleration = 1)
+view-if: panzerkreuzer_b_seen = 0 and year = 1931 and month >= 2 and (spd_in_government = 1 or spd_toleration = 1) and violence_timer <= 0
 
 = Panzerkreuzer B
 
