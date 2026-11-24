@@ -155,6 +155,16 @@ for (var party of Q.parties) {
     Q['proletariat_' + party + '_normalized'] = Math.round(norm);
 }
 
+const republicanCrisis = Q.violence_timer > 0 && Q.spd_bd_position != "support_kpd";
+const grandCoalitionBacksRepublic = republicanCrisis && Q.in_grand_coalition && Q.spd_in_government;
+if (republicanCrisis || Q.month_actions >= 1) {
+    Q.dvp_in_government = (Q.in_bourgeois_coalition || (Q.in_grand_coalition && (!republicanCrisis || Q.spd_in_government))) ? 1 : 0;
+}
+if (grandCoalitionBacksRepublic) {
+    Q.dvp_alignment = 100;
+    Q.dvp_willing_alignment = 100;
+}
+
 // 1. update dates
 if (Q.month_actions >= 1) {
     Q.time += 1;
@@ -339,13 +349,6 @@ Q.inflation /= Q.currency_value_old * Q.currency_value_old * Q.currency_value_ol
     }
 
 
-    //updating in government stuff, for some reason game only cares about spd. atleast my old version.
-if (Q.in_grand_coalition || Q.in_bourgeois_coalition) {
-    Q.dvp_in_government = 1;
-} else {
-    Q.dvp_in_government = 0;
-}
-
 // Interest Rates, affecting baseline inflation and economic growth
 
 switch (Q.interest_rates) {
@@ -518,13 +521,13 @@ Q.economic_goal = (Q.economic_base * Q.tax_reform) -
 
 if (Q.spd_bd_position == "support_government" || Q.spd_bd_position == "in_government") {
 
-    if (Q.violence_timer > 0) {
+    if (Q.violence_timer > 0 && !grandCoalitionBacksRepublic) {
     if (Q.right_dominance_timer >= 1) Q.dvp_alignment -= 0.5;
     if (Q.weimar_dominance_timer >= 1) Q.dvp_alignment += 0.5;
     if (Q.left_dominance_timer >= 1) Q.dvp_alignment -= 1;
 
     // Cap at willing threshold
-   if (Q.dvp_alignment > Q.dvp_willing_alignment) {Q.dvp_in_government = Q.dvp_willing_alignment}
+    if (Q.dvp_alignment > Q.dvp_willing_alignment) {Q.dvp_alignment = Q.dvp_willing_alignment}
 
     // Soft boundaries during low violence
     if (Q.violence_level <= 33) {

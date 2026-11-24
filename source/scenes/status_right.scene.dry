@@ -148,11 +148,11 @@ Military Weariness: [+ military_weariness +]%
 
 Undecided:
 
-[? if dvp_alignment >= 10 and not in_grand_coalition : DVP : [+ dvp_alignment : alignment +] ?]
+[? if dvp_alignment > 0 and dvp_alignment < 10 : DVP : [+ dvp_alignment : alignment +] ?]
 
-[? if dvp_alignment < 10 and dvp_alignment > 0 and not in_grand_coalition : [? if dvp_alignment == dvp_willing_alignment : We must reach out to them. ?] ?]
+[? if dvp_alignment < 10 and dvp_alignment > 0 : [? if dvp_alignment == dvp_willing_alignment : We must reach out to them. ?] ?]
 
-[? if dvp_alignment < 10 and dvp_alignment > 0 and not in_grand_coalition : [? if violence_level < 33 : They will not be convinced of joining a side until violence is high enough. ?] ?]
+[? if dvp_alignment < 10 and dvp_alignment > 0 : [? if violence_level < 33 : They will not be convinced of joining a side until violence is high enough. ?] ?]
 
 Others
 
@@ -171,13 +171,13 @@ The Republic:
 Z
 BVP
 DDP
-[? if dvp_alignment >= 10 and not in_grand_coalition : DVP ?]
+[? if dvp_alignment >= 10 : DVP ?]
 
 The Far Right:
 
 DNVP
 NDSAP
-[? if dvp_alignment <= 0 and not in_grand_coalition : DVP ?]
+[? if dvp_alignment <= 0 : DVP ?]
 
 @reichsbanner
 
