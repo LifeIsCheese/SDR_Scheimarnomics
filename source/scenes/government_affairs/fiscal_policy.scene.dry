@@ -37,7 +37,7 @@ title: Change Tax.
 - @cut_overall: Cut overall taxes.
 - @cut_overall_wtb: Cut overall taxes.
 - @reform_tax:
-- @fiscal_menu: Change domestic taxes instead of tariffs.
+- @tariffs: Change domestic tariffs instead of taxes.
 - @root: We are fine as it is.
 - @easy_discard
 
