@@ -21,12 +21,12 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      artifact_name: ${{ steps.pages_artifact.outputs.name }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -40,13 +40,24 @@ jobs:
         run: npm run dendrynexus make-html -- --pretty
       - name: Copy game.json to output
         run: cp out/game.json out/html/
+      - name: Set Pages artifact name
+        id: pages_artifact
+        run: echo "name=github-pages-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages-${{ github.run_attempt }}
+          name: ${{ steps.pages_artifact.outputs.name }}
           path: 'out/html'
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          artifact_name: github-pages-${{ github.run_attempt }}
+          artifact_name: ${{ needs.build.outputs.artifact_name }}
